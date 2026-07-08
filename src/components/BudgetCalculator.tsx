@@ -1,9 +1,118 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { countries } from '../data/countries';
 
+interface City {
+  name: string;
+  costOfLiving: number;
+}
+
+const CITIES_DATA: Record<string, City[]> = {
+  germany: [
+    { name: 'National Average', costOfLiving: 1100 },
+    { name: 'Munich (München)', costOfLiving: 1450 },
+    { name: 'Berlin', costOfLiving: 1200 },
+    { name: 'Hamburg', costOfLiving: 1250 },
+    { name: 'Frankfurt', costOfLiving: 1300 },
+    { name: 'Heidelberg', costOfLiving: 1150 },
+    { name: 'Bonn / Göttingen', costOfLiving: 1000 }
+  ],
+  netherlands: [
+    { name: 'National Average', costOfLiving: 1500 },
+    { name: 'Amsterdam', costOfLiving: 1850 },
+    { name: 'Utrecht', costOfLiving: 1650 },
+    { name: 'Rotterdam', costOfLiving: 1550 },
+    { name: 'Delft / Leiden', costOfLiving: 1500 },
+    { name: 'Groningen / Enschede', costOfLiving: 1300 }
+  ],
+  switzerland: [
+    { name: 'National Average', costOfLiving: 1850 },
+    { name: 'Zurich (Zürich)', costOfLiving: 2350 },
+    { name: 'Geneva (Genève)', costOfLiving: 2300 },
+    { name: 'Basel', costOfLiving: 2000 },
+    { name: 'Lausanne', costOfLiving: 1950 },
+    { name: 'Bern', costOfLiving: 1800 }
+  ],
+  france: [
+    { name: 'National Average', costOfLiving: 1100 },
+    { name: 'Paris', costOfLiving: 1550 },
+    { name: 'Lyon', costOfLiving: 1200 },
+    { name: 'Nice', costOfLiving: 1150 },
+    { name: 'Marseille / Toulouse', costOfLiving: 950 },
+    { name: 'Grenoble / Lille', costOfLiving: 1000 }
+  ],
+  united_kingdom: [
+    { name: 'National Average', costOfLiving: 1300 },
+    { name: 'London', costOfLiving: 1850 },
+    { name: 'Oxford', costOfLiving: 1500 },
+    { name: 'Cambridge', costOfLiving: 1450 },
+    { name: 'Edinburgh', costOfLiving: 1250 },
+    { name: 'Manchester', costOfLiving: 1100 },
+    { name: 'Belfast / Newcastle', costOfLiving: 950 }
+  ],
+  sweden: [
+    { name: 'National Average', costOfLiving: 1200 },
+    { name: 'Stockholm', costOfLiving: 1450 },
+    { name: 'Gothenburg (Göteborg)', costOfLiving: 1300 },
+    { name: 'Lund / Uppsala', costOfLiving: 1150 }
+  ],
+  norway: [
+    { name: 'National Average', costOfLiving: 1800 },
+    { name: 'Oslo', costOfLiving: 2100 },
+    { name: 'Bergen', costOfLiving: 1900 },
+    { name: 'Trondheim', costOfLiving: 1750 }
+  ],
+  denmark: [
+    { name: 'National Average', costOfLiving: 1700 },
+    { name: 'Copenhagen', costOfLiving: 2000 },
+    { name: 'Aarhus', costOfLiving: 1750 },
+    { name: 'Odense', costOfLiving: 1550 }
+  ],
+  italy: [
+    { name: 'National Average', costOfLiving: 850 },
+    { name: 'Milan (Milano)', costOfLiving: 1200 },
+    { name: 'Rome (Roma)', costOfLiving: 1000 },
+    { name: 'Bologna', costOfLiving: 950 },
+    { name: 'Florence (Firenze)', costOfLiving: 950 },
+    { name: 'Naples (Napoli) / Pisa', costOfLiving: 750 }
+  ],
+  spain: [
+    { name: 'National Average', costOfLiving: 900 },
+    { name: 'Madrid', costOfLiving: 1200 },
+    { name: 'Barcelona', costOfLiving: 1200 },
+    { name: 'Valencia', costOfLiving: 950 },
+    { name: 'Seville (Sevilla) / Granada', costOfLiving: 750 }
+  ],
+  belgium: [
+    { name: 'National Average', costOfLiving: 1300 },
+    { name: 'Brussels', costOfLiving: 1450 },
+    { name: 'Leuven', costOfLiving: 1350 },
+    { name: 'Ghent', costOfLiving: 1300 },
+    { name: 'Liège', costOfLiving: 1100 }
+  ],
+  austria: [
+    { name: 'National Average', costOfLiving: 1250 },
+    { name: 'Vienna (Wien)', costOfLiving: 1350 },
+    { name: 'Innsbruck', costOfLiving: 1300 },
+    { name: 'Graz', costOfLiving: 1150 }
+  ],
+  finland: [
+    { name: 'National Average', costOfLiving: 1200 },
+    { name: 'Helsinki', costOfLiving: 1350 },
+    { name: 'Tampere', costOfLiving: 1150 },
+    { name: 'Turku / Oulu', costOfLiving: 1100 }
+  ],
+  ireland: [
+    { name: 'National Average', costOfLiving: 1750 },
+    { name: 'Dublin', costOfLiving: 2100 },
+    { name: 'Cork', costOfLiving: 1700 },
+    { name: 'Galway', costOfLiving: 1600 }
+  ]
+};
+
 export default function BudgetCalculator() {
   const [selectedCountryId, setSelectedCountryId] = useState(countries[0].id);
   const [citizenship, setCitizenship] = useState<'eu' | 'noneu'>('eu');
+  const [selectedCityName, setSelectedCityName] = useState('National Average');
 
   // Sliders State
   const [stipend, setStipend] = useState(0);
@@ -16,17 +125,62 @@ export default function BudgetCalculator() {
     return countries.find((c) => c.id === selectedCountryId) || countries[0];
   }, [selectedCountryId]);
 
+  // Get available cities for selected country
+  const availableCities = useMemo(() => {
+    if (CITIES_DATA[selectedCountryId]) {
+      return CITIES_DATA[selectedCountryId];
+    }
+    // Fallback dynamic options using capital
+    return [
+      { name: 'National Average', costOfLiving: country.costOfLiving },
+      { name: `${country.capital || 'Capital'} (Capital)`, costOfLiving: Math.round(country.costOfLiving * 1.2) }
+    ];
+  }, [selectedCountryId, country]);
+
   // Load defaults when country or citizenship changes
   useEffect(() => {
     const isEU = citizenship === 'eu';
     const defaultTuition = isEU ? country.tuitionFeesEU : country.tuitionFeesNonEU;
 
     setStipend(country.netIncome);
-    setLiving(country.costOfLiving);
+    
+    // Default to National Average cost of living
+    setSelectedCityName('National Average');
+    const defaultCityCost = availableCities.find(c => c.name === 'National Average')?.costOfLiving ?? country.costOfLiving;
+    setLiving(defaultCityCost);
+    
     setTuition(defaultTuition);
     setSavings(0);
     setOther(200);
-  }, [country, citizenship]);
+  }, [country, citizenship, availableCities]);
+
+  // City dropdown selection handler
+  const handleCityChange = (cityName: string) => {
+    setSelectedCityName(cityName);
+    const city = availableCities.find(c => c.name === cityName);
+    if (city) {
+      setLiving(city.costOfLiving);
+    }
+  };
+
+  // Slider adjustment updates city dropdown selection to "Custom" if it doesn't match any preset
+  const handleLivingSliderChange = (val: number) => {
+    setLiving(val);
+    const matchingCity = availableCities.find(c => c.costOfLiving === val);
+    if (matchingCity) {
+      setSelectedCityName(matchingCity.name);
+    } else {
+      setSelectedCityName('Custom');
+    }
+  };
+
+  const dropdownOptions = useMemo(() => {
+    const options = [...availableCities];
+    if (selectedCityName === 'Custom') {
+      options.push({ name: 'Custom (User Adjusted)', costOfLiving: living });
+    }
+    return options;
+  }, [availableCities, selectedCityName, living]);
 
   // Custom event listener for external triggers (e.g. from the explorer modal)
   useEffect(() => {
@@ -161,6 +315,30 @@ export default function BudgetCalculator() {
           {/* Financial Outflows */}
           <div className="calc-section-divider">Expenses & Outflows</div>
 
+          {/* City Selection */}
+          <div className="form-group">
+            <label htmlFor="calc-city-select" className="control-label">Select City Base</label>
+            <select
+              id="calc-city-select"
+              className="form-select"
+              value={selectedCityName === 'Custom' ? 'Custom (User Adjusted)' : selectedCityName}
+              onChange={(e) => {
+                if (e.target.value === 'Custom (User Adjusted)') {
+                  setSelectedCityName('Custom');
+                } else {
+                  handleCityChange(e.target.value);
+                }
+              }}
+            >
+              {dropdownOptions.map((city) => (
+                <option key={city.name} value={city.name}>
+                  {city.name} (~€{city.costOfLiving.toLocaleString()}/mo)
+                </option>
+              ))}
+            </select>
+            <span className="slider-hint">Quickly adjust base living costs to specific academic hubs.</span>
+          </div>
+
           <div className="form-group">
             <div className="slider-label-row">
               <label htmlFor="input-living" className="control-label">Estimated Living Cost (Rent + Food)</label>
@@ -173,10 +351,10 @@ export default function BudgetCalculator() {
               max="3500"
               step="50"
               value={living}
-              onChange={(e) => setLiving(Number(e.target.value))}
+              onChange={(e) => handleLivingSliderChange(Number(e.target.value))}
               className="calc-slider"
             />
-            <span className="slider-hint">Basic local student expenses.</span>
+            <span className="slider-hint">Basic local student expenses. Can override manually.</span>
           </div>
 
           <div className="form-group">
