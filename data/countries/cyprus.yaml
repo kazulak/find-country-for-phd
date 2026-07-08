@@ -1,0 +1,45 @@
+id: cyprus
+name: Cyprus
+capital: Nicosia
+languages:
+  - name: Greek
+    english_friendly: false
+    official: true
+  - name: Turkish
+    english_friendly: false
+    official: true
+  - name: English
+    english_friendly: true
+    official: false
+stipend:
+  amount_eur_per_year: 12000
+  is_taxable: false
+  is_social_security_covered: false
+  purchasing_power_index: 88
+tuition_fees:
+  eu_students_eur_per_year: 1500
+  non_eu_students_eur_per_year: 4000
+cost_of_living:
+  estimated_monthly_expenses_eur: 900
+  index_relative_to_eu_average: 89
+phd_system:
+  typical_duration_years: 3.5
+  is_employee_status: false
+  academic_calendar: Semester (Sep-Jan / Feb-Jun)
+  required_ects: 0
+visa_and_work_rights:
+  requires_visa_for_non_eu: true
+  post_study_work_visa_duration_months: 6
+  work_hours_limit_per_week: 20
+funding_availability:
+  rate: low
+  main_sources:
+    - Research and Innovation Foundation of Cyprus
+happiness_index: 6.13
+climate:
+  type: Subtropical / Sunny
+  average_temperature_summer_c: 33
+  average_temperature_winter_c: 12
+contact_portals:
+  - title: Cyprus Ministry of Education
+    url: https://highereducation.ac.cy

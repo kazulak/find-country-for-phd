@@ -1,0 +1,146 @@
+---
+// Footer.astro
+---
+
+<footer class="site-footer glass">
+  <div class="container footer-content">
+    <div class="footer-meta">
+      <div class="footer-logo">
+        <span class="f-logo-icon">🇪🇺</span>
+        <span class="f-logo-text">PhD<span class="highlight">Europe</span></span>
+      </div>
+      <p class="footer-desc">An interactive, serverless decision platform mapping PhD funding models, employment benefits, and living cost sustainabilities for early-stage researchers in Europe.</p>
+    </div>
+    
+    <div class="footer-sources">
+      <h4 class="sources-title">Data Sources & Citations</h4>
+      <ul class="sources-list">
+        <li>Academic salaries correspond to national collective agreements (e.g., German TV-L E13, Dutch VSNU, Swedish Doktorandtrappa, UKRI minimum stipends).</li>
+        <li>Tuition fee assessments reflect general state university guidelines for doctoral registrations as of 2025/2026.</li>
+        <li>Cost of living estimates compile rent, food, transport, and mandatory insurance data from Numbeo, national student unions, and university advice portals.</li>
+      </ul>
+    </div>
+  </div>
+  
+  <div class="footer-bottom">
+    <div class="container bottom-container">
+      <span class="copyright">© 2026 PhD Europe Match Platform. No rights reserved (Public Domain).</span>
+      <span class="credit">Built entirely client-side with Astro & Vanilla JS.</span>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    margin: 40px 24px 24px;
+    border-radius: var(--radius-md);
+    padding: 40px 0 0;
+    margin-top: auto; /* Push to bottom */
+  }
+  
+  .footer-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding-bottom: 40px;
+  }
+  
+  @media (min-width: 768px) {
+    .footer-content {
+      grid-template-columns: 1.2fr 1.8fr;
+      gap: 60px;
+    }
+  }
+  
+  .footer-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 1.15rem;
+    color: var(--text-primary);
+  }
+  
+  .f-logo-icon {
+    font-size: 1.35rem;
+  }
+  
+  .highlight {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .footer-desc {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+  
+  .footer-sources {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .sources-title {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  
+  .sources-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .sources-list li {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    position: relative;
+    padding-left: 14px;
+    line-height: 1.5;
+  }
+  
+  .sources-list li::before {
+    content: "▪";
+    position: absolute;
+    left: 0;
+    color: var(--primary-hover);
+  }
+  
+  .footer-bottom {
+    border-top: 1px solid var(--border-color);
+    padding: 20px 0;
+    background: rgba(0, 0, 0, 0.1);
+  }
+  
+  .bottom-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+  }
+  
+  .copyright {
+    font-weight: 500;
+  }
+  
+  .credit {
+    font-weight: 400;
+  }
+</style>

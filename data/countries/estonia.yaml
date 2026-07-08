@@ -1,0 +1,43 @@
+id: estonia
+name: Estonia
+capital: Tallinn
+languages:
+  - name: Estonian
+    english_friendly: false
+    official: true
+  - name: English
+    english_friendly: true
+    official: false
+stipend:
+  amount_eur_per_year: 21600
+  is_taxable: true
+  is_social_security_covered: true
+  purchasing_power_index: 102
+tuition_fees:
+  eu_students_eur_per_year: 0
+  non_eu_students_eur_per_year: 0
+cost_of_living:
+  estimated_monthly_expenses_eur: 950
+  index_relative_to_eu_average: 90
+phd_system:
+  typical_duration_years: 4
+  is_employee_status: true
+  academic_calendar: Semester (Sep-Dec / Feb-May)
+  required_ects: 60
+visa_and_work_rights:
+  requires_visa_for_non_eu: true
+  post_study_work_visa_duration_months: 9
+  work_hours_limit_per_week: 20
+funding_availability:
+  rate: high
+  main_sources:
+    - Estonian Research Council
+    - University employee research grants
+happiness_index: 6.44
+climate:
+  type: Maritime / Cold
+  average_temperature_summer_c: 21
+  average_temperature_winter_c: -4
+contact_portals:
+  - title: Study in Estonia
+    url: https://studyinestonia.ee

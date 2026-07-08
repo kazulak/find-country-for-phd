@@ -1,0 +1,43 @@
+id: norway
+name: Norway
+capital: Oslo
+languages:
+  - name: Norwegian
+    english_friendly: false
+    official: true
+  - name: English
+    english_friendly: true
+    official: false
+stipend:
+  amount_eur_per_year: 54000
+  is_taxable: true
+  is_social_security_covered: true
+  purchasing_power_index: 135
+tuition_fees:
+  eu_students_eur_per_year: 0
+  non_eu_students_eur_per_year: 0
+cost_of_living:
+  estimated_monthly_expenses_eur: 1800
+  index_relative_to_eu_average: 155
+phd_system:
+  typical_duration_years: 3.5
+  is_employee_status: true
+  academic_calendar: Semester (Aug-Dec / Jan-Jun)
+  required_ects: 30
+visa_and_work_rights:
+  requires_visa_for_non_eu: true
+  post_study_work_visa_duration_months: 12
+  work_hours_limit_per_week: 20
+funding_availability:
+  rate: high
+  main_sources:
+    - Research Council of Norway
+    - University PhD Positions (Employed)
+happiness_index: 7.39
+climate:
+  type: Nordic / Temperate
+  average_temperature_summer_c: 18
+  average_temperature_winter_c: -3
+contact_portals:
+  - title: Study in Norway
+    url: https://www.studyinnorway.no

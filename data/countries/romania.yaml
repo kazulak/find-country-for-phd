@@ -1,0 +1,43 @@
+id: romania
+name: Romania
+capital: Bucharest
+languages:
+  - name: Romanian
+    english_friendly: false
+    official: true
+  - name: English
+    english_friendly: true
+    official: false
+stipend:
+  amount_eur_per_year: 7200
+  is_taxable: false
+  is_social_security_covered: false
+  purchasing_power_index: 77
+tuition_fees:
+  eu_students_eur_per_year: 0
+  non_eu_students_eur_per_year: 3000
+cost_of_living:
+  estimated_monthly_expenses_eur: 600
+  index_relative_to_eu_average: 60
+phd_system:
+  typical_duration_years: 3
+  is_employee_status: false
+  academic_calendar: Semester (Oct-Jan / Feb-Jun)
+  required_ects: 0
+visa_and_work_rights:
+  requires_visa_for_non_eu: true
+  post_study_work_visa_duration_months: 6
+  work_hours_limit_per_week: 20
+funding_availability:
+  rate: medium
+  main_sources:
+    - UEFISCDI Romania
+    - State financed tuition-free spots
+happiness_index: 6.5
+climate:
+  type: Temperate / Continental
+  average_temperature_summer_c: 28
+  average_temperature_winter_c: -1
+contact_portals:
+  - title: Study in Romania
+    url: https://studyinromania.gov.ro

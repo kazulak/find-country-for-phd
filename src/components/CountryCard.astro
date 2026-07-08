@@ -1,0 +1,289 @@
+---
+import type { Country } from '../data/countries';
+
+interface Props {
+  country: Country;
+}
+
+const { country } = Astro.props;
+
+// Determine housing warning color
+const housingCrisisColors = {
+  None: 'badge-success',
+  Low: 'badge-success',
+  Medium: 'badge-warning',
+  High: 'badge-danger',
+  Critical: 'badge-danger'
+};
+
+const housingCrisisClass = housingCrisisColors[country.housingCrisis] || 'badge-secondary';
+
+// Calculate stipend to expense ratio
+const expenseRatio = Math.round((country.costOfLiving / country.netIncome) * 100);
+const savingsMargin = country.netIncome - country.costOfLiving;
+const isPositive = savingsMargin > 0;
+---
+
+<div class="country-card glass-interactive gradient-border-card" data-country-id={country.id}>
+  <div class="card-header">
+    <div class="country-identity">
+      <span class="country-flag" aria-hidden="true">{country.flag}</span>
+      <div class="country-info">
+        <h3 class="country-name">{country.name}</h3>
+        <span class="country-region">{country.region}</span>
+      </div>
+    </div>
+    <span class="status-badge font-display">{country.status}</span>
+  </div>
+
+  <div class="card-body">
+    <!-- Quick Stats Grid -->
+    <div class="quick-stats">
+      <div class="q-stat">
+        <span class="q-label">Avg. Net Income</span>
+        <span class="q-value text-glow-primary">€{country.netIncome.toLocaleString()}/mo</span>
+      </div>
+      <div class="q-stat">
+        <span class="q-label">Cost of Living</span>
+        <span class="q-value">~€{country.costOfLiving.toLocaleString()}/mo</span>
+      </div>
+    </div>
+
+    <!-- Stipend-to-Expense Visual Bar -->
+    <div class="ratio-wrapper">
+      <div class="ratio-label-row">
+        <span class="ratio-title">Stipend Consumption</span>
+        <span class={`ratio-percentage ${isPositive && expenseRatio < 80 ? 'text-success' : 'text-warning'}`}>{expenseRatio}%</span>
+      </div>
+      <div class="progress-bar-bg">
+        <div 
+          class={`progress-bar-fill ${expenseRatio > 100 ? 'fill-danger' : expenseRatio > 80 ? 'fill-warning' : 'fill-success'}`} 
+          style={`width: ${Math.min(expenseRatio, 100)}%`}
+        ></div>
+      </div>
+      <span class="ratio-sub">
+        {isPositive 
+          ? `Est. savings: +€${savingsMargin}/mo` 
+          : `Est. deficit: -€${Math.abs(savingsMargin)}/mo`
+        }
+      </span>
+    </div>
+
+    <!-- Bullet Metrics -->
+    <div class="bullet-metrics">
+      <div class="bullet-item">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="bullet-icon"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        <span>Duration: <strong>{country.duration}</strong></span>
+      </div>
+      <div class="bullet-item">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="bullet-icon"><path d="M2 10h20"/><path d="M22 6H2a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2z"/><rect width="6" height="4" x="6" y="11" rx="1"/></svg>
+        <span>Tuition: <strong>{country.tuitionFeesEU === 0 ? 'Free (EU)' : `€${country.tuitionFeesEU.toLocaleString()}/yr`}</strong></span>
+      </div>
+      <div class="bullet-item">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="bullet-icon"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <span>Visa Complexity: <strong class="capitalize">{country.visaComplexityNonEU}</strong></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-footer">
+    <div class="card-badges">
+      <span class={`badge ${housingCrisisClass}`}>Housing: {country.housingCrisis}</span>
+      {country.englishFriendly >= 8 && <span class="badge badge-secondary">English Ok</span>}
+    </div>
+    <button class="view-details-btn btn btn-secondary btn-sm" data-id={country.id}>
+      Explore Details
+    </button>
+  </div>
+</div>
+
+<style>
+  .country-card {
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    height: 100%;
+    cursor: pointer;
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+  }
+  
+  .country-card:hover {
+    transform: translateY(-4px);
+  }
+  
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+  
+  .country-identity {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .country-flag {
+    font-size: 2.2rem;
+    line-height: 1;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.15));
+  }
+  
+  .country-name {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-primary);
+  }
+  
+  .country-region {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-weight: 500;
+  }
+  
+  .status-badge {
+    font-size: 0.75rem;
+    font-weight: 700;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-color);
+    padding: 4px 10px;
+    border-radius: var(--radius-sm);
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  
+  .card-body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .quick-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    background: rgba(255, 255, 255, 0.01);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    padding: 10px;
+  }
+  
+  .q-stat {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .q-label {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    font-weight: 500;
+  }
+  
+  .q-value {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+  }
+
+  .text-glow-primary {
+    color: var(--primary-hover);
+    text-shadow: 0 0 10px rgba(139, 92, 246, 0.3);
+  }
+  
+  .ratio-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  
+  .ratio-label-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+  
+  .ratio-title {
+    color: var(--text-secondary);
+  }
+  
+  .ratio-percentage {
+    font-family: var(--font-display);
+  }
+  
+  .progress-bar-bg {
+    height: 6px;
+    background: var(--bg-tertiary);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+    border: 1px solid var(--glass-border);
+  }
+  
+  .progress-bar-fill {
+    height: 100%;
+    border-radius: var(--radius-full);
+    transition: width var(--transition-slow) ease-out;
+  }
+
+  .fill-success { background: linear-gradient(90deg, var(--success), #34d399); }
+  .fill-warning { background: linear-gradient(90deg, var(--warning), #fbbf24); }
+  .fill-danger { background: linear-gradient(90deg, var(--danger), #f87171); }
+  
+  .text-success { color: var(--success); }
+  .text-warning { color: var(--warning); }
+  
+  .ratio-sub {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    font-weight: 500;
+  }
+  
+  .bullet-metrics {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    border-top: 1px dashed var(--border-color);
+    padding-top: 16px;
+  }
+  
+  .bullet-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+  }
+  
+  .bullet-icon {
+    color: var(--text-muted);
+    flex-shrink: 0;
+  }
+  
+  .card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--border-color);
+    padding-top: 16px;
+  }
+  
+  .card-badges {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    max-width: 60%;
+  }
+
+  .btn-sm {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+
+  .capitalize {
+    text-transform: capitalize;
+  }
+</style>

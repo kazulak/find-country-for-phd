@@ -1,0 +1,159 @@
+---
+// ComparisonHub.astro
+import ReactComparisonHub from './ComparisonHub';
+---
+
+<ReactComparisonHub client:load />
+
+<style is:global>
+  .comparison-panel {
+    padding: 30px;
+    margin-bottom: 40px;
+  }
+  
+  .compare-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--text-primary);
+  }
+  
+  .compare-subtitle {
+    color: var(--text-secondary);
+    margin-bottom: 24px;
+    font-size: 0.95rem;
+  }
+  
+  .selectors-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-bottom: 30px;
+  }
+  
+  @media (min-width: 768px) {
+    .selectors-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  .selector-box {
+    position: relative;
+    padding: 16px;
+    border-radius: var(--radius-md);
+    background: rgba(255, 255, 255, 0.01);
+    border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .color-dot {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+  }
+  
+  .dot-1 { background: var(--primary); box-shadow: 0 0 10px var(--primary); }
+  .dot-2 { background: var(--secondary); box-shadow: 0 0 10px var(--secondary); }
+  .dot-3 { background: var(--accent); box-shadow: 0 0 10px var(--accent); }
+  
+  /* Horizontal scroll for table */
+  .table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    background: rgba(0, 0, 0, 0.15);
+  }
+  
+  .compare-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    min-width: 700px;
+    font-size: 0.95rem;
+  }
+  
+  .header-tr th {
+    padding: 18px 24px;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.05rem;
+    border-bottom: 2px solid var(--border-color);
+    background: var(--bg-tertiary);
+  }
+  
+  .feature-col {
+    width: 25%;
+    color: var(--text-primary);
+  }
+  
+  .country-col {
+    width: 25%;
+    text-align: center;
+  }
+  
+  .compare-table td {
+    padding: 16px 24px;
+    border-bottom: 1px solid var(--border-color);
+    line-height: 1.5;
+  }
+  
+  /* Feature Row styling */
+  .section-row td {
+    background: rgba(255, 255, 255, 0.02);
+    font-weight: 700;
+    color: var(--text-primary);
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    padding: 10px 24px;
+    border-bottom: 1.5px solid var(--border-color);
+  }
+  
+  .param-name {
+    font-weight: 600;
+    color: var(--text-secondary);
+  }
+  
+  .param-val {
+    text-align: center;
+    color: var(--text-primary);
+  }
+  
+  /* Highlight cell helpers */
+  .highlight-cell-green {
+    background: rgba(16, 185, 129, 0.04);
+    font-weight: 600;
+  }
+  
+  .highlight-cell-red {
+    background: rgba(239, 68, 68, 0.04);
+  }
+  
+  .country-header-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+  }
+  
+  .c-flag {
+    font-size: 2.2rem;
+    line-height: 1;
+  }
+  
+  .c-name {
+    font-size: 1.15rem;
+    font-weight: 700;
+  }
+  
+  .empty-cell-text {
+    color: var(--text-muted);
+    font-style: italic;
+  }
+</style>

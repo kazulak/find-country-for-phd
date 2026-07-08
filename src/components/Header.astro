@@ -1,0 +1,256 @@
+---
+// Header.astro
+---
+
+<header class="site-header glass">
+  <div class="container header-container">
+    <a href="#" class="logo" id="logo-btn">
+      <span class="logo-icon">🇪🇺</span>
+      <span class="logo-text">PhD<span class="highlight">Europe</span></span>
+    </a>
+    
+    <nav class="nav-menu">
+      <button class="nav-link active" data-tab="explorer">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="nav-icon"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        Explorer
+      </button>
+      <button class="nav-link" data-tab="quiz">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="nav-icon"><path d="m9 12 2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+        Match Quiz
+      </button>
+      <button class="nav-link" data-tab="calculator">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="nav-icon"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="16" y1="14" x2="16" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg>
+        Budget Calculator
+      </button>
+      <button class="nav-link" data-tab="comparison">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="nav-icon"><path d="M16 3h5v5"/><path d="M8 21H3v-5"/><path d="M12 12 3 21"/><path d="m19 5-7 7"/></svg>
+        Comparison Hub
+      </button>
+    </nav>
+    
+    <div class="header-actions">
+      <button id="theme-toggle" class="theme-btn glass" aria-label="Toggle light/dark theme">
+        <span class="theme-icon-dark">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+        </span>
+        <span class="theme-icon-light">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+        </span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 16px;
+    z-index: 100;
+    margin: 16px 24px;
+    border-radius: var(--radius-md);
+  }
+  
+  .header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+    padding: 0 16px;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 1.3rem;
+    color: var(--text-primary);
+  }
+  
+  .logo-icon {
+    font-size: 1.6rem;
+    filter: drop-shadow(0 2px 8px rgba(139, 92, 246, 0.3));
+  }
+  
+  .logo-text {
+    letter-spacing: -0.03em;
+  }
+  
+  .highlight {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .nav-menu {
+    display: flex;
+    gap: 8px;
+  }
+  
+  .nav-link {
+    background: transparent;
+    border: none;
+    padding: 8px 16px;
+    border-radius: var(--radius-sm);
+    color: var(--text-secondary);
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: var(--transition-fast);
+  }
+  
+  .nav-link:hover {
+    color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.04);
+  }
+  
+  .nav-link.active {
+    color: var(--primary-hover);
+    background: var(--primary-glow);
+    border: 1px solid rgba(139, 92, 246, 0.15);
+  }
+  
+  .nav-icon {
+    transition: transform var(--transition-fast);
+  }
+  
+  .nav-link:hover .nav-icon {
+    transform: translateY(-1px);
+  }
+  
+  .theme-btn {
+    width: 38px;
+    height: 38px;
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+  }
+  
+  .theme-btn:hover {
+    background: var(--border-color);
+  }
+
+  /* Show/hide icons based on active theme */
+  :root[data-theme="dark"] .theme-icon-dark {
+    display: none;
+  }
+  :root[data-theme="dark"] .theme-icon-light {
+    display: block;
+    color: var(--warning);
+  }
+  
+  :root[data-theme="light"] .theme-icon-dark {
+    display: block;
+    color: var(--primary);
+  }
+  :root[data-theme="light"] .theme-icon-light {
+    display: none;
+  }
+
+  /* Mobile Responsive styling */
+  @media (max-width: 768px) {
+    .site-header {
+      margin: 8px 12px;
+    }
+    .header-container {
+      height: auto;
+      padding: 12px 8px;
+      flex-direction: column;
+      gap: 12px;
+    }
+    
+    .nav-menu {
+      width: 100%;
+      overflow-x: auto;
+      padding-bottom: 4px;
+      justify-content: flex-start;
+      /* hide scrollbar */
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    .nav-menu::-webkit-scrollbar {
+      display: none;
+    }
+    
+    .nav-link {
+      white-space: nowrap;
+      padding: 6px 12px;
+      font-size: 0.85rem;
+    }
+    
+    .header-actions {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
+  }
+</style>
+
+<script>
+  // Tab Switching logic
+  const navLinks = document.querySelectorAll('.nav-link');
+  
+  function switchTab(tabId: string) {
+    navLinks.forEach(link => {
+      if (link.getAttribute('data-tab') === tabId) {
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
+      }
+    });
+
+    const contents = document.querySelectorAll('.tab-content');
+    contents.forEach(content => {
+      if (content.id === `${tabId}-tab`) {
+        content.classList.add('active');
+      } else {
+        content.classList.remove('active');
+      }
+    });
+    
+    // Dispatch custom event for child components to respond to tab change
+    window.dispatchEvent(new CustomEvent('tabchange', { detail: { tab: tabId } }));
+  }
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      const tabId = link.getAttribute('data-tab');
+      if (tabId) {
+        switchTab(tabId);
+      }
+    });
+  });
+
+  // Logo button returns to explorer
+  document.getElementById('logo-btn')?.addEventListener('click', (e) => {
+    e.preventDefault();
+    switchTab('explorer');
+  });
+
+  // Handle external triggers to switch tabs (like buttons in Hero)
+  window.addEventListener('switch-tab', (e: Event) => {
+    const customEvent = e as CustomEvent<{ tab: string }>;
+    if (customEvent.detail && customEvent.detail.tab) {
+      switchTab(customEvent.detail.tab);
+    }
+  });
+
+  // Theme Toggler logic
+  const themeToggleBtn = document.getElementById('theme-toggle');
+  themeToggleBtn?.addEventListener('click', () => {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+  });
+</script>

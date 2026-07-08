@@ -1,0 +1,1105 @@
+[
+  {
+    "id": "austria",
+    "name": "Austria",
+    "code": "AT",
+    "region": "Western Europe",
+    "flag": "🇦🇹",
+    "duration": "3.5 Years",
+    "status": "Employed",
+    "structure": "Individual",
+    "grossSalary": 3200,
+    "netIncome": 2560,
+    "tuitionFeesEU": 750,
+    "tuitionFeesNonEU": 1500,
+    "costOfLiving": 1250,
+    "fundingAvailability": "Medium",
+    "englishFriendly": 9,
+    "localLanguageImportance": "Medium",
+    "visaComplexityNonEU": "Medium",
+    "happinessIndex": 7.21,
+    "housingCrisis": "Medium",
+    "academicReputation": "Strong",
+    "pros": [
+      "Full employee rights & social benefits",
+      "State pension contributions covered",
+      "Excellent funding via FWF (Austrian Science Fund)"
+    ],
+    "cons": [],
+    "warnings": [],
+    "quizTags": [
+      "employee",
+      "high-pay",
+      "fast-phd",
+      "english-ok"
+    ]
+  },
+  {
+    "id": "belgium",
+    "name": "Belgium",
+    "code": "BE",
+    "region": "Western Europe",
+    "flag": "🇧🇪",
+    "duration": "4 Years",
+    "status": "Employed",
+    "structure": "Structured",
+    "grossSalary": 2500,
+    "netIncome": 2500,
+    "tuitionFeesEU": 900,
+    "tuitionFeesNonEU": 900,
+    "costOfLiving": 1300,
+    "fundingAvailability": "Medium",
+    "englishFriendly": 9,
+    "localLanguageImportance": "Medium",
+    "visaComplexityNonEU": "Medium",
+    "happinessIndex": 6.89,
+    "housingCrisis": "Medium",
+    "academicReputation": "Strong",
+    "pros": [
+      "Full employee rights & social benefits",
+      "State pension contributions covered",
+      "Excellent funding via FWO (Flanders)"
+    ],
+    "cons": [],
+    "warnings": [
+      "Mandatory coursework of 60 ECTS required"
+    ],
+    "quizTags": [
+      "employee",
+      "high-pay",
+      "english-ok"
+    ]
+  },
+  {
+    "id": "bulgaria",
+    "name": "Bulgaria",
+    "code": "BG",
+    "region": "Southern Europe",
+    "flag": "🇧🇬",
+    "duration": "3 Years",
+    "status": "Student",
+    "structure": "Individual",
+    "grossSalary": 500,
+    "netIncome": 500,
+    "tuitionFeesEU": 500,
+    "tuitionFeesNonEU": 3000,
+    "costOfLiving": 500,
+    "fundingAvailability": "Low",
+    "englishFriendly": 9,
+    "localLanguageImportance": "Medium",
+    "visaComplexityNonEU": "Hard",
+    "happinessIndex": 5.36,
+    "housingCrisis": "None",
+    "academicReputation": "Strong",
+    "pros": [
+      "Tax-free stipend income",
+      "Excellent funding via Ministry of Education and Science"
+    ],
+    "cons": [
+      "Strict visa stay-back terms post-PhD",
+      "Low starting stipend compared to Northern Europe",
+      "No pension contributions built up during studies"
+    ],
+    "warnings": [],
+    "quizTags": [
+      "fast-phd",
+      "english-ok"
+    ]
+  },
+  {
+    "id": "croatia",
+    "name": "Croatia",
+    "code": "HR",
+    "region": "Southern Europe",
+    "flag": "🇭🇷",
+    "duration": "3 Years",
+    "status": "Employed",
+    "structure": "Individual",
+    "grossSalary": 1100,
+    "netIncome": 880,
+    "tuitionFeesEU": 0,
+    "tuitionFeesNonEU": 3000,
+    "costOfLiving": 700,
+    "fundingAvailability": "Low",
+    "englishFriendly": 9,
+    "localLanguageImportance": "Medium",
+    "visaComplexityNonEU": "Medium",
+    "happinessIndex": 5.88,
+    "housingCrisis": "None",
+    "academicReputation": "Strong",
+    "pros": [
+      "Full employee rights & social benefits",
+      "State pension contributions covered",
+      "Vibrant Mediterranean lifestyle & sunny weather",
+      "Excellent funding via HRZZ (Croatian Science Foundation)"
+    ],
+    "cons": [
+      "Low starting stipend compared to Northern Europe"
+    ],
+    "warnings": [],
+    "quizTags": [
+      "employee",
+      "fast-phd",
+      "english-ok",
+      "sunny"
+    ]
+  },
+  {
+    "id": "cyprus",
+    "name": "Cyprus",
+    "code": "CY",
+    "region": "Southern Europe",
+    "flag": "🇨🇾",
+    "duration": "3.5 Years",
+    "status": "Student",
+    "structure": "Individual",
+    "grossSalary": 1000,
+    "netIncome": 1000,
+    "tuitionFeesEU": 1500,
+    "tuitionFeesNonEU": 4000,
+    "costOfLiving": 900,
+    "fundingAvailability": "Low",
+    "englishFriendly": 9,
+    "localLanguageImportance": "Medium",
+    "visaComplexityNonEU": "Hard",
+    "happinessIndex": 6.13,
+    "housingCrisis": "Low",
+    "academicReputation": "Strong",
+    "pros": [
+      "Tax-free stipend income",
+      "Vibrant Mediterranean lifestyle & sunny weather",
+      "Excellent funding via Research and Innovation Foundation of Cyprus"
+    ],
+    "cons": [
+      "Strict visa stay-back terms post-PhD",
+      "Low starting stipend compared to Northern Europe",
+      "No pension contributions built up during studies"
+    ],
+    "warnings": [],
+    "quizTags": [
+      "fast-phd",
+      "english-ok",
+      "sunny"
+    ]
+  },
+  {
+    "id": "czech_republic",
+    "name": "Czech Republic",
+    "code": "CZ",
+    "region": "Central Europe",
+    "flag": "🇨🇿",
+    "duration": "4 Years",
+    "status": "Student",
+    "structure": "Individual",
+    "grossSalary": 750,
+    "netIncome": 750,
+    "tuitionFeesEU": 0,
+    "tuitionFeesNonEU": 2000,
+    "costOfLiving": 800,
+    "fundingAvailability": "Medium",
+    "englishFriendly": 9,
+    "localLanguageImportance": "Medium",
+    "visaComplexityNonEU": "Hard",
+    "happinessIndex": 6.85,
+    "housingCrisis": "Low",
+    "academicReputation": "Strong",
+    "pros": [
+      "Tax-free stipend income",
+      "Excellent funding via GACR (Czech Science Foundation)"
+    ],
+    "cons": [
+      "Strict visa stay-back terms post-PhD",
+      "Low starting stipend compared to Northern Europe",
+      "No pension contributions built up during studies"
+    ],
+    "warnings": [],
+    "quizTags": [
+      "english-ok"
+    ]
+  },
+  {
+    "id": "denmark",
+    "name": "Denmark",
+    "code": "DK",
+    "region": "Northern Europe",
+    "flag": "🇩🇰",
+    "duration": "3 Years",
+    "status": "Employed",
+    "structure": "Structured",
+    "grossSalary": 4400,
+    "netIncome": 2860,
+    "tuitionFeesEU": 0,
+    "tuitionFeesNonEU": 0,
+    "costOfLiving": 1700,
+    "fundingAvailability": "High",
+    "englishFriendly": 9,
+    "localLanguageImportance": "Medium",
+    "visaComplexityNonEU": "Medium",
+    "happinessIndex": 7.58,
+    "housingCrisis": "Critical",
+    "academicReputation": "World Class",
+    "pros": [
+      "Full employee rights & social benefits",
+      "State pension contributions covered",
+      "Excellent funding via Independent Research Fund Denmark"
+    ],
+    "cons": [
+      "Severe housing shortage & high rental costs"
+    ],
+    "warnings": [
+      "Mandatory coursework of 30 ECTS required",
+      "High daily cost of living in university towns"
+    ],
+    "quizTags": [
+      "employee",
+      "high-pay",
+      "fast-phd",
+      "english-ok"
+    ]
+  },
+  {
+    "id": "estonia",
+    "name": "Estonia",
+    "code": "EE",
+    "region": "Northern Europe",
+    "flag": "🇪🇪",
+    "duration": "4 Years",
+    "status": "Employed",
+    "structure": "Structured",
+    "grossSalary": 1800,
+    "netIncome": 1440,
+    "tuitionFeesEU": 0,
+    "tuitionFeesNonEU": 0,
+    "costOfLiving": 950,
+    "fundingAvailability": "High",
+    "englishFriendly": 9,
+    "localLanguageImportance": "Medium",
+    "visaComplexityNonEU": "Hard",
+    "happinessIndex": 6.44,
+    "housingCrisis": "Low",
+    "academicReputation": "World Class",
+    "pros": [
+      "Full employee rights & social benefits",
+      "State pension contributions covered",
+      "Excellent funding via Estonian Research Council"
+    ],
+    "cons": [
+      "Strict visa stay-back terms post-PhD"
+    ],
+    "warnings": [
+      "Mandatory coursework of 60 ECTS required"
+    ],
+    "quizTags": [
+      "employee",
+      "english-ok"
+    ]
+  },
+  {
+    "id": "finland",
+    "name": "Finland",
+    "code": "FI",
+    "region": "Northern Europe",
+    "flag": "🇫🇮",
+    "duration": "4 Years",
+    "status": "Employed",
+    "structure": "Structured",
+    "grossSalary": 2500,
+    "netIncome": 2000,
+    "tuitionFeesEU": 0,
+    "tuitionFeesNonEU": 0,
+    "costOfLiving": 1200,
+    "fundingAvailability": "High",
+    "englishFriendly": 9,
+    "localLanguageImportance": "Medium",
+    "visaComplexityNonEU": "Medium",
+    "happinessIndex": 7.8,
+    "housingCrisis": "High",
+    "academicReputation": "World Class",
+    "pros": [
+      "Full employee rights & social benefits",
+      "State pension contributions covered",
+      "Excellent funding via Academy of Finland"
+    ],
+    "cons": [
+      "Severe housing shortage & high rental costs"
+    ],
+    "warnings": [
+      "Mandatory coursework of 40 ECTS required"
+    ],
+    "quizTags": [
+      "employee",
+      "english-ok"
+    ]
+  },
+  {
+    "id": "france",
+    "name": "France",
+    "code": "FR",
+    "region": "Western Europe",
+    "flag": "🇫🇷",
+    "duration": "3 Years",
+    "status": "Employed",
+    "structure": "Individual",
+    "grossSalary": 2100,
+    "netIncome": 1680,
+    "tuitionFeesEU": 380,
+    "tuitionFeesNonEU": 380,
+    "costOfLiving": 1150,
+    "fundingAvailability": "Medium",
+    "englishFriendly": 9,
+    "localLanguageImportance": "Medium",
+    "visaComplexityNonEU": "Medium",
+    "happinessIndex": 6.69,
+    "housingCrisis": "Medium",
+    "academicReputation": "Strong",
+    "pros": [
+      "Full employee rights & social benefits",
+      "State pension contributions covered",
+      "Vibrant Mediterranean lifestyle & sunny weather",
+      "Excellent funding via Ministry of Higher Education and Research (contrat doctoral)"
+    ],
+    "cons": [],
+    "warnings": [],
+    "quizTags": [
+      "employee",
+      "fast-phd",
+      "english-ok",
+      "sunny"
+    ]
+  },
+  {
+    "id": "germany",
+    "name": "Germany",
+    "code": "DE",
+    "region": "Western Europe",
+    "flag": "🇩🇪",
+    "duration": "3.5 Years",
+    "status": "Employed",
+    "structure": "Individual",
+    "grossSalary": 2333,
+    "netIncome": 1867,
+    "tuitionFeesEU": 600,
+    "tuitionFeesNonEU": 600,
+    "costOfLiving": 1100,
+    "fundingAvailability": "High",
+    "englishFriendly": 9,
+    "localLanguageImportance": "Medium",
+    "visaComplexityNonEU": "Medium",
+    "happinessIndex": 6.89,
+    "housingCrisis": "Medium",
+    "academicReputation": "World Class",
+    "pros": [
+      "Full employee rights & social benefits",
+      "State pension contributions covered",
+      "Excellent funding via DFG (German Research Foundation)"
+    ],
+    "cons": [],
+    "warnings": [],
+    "quizTags": [
+      "employee",
+      "fast-phd",
+      "english-ok"
+    ]
+  },
+  {
+    "id": "greece",
+    "name": "Greece",
+    "code": "GR",
+    "region": "Southern Europe",
+    "flag": "🇬🇷",
+    "duration": "3 Years",
+    "status": "Student",
+    "structure": "Individual",
+    "grossSalary": 700,
+    "netIncome": 700,
+    "tuitionFeesEU": 0,
+    "tuitionFeesNonEU": 0,
+    "costOfLiving": 750,
+    "fundingAvailability": "Low",
+    "englishFriendly": 9,
+    "localLanguageImportance": "Medium",
+    "visaComplexityNonEU": "Medium",
+    "happinessIndex": 5.93,
+    "housingCrisis": "Low",
+    "academicReputation": "Strong",
+    "pros": [
+      "Tax-free stipend income",
+      "Vibrant Mediterranean lifestyle & sunny weather",
+      "Excellent funding via IKY (State Scholarships Foundation)"
+    ],
+    "cons": [
+      "Low starting stipend compared to Northern Europe",
+      "No pension contributions built up during studies"
+    ],
+    "warnings": [],
+    "quizTags": [
+      "fast-phd",
+      "english-ok",
+      "sunny"
+    ]
+  },
+  {
+    "id": "hungary",
+    "name": "Hungary",
+    "code": "HU",
+    "region": "Central Europe",
+    "flag": "🇭🇺",
+    "duration": "4 Years",
+    "status": "Student",
+    "structure": "Structured",
+    "grossSalary": 600,
+    "netIncome": 600,
+    "tuitionFeesEU": 0,
+    "tuitionFeesNonEU": 3000,
+    "costOfLiving": 700,
+    "fundingAvailability": "Medium",
+    "englishFriendly": 9,
+    "localLanguageImportance": "Medium",
+    "visaComplexityNonEU": "Hard",
+    "happinessIndex": 5.8,
+    "housingCrisis": "None",
+    "academicReputation": "Strong",
+    "pros": [
+      "Tax-free stipend income",
+      "Excellent funding via Hungarian Doctoral Council"
+    ],
+    "cons": [
+      "Strict visa stay-back terms post-PhD",
+      "Low starting stipend compared to Northern Europe",
+      "No pension contributions built up during studies"
+    ],
+    "warnings": [
+      "Mandatory coursework of 240 ECTS required"
+    ],
+    "quizTags": [
+      "english-ok"
+    ]
+  },
+  {
+    "id": "ireland",
+    "name": "Ireland",
+    "code": "IE",
+    "region": "Western Europe",
+    "flag": "🇮🇪",
+    "duration": "4 Years",
+    "status": "Student",
+    "structure": "Structured",
+    "grossSalary": 1833,
+    "netIncome": 1833,
+    "tuitionFeesEU": 6000,
+    "tuitionFeesNonEU": 14000,
+    "costOfLiving": 1750,
+    "fundingAvailability": "Medium",
+    "englishFriendly": 9,
+    "localLanguageImportance": "Medium",
+    "visaComplexityNonEU": "Medium",
+    "happinessIndex": 6.91,
+    "housingCrisis": "Critical",
+    "academicReputation": "Strong",
+    "pros": [
+      "Tax-free stipend income",
+      "Excellent funding via Irish Research Council (IRC)"
+    ],
+    "cons": [
+      "Severe housing shortage & high rental costs",
+      "No pension contributions built up during studies"
+    ],
+    "warnings": [
+      "Mandatory coursework of 30 ECTS required",
+      "High daily cost of living in university towns"
+    ],
+    "quizTags": [
+      "english-ok"
+    ]
+  },
+  {
+    "id": "italy",
+    "name": "Italy",
+    "code": "IT",
+    "region": "Southern Europe",
+    "flag": "🇮🇹",
+    "duration": "3 Years",
+    "status": "Fellowship",
+    "structure": "Individual",
+    "grossSalary": 1354,
+    "netIncome": 1354,
+    "tuitionFeesEU": 200,
+    "tuitionFeesNonEU": 200,
+    "costOfLiving": 850,
+    "fundingAvailability": "Medium",
+    "englishFriendly": 9,
+    "localLanguageImportance": "Medium",
+    "visaComplexityNonEU": "Medium",
+    "happinessIndex": 6.4,
+    "housingCrisis": "Low",
+    "academicReputation": "Strong",
+    "pros": [
+      "Tax-free stipend income",
+      "Basic social security coverage",
+      "Vibrant Mediterranean lifestyle & sunny weather",
+      "Excellent funding via MUR (Ministry of University and Research)"
+    ],
+    "cons": [],
+    "warnings": [],
+    "quizTags": [
+      "fast-phd",
+      "english-ok",
+      "sunny"
+    ]
+  },
+  {
+    "id": "latvia",
+    "name": "Latvia",
+    "code": "LV",
+    "region": "Northern Europe",
+    "flag": "🇱🇻",
+    "duration": "3.5 Years",
+    "status": "Student",
+    "structure": "Individual",
+    "grossSalary": 600,
+    "netIncome": 600,
+    "tuitionFeesEU": 0,
+    "tuitionFeesNonEU": 3500,
+    "costOfLiving": 700,
+    "fundingAvailability": "Low",
+    "englishFriendly": 9,
+    "localLanguageImportance": "Medium",
+    "visaComplexityNonEU": "Medium",
+    "happinessIndex": 5.87,
+    "housingCrisis": "None",
+    "academicReputation": "Strong",
+    "pros": [
+      "Tax-free stipend income",
+      "Excellent funding via Latvian Council of Science"
+    ],
+    "cons": [
+      "Low starting stipend compared to Northern Europe",
+      "No pension contributions built up during studies"
+    ],
+    "warnings": [],
+    "quizTags": [
+      "fast-phd",
+      "english-ok"
+    ]
+  },
+  {
+    "id": "lithuania",
+    "name": "Lithuania",
+    "code": "LT",
+    "region": "Northern Europe",
+    "flag": "🇱🇹",
+    "duration": "4 Years",
+    "status": "Student",
+    "structure": "Structured",
+    "grossSalary": 1000,
+    "netIncome": 1000,
+    "tuitionFeesEU": 0,
+    "tuitionFeesNonEU": 3000,
+    "costOfLiving": 750,
+    "fundingAvailability": "Medium",
+    "englishFriendly": 9,
+    "localLanguageImportance": "Medium",
+    "visaComplexityNonEU": "Medium",
+    "happinessIndex": 6.21,
+    "housingCrisis": "Low",
+    "academicReputation": "Strong",
+    "pros": [
+      "Tax-free stipend income",
+      "Excellent funding via Research Council of Lithuania"
+    ],
+    "cons": [
+      "Low starting stipend compared to Northern Europe",
+      "No pension contributions built up during studies"
+    ],
+    "warnings": [
+      "Mandatory coursework of 30 ECTS required"
+    ],
+    "quizTags": [
+      "english-ok"
+    ]
+  },
+  {
+    "id": "luxembourg",
+    "name": "Luxembourg",
+    "code": "LU",
+    "region": "Western Europe",
+    "flag": "🇱🇺",
+    "duration": "3.5 Years",
+    "status": "Employed",
+    "structure": "Structured",
+    "grossSalary": 3400,
+    "netIncome": 2720,
+    "tuitionFeesEU": 400,
+    "tuitionFeesNonEU": 400,
+    "costOfLiving": 1850,
+    "fundingAvailability": "High",
+    "englishFriendly": 9,
+    "localLanguageImportance": "Medium",
+    "visaComplexityNonEU": "Hard",
+    "happinessIndex": 7.23,
+    "housingCrisis": "Critical",
+    "academicReputation": "World Class",
+    "pros": [
+      "Full employee rights & social benefits",
+      "State pension contributions covered",
+      "Excellent funding via FNR (Luxembourg National Research Fund)"
+    ],
+    "cons": [
+      "Severe housing shortage & high rental costs",
+      "Strict visa stay-back terms post-PhD"
+    ],
+    "warnings": [
+      "Mandatory coursework of 20 ECTS required",
+      "High daily cost of living in university towns"
+    ],
+    "quizTags": [
+      "employee",
+      "high-pay",
+      "fast-phd",
+      "english-ok"
+    ]
+  },
+  {
+    "id": "malta",
+    "name": "Malta",
+    "code": "MT",
+    "region": "Southern Europe",
+    "flag": "🇲🇹",
+    "duration": "3.5 Years",
+    "status": "Student",
+    "structure": "Individual",
+    "grossSalary": 950,
+    "netIncome": 950,
+    "tuitionFeesEU": 0,
+    "tuitionFeesNonEU": 8500,
+    "costOfLiving": 1100,
+    "fundingAvailability": "Low",
+    "englishFriendly": 9,
+    "localLanguageImportance": "Medium",
+    "visaComplexityNonEU": "Hard",
+    "happinessIndex": 6.3,
+    "housingCrisis": "Low",
+    "academicReputation": "Strong",
+    "pros": [
+      "Tax-free stipend income",
+      "Vibrant Mediterranean lifestyle & sunny weather",
+      "Excellent funding via Ministry for Education Malta"
+    ],
+    "cons": [
+      "Strict visa stay-back terms post-PhD",
+      "Low starting stipend compared to Northern Europe",
+      "No pension contributions built up during studies"
+    ],
+    "warnings": [],
+    "quizTags": [
+      "fast-phd",
+      "english-ok",
+      "sunny"
+    ]
+  },
+  {
+    "id": "netherlands",
+    "name": "Netherlands",
+    "code": "NL",
+    "region": "Western Europe",
+    "flag": "🇳🇱",
+    "duration": "4 Years",
+    "status": "Employed",
+    "structure": "Structured",
+    "grossSalary": 2917,
+    "netIncome": 2333,
+    "tuitionFeesEU": 0,
+    "tuitionFeesNonEU": 0,
+    "costOfLiving": 1500,
+    "fundingAvailability": "High",
+    "englishFriendly": 9,
+    "localLanguageImportance": "Medium",
+    "visaComplexityNonEU": "Medium",
+    "happinessIndex": 7.4,
+    "housingCrisis": "High",
+    "academicReputation": "World Class",
+    "pros": [
+      "Full employee rights & social benefits",
+      "State pension contributions covered",
+      "Excellent funding via NWO (Dutch Research Council)"
+    ],
+    "cons": [
+      "Severe housing shortage & high rental costs"
+    ],
+    "warnings": [
+      "Mandatory coursework of 30 ECTS required",
+      "High daily cost of living in university towns"
+    ],
+    "quizTags": [
+      "employee",
+      "high-pay",
+      "english-ok"
+    ]
+  },
+  {
+    "id": "norway",
+    "name": "Norway",
+    "code": "NO",
+    "region": "Northern Europe",
+    "flag": "🇳🇴",
+    "duration": "3.5 Years",
+    "status": "Employed",
+    "structure": "Structured",
+    "grossSalary": 4500,
+    "netIncome": 3600,
+    "tuitionFeesEU": 0,
+    "tuitionFeesNonEU": 0,
+    "costOfLiving": 1800,
+    "fundingAvailability": "High",
+    "englishFriendly": 9,
+    "localLanguageImportance": "Medium",
+    "visaComplexityNonEU": "Medium",
+    "happinessIndex": 7.39,
+    "housingCrisis": "Critical",
+    "academicReputation": "World Class",
+    "pros": [
+      "Full employee rights & social benefits",
+      "State pension contributions covered",
+      "Excellent work-life balance & equality focus",
+      "Excellent funding via Research Council of Norway"
+    ],
+    "cons": [
+      "Severe housing shortage & high rental costs"
+    ],
+    "warnings": [
+      "Mandatory coursework of 30 ECTS required",
+      "High daily cost of living in university towns"
+    ],
+    "quizTags": [
+      "employee",
+      "high-pay",
+      "fast-phd",
+      "english-ok",
+      "welfare"
+    ]
+  },
+  {
+    "id": "poland",
+    "name": "Poland",
+    "code": "PL",
+    "region": "Central Europe",
+    "flag": "🇵🇱",
+    "duration": "4 Years",
+    "status": "Fellowship",
+    "structure": "Individual",
+    "grossSalary": 900,
+    "netIncome": 900,
+    "tuitionFeesEU": 0,
+    "tuitionFeesNonEU": 0,
+    "costOfLiving": 750,
+    "fundingAvailability": "High",
+    "englishFriendly": 9,
+    "localLanguageImportance": "Medium",
+    "visaComplexityNonEU": "Medium",
+    "happinessIndex": 6.12,
+    "housingCrisis": "None",
+    "academicReputation": "World Class",
+    "pros": [
+      "Tax-free stipend income",
+      "Basic social security coverage",
+      "Excellent funding via NCN (National Science Centre Poland)"
+    ],
+    "cons": [
+      "Low starting stipend compared to Northern Europe"
+    ],
+    "warnings": [],
+    "quizTags": [
+      "english-ok"
+    ]
+  },
+  {
+    "id": "portugal",
+    "name": "Portugal",
+    "code": "PT",
+    "region": "Southern Europe",
+    "flag": "🇵🇹",
+    "duration": "4 Years",
+    "status": "Student",
+    "structure": "Structured",
+    "grossSalary": 1250,
+    "netIncome": 1250,
+    "tuitionFeesEU": 1000,
+    "tuitionFeesNonEU": 2500,
+    "costOfLiving": 900,
+    "fundingAvailability": "Medium",
+    "englishFriendly": 9,
+    "localLanguageImportance": "Medium",
+    "visaComplexityNonEU": "Medium",
+    "happinessIndex": 5.96,
+    "housingCrisis": "Low",
+    "academicReputation": "Strong",
+    "pros": [
+      "Tax-free stipend income",
+      "Vibrant Mediterranean lifestyle & sunny weather",
+      "Excellent funding via FCT (Foundation for Science and Technology)"
+    ],
+    "cons": [
+      "No pension contributions built up during studies"
+    ],
+    "warnings": [
+      "Mandatory coursework of 60 ECTS required"
+    ],
+    "quizTags": [
+      "english-ok",
+      "sunny"
+    ]
+  },
+  {
+    "id": "romania",
+    "name": "Romania",
+    "code": "RO",
+    "region": "Southern Europe",
+    "flag": "🇷🇴",
+    "duration": "3 Years",
+    "status": "Student",
+    "structure": "Individual",
+    "grossSalary": 600,
+    "netIncome": 600,
+    "tuitionFeesEU": 0,
+    "tuitionFeesNonEU": 3000,
+    "costOfLiving": 600,
+    "fundingAvailability": "Medium",
+    "englishFriendly": 9,
+    "localLanguageImportance": "Medium",
+    "visaComplexityNonEU": "Hard",
+    "happinessIndex": 6.5,
+    "housingCrisis": "None",
+    "academicReputation": "Strong",
+    "pros": [
+      "Tax-free stipend income",
+      "Excellent funding via UEFISCDI Romania"
+    ],
+    "cons": [
+      "Strict visa stay-back terms post-PhD",
+      "Low starting stipend compared to Northern Europe",
+      "No pension contributions built up during studies"
+    ],
+    "warnings": [],
+    "quizTags": [
+      "fast-phd",
+      "english-ok"
+    ]
+  },
+  {
+    "id": "slovakia",
+    "name": "Slovakia",
+    "code": "SK",
+    "region": "Central Europe",
+    "flag": "🇸🇰",
+    "duration": "3.5 Years",
+    "status": "Student",
+    "structure": "Individual",
+    "grossSalary": 850,
+    "netIncome": 850,
+    "tuitionFeesEU": 0,
+    "tuitionFeesNonEU": 2500,
+    "costOfLiving": 700,
+    "fundingAvailability": "Low",
+    "englishFriendly": 9,
+    "localLanguageImportance": "Medium",
+    "visaComplexityNonEU": "Hard",
+    "happinessIndex": 6.25,
+    "housingCrisis": "None",
+    "academicReputation": "Strong",
+    "pros": [
+      "Tax-free stipend income",
+      "Excellent funding via Slovak Ministry of Education"
+    ],
+    "cons": [
+      "Strict visa stay-back terms post-PhD",
+      "Low starting stipend compared to Northern Europe",
+      "No pension contributions built up during studies"
+    ],
+    "warnings": [],
+    "quizTags": [
+      "fast-phd",
+      "english-ok"
+    ]
+  },
+  {
+    "id": "slovenia",
+    "name": "Slovenia",
+    "code": "SI",
+    "region": "Central Europe",
+    "flag": "🇸🇮",
+    "duration": "3.5 Years",
+    "status": "Employed",
+    "structure": "Individual",
+    "grossSalary": 1600,
+    "netIncome": 1280,
+    "tuitionFeesEU": 0,
+    "tuitionFeesNonEU": 3000,
+    "costOfLiving": 850,
+    "fundingAvailability": "Medium",
+    "englishFriendly": 9,
+    "localLanguageImportance": "Medium",
+    "visaComplexityNonEU": "Medium",
+    "happinessIndex": 6.69,
+    "housingCrisis": "Low",
+    "academicReputation": "Strong",
+    "pros": [
+      "Full employee rights & social benefits",
+      "State pension contributions covered",
+      "Excellent funding via Slovenian Research Agency (ARRS)"
+    ],
+    "cons": [],
+    "warnings": [],
+    "quizTags": [
+      "employee",
+      "fast-phd",
+      "english-ok"
+    ]
+  },
+  {
+    "id": "spain",
+    "name": "Spain",
+    "code": "ES",
+    "region": "Southern Europe",
+    "flag": "🇪🇸",
+    "duration": "3 Years",
+    "status": "Employed",
+    "structure": "Individual",
+    "grossSalary": 1500,
+    "netIncome": 1200,
+    "tuitionFeesEU": 500,
+    "tuitionFeesNonEU": 500,
+    "costOfLiving": 900,
+    "fundingAvailability": "Medium",
+    "englishFriendly": 9,
+    "localLanguageImportance": "Medium",
+    "visaComplexityNonEU": "Medium",
+    "happinessIndex": 6.5,
+    "housingCrisis": "Low",
+    "academicReputation": "Strong",
+    "pros": [
+      "Full employee rights & social benefits",
+      "State pension contributions covered",
+      "Vibrant Mediterranean lifestyle & sunny weather",
+      "Excellent funding via FPU (University Teacher Training) fellowships"
+    ],
+    "cons": [],
+    "warnings": [],
+    "quizTags": [
+      "employee",
+      "fast-phd",
+      "english-ok",
+      "sunny"
+    ]
+  },
+  {
+    "id": "sweden",
+    "name": "Sweden",
+    "code": "SE",
+    "region": "Northern Europe",
+    "flag": "🇸🇪",
+    "duration": "4 Years",
+    "status": "Employed",
+    "structure": "Structured",
+    "grossSalary": 2833,
+    "netIncome": 2267,
+    "tuitionFeesEU": 0,
+    "tuitionFeesNonEU": 0,
+    "costOfLiving": 1300,
+    "fundingAvailability": "High",
+    "englishFriendly": 9,
+    "localLanguageImportance": "Medium",
+    "visaComplexityNonEU": "Medium",
+    "happinessIndex": 7.39,
+    "housingCrisis": "Medium",
+    "academicReputation": "World Class",
+    "pros": [
+      "Full employee rights & social benefits",
+      "State pension contributions covered",
+      "Excellent funding via Swedish Research Council (Vetenskapsrådet)"
+    ],
+    "cons": [],
+    "warnings": [
+      "Mandatory coursework of 60 ECTS required"
+    ],
+    "quizTags": [
+      "employee",
+      "high-pay",
+      "english-ok"
+    ]
+  },
+  {
+    "id": "switzerland",
+    "name": "Switzerland",
+    "code": "CH",
+    "region": "Western Europe",
+    "flag": "🇨🇭",
+    "duration": "4 Years",
+    "status": "Employed",
+    "structure": "Structured",
+    "grossSalary": 4333,
+    "netIncome": 3467,
+    "tuitionFeesEU": 1400,
+    "tuitionFeesNonEU": 1400,
+    "costOfLiving": 2100,
+    "fundingAvailability": "High",
+    "englishFriendly": 9,
+    "localLanguageImportance": "Medium",
+    "visaComplexityNonEU": "Hard",
+    "happinessIndex": 7.24,
+    "housingCrisis": "Critical",
+    "academicReputation": "World Class",
+    "pros": [
+      "Full employee rights & social benefits",
+      "State pension contributions covered",
+      "Excellent funding via SNSF (Swiss National Science Foundation)"
+    ],
+    "cons": [
+      "Severe housing shortage & high rental costs",
+      "Strict visa stay-back terms post-PhD"
+    ],
+    "warnings": [
+      "Mandatory coursework of 12 ECTS required",
+      "High daily cost of living in university towns"
+    ],
+    "quizTags": [
+      "employee",
+      "high-pay",
+      "english-ok"
+    ]
+  },
+  {
+    "id": "united_kingdom",
+    "name": "United Kingdom",
+    "code": "GB",
+    "region": "Western Europe",
+    "flag": "🇬🇧",
+    "duration": "3.5 Years",
+    "status": "Student",
+    "structure": "Individual",
+    "grossSalary": 1875,
+    "netIncome": 1875,
+    "tuitionFeesEU": 24000,
+    "tuitionFeesNonEU": 24000,
+    "costOfLiving": 1400,
+    "fundingAvailability": "Medium",
+    "englishFriendly": 9,
+    "localLanguageImportance": "Medium",
+    "visaComplexityNonEU": "Medium",
+    "happinessIndex": 6.72,
+    "housingCrisis": "High",
+    "academicReputation": "Strong",
+    "pros": [
+      "Tax-free stipend income",
+      "Excellent funding via UKRI (UK Research and Innovation)"
+    ],
+    "cons": [
+      "Severe housing shortage & high rental costs",
+      "No pension contributions built up during studies"
+    ],
+    "warnings": [],
+    "quizTags": [
+      "fast-phd",
+      "english-ok"
+    ]
+  }
+]

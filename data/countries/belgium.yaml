@@ -1,0 +1,47 @@
+id: belgium
+name: Belgium
+capital: Brussels
+languages:
+  - name: Dutch
+    english_friendly: false
+    official: true
+  - name: French
+    english_friendly: false
+    official: true
+  - name: English
+    english_friendly: true
+    official: false
+stipend:
+  amount_eur_per_year: 30000
+  is_taxable: false
+  is_social_security_covered: true
+  purchasing_power_index: 104
+tuition_fees:
+  eu_students_eur_per_year: 900
+  non_eu_students_eur_per_year: 900
+cost_of_living:
+  estimated_monthly_expenses_eur: 1300
+  index_relative_to_eu_average: 112
+phd_system:
+  typical_duration_years: 4
+  is_employee_status: true
+  academic_calendar: Semester (Sep-Jan / Feb-Jun)
+  required_ects: 60
+visa_and_work_rights:
+  requires_visa_for_non_eu: true
+  post_study_work_visa_duration_months: 12
+  work_hours_limit_per_week: 20
+funding_availability:
+  rate: medium
+  main_sources:
+    - FWO (Flanders)
+    - FNRS (Wallonia)
+    - University research assistantships
+happiness_index: 6.89
+climate:
+  type: Maritime / Temperate
+  average_temperature_summer_c: 22
+  average_temperature_winter_c: 3
+contact_portals:
+  - title: Study in Belgium
+    url: https://www.studyinbelgium.be

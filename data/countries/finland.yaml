@@ -1,0 +1,46 @@
+id: finland
+name: Finland
+capital: Helsinki
+languages:
+  - name: Finnish
+    english_friendly: false
+    official: true
+  - name: Swedish
+    english_friendly: false
+    official: true
+  - name: English
+    english_friendly: true
+    official: false
+stipend:
+  amount_eur_per_year: 30000
+  is_taxable: true
+  is_social_security_covered: true
+  purchasing_power_index: 105
+tuition_fees:
+  eu_students_eur_per_year: 0
+  non_eu_students_eur_per_year: 0
+cost_of_living:
+  estimated_monthly_expenses_eur: 1200
+  index_relative_to_eu_average: 122
+phd_system:
+  typical_duration_years: 4
+  is_employee_status: true
+  academic_calendar: Semester (Sep-Dec / Jan-May)
+  required_ects: 40
+visa_and_work_rights:
+  requires_visa_for_non_eu: true
+  post_study_work_visa_duration_months: 24
+  work_hours_limit_per_week: 20
+funding_availability:
+  rate: high
+  main_sources:
+    - Academy of Finland
+    - University graduate school funding
+happiness_index: 7.8
+climate:
+  type: Subarctic / Cold
+  average_temperature_summer_c: 20
+  average_temperature_winter_c: -6
+contact_portals:
+  - title: Study in Finland
+    url: https://www.studyinfinland.fi

@@ -1,0 +1,43 @@
+id: denmark
+name: Denmark
+capital: Copenhagen
+languages:
+  - name: Danish
+    english_friendly: false
+    official: true
+  - name: English
+    english_friendly: true
+    official: false
+stipend:
+  amount_eur_per_year: 52800
+  is_taxable: true
+  is_social_security_covered: true
+  purchasing_power_index: 128
+tuition_fees:
+  eu_students_eur_per_year: 0
+  non_eu_students_eur_per_year: 0
+cost_of_living:
+  estimated_monthly_expenses_eur: 1700
+  index_relative_to_eu_average: 140
+phd_system:
+  typical_duration_years: 3
+  is_employee_status: true
+  academic_calendar: Semester (Sep-Jan / Feb-Jun)
+  required_ects: 30
+visa_and_work_rights:
+  requires_visa_for_non_eu: true
+  post_study_work_visa_duration_months: 36
+  work_hours_limit_per_week: 20
+funding_availability:
+  rate: high
+  main_sources:
+    - Independent Research Fund Denmark
+    - State-funded PhD positions
+happiness_index: 7.58
+climate:
+  type: Maritime / Cool
+  average_temperature_summer_c: 21
+  average_temperature_winter_c: 0
+contact_portals:
+  - title: Study in Denmark
+    url: https://studyindenmark.dk

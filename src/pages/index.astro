@@ -1,0 +1,92 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import CountryExplorer from '../components/CountryExplorer.astro';
+import Quiz from '../components/Quiz.astro';
+import BudgetCalculator from '../components/BudgetCalculator.astro';
+import ComparisonHub from '../components/ComparisonHub.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout>
+  <!-- Global Navigation Header -->
+  <Header />
+
+  <!-- Main Content Dashboard -->
+  <main class="container site-main">
+    
+    <!-- Tab 1: Country Explorer -->
+    <div id="explorer-tab" class="tab-content active">
+      <Hero />
+      <CountryExplorer />
+    </div>
+
+    <!-- Tab 2: Match Quiz -->
+    <div id="quiz-tab" class="tab-content">
+      <div class="tab-header">
+        <span class="tab-sub">Interactive Questionnaire</span>
+        <h2 class="tab-title font-display">PhD Country Match Quiz</h2>
+      </div>
+      <Quiz />
+    </div>
+
+    <!-- Tab 3: Affordability Calculator -->
+    <div id="calculator-tab" class="tab-content">
+      <div class="tab-header">
+        <span class="tab-sub">Financial Simulator</span>
+        <h2 class="tab-title font-display">PhD Cost-of-Living Calculator</h2>
+      </div>
+      <BudgetCalculator />
+    </div>
+
+    <!-- Tab 4: Comparison Hub -->
+    <div id="comparison-tab" class="tab-content">
+      <div class="tab-header">
+        <span class="tab-sub">Metrics Matrix</span>
+        <h2 class="tab-title font-display">Academic & Economic Comparison</h2>
+      </div>
+      <ComparisonHub />
+    </div>
+
+  </main>
+
+  <!-- Global Footer -->
+  <Footer />
+</Layout>
+
+<style>
+  .site-main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+  }
+  
+  .tab-header {
+    margin-bottom: 24px;
+    padding: 0 8px;
+  }
+  
+  .tab-sub {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--secondary-hover);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  
+  .tab-title {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin-top: 4px;
+    letter-spacing: -0.03em;
+  }
+
+  @media (max-width: 768px) {
+    .tab-title {
+      font-size: 1.8rem;
+    }
+  }
+</style>

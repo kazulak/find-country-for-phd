@@ -1,0 +1,42 @@
+id: croatia
+name: Croatia
+capital: Zagreb
+languages:
+  - name: Croatian
+    english_friendly: false
+    official: true
+  - name: English
+    english_friendly: true
+    official: false
+stipend:
+  amount_eur_per_year: 13200
+  is_taxable: true
+  is_social_security_covered: true
+  purchasing_power_index: 85
+tuition_fees:
+  eu_students_eur_per_year: 0
+  non_eu_students_eur_per_year: 3000
+cost_of_living:
+  estimated_monthly_expenses_eur: 700
+  index_relative_to_eu_average: 74
+phd_system:
+  typical_duration_years: 3
+  is_employee_status: true
+  academic_calendar: Semester (Oct-Jan / Mar-Jun)
+  required_ects: 0
+visa_and_work_rights:
+  requires_visa_for_non_eu: true
+  post_study_work_visa_duration_months: 12
+  work_hours_limit_per_week: 20
+funding_availability:
+  rate: low
+  main_sources:
+    - HRZZ (Croatian Science Foundation)
+happiness_index: 5.88
+climate:
+  type: Mediterranean / Continental
+  average_temperature_summer_c: 26
+  average_temperature_winter_c: 2
+contact_portals:
+  - title: Study in Croatia
+    url: https://www.studyincroatia.hr

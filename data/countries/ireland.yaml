@@ -1,0 +1,43 @@
+id: ireland
+name: Ireland
+capital: Dublin
+languages:
+  - name: English
+    english_friendly: true
+    official: true
+  - name: Irish
+    english_friendly: false
+    official: true
+stipend:
+  amount_eur_per_year: 22000
+  is_taxable: false
+  is_social_security_covered: false
+  purchasing_power_index: 92
+tuition_fees:
+  eu_students_eur_per_year: 6000
+  non_eu_students_eur_per_year: 14000
+cost_of_living:
+  estimated_monthly_expenses_eur: 1750
+  index_relative_to_eu_average: 138
+phd_system:
+  typical_duration_years: 4
+  is_employee_status: false
+  academic_calendar: Semester (Sep-Dec / Jan-May)
+  required_ects: 30
+visa_and_work_rights:
+  requires_visa_for_non_eu: true
+  post_study_work_visa_duration_months: 24
+  work_hours_limit_per_week: 20
+funding_availability:
+  rate: medium
+  main_sources:
+    - Irish Research Council (IRC)
+    - Science Foundation Ireland (SFI)
+happiness_index: 6.91
+climate:
+  type: Maritime / Temperate
+  average_temperature_summer_c: 19
+  average_temperature_winter_c: 5
+contact_portals:
+  - title: Study in Ireland
+    url: https://www.educationinireland.com

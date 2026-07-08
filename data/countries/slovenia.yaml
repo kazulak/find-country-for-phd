@@ -1,0 +1,43 @@
+id: slovenia
+name: Slovenia
+capital: Ljubljana
+languages:
+  - name: Slovenian
+    english_friendly: false
+    official: true
+  - name: English
+    english_friendly: true
+    official: false
+stipend:
+  amount_eur_per_year: 19200
+  is_taxable: true
+  is_social_security_covered: true
+  purchasing_power_index: 94
+tuition_fees:
+  eu_students_eur_per_year: 0
+  non_eu_students_eur_per_year: 3000
+cost_of_living:
+  estimated_monthly_expenses_eur: 850
+  index_relative_to_eu_average: 88
+phd_system:
+  typical_duration_years: 3.5
+  is_employee_status: true
+  academic_calendar: Semester (Oct-Jan / Feb-Jun)
+  required_ects: 0
+visa_and_work_rights:
+  requires_visa_for_non_eu: true
+  post_study_work_visa_duration_months: 12
+  work_hours_limit_per_week: 20
+funding_availability:
+  rate: medium
+  main_sources:
+    - Slovenian Research Agency (ARRS)
+    - Ministry co-funding for doctoral study
+happiness_index: 6.69
+climate:
+  type: Temperate / Alpine
+  average_temperature_summer_c: 26
+  average_temperature_winter_c: 0
+contact_portals:
+  - title: Study in Slovenia
+    url: https://www.studyinslovenia.si

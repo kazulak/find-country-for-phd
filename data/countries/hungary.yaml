@@ -1,0 +1,43 @@
+id: hungary
+name: Hungary
+capital: Budapest
+languages:
+  - name: Hungarian
+    english_friendly: false
+    official: true
+  - name: English
+    english_friendly: true
+    official: false
+stipend:
+  amount_eur_per_year: 7200
+  is_taxable: false
+  is_social_security_covered: false
+  purchasing_power_index: 76
+tuition_fees:
+  eu_students_eur_per_year: 0
+  non_eu_students_eur_per_year: 3000
+cost_of_living:
+  estimated_monthly_expenses_eur: 700
+  index_relative_to_eu_average: 70
+phd_system:
+  typical_duration_years: 4
+  is_employee_status: false
+  academic_calendar: Semester (Sep-Dec / Feb-May)
+  required_ects: 240
+visa_and_work_rights:
+  requires_visa_for_non_eu: true
+  post_study_work_visa_duration_months: 9
+  work_hours_limit_per_week: 20
+funding_availability:
+  rate: medium
+  main_sources:
+    - Hungarian Doctoral Council
+    - Stipendium Hungaricum (international)
+happiness_index: 5.8
+climate:
+  type: Continental / Temperate
+  average_temperature_summer_c: 26
+  average_temperature_winter_c: -1
+contact_portals:
+  - title: Study in Hungary
+    url: http://www.studyinhungary.hu

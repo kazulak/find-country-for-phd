@@ -1,0 +1,233 @@
+---
+// BudgetCalculator.astro
+import ReactBudgetCalculator from './BudgetCalculator';
+---
+
+<ReactBudgetCalculator client:load />
+
+<style is:global>
+  .calculator-panel {
+    padding: 30px;
+    margin-bottom: 40px;
+  }
+  
+  .calc-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--text-primary);
+  }
+  
+  .calc-subtitle {
+    color: var(--text-secondary);
+    margin-bottom: 24px;
+    font-size: 0.95rem;
+  }
+  
+  .calc-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  @media (min-width: 900px) {
+    .calc-grid {
+      grid-template-columns: 1.2fr 1fr;
+    }
+  }
+  
+  .input-row-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 20px;
+  }
+  
+  .control-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+  }
+  
+  .slider-label-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .slider-display-val {
+    font-family: var(--font-display);
+    font-weight: 700;
+    color: var(--primary-hover);
+    font-size: 1.1rem;
+  }
+  
+  .calc-slider {
+    width: 100%;
+    accent-color: var(--primary);
+    cursor: pointer;
+    height: 6px;
+    background: var(--bg-tertiary);
+    border-radius: var(--radius-full);
+    outline: none;
+    -webkit-appearance: none;
+  }
+  
+  .calc-slider::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 6px;
+    cursor: pointer;
+    background: transparent;
+  }
+  
+  .calc-slider::-webkit-slider-thumb {
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    background: var(--primary);
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -6px;
+    box-shadow: 0 0 10px rgba(139, 92, 246, 0.4);
+    transition: var(--transition-fast);
+  }
+  
+  .calc-slider::-webkit-slider-thumb:hover {
+    background: var(--primary-hover);
+    transform: scale(1.1);
+  }
+  
+  .slider-hint {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+  }
+  
+  .calc-section-divider {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 6px;
+    margin: 24px 0 16px;
+  }
+  
+  /* Results column */
+  .calc-results {
+    padding: 24px;
+    background: rgba(255, 255, 255, 0.01);
+  }
+  
+  .results-sticky {
+    position: sticky;
+    top: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .results-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+  }
+  
+  .balance-card {
+    padding: 24px;
+    border-radius: var(--radius-md);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    transition: var(--transition-normal);
+  }
+  
+  .balance-title {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--text-secondary);
+    letter-spacing: 0.05em;
+  }
+  
+  .balance-val {
+    font-family: var(--font-display);
+    font-size: 2.8rem;
+    font-weight: 800;
+  }
+  
+  /* State Styles for Balance Card */
+  .state-sustainable {
+    background: rgba(16, 185, 129, 0.08);
+    border: 1px solid rgba(16, 185, 129, 0.2);
+    box-shadow: 0 4px 20px rgba(16, 185, 129, 0.15);
+  }
+  .state-sustainable .balance-val { color: var(--success); }
+  
+  .state-tight {
+    background: rgba(245, 158, 11, 0.08);
+    border: 1px solid rgba(245, 158, 11, 0.2);
+    box-shadow: 0 4px 20px rgba(245, 158, 11, 0.15);
+  }
+  .state-tight .balance-val { color: var(--warning); }
+  
+  .state-deficit {
+    background: rgba(239, 68, 68, 0.08);
+    border: 1px solid rgba(239, 68, 68, 0.2);
+    box-shadow: 0 4px 20px rgba(239, 68, 68, 0.15);
+  }
+  .state-deficit .balance-val { color: var(--danger); }
+  
+  .breakdown-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    padding: 16px 0;
+  }
+  
+  .breakdown-item {
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1rem;
+  }
+  
+  .text-success { color: var(--success); }
+  .text-danger { color: var(--danger); }
+  
+  .visualizer-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .visualizer-label-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+  }
+  
+  .calculator-warnings {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 10px;
+  }
+  
+  .text-glow-secondary {
+    color: var(--secondary-hover);
+  }
+</style>
