@@ -1,0 +1,46 @@
+id: france
+name: France
+capital: Paris
+languages:
+  - name: French
+    english_friendly: false
+    official: true
+  - name: English
+    english_friendly: true
+    official: false
+stipend:
+  amount_eur_per_year: 25200
+  is_taxable: true
+  is_social_security_covered: true
+  purchasing_power_index: 98
+tuition_fees:
+  eu_students_eur_per_year: 380
+  non_eu_students_eur_per_year: 380
+cost_of_living:
+  estimated_monthly_expenses_eur: 1150
+  index_relative_to_eu_average: 107
+phd_system:
+  typical_duration_years: 3.0
+  is_employee_status: true
+  academic_calendar: "Semester (Sep-Jan / Feb-Jun)"
+  required_ects: null
+visa_and_work_rights:
+  requires_visa_for_non_eu: true
+  post_study_work_visa_duration_months: 12
+  work_hours_limit_per_week: 20
+funding_availability:
+  rate: medium
+  main_sources:
+    - "Ministry of Higher Education and Research (contrat doctoral)"
+    - "CIFRE (Industrial agreements)"
+    - "CNRS and other public research institutes"
+happiness_index: 6.69
+climate:
+  type: Temperate Maritime / Mediterranean
+  average_temperature_summer_c: 24
+  average_temperature_winter_c: 5
+contact_portals:
+  - title: "Campus France"
+    url: "https://www.campusfrance.org"
+  - title: "Association Bernard Gregory (ABG)"
+    url: "https://www.abg.asso.fr"

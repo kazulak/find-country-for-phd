@@ -1,0 +1,191 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "PhD Country Profile Schema",
+  "type": "object",
+  "required": [
+    "id",
+    "name",
+    "capital",
+    "languages",
+    "stipend",
+    "tuition_fees",
+    "cost_of_living",
+    "phd_system",
+    "visa_and_work_rights",
+    "funding_availability",
+    "happiness_index",
+    "climate",
+    "contact_portals"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z_-]+$"
+    },
+    "name": {
+      "type": "string"
+    },
+    "capital": {
+      "type": "string"
+    },
+    "languages": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["name", "english_friendly", "official"],
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "english_friendly": {
+            "type": "boolean"
+          },
+          "official": {
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "stipend": {
+      "type": "object",
+      "required": ["amount_eur_per_year", "is_taxable", "is_social_security_covered", "purchasing_power_index"],
+      "additionalProperties": false,
+      "properties": {
+        "amount_eur_per_year": {
+          "type": ["number", "null"]
+        },
+        "is_taxable": {
+          "type": ["boolean", "null"]
+        },
+        "is_social_security_covered": {
+          "type": ["boolean", "null"]
+        },
+        "purchasing_power_index": {
+          "type": ["number", "null"],
+          "minimum": 0,
+          "maximum": 200
+        }
+      }
+    },
+    "tuition_fees": {
+      "type": "object",
+      "required": ["eu_students_eur_per_year", "non_eu_students_eur_per_year"],
+      "additionalProperties": false,
+      "properties": {
+        "eu_students_eur_per_year": {
+          "type": ["number", "null"]
+        },
+        "non_eu_students_eur_per_year": {
+          "type": ["number", "null"]
+        }
+      }
+    },
+    "cost_of_living": {
+      "type": "object",
+      "required": ["estimated_monthly_expenses_eur", "index_relative_to_eu_average"],
+      "additionalProperties": false,
+      "properties": {
+        "estimated_monthly_expenses_eur": {
+          "type": ["number", "null"]
+        },
+        "index_relative_to_eu_average": {
+          "type": ["number", "null"],
+          "minimum": 0
+        }
+      }
+    },
+    "phd_system": {
+      "type": "object",
+      "required": ["typical_duration_years", "is_employee_status", "academic_calendar", "required_ects"],
+      "additionalProperties": false,
+      "properties": {
+        "typical_duration_years": {
+          "type": ["number", "null"]
+        },
+        "is_employee_status": {
+          "type": ["boolean", "null"]
+        },
+        "academic_calendar": {
+          "type": ["string", "null"]
+        },
+        "required_ects": {
+          "type": ["number", "null"]
+        }
+      }
+    },
+    "visa_and_work_rights": {
+      "type": "object",
+      "required": ["requires_visa_for_non_eu", "post_study_work_visa_duration_months", "work_hours_limit_per_week"],
+      "additionalProperties": false,
+      "properties": {
+        "requires_visa_for_non_eu": {
+          "type": ["boolean", "null"]
+        },
+        "post_study_work_visa_duration_months": {
+          "type": ["number", "null"]
+        },
+        "work_hours_limit_per_week": {
+          "type": ["number", "null"]
+        }
+      }
+    },
+    "funding_availability": {
+      "type": "object",
+      "required": ["rate", "main_sources"],
+      "additionalProperties": false,
+      "properties": {
+        "rate": {
+          "type": ["string", "null"],
+          "enum": ["high", "medium", "low", null]
+        },
+        "main_sources": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "happiness_index": {
+      "type": ["number", "null"],
+      "minimum": 0,
+      "maximum": 10
+    },
+    "climate": {
+      "type": "object",
+      "required": ["type", "average_temperature_summer_c", "average_temperature_winter_c"],
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "type": ["string", "null"]
+        },
+        "average_temperature_summer_c": {
+          "type": ["number", "null"]
+        },
+        "average_temperature_winter_c": {
+          "type": ["number", "null"]
+        }
+      }
+    },
+    "contact_portals": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["title", "url"],
+        "additionalProperties": false,
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          }
+        }
+      }
+    }
+  }
+}

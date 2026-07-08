@@ -1,0 +1,47 @@
+id: germany
+name: Germany
+capital: Berlin
+languages:
+  - name: German
+    english_friendly: false
+    official: true
+  - name: English
+    english_friendly: true
+    official: false
+stipend:
+  amount_eur_per_year: 28000
+  is_taxable: true
+  is_social_security_covered: true
+  purchasing_power_index: 102
+tuition_fees:
+  eu_students_eur_per_year: 600
+  non_eu_students_eur_per_year: 600
+cost_of_living:
+  estimated_monthly_expenses_eur: 1100
+  index_relative_to_eu_average: 105
+phd_system:
+  typical_duration_years: 3.5
+  is_employee_status: true
+  academic_calendar: "Semester (Oct-Mar / Apr-Sep)"
+  required_ects: 0
+visa_and_work_rights:
+  requires_visa_for_non_eu: true
+  post_study_work_visa_duration_months: 18
+  work_hours_limit_per_week: 20
+funding_availability:
+  rate: high
+  main_sources:
+    - "DFG (German Research Foundation)"
+    - "DAAD (German Academic Exchange Service)"
+    - "University TV-L employment contracts"
+    - "Industry funding"
+happiness_index: 6.89
+climate:
+  type: Temperate
+  average_temperature_summer_c: 22
+  average_temperature_winter_c: 1
+contact_portals:
+  - title: "Research in Germany"
+    url: "https://www.research-in-germany.org"
+  - title: "DAAD PhD Database"
+    url: "https://www.daad.de"

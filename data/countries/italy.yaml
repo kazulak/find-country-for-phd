@@ -1,0 +1,44 @@
+id: italy
+name: Italy
+capital: Rome
+languages:
+  - name: Italian
+    english_friendly: false
+    official: true
+  - name: English
+    english_friendly: true
+    official: false
+stipend:
+  amount_eur_per_year: 16243
+  is_taxable: false
+  is_social_security_covered: true
+  purchasing_power_index: 82
+tuition_fees:
+  eu_students_eur_per_year: 200
+  non_eu_students_eur_per_year: 200
+cost_of_living:
+  estimated_monthly_expenses_eur: 850
+  index_relative_to_eu_average: 88
+phd_system:
+  typical_duration_years: 3.0
+  is_employee_status: false
+  academic_calendar: "Semester (Oct-Feb / Mar-Jul)"
+  required_ects: 0
+visa_and_work_rights:
+  requires_visa_for_non_eu: true
+  post_study_work_visa_duration_months: 12
+  work_hours_limit_per_week: null
+funding_availability:
+  rate: medium
+  main_sources:
+    - "MUR (Ministry of University and Research)"
+    - "PNRR (National Recovery and Resilience Plan) scholarships"
+    - "University funding"
+happiness_index: 6.40
+climate:
+  type: Mediterranean
+  average_temperature_summer_c: 29
+  average_temperature_winter_c: 7
+contact_portals:
+  - title: "Universitaly"
+    url: "https://www.universitaly.it"

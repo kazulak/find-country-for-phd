@@ -1,0 +1,44 @@
+id: spain
+name: Spain
+capital: Madrid
+languages:
+  - name: Spanish
+    english_friendly: false
+    official: true
+  - name: English
+    english_friendly: true
+    official: false
+stipend:
+  amount_eur_per_year: 18000
+  is_taxable: true
+  is_social_security_covered: true
+  purchasing_power_index: 85
+tuition_fees:
+  eu_students_eur_per_year: 500
+  non_eu_students_eur_per_year: 500
+cost_of_living:
+  estimated_monthly_expenses_eur: 900
+  index_relative_to_eu_average: 90
+phd_system:
+  typical_duration_years: 3.0
+  is_employee_status: true
+  academic_calendar: "Semester (Oct-Jan / Feb-Jun)"
+  required_ects: 0
+visa_and_work_rights:
+  requires_visa_for_non_eu: true
+  post_study_work_visa_duration_months: 12
+  work_hours_limit_per_week: 0
+funding_availability:
+  rate: medium
+  main_sources:
+    - "FPU (University Teacher Training) fellowships"
+    - "FPI (Research Personnel Training) fellowships"
+    - "Regional government predoctoral grants"
+happiness_index: null
+climate:
+  type: Mediterranean / Continental
+  average_temperature_summer_c: 30
+  average_temperature_winter_c: 9
+contact_portals:
+  - title: "Ministry of Science, Innovation and Universities"
+    url: "https://www.ciencia.gob.es"
