@@ -41,3 +41,11 @@ climate:
 contact_portals:
   - title: Study in Poland
     url: https://studyinpoland.pl
+description:
+  overview: Poland utilizes a two-tier stipend structure for Doctoral Schools. In the first two years (before mid-term evaluation), candidates receive a lower tier of ~3,467 PLN gross/month (~€800 gross, ~€720 net after pension/social security deductions). After a successful mid-term evaluation (next two years), the stipend increases to ~5,340 PLN gross/month (~€1,240 gross, ~€1,100 net). Stipends are tax-free but subject to social security pension deductions.
+  pros:
+    - Stipend increases significantly after the 2-year mid-term evaluation.
+    - No tuition fees for doctoral school programs.
+  cons:
+    - Stipend in the first two years is tight for renting in Warsaw.
+    - Subject to social security pension deductions since 2019 reform.

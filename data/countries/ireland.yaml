@@ -41,3 +41,11 @@ climate:
 contact_portals:
   - title: Study in Ireland
     url: https://www.educationinireland.com
+description:
+  overview: Funded primarily through Irish Research Council (IRC) awards or university fellowships. The standard minimum stipend is ~€22,000 tax-free per year (~€1,833/month net). Grant holders do not pay income tax, and tuition fees are covered separately.
+  pros:
+    - Stipend is completely tax-free.
+    - Excellent tech and biotech post-PhD industry connections.
+  cons:
+    - Dublin rental costs can exceed the entire stipend.
+    - No pension contributions or standard employee contract protections.

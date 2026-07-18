@@ -1,5 +1,5 @@
 id: united_kingdom
-name: "United Kingdom"
+name: United Kingdom
 capital: London
 languages:
   - name: English
@@ -19,7 +19,7 @@ cost_of_living:
 phd_system:
   typical_duration_years: 3.5
   is_employee_status: false
-  academic_calendar: "Trimester/Term (Autumn, Spring, Summer)"
+  academic_calendar: Trimester/Term (Autumn, Spring, Summer)
   required_ects: 0
 visa_and_work_rights:
   requires_visa_for_non_eu: true
@@ -28,17 +28,25 @@ visa_and_work_rights:
 funding_availability:
   rate: medium
   main_sources:
-    - "UKRI (UK Research and Innovation)"
-    - "Wellcome Trust"
-    - "University scholarships"
-    - "Industrial funding"
+    - UKRI (UK Research and Innovation)
+    - Wellcome Trust
+    - University scholarships
+    - Industrial funding
 happiness_index: 6.72
 climate:
   type: Temperate Maritime
   average_temperature_summer_c: 20
   average_temperature_winter_c: 4
 contact_portals:
-  - title: "FindAPhD"
-    url: "https://www.findaphd.com"
-  - title: "UKRI Funding Finder"
-    url: "https://www.ukri.org"
+  - title: FindAPhD
+    url: https://www.findaphd.com
+  - title: UKRI Funding Finder
+    url: https://www.ukri.org
+description:
+  overview: PhD funding is primarily distributed through tax-free UKRI minimum stipends. The standard rate is ~£19,237 tax-free per year (~£1,600/month net), with a London allowance top-up of £2,000 (~£1,765/month net). Since it is a tax-free stipend, it does not accumulate pension or national insurance benefits.
+  pros:
+    - Stipend is 100% tax-free.
+    - Opportunity for industry-sponsored CASE top-ups.
+  cons:
+    - No social security benefits, paid parental leave, or pension accrual.
+    - Dublin-equivalent severe rental crisis in major university cities.

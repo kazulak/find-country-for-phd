@@ -20,12 +20,18 @@
     "happinessIndex": 7.21,
     "housingCrisis": "Medium",
     "academicReputation": "Strong",
+    "overview": "PhD candidates are hired as university assistants under the collective agreement. Minimum gross salary is ~€3,277/month gross (based on 30 hours/week, approx. €2,300 net/month). STEM contracts are often topped up to 40 hours/week (~€3,050 net/month). Includes 14 monthly salary payouts per year.",
     "pros": [
       "Full employee rights & social benefits",
       "State pension contributions covered",
-      "Excellent funding via FWF (Austrian Science Fund)"
+      "Excellent funding via FWF (Austrian Science Fund)",
+      "Full employee status with 14 salary payouts per year.",
+      "Strong academic networks and high quality of life."
     ],
-    "cons": [],
+    "cons": [
+      "Rents are rising in Vienna and Innsbruck.",
+      "Requires teaching contributions in local languages."
+    ],
     "warnings": [],
     "quizTags": [
       "employee",
@@ -55,12 +61,18 @@
     "happinessIndex": 6.89,
     "housingCrisis": "Medium",
     "academicReputation": "Strong",
+    "overview": "Predoctoral researchers are typically funded via tax-free doctoral fellowships (stipendiat) of €2,200 to €2.450/month net. It is tax-free but covers basic health and social security insurance. Rents in Brussels, Ghent, and Leuven are moderate-high.",
     "pros": [
       "Full employee rights & social benefits",
       "State pension contributions covered",
-      "Excellent funding via FWO (Flanders)"
+      "Excellent funding via FWO (Flanders)",
+      "High tax-free net stipend with basic health insurance.",
+      "Excellent research groups and central European location."
     ],
-    "cons": [],
+    "cons": [
+      "No standard pension contributions during the fellowship.",
+      "Complex regional university administrations (Flanders vs. Wallonia)."
+    ],
     "warnings": [
       "Mandatory coursework of 60 ECTS required"
     ],
@@ -91,14 +103,19 @@
     "happinessIndex": 5.36,
     "housingCrisis": "None",
     "academicReputation": "Strong",
+    "overview": "Bulgaria provides state-funded PhD candidates with a flat monthly stipend of ~1,000 BGN (approx. €510 net). Living expenses in Sofia are low.",
     "pros": [
       "Tax-free stipend income",
-      "Excellent funding via Ministry of Education and Science"
+      "Excellent funding via Ministry of Education and Science",
+      "Very low cost of daily living and services.",
+      "Cheap student dormitory options."
     ],
     "cons": [
       "Strict visa stay-back terms post-PhD",
       "Low starting stipend compared to Northern Europe",
-      "No pension contributions built up during studies"
+      "No pension contributions built up during studies",
+      "Lowest base PhD salary in the EU.",
+      "Heavy administrative requirements and high language barrier."
     ],
     "warnings": [],
     "quizTags": [
@@ -127,14 +144,19 @@
     "happinessIndex": 5.88,
     "housingCrisis": "None",
     "academicReputation": "Strong",
+    "overview": "Croatia employs PhD researchers on assistant contracts, often funded by the Croatian Science Foundation (HRZZ). The gross salary is ~€1,400/month, translating to a net pay of ~€1,050 to €1,150/month with full health and social security benefits.",
     "pros": [
       "Full employee rights & social benefits",
       "State pension contributions covered",
       "Vibrant Mediterranean lifestyle & sunny weather",
-      "Excellent funding via HRZZ (Croatian Science Foundation)"
+      "Excellent funding via HRZZ (Croatian Science Foundation)",
+      "Full employee rights, including health cover and pension accrual.",
+      "Low cost of living in historical coastal/academic cities."
     ],
     "cons": [
-      "Low starting stipend compared to Northern Europe"
+      "Low starting stipend compared to Northern Europe",
+      "Low salary scale relative to Western European averages.",
+      "Highly document-heavy public administration and language barrier."
     ],
     "warnings": [],
     "quizTags": [
@@ -165,15 +187,20 @@
     "happinessIndex": 6.13,
     "housingCrisis": "Low",
     "academicReputation": "Strong",
+    "overview": "Cyprus employs predoctoral researchers primarily on European-funded research grants (Horizon Europe). Typical monthly net salaries range from €1,200 to €1,500.",
     "pros": [
       "Tax-free stipend income",
       "Vibrant Mediterranean lifestyle & sunny weather",
-      "Excellent funding via Research and Innovation Foundation of Cyprus"
+      "Excellent funding via Research and Innovation Foundation of Cyprus",
+      "Vibrant, English-friendly Mediterranean academic settings.",
+      "High funding levels in specific EU-sponsored research institutes."
     ],
     "cons": [
       "Strict visa stay-back terms post-PhD",
       "Low starting stipend compared to Northern Europe",
-      "No pension contributions built up during studies"
+      "No pension contributions built up during studies",
+      "Limited local tenure opportunities post-PhD.",
+      "Car-dependent infrastructure outside city centers."
     ],
     "warnings": [],
     "quizTags": [
@@ -203,14 +230,19 @@
     "happinessIndex": 6.85,
     "housingCrisis": "Low",
     "academicReputation": "Strong",
+    "overview": "PhD candidates in the Czech Republic receive a state stipend (~11,250 CZK/month tax-free, approx. €450 net/month), which is frequently topped up by university or project employment to ~€1,200/month net.",
     "pros": [
       "Tax-free stipend income",
-      "Excellent funding via GACR (Czech Science Foundation)"
+      "Excellent funding via GACR (Czech Science Foundation)",
+      "Low tuition fees and very affordable dormitory housing.",
+      "Prague is a highly attractive, central European city."
     ],
     "cons": [
       "Strict visa stay-back terms post-PhD",
       "Low starting stipend compared to Northern Europe",
-      "No pension contributions built up during studies"
+      "No pension contributions built up during studies",
+      "Base state stipend is too low without university top-ups.",
+      "Strict predoctoral milestones before completing studies."
     ],
     "warnings": [],
     "quizTags": [
@@ -238,13 +270,18 @@
     "happinessIndex": 7.58,
     "housingCrisis": "Critical",
     "academicReputation": "World Class",
+    "overview": "Salaried employee contracts with high starting salaries (~€2,500 to €3,000/month net) and a generous 17.1% university-paid pension scheme.",
     "pros": [
       "Full employee rights & social benefits",
       "State pension contributions covered",
-      "Excellent funding via Independent Research Fund Denmark"
+      "Excellent funding via Independent Research Fund Denmark",
+      "High net starting salaries and excellent pension schemes.",
+      "Very flat hierarchy and high work autonomy."
     ],
     "cons": [
-      "Severe housing shortage & high rental costs"
+      "Severe housing shortage & high rental costs",
+      "High personal income taxes.",
+      "Very high cost of living and housing shortages in Copenhagen."
     ],
     "warnings": [
       "Mandatory coursework of 30 ECTS required",
@@ -278,13 +315,18 @@
     "happinessIndex": 6.44,
     "housingCrisis": "Low",
     "academicReputation": "World Class",
+    "overview": "Estonia employs PhD candidates as junior researchers, providing standard employee rights. Junior researchers receive a guaranteed salary aligned with the national average wage (approx. €1,750 to €1,900 gross/month, yielding ~€1,400 to €1,550 net/month).",
     "pros": [
       "Full employee rights & social benefits",
       "State pension contributions covered",
-      "Excellent funding via Estonian Research Council"
+      "Excellent funding via Estonian Research Council",
+      "Highly digitalized, paperless university administration.",
+      "Full employee status with standard health cover and pension."
     ],
     "cons": [
-      "Strict visa stay-back terms post-PhD"
+      "Strict visa stay-back terms post-PhD",
+      "Winters are long, dark, and cold.",
+      "Relatively high rental costs in Tallinn and Tartu."
     ],
     "warnings": [
       "Mandatory coursework of 60 ECTS required"
@@ -315,13 +357,18 @@
     "happinessIndex": 7.8,
     "housingCrisis": "High",
     "academicReputation": "World Class",
+    "overview": "PhD researchers are hired on university contracts starting at ~€2,200 gross/month (~€1,650 net) up to €3,000 gross/month. Covers health insurance and public pension accumulation.",
     "pros": [
       "Full employee rights & social benefits",
       "State pension contributions covered",
-      "Excellent funding via Academy of Finland"
+      "Excellent funding via Academy of Finland",
+      "Salaried contract with full pension and social security.",
+      "Excellent work-life balance and pristine nature."
     ],
     "cons": [
-      "Severe housing shortage & high rental costs"
+      "Severe housing shortage & high rental costs",
+      "Cold, dark winters.",
+      "High tax rates on salaries."
     ],
     "warnings": [
       "Mandatory coursework of 40 ECTS required"
@@ -352,13 +399,19 @@
     "happinessIndex": 6.69,
     "housingCrisis": "Medium",
     "academicReputation": "Strong",
+    "overview": "PhD candidates are typically employed on doctoral contracts (contrat doctoral). Standard minimum gross salary is ~€2,100/month gross, resulting in a net take-home salary of ~€1,650/month. Covers basic health, unemployment, and pension insurance.",
     "pros": [
       "Full employee rights & social benefits",
       "State pension contributions covered",
       "Vibrant Mediterranean lifestyle & sunny weather",
-      "Excellent funding via Ministry of Higher Education and Research (contrat doctoral)"
+      "Excellent funding via Ministry of Higher Education and Research (contrat doctoral)",
+      "Standardized employee contract with full worker rights.",
+      "Low tuition fees at public universities."
     ],
-    "cons": [],
+    "cons": [
+      "Complex administration bureaucracy (often in French only).",
+      "High rents in Paris and large university cities."
+    ],
     "warnings": [],
     "quizTags": [
       "employee",
@@ -388,12 +441,18 @@
     "happinessIndex": 6.89,
     "housingCrisis": "Medium",
     "academicReputation": "World Class",
+    "overview": "PhD contracts in Germany are usually TV-L E13 employee contracts. Around 75% of STEM positions are funded at the 65% to 75% scale (~€1,950–€2,250 net/month), and some (like Computer Science/Engineering) are funded at 100% (~€2,700–€2,900 net/month). Humanities/Social Sciences are often on 50% scale (~€1,450–€1,600 net/month) but still work full-time.",
     "pros": [
       "Full employee rights & social benefits",
       "State pension contributions covered",
-      "Excellent funding via DFG (German Research Foundation)"
+      "Excellent funding via DFG (German Research Foundation)",
+      "Generous TV-L E13 employee rights & public pension accrual.",
+      "Highly integrated industrial and research networks."
     ],
-    "cons": [],
+    "cons": [
+      "Heavy regional administration and bureaucracy.",
+      "Humanities often receive low contract percentages (50%)."
+    ],
     "warnings": [],
     "quizTags": [
       "employee",
@@ -422,14 +481,19 @@
     "happinessIndex": 5.93,
     "housingCrisis": "Low",
     "academicReputation": "Strong",
+    "overview": "Greece funds PhD candidates through tax-free stipends from the State Scholarship Foundation (IKY) or ELIDEK, typically averaging €900 to €1,100/month net.",
     "pros": [
       "Tax-free stipend income",
       "Vibrant Mediterranean lifestyle & sunny weather",
-      "Excellent funding via IKY (State Scholarships Foundation)"
+      "Excellent funding via IKY (State Scholarships Foundation)",
+      "Low cost of daily living and dining.",
+      "Tax-free stipend status."
     ],
     "cons": [
       "Low starting stipend compared to Northern Europe",
-      "No pension contributions built up during studies"
+      "No pension contributions built up during studies",
+      "Very low stipend compared to Western Europe.",
+      "Limited laboratory infrastructure and slow university bureaucracy."
     ],
     "warnings": [],
     "quizTags": [
@@ -459,14 +523,19 @@
     "happinessIndex": 5.8,
     "housingCrisis": "None",
     "academicReputation": "Strong",
+    "overview": "Hungary offers a national predoctoral scholarship: before the complex exam (years 1 & 2) the tax-free stipend is 140,000 HUF/month (~€350/mo net), which increases to 180,000 HUF/month (~€460/mo net) for years 3 & 4.",
     "pros": [
       "Tax-free stipend income",
-      "Excellent funding via Hungarian Doctoral Council"
+      "Excellent funding via Hungarian Doctoral Council",
+      "Universal tax-free stipend for all state-funded slots.",
+      "Extremely cheap university dormitory options."
     ],
     "cons": [
       "Strict visa stay-back terms post-PhD",
       "Low starting stipend compared to Northern Europe",
-      "No pension contributions built up during studies"
+      "No pension contributions built up during studies",
+      "Stipend is very low and requires additional teaching or part-time work to survive.",
+      "Strict academic requirements for passing the complex exam at 2 years."
     ],
     "warnings": [
       "Mandatory coursework of 240 ECTS required"
@@ -496,13 +565,18 @@
     "happinessIndex": 6.91,
     "housingCrisis": "Critical",
     "academicReputation": "Strong",
+    "overview": "Funded primarily through Irish Research Council (IRC) awards or university fellowships. The standard minimum stipend is ~€22,000 tax-free per year (~€1,833/month net). Grant holders do not pay income tax, and tuition fees are covered separately.",
     "pros": [
       "Tax-free stipend income",
-      "Excellent funding via Irish Research Council (IRC)"
+      "Excellent funding via Irish Research Council (IRC)",
+      "Stipend is completely tax-free.",
+      "Excellent tech and biotech post-PhD industry connections."
     ],
     "cons": [
       "Severe housing shortage & high rental costs",
-      "No pension contributions built up during studies"
+      "No pension contributions built up during studies",
+      "Dublin rental costs can exceed the entire stipend.",
+      "No pension contributions or standard employee contract protections."
     ],
     "warnings": [
       "Mandatory coursework of 30 ECTS required",
@@ -533,13 +607,19 @@
     "happinessIndex": 6.4,
     "housingCrisis": "Low",
     "academicReputation": "Strong",
+    "overview": "Italy relies on national doctoral scholarships (borsa di dottorato) of €16,243 gross/year. After INPS Gestione Separata contributions (approx. 33% shared/individual), candidates receive around €1,180 to €1,200/month net. This scholarship is tax-free but lacks pension accrual.",
     "pros": [
       "Tax-free stipend income",
       "Basic social security coverage",
       "Vibrant Mediterranean lifestyle & sunny weather",
-      "Excellent funding via MUR (Ministry of University and Research)"
+      "Excellent funding via MUR (Ministry of University and Research)",
+      "Doctoral scholarship is completely tax-free.",
+      "Reasonable cost of living in southern and central regions."
     ],
-    "cons": [],
+    "cons": [
+      "Net stipend is very low for northern cities like Milan/Turin.",
+      "Highly document-heavy public administration bureaucracy."
+    ],
     "warnings": [],
     "quizTags": [
       "fast-phd",
@@ -568,13 +648,18 @@
     "happinessIndex": 5.87,
     "housingCrisis": "None",
     "academicReputation": "Strong",
+    "overview": "Latvia supports PhD candidates through state stipends (~€250/month tax-free) supplemented by university or European research contract employment. This typically results in a combined net take-home salary of €800 to €950/month.",
     "pros": [
       "Tax-free stipend income",
-      "Excellent funding via Latvian Council of Science"
+      "Excellent funding via Latvian Council of Science",
+      "Low cost of living and affordable student accommodation.",
+      "Beautiful nature and Baltic coastal access."
     ],
     "cons": [
       "Low starting stipend compared to Northern Europe",
-      "No pension contributions built up during studies"
+      "No pension contributions built up during studies",
+      "Base state stipend alone is not survivable.",
+      "Limited funding for humanities and social sciences."
     ],
     "warnings": [],
     "quizTags": [
@@ -603,13 +688,18 @@
     "happinessIndex": 6.21,
     "housingCrisis": "Low",
     "academicReputation": "Strong",
+    "overview": "Lithuania provides tax-free government scholarships for doctoral students: €930/month in the 1st year and €1,075/month for years 2 to 4. Rents in Vilnius are moderate.",
     "pros": [
       "Tax-free stipend income",
-      "Excellent funding via Research Council of Lithuania"
+      "Excellent funding via Research Council of Lithuania",
+      "Scholarship is completely tax-free.",
+      "Low cost of living and modern digital infrastructure."
     ],
     "cons": [
       "Low starting stipend compared to Northern Europe",
-      "No pension contributions built up during studies"
+      "No pension contributions built up during studies",
+      "No standard pension accrual or employee contract rights.",
+      "Language barrier in municipal and off-campus offices."
     ],
     "warnings": [
       "Mandatory coursework of 30 ECTS required"
@@ -639,14 +729,19 @@
     "happinessIndex": 7.23,
     "housingCrisis": "Critical",
     "academicReputation": "World Class",
+    "overview": "Luxembourg hires doctoral candidates on standard university employment contracts (often funded by AFR). Gross salaries are €3,100 to €3,400/month, yielding a net pay of ~€2,500 to €2,750/month.",
     "pros": [
       "Full employee rights & social benefits",
       "State pension contributions covered",
-      "Excellent funding via FNR (Luxembourg National Research Fund)"
+      "Excellent funding via FNR (Luxembourg National Research Fund)",
+      "Very high net salary (approx. €2,600 net) with full pension.",
+      "Highly international, multilingual research labs."
     ],
     "cons": [
       "Severe housing shortage & high rental costs",
-      "Strict visa stay-back terms post-PhD"
+      "Strict visa stay-back terms post-PhD",
+      "Rents are extremely high and finding housing is difficult.",
+      "Limited local student life outside the university town of Belval."
     ],
     "warnings": [
       "Mandatory coursework of 20 ECTS required",
@@ -680,15 +775,20 @@
     "happinessIndex": 6.3,
     "housingCrisis": "Low",
     "academicReputation": "Strong",
+    "overview": "Malta funds PhD candidates via University of Malta or MGSS scholarships, providing €8,500 to €11,000/year tax-free (~€700–€900/month net).",
     "pros": [
       "Tax-free stipend income",
       "Vibrant Mediterranean lifestyle & sunny weather",
-      "Excellent funding via Ministry for Education Malta"
+      "Excellent funding via Ministry for Education Malta",
+      "English is an official language, making integration immediate.",
+      "Tax-free stipend status."
     ],
     "cons": [
       "Strict visa stay-back terms post-PhD",
       "Low starting stipend compared to Northern Europe",
-      "No pension contributions built up during studies"
+      "No pension contributions built up during studies",
+      "Stipend is low relative to rising rental costs in expat hubs.",
+      "Limited research funding for large lab materials."
     ],
     "warnings": [],
     "quizTags": [
@@ -718,13 +818,18 @@
     "happinessIndex": 7.4,
     "housingCrisis": "High",
     "academicReputation": "World Class",
+    "overview": "Fully salaried employee status governed by the Dutch CAO-NU. Salary scales start at scale P1 (~€2,770 gross/mo, ~€2,200 net/mo) and scale up to scale P4 in year 4 (~€3,530 gross/mo, ~€2,750 net/mo). Includes 8% holiday allowance, 8.3% year-end bonus, and full pension accumulation.",
     "pros": [
       "Full employee rights & social benefits",
       "State pension contributions covered",
-      "Excellent funding via NWO (Dutch Research Council)"
+      "Excellent funding via NWO (Dutch Research Council)",
+      "Highest standard employee salaries and holiday/end-year bonuses.",
+      "Outstanding university support networks and high English proficiency."
     ],
     "cons": [
-      "Severe housing shortage & high rental costs"
+      "Severe housing shortage & high rental costs",
+      "Severe national housing shortage with high rent.",
+      "High cost of daily living and services in academic hubs."
     ],
     "warnings": [
       "Mandatory coursework of 30 ECTS required",
@@ -757,14 +862,19 @@
     "happinessIndex": 7.39,
     "housingCrisis": "Critical",
     "academicReputation": "World Class",
+    "overview": "PhD candidates are hired as public servants (Stipendiat, code 1017). Starting salaries begin at scale 54, yielding ~532,000 NOK gross/year (~44,300 NOK gross/month, resulting in ~30,000 to 32,000 NOK/mo net, approx. €2,750 net/month). Enjoy full employee benefits and state pension accrual.",
     "pros": [
       "Full employee rights & social benefits",
       "State pension contributions covered",
       "Excellent work-life balance & equality focus",
-      "Excellent funding via Research Council of Norway"
+      "Excellent funding via Research Council of Norway",
+      "Excellent starting salary with full public servant benefits.",
+      "Exceptional work-life balance and generous parental leave."
     ],
     "cons": [
-      "Severe housing shortage & high rental costs"
+      "Severe housing shortage & high rental costs",
+      "Very high cost of living, especially for services and eating out.",
+      "Highly competitive application process."
     ],
     "warnings": [
       "Mandatory coursework of 30 ECTS required",
@@ -799,13 +909,18 @@
     "happinessIndex": 6.12,
     "housingCrisis": "None",
     "academicReputation": "World Class",
+    "overview": "Poland utilizes a two-tier stipend structure for Doctoral Schools. In the first two years (before mid-term evaluation), candidates receive a lower tier of ~3,467 PLN gross/month (~€800 gross, ~€720 net after pension/social security deductions). After a successful mid-term evaluation (next two years), the stipend increases to ~5,340 PLN gross/month (~€1,240 gross, ~€1,100 net). Stipends are tax-free but subject to social security pension deductions.",
     "pros": [
       "Tax-free stipend income",
       "Basic social security coverage",
-      "Excellent funding via NCN (National Science Centre Poland)"
+      "Excellent funding via NCN (National Science Centre Poland)",
+      "Stipend increases significantly after the 2-year mid-term evaluation.",
+      "No tuition fees for doctoral school programs."
     ],
     "cons": [
-      "Low starting stipend compared to Northern Europe"
+      "Low starting stipend compared to Northern Europe",
+      "Stipend in the first two years is tight for renting in Warsaw.",
+      "Subject to social security pension deductions since 2019 reform."
     ],
     "warnings": [],
     "quizTags": [
@@ -833,13 +948,16 @@
     "happinessIndex": 5.96,
     "housingCrisis": "Low",
     "academicReputation": "Strong",
+    "overview": "PhD candidates in Portugal typically receive standard funding and research access.",
     "pros": [
       "Tax-free stipend income",
       "Vibrant Mediterranean lifestyle & sunny weather",
-      "Excellent funding via FCT (Foundation for Science and Technology)"
+      "Excellent funding via FCT (Foundation for Science and Technology)",
+      "Tax-free or structured funding options."
     ],
     "cons": [
-      "No pension contributions built up during studies"
+      "No pension contributions built up during studies",
+      "Cost of living or stay-back complexities depending on nationality."
     ],
     "warnings": [
       "Mandatory coursework of 60 ECTS required"
@@ -870,14 +988,19 @@
     "happinessIndex": 6.5,
     "housingCrisis": "None",
     "academicReputation": "Strong",
+    "overview": "Romania provides ministry stipends of ~1,800 RON/month (~€360/mo net) for the first two years, increasing to ~2,200 RON/month (~€440/mo net) in years 3 & 4. Frequently topped up by research grants to €600–€800/month net.",
     "pros": [
       "Tax-free stipend income",
-      "Excellent funding via UEFISCDI Romania"
+      "Excellent funding via UEFISCDI Romania",
+      "Low cost of daily living and housing.",
+      "Fast-growing IT and tech hubs in Cluj and Bucharest."
     ],
     "cons": [
       "Strict visa stay-back terms post-PhD",
       "Low starting stipend compared to Northern Europe",
-      "No pension contributions built up during studies"
+      "No pension contributions built up during studies",
+      "Base state stipend is very low.",
+      "Heavy reliance on project-based top-ups which vary between labs."
     ],
     "warnings": [],
     "quizTags": [
@@ -906,14 +1029,19 @@
     "happinessIndex": 6.25,
     "housingCrisis": "None",
     "academicReputation": "Strong",
+    "overview": "Slovakia offers standardized junior researcher scholarships: €1,025/month tax-free before passing the dissertation exam, and €1,195/month tax-free after passing the exam.",
     "pros": [
       "Tax-free stipend income",
-      "Excellent funding via Slovak Ministry of Education"
+      "Excellent funding via Slovak Ministry of Education",
+      "Significant stipend increase after the dissertation exam.",
+      "Tax-free stipend status with health insurance included."
     ],
     "cons": [
       "Strict visa stay-back terms post-PhD",
       "Low starting stipend compared to Northern Europe",
-      "No pension contributions built up during studies"
+      "No pension contributions built up during studies",
+      "No standard employee social benefits or pension accrual.",
+      "Slow academic administrative processes."
     ],
     "warnings": [],
     "quizTags": [
@@ -942,12 +1070,18 @@
     "happinessIndex": 6.69,
     "housingCrisis": "Low",
     "academicReputation": "Strong",
+    "overview": "Slovenia employs doctoral researchers under the 'Young Researcher' (Mladi raziskovalec) program. The gross salary is €1,650 to €1,850/month, resulting in a net take-home pay of ~€1,150 to €1,280/month.",
     "pros": [
       "Full employee rights & social benefits",
       "State pension contributions covered",
-      "Excellent funding via Slovenian Research Agency (ARRS)"
+      "Excellent funding via Slovenian Research Agency (ARRS)",
+      "Full employee status with pension, travel, and lunch allowances.",
+      "Clean, safe, and beautiful alpine nature."
     ],
-    "cons": [],
+    "cons": [
+      "Limited number of Young Researcher slots available annually.",
+      "Language barrier for teaching and local administration."
+    ],
     "warnings": [],
     "quizTags": [
       "employee",
@@ -976,13 +1110,19 @@
     "happinessIndex": 6.5,
     "housingCrisis": "Low",
     "academicReputation": "Strong",
+    "overview": "Predoctoral contracts (contrato predoctoral) are regulated by the EPIF statute. Salaries scale as percentages of standard categories: 56% in years 1-2 (~€18,000/yr gross, ~€1,250 net/mo), 60% in year 3 (~€19,000/yr gross, ~€1,350 net/mo), and 75% in year 4 (~€23,000/yr gross, ~€1,650 net/mo). Cover health insurance and full employment rights.",
     "pros": [
       "Full employee rights & social benefits",
       "State pension contributions covered",
       "Vibrant Mediterranean lifestyle & sunny weather",
-      "Excellent funding via FPU (University Teacher Training) fellowships"
+      "Excellent funding via FPU (University Teacher Training) fellowships",
+      "Predoctoral contract provides solid legal employee rights.",
+      "Vibrant academic communities and outstanding quality of life."
     ],
-    "cons": [],
+    "cons": [
+      "Stipend is very low relative to Madrid and Barcelona rental costs.",
+      "Varying research budgets between institutions."
+    ],
     "warnings": [],
     "quizTags": [
       "employee",
@@ -1012,12 +1152,18 @@
     "happinessIndex": 7.39,
     "housingCrisis": "Medium",
     "academicReputation": "World Class",
+    "overview": "Salaried employee status (Doktorandtjänst) with full social benefits, governed by strong collective bargaining agreements. Net salaries start at ~€2,000 to €2,400/month with annual increases.",
     "pros": [
       "Full employee rights & social benefits",
       "State pension contributions covered",
-      "Excellent funding via Swedish Research Council (Vetenskapsrådet)"
+      "Excellent funding via Swedish Research Council (Vetenskapsrådet)",
+      "Clear pathway to permanent residency after 4 years.",
+      "Outstanding work-life balance and parental leave benefits."
     ],
-    "cons": [],
+    "cons": [
+      "Long, dark, and cold winters.",
+      "High tax rates and long queues for public rentals."
+    ],
     "warnings": [
       "Mandatory coursework of 60 ECTS required"
     ],
@@ -1048,14 +1194,19 @@
     "happinessIndex": 7.24,
     "housingCrisis": "Critical",
     "academicReputation": "World Class",
+    "overview": "Swiss National Science Foundation (SNSF) salaries start at CHF 48,000 gross/year in year 1 (~CHF 4,000/mo gross, ~CHF 3,300/mo net) up to CHF 50,000 in year 4. Major institutions (ETH Zurich, EPFL) offer higher scales up to CHF 85,000/year gross (~CHF 5,200/mo net). Social security contributions are automatically deducted, and tuition fees are low, but the cost of living is extremely high.",
     "pros": [
       "Full employee rights & social benefits",
       "State pension contributions covered",
-      "Excellent funding via SNSF (Swiss National Science Foundation)"
+      "Excellent funding via SNSF (Swiss National Science Foundation)",
+      "Highest nominal PhD salaries in Europe (up to CHF 5,200/mo net).",
+      "World-renowned research labs and infrastructure (ETH/EPFL)."
     ],
     "cons": [
       "Severe housing shortage & high rental costs",
-      "Strict visa stay-back terms post-PhD"
+      "Strict visa stay-back terms post-PhD",
+      "Extremely high cost of living (rent, groceries, health insurance).",
+      "Strict immigration quotas for non-EU/EFTA graduates."
     ],
     "warnings": [
       "Mandatory coursework of 12 ECTS required",
@@ -1088,13 +1239,18 @@
     "happinessIndex": 6.72,
     "housingCrisis": "High",
     "academicReputation": "Strong",
+    "overview": "PhD funding is primarily distributed through tax-free UKRI minimum stipends. The standard rate is ~£19,237 tax-free per year (~£1,600/month net), with a London allowance top-up of £2,000 (~£1,765/month net). Since it is a tax-free stipend, it does not accumulate pension or national insurance benefits.",
     "pros": [
       "Tax-free stipend income",
-      "Excellent funding via UKRI (UK Research and Innovation)"
+      "Excellent funding via UKRI (UK Research and Innovation)",
+      "Stipend is 100% tax-free.",
+      "Opportunity for industry-sponsored CASE top-ups."
     ],
     "cons": [
       "Severe housing shortage & high rental costs",
-      "No pension contributions built up during studies"
+      "No pension contributions built up during studies",
+      "No social security benefits, paid parental leave, or pension accrual.",
+      "Dublin-equivalent severe rental crisis in major university cities."
     ],
     "warnings": [],
     "quizTags": [

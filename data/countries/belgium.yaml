@@ -45,3 +45,11 @@ climate:
 contact_portals:
   - title: Study in Belgium
     url: https://www.studyinbelgium.be
+description:
+  overview: Predoctoral researchers are typically funded via tax-free doctoral fellowships (stipendiat) of €2,200 to €2.450/month net. It is tax-free but covers basic health and social security insurance. Rents in Brussels, Ghent, and Leuven are moderate-high.
+  pros:
+    - High tax-free net stipend with basic health insurance.
+    - Excellent research groups and central European location.
+  cons:
+    - No standard pension contributions during the fellowship.
+    - Complex regional university administrations (Flanders vs. Wallonia).

@@ -41,3 +41,11 @@ climate:
 contact_portals:
   - title: Study in Romania
     url: https://studyinromania.gov.ro
+description:
+  overview: Romania provides ministry stipends of ~1,800 RON/month (~€360/mo net) for the first two years, increasing to ~2,200 RON/month (~€440/mo net) in years 3 & 4. Frequently topped up by research grants to €600–€800/month net.
+  pros:
+    - Low cost of daily living and housing.
+    - Fast-growing IT and tech hubs in Cluj and Bucharest.
+  cons:
+    - Base state stipend is very low.
+    - Heavy reliance on project-based top-ups which vary between labs.

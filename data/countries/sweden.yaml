@@ -20,9 +20,9 @@ cost_of_living:
   estimated_monthly_expenses_eur: 1300
   index_relative_to_eu_average: 112
 phd_system:
-  typical_duration_years: 4.0
+  typical_duration_years: 4
   is_employee_status: true
-  academic_calendar: "Semester (Aug-Jan / Jan-Jun)"
+  academic_calendar: Semester (Aug-Jan / Jan-Jun)
   required_ects: 60
 visa_and_work_rights:
   requires_visa_for_non_eu: true
@@ -31,16 +31,24 @@ visa_and_work_rights:
 funding_availability:
   rate: high
   main_sources:
-    - "Swedish Research Council (Vetenskapsrådet)"
-    - "University doctoral positions (Doktorandtjänst)"
-    - "Wallenberg Foundations"
+    - Swedish Research Council (Vetenskapsrådet)
+    - University doctoral positions (Doktorandtjänst)
+    - Wallenberg Foundations
 happiness_index: 7.39
 climate:
   type: Subarctic / Temperate
   average_temperature_summer_c: 21
   average_temperature_winter_c: -3
 contact_portals:
-  - title: "Study in Sweden"
-    url: "https://studyinsweden.se"
-  - title: "Swedish Higher Education Authority"
-    url: "https://www.uka.se"
+  - title: Study in Sweden
+    url: https://studyinsweden.se
+  - title: Swedish Higher Education Authority
+    url: https://www.uka.se
+description:
+  overview: Salaried employee status (Doktorandtjänst) with full social benefits, governed by strong collective bargaining agreements. Net salaries start at ~€2,000 to €2,400/month with annual increases.
+  pros:
+    - Clear pathway to permanent residency after 4 years.
+    - Outstanding work-life balance and parental leave benefits.
+  cons:
+    - Long, dark, and cold winters.
+    - High tax rates and long queues for public rentals.

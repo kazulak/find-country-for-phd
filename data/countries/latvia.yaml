@@ -40,3 +40,11 @@ climate:
 contact_portals:
   - title: Study in Latvia
     url: https://www.studyinlatvia.lv
+description:
+  overview: Latvia supports PhD candidates through state stipends (~€250/month tax-free) supplemented by university or European research contract employment. This typically results in a combined net take-home salary of €800 to €950/month.
+  pros:
+    - Low cost of living and affordable student accommodation.
+    - Beautiful nature and Baltic coastal access.
+  cons:
+    - Base state stipend alone is not survivable.
+    - Limited funding for humanities and social sciences.

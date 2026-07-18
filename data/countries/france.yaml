@@ -20,9 +20,9 @@ cost_of_living:
   estimated_monthly_expenses_eur: 1150
   index_relative_to_eu_average: 107
 phd_system:
-  typical_duration_years: 3.0
+  typical_duration_years: 3
   is_employee_status: true
-  academic_calendar: "Semester (Sep-Jan / Feb-Jun)"
+  academic_calendar: Semester (Sep-Jan / Feb-Jun)
   required_ects: null
 visa_and_work_rights:
   requires_visa_for_non_eu: true
@@ -31,16 +31,24 @@ visa_and_work_rights:
 funding_availability:
   rate: medium
   main_sources:
-    - "Ministry of Higher Education and Research (contrat doctoral)"
-    - "CIFRE (Industrial agreements)"
-    - "CNRS and other public research institutes"
+    - Ministry of Higher Education and Research (contrat doctoral)
+    - CIFRE (Industrial agreements)
+    - CNRS and other public research institutes
 happiness_index: 6.69
 climate:
   type: Temperate Maritime / Mediterranean
   average_temperature_summer_c: 24
   average_temperature_winter_c: 5
 contact_portals:
-  - title: "Campus France"
-    url: "https://www.campusfrance.org"
-  - title: "Association Bernard Gregory (ABG)"
-    url: "https://www.abg.asso.fr"
+  - title: Campus France
+    url: https://www.campusfrance.org
+  - title: Association Bernard Gregory (ABG)
+    url: https://www.abg.asso.fr
+description:
+  overview: PhD candidates are typically employed on doctoral contracts (contrat doctoral). Standard minimum gross salary is ~€2,100/month gross, resulting in a net take-home salary of ~€1,650/month. Covers basic health, unemployment, and pension insurance.
+  pros:
+    - Standardized employee contract with full worker rights.
+    - Low tuition fees at public universities.
+  cons:
+    - Complex administration bureaucracy (often in French only).
+    - High rents in Paris and large university cities.

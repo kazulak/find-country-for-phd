@@ -41,3 +41,11 @@ climate:
 contact_portals:
   - title: Study in Hungary
     url: http://www.studyinhungary.hu
+description:
+  overview: 'Hungary offers a national predoctoral scholarship: before the complex exam (years 1 & 2) the tax-free stipend is 140,000 HUF/month (~€350/mo net), which increases to 180,000 HUF/month (~€460/mo net) for years 3 & 4.'
+  pros:
+    - Universal tax-free stipend for all state-funded slots.
+    - Extremely cheap university dormitory options.
+  cons:
+    - Stipend is very low and requires additional teaching or part-time work to survive.
+    - Strict academic requirements for passing the complex exam at 2 years.

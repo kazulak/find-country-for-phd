@@ -186,6 +186,28 @@
           }
         }
       }
+    },
+    "description": {
+      "type": "object",
+      "required": ["overview"],
+      "additionalProperties": false,
+      "properties": {
+        "overview": {
+          "type": "string"
+        },
+        "pros": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "cons": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "warnings": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
     }
   }
 }

@@ -20,9 +20,9 @@ cost_of_living:
   estimated_monthly_expenses_eur: 1500
   index_relative_to_eu_average: 118
 phd_system:
-  typical_duration_years: 4.0
+  typical_duration_years: 4
   is_employee_status: true
-  academic_calendar: "Flexible (Start anytime)"
+  academic_calendar: Flexible (Start anytime)
   required_ects: 30
 visa_and_work_rights:
   requires_visa_for_non_eu: true
@@ -31,17 +31,25 @@ visa_and_work_rights:
 funding_availability:
   rate: high
   main_sources:
-    - "NWO (Dutch Research Council)"
-    - "Direct university funding (employee positions)"
-    - "ERC grants"
-    - "Industrial partnerships"
-happiness_index: 7.40
+    - NWO (Dutch Research Council)
+    - Direct university funding (employee positions)
+    - ERC grants
+    - Industrial partnerships
+happiness_index: 7.4
 climate:
   type: Temperate Maritime
   average_temperature_summer_c: 21
   average_temperature_winter_c: 3
 contact_portals:
-  - title: "AcademicTransfer (Dutch PhD Jobs)"
-    url: "https://www.academictransfer.com"
-  - title: "Study in NL"
-    url: "https://www.studyinnl.org"
+  - title: AcademicTransfer (Dutch PhD Jobs)
+    url: https://www.academictransfer.com
+  - title: Study in NL
+    url: https://www.studyinnl.org
+description:
+  overview: Fully salaried employee status governed by the Dutch CAO-NU. Salary scales start at scale P1 (~€2,770 gross/mo, ~€2,200 net/mo) and scale up to scale P4 in year 4 (~€3,530 gross/mo, ~€2,750 net/mo). Includes 8% holiday allowance, 8.3% year-end bonus, and full pension accumulation.
+  pros:
+    - Highest standard employee salaries and holiday/end-year bonuses.
+    - Outstanding university support networks and high English proficiency.
+  cons:
+    - Severe national housing shortage with high rent.
+    - High cost of daily living and services in academic hubs.

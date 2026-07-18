@@ -152,6 +152,10 @@ function runBuild() {
       pros.push(`Excellent funding via ${data.funding_availability.main_sources[0]}`);
     }
 
+    if (data.description?.pros) {
+      pros.push(...data.description.pros);
+    }
+
     const cons = [];
     if (housingCrisis === 'Critical' || housingCrisis === 'High') {
       cons.push('Severe housing shortage & high rental costs');
@@ -165,6 +169,9 @@ function runBuild() {
     if (!isEmployee && !isSocialCovered) {
       cons.push('No pension contributions built up during studies');
     }
+    if (data.description?.cons) {
+      cons.push(...data.description.cons);
+    }
 
     const warnings = [];
     if (ects > 0) {
@@ -172,6 +179,9 @@ function runBuild() {
     }
     if (data.cost_of_living.estimated_monthly_expenses_eur > 1400) {
       warnings.push('High daily cost of living in university towns');
+    }
+    if (data.description?.warnings) {
+      warnings.push(...data.description.warnings);
     }
 
     const quizTags = [];
@@ -203,6 +213,7 @@ function runBuild() {
       happinessIndex: data.happiness_index || 6.5,
       housingCrisis,
       academicReputation: data.funding_availability.rate === 'high' ? 'World Class' : 'Strong',
+      overview: data.description?.overview || `PhD candidates in ${data.name} are classified as ${status} status, with a typical duration of ${data.phd_system.typical_duration_years} years.`,
       pros,
       cons,
       warnings,

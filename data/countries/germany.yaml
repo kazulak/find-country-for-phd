@@ -22,7 +22,7 @@ cost_of_living:
 phd_system:
   typical_duration_years: 3.5
   is_employee_status: true
-  academic_calendar: "Semester (Oct-Mar / Apr-Sep)"
+  academic_calendar: Semester (Oct-Mar / Apr-Sep)
   required_ects: 0
 visa_and_work_rights:
   requires_visa_for_non_eu: true
@@ -31,17 +31,25 @@ visa_and_work_rights:
 funding_availability:
   rate: high
   main_sources:
-    - "DFG (German Research Foundation)"
-    - "DAAD (German Academic Exchange Service)"
-    - "University TV-L employment contracts"
-    - "Industry funding"
+    - DFG (German Research Foundation)
+    - DAAD (German Academic Exchange Service)
+    - University TV-L employment contracts
+    - Industry funding
 happiness_index: 6.89
 climate:
   type: Temperate
   average_temperature_summer_c: 22
   average_temperature_winter_c: 1
 contact_portals:
-  - title: "Research in Germany"
-    url: "https://www.research-in-germany.org"
-  - title: "DAAD PhD Database"
-    url: "https://www.daad.de"
+  - title: Research in Germany
+    url: https://www.research-in-germany.org
+  - title: DAAD PhD Database
+    url: https://www.daad.de
+description:
+  overview: PhD contracts in Germany are usually TV-L E13 employee contracts. Around 75% of STEM positions are funded at the 65% to 75% scale (~€1,950–€2,250 net/month), and some (like Computer Science/Engineering) are funded at 100% (~€2,700–€2,900 net/month). Humanities/Social Sciences are often on 50% scale (~€1,450–€1,600 net/month) but still work full-time.
+  pros:
+    - Generous TV-L E13 employee rights & public pension accrual.
+    - Highly integrated industrial and research networks.
+  cons:
+    - Heavy regional administration and bureaucracy.
+    - Humanities often receive low contract percentages (50%).

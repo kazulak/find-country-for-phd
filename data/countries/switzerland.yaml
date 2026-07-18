@@ -26,7 +26,7 @@ cost_of_living:
   estimated_monthly_expenses_eur: 2100
   index_relative_to_eu_average: 155
 phd_system:
-  typical_duration_years: 4.0
+  typical_duration_years: 4
   is_employee_status: true
   academic_calendar: null
   required_ects: 12
@@ -37,16 +37,24 @@ visa_and_work_rights:
 funding_availability:
   rate: high
   main_sources:
-    - "SNSF (Swiss National Science Foundation)"
-    - "University assistantships"
-    - "EU Horizon programs"
+    - SNSF (Swiss National Science Foundation)
+    - University assistantships
+    - EU Horizon programs
 happiness_index: 7.24
 climate:
   type: Continental/Alpine
   average_temperature_summer_c: 23
   average_temperature_winter_c: -1
 contact_portals:
-  - title: "Swiss National Science Foundation"
-    url: "https://www.snf.ch"
-  - title: "Study in Switzerland"
-    url: "https://www.studyinswitzerland.plus"
+  - title: Swiss National Science Foundation
+    url: https://www.snf.ch
+  - title: Study in Switzerland
+    url: https://www.studyinswitzerland.plus
+description:
+  overview: Swiss National Science Foundation (SNSF) salaries start at CHF 48,000 gross/year in year 1 (~CHF 4,000/mo gross, ~CHF 3,300/mo net) up to CHF 50,000 in year 4. Major institutions (ETH Zurich, EPFL) offer higher scales up to CHF 85,000/year gross (~CHF 5,200/mo net). Social security contributions are automatically deducted, and tuition fees are low, but the cost of living is extremely high.
+  pros:
+    - Highest nominal PhD salaries in Europe (up to CHF 5,200/mo net).
+    - World-renowned research labs and infrastructure (ETH/EPFL).
+  cons:
+    - Extremely high cost of living (rent, groceries, health insurance).
+    - Strict immigration quotas for non-EU/EFTA graduates.

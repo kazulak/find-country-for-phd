@@ -20,9 +20,9 @@ cost_of_living:
   estimated_monthly_expenses_eur: 900
   index_relative_to_eu_average: 90
 phd_system:
-  typical_duration_years: 3.0
+  typical_duration_years: 3
   is_employee_status: true
-  academic_calendar: "Semester (Oct-Jan / Feb-Jun)"
+  academic_calendar: Semester (Oct-Jan / Feb-Jun)
   required_ects: 0
 visa_and_work_rights:
   requires_visa_for_non_eu: true
@@ -31,14 +31,22 @@ visa_and_work_rights:
 funding_availability:
   rate: medium
   main_sources:
-    - "FPU (University Teacher Training) fellowships"
-    - "FPI (Research Personnel Training) fellowships"
-    - "Regional government predoctoral grants"
+    - FPU (University Teacher Training) fellowships
+    - FPI (Research Personnel Training) fellowships
+    - Regional government predoctoral grants
 happiness_index: null
 climate:
   type: Mediterranean / Continental
   average_temperature_summer_c: 30
   average_temperature_winter_c: 9
 contact_portals:
-  - title: "Ministry of Science, Innovation and Universities"
-    url: "https://www.ciencia.gob.es"
+  - title: Ministry of Science, Innovation and Universities
+    url: https://www.ciencia.gob.es
+description:
+  overview: 'Predoctoral contracts (contrato predoctoral) are regulated by the EPIF statute. Salaries scale as percentages of standard categories: 56% in years 1-2 (~€18,000/yr gross, ~€1,250 net/mo), 60% in year 3 (~€19,000/yr gross, ~€1,350 net/mo), and 75% in year 4 (~€23,000/yr gross, ~€1,650 net/mo). Cover health insurance and full employment rights.'
+  pros:
+    - Predoctoral contract provides solid legal employee rights.
+    - Vibrant academic communities and outstanding quality of life.
+  cons:
+    - Stipend is very low relative to Madrid and Barcelona rental costs.
+    - Varying research budgets between institutions.

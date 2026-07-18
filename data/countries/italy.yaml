@@ -20,9 +20,9 @@ cost_of_living:
   estimated_monthly_expenses_eur: 850
   index_relative_to_eu_average: 88
 phd_system:
-  typical_duration_years: 3.0
+  typical_duration_years: 3
   is_employee_status: false
-  academic_calendar: "Semester (Oct-Feb / Mar-Jul)"
+  academic_calendar: Semester (Oct-Feb / Mar-Jul)
   required_ects: 0
 visa_and_work_rights:
   requires_visa_for_non_eu: true
@@ -31,14 +31,22 @@ visa_and_work_rights:
 funding_availability:
   rate: medium
   main_sources:
-    - "MUR (Ministry of University and Research)"
-    - "PNRR (National Recovery and Resilience Plan) scholarships"
-    - "University funding"
-happiness_index: 6.40
+    - MUR (Ministry of University and Research)
+    - PNRR (National Recovery and Resilience Plan) scholarships
+    - University funding
+happiness_index: 6.4
 climate:
   type: Mediterranean
   average_temperature_summer_c: 29
   average_temperature_winter_c: 7
 contact_portals:
-  - title: "Universitaly"
-    url: "https://www.universitaly.it"
+  - title: Universitaly
+    url: https://www.universitaly.it
+description:
+  overview: Italy relies on national doctoral scholarships (borsa di dottorato) of €16,243 gross/year. After INPS Gestione Separata contributions (approx. 33% shared/individual), candidates receive around €1,180 to €1,200/month net. This scholarship is tax-free but lacks pension accrual.
+  pros:
+    - Doctoral scholarship is completely tax-free.
+    - Reasonable cost of living in southern and central regions.
+  cons:
+    - Net stipend is very low for northern cities like Milan/Turin.
+    - Highly document-heavy public administration bureaucracy.

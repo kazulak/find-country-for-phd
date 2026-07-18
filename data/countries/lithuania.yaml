@@ -40,3 +40,11 @@ climate:
 contact_portals:
   - title: Study in Lithuania
     url: https://www.studyin.lt
+description:
+  overview: 'Lithuania provides tax-free government scholarships for doctoral students: €930/month in the 1st year and €1,075/month for years 2 to 4. Rents in Vilnius are moderate.'
+  pros:
+    - Scholarship is completely tax-free.
+    - Low cost of living and modern digital infrastructure.
+  cons:
+    - No standard pension accrual or employee contract rights.
+    - Language barrier in municipal and off-campus offices.

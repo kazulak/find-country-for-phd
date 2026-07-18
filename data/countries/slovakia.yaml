@@ -41,3 +41,11 @@ climate:
 contact_portals:
   - title: Slovak Scholarship Portal
     url: https://www.scholarships.sk
+description:
+  overview: 'Slovakia offers standardized junior researcher scholarships: €1,025/month tax-free before passing the dissertation exam, and €1,195/month tax-free after passing the exam.'
+  pros:
+    - Significant stipend increase after the dissertation exam.
+    - Tax-free stipend status with health insurance included.
+  cons:
+    - No standard employee social benefits or pension accrual.
+    - Slow academic administrative processes.

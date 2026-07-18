@@ -429,6 +429,7 @@
 
 <script>
   import { countries } from '../data/countries';
+  import { calculateMatchScore } from '../../lib/score-engine.js';
 
   // Navigation DOM Elements
   const step0 = document.getElementById('step-0');
@@ -544,122 +545,39 @@
   }
 
   function calculateAndShowResults() {
-    // Scoring Algorithm
+    // Standardize user answers to priority weighting preferences
+    const preferences = {
+      isEuStudent: answers.citizenship === 'eu',
+      priorityStipend: answers.finance === 'salary' ? 5 : 3,
+      priorityCostOfLiving: answers.finance === 'living' ? 5 : 3,
+      priorityTuitionFees: answers.finance === 'tuition' ? 5 : 3,
+      requireEnglishFriendly: answers.language === 'english',
+      requireEmployeeStatus: answers.finance === 'salary',
+      preferShorterDuration: answers.structure === 'individual',
+      priorityHappiness: answers.lifestyle === 'wlb' ? 5 : 3,
+      visaImportance: answers.lifestyle === 'prestige' ? 5 : 3
+    };
+
     const matchedScores = countries.map(country => {
-      let score = 70; // Base score
-      let matchReason = '';
-
-      // 1. Citizenship & Visa/Tuition Fees
-      if (answers.citizenship === 'noneu') {
-        if (country.tuitionFeesNonEU > 10000) {
-          score -= 30; // High tuition penalty
-        }
-        if (country.visaComplexityNonEU === 'Hard') {
-          score -= 15;
-        } else if (country.visaComplexityNonEU === 'Easy') {
-          score += 10;
-        }
-      } else {
-        // EU Citizen
-        if (country.tuitionFeesEU === 0) {
-          score += 10;
-        }
-      }
-
-      // 2. Financial Preference
-      if (answers.finance === 'salary') {
-        if (country.status === 'Employed') {
-          score += 30;
-          matchReason = 'Full employment contract and security.';
-        }
-        if (country.netIncome >= 2500) {
-          score += 15;
-        } else if (country.netIncome < 1500) {
-          score -= 20;
-        }
-      } else if (answers.finance === 'living') {
-        if (country.costOfLiving < 1200) {
-          score += 30;
-          matchReason = 'Low cost of living, keeping budget stress down.';
-        }
-        if (country.netIncome - country.costOfLiving > 500) {
-          score += 10;
-        }
-        if (country.costOfLiving > 1800) {
-          score -= 20;
-        }
-      } else if (answers.finance === 'tuition') {
-        const fees = answers.citizenship === 'noneu' ? country.tuitionFeesNonEU : country.tuitionFeesEU;
-        if (fees === 0) {
-          score += 35;
-          matchReason = '100% free tuition fees.';
-        } else {
-          score -= 15;
-        }
-      }
-
-      // 3. Language preference
-      if (answers.language === 'english') {
-        if (country.englishFriendly >= 9) {
-          score += 30;
-          if (!matchReason) matchReason = 'High English proficiency inside and outside labs.';
-        } else if (country.englishFriendly <= 6) {
-          score -= 25;
-        }
-      } else if (answers.language === 'local') {
-        if (country.localLanguageImportance === 'High' || country.localLanguageImportance === 'Medium') {
-          score += 25;
-          if (!matchReason) matchReason = 'Perfect fit for practicing local languages.';
-        }
-      }
-
-      // 4. Academic Structure
-      if (answers.structure === 'structured') {
-        if (country.structure === 'Structured') {
-          score += 20;
-        } else if (country.structure === 'Individual') {
-          score -= 10;
-        }
-      } else if (answers.structure === 'individual') {
-        if (country.structure === 'Individual') {
-          score += 20;
-        } else if (country.structure === 'Structured') {
-          score -= 10;
-        }
-      }
-
-      // 5. Lifestyle & Quality of Life
-      if (answers.lifestyle === 'wlb') {
-        if (country.happinessIndex >= 8.3) {
-          score += 25;
-          if (!matchReason) matchReason = 'Tops student happiness and quality of life indices.';
-        }
-      } else if (answers.lifestyle === 'climate') {
-        if (country.region === 'Southern Europe') {
-          score += 30;
-          if (!matchReason) matchReason = 'Sunny climate and Southern European lifestyle.';
-        } else if (country.region === 'Northern Europe') {
-          score -= 15; // Dark winters penalty
-        }
-      } else if (answers.lifestyle === 'prestige') {
-        if (country.id === 'united-kingdom' || country.id === 'switzerland') {
-          score += 30;
-          if (!matchReason) matchReason = 'Host to highly prestigious global academic brands.';
-        }
-      }
-
-      // Clamp score
-      score = Math.max(10, Math.min(100, score));
-
+      const match = calculateMatchScore(country, preferences);
       return {
         country,
-        score,
-        reason: matchReason || 'Balanced academic and financial profile.'
+        eligible: match.eligible,
+        score: match.totalScore,
+        reason: match.explanation,
+        warnings: match.warnings,
+        confidence: match.confidence,
+        affordability_risk: match.affordability_risk
       };
     });
 
-    // Sort by score descending
-    matchedScores.sort((a, b) => b.score - a.score);
+    // Sort: eligible matches first, then by score descending, then by name alphabetically
+    matchedScores.sort((a, b) => {
+      if (a.eligible !== b.eligible) {
+        return a.eligible ? -1 : 1;
+      }
+      return b.score - a.score;
+    });
 
     // Render results list
     if (matchesOutputList) {
@@ -667,7 +585,10 @@
         let confidenceClass = 'badge-danger';
         let confidenceLabel = 'Low Fit';
 
-        if (item.score >= 80) {
+        if (!item.eligible) {
+          confidenceClass = 'badge-danger';
+          confidenceLabel = 'Disqualified';
+        } else if (item.score >= 80) {
           confidenceClass = 'badge-success';
           confidenceLabel = 'High Match';
         } else if (item.score >= 60) {
@@ -675,22 +596,31 @@
           confidenceLabel = 'Medium Match';
         }
 
+        const scoreHTML = item.eligible 
+          ? `<span class="match-percentage-badge">${item.score}% Match</span>`
+          : `<span class="match-percentage-badge disqualified-badge" style="background: rgba(239, 68, 68, 0.1); color: var(--accent); border-color: var(--accent); padding: 4px 8px; border-radius: 4px; font-size: 0.8rem; font-weight: 700;">DB Failed</span>`;
+
         return `
-          <div class="result-item glass-interactive">
+          <div class="result-item glass-interactive ${item.eligible ? '' : 'disqualified-item'}" style="${item.eligible ? '' : 'opacity: 0.65;'}">
             <span class="result-rank-num">#${idx + 1}</span>
             <span class="result-flag" aria-hidden="true">${item.country.flag}</span>
             <div class="result-content">
               <div class="result-name-row">
                 <h3 class="result-country-name">${item.country.name}</h3>
                 <span class="badge ${confidenceClass}">${confidenceLabel}</span>
-                <span class="match-percentage-badge">${item.score}% Match</span>
+                ${scoreHTML}
               </div>
               <p class="result-brief">
                 PhD Candidate Status: <strong>${item.country.status}</strong> | Net income: <strong>€${item.country.netIncome.toLocaleString()}/mo</strong> | Cost of living: <strong>~€${item.country.costOfLiving.toLocaleString()}/mo</strong>
               </p>
-              <div class="result-reasoning-tag">
+              <div class="result-reasoning-tag" style="margin-top: 6px;">
                 <span>${item.reason}</span>
               </div>
+              ${item.warnings.length > 0 ? `
+                <div class="result-warnings-tag" style="margin-top: 6px; font-size: 0.8rem; color: var(--accent); display: flex; gap: 4px; align-items: center;">
+                  <span>⚠️ ${item.warnings.join(' | ')}</span>
+                </div>
+              ` : ''}
             </div>
             <button class="btn btn-secondary btn-sm result-details-trigger" data-id="${item.country.id}">
               View Passport
