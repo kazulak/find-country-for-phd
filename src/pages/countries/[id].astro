@@ -1,0 +1,521 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { countries } from '../../data/countries';
+
+export async function getStaticPaths() {
+  return countries.map((country) => ({
+    params: { id: country.id },
+    props: { country },
+  }));
+}
+
+const { country } = Astro.props;
+
+// Calculate savings margin
+const savingsMargin = country.netIncome - country.costOfLiving;
+const isPositive = savingsMargin > 0;
+
+// Determine confidence level label
+let confidenceLabel = 'High';
+if (country.netIncome < 1000 || !country.overview) {
+  confidenceLabel = 'Limited';
+} else if (country.costOfLiving === 1200) {
+  confidenceLabel = 'Medium';
+}
+---
+
+<Layout title={`PhD in ${country.name} - Requirements, Salary & Costs`}>
+  <Header />
+
+  <main class="container country-page">
+    <!-- Back Navigation -->
+    <div class="nav-breadcrumbs">
+      <a href="/find-country-for-phd/" class="back-link">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px;"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        Back to all countries
+      </a>
+    </div>
+
+    <!-- Country Main Header -->
+    <header class="country-header">
+      <div class="header-main-row">
+        <span class="country-flag-large" aria-hidden="true">{country.flag}</span>
+        <div class="header-text">
+          <h1 class="country-title">PhD in {country.name}</h1>
+          <div class="meta-badges">
+            <span class="status-badge-large">{country.status} Model</span>
+            <span class="region-badge">{country.region}</span>
+            <span class={`confidence-badge conf-${confidenceLabel.toLowerCase()}`}>Data Confidence: {confidenceLabel}</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Content Sections Grid -->
+    <div class="country-details-grid">
+      
+      <!-- Column 1: Key Facts and Financials -->
+      <section class="details-main-column">
+        
+        <!-- Summary Section -->
+        <div class="content-card">
+          <h2>System Overview</h2>
+          <p class="overview-text">{country.overview}</p>
+          <div class="meta-info-row">
+            <span><strong>Data Last Verified:</strong> February 2026</span>
+            <span><strong>Academic Calendar:</strong> Semester-based</span>
+          </div>
+        </div>
+
+        <!-- Key Financial & Academic Facts -->
+        <div class="content-card">
+          <h2>Key Figures & Estimates</h2>
+          <div class="facts-table-grid">
+            <div class="fact-row">
+              <span class="fact-lbl">Typical Net Compensation</span>
+              <span class="fact-val">€{country.netIncome.toLocaleString()} / month</span>
+            </div>
+            <div class="fact-row">
+              <span class="fact-lbl">Estimated Living Cost</span>
+              <span class="fact-val">~€{country.costOfLiving.toLocaleString()} / month</span>
+            </div>
+            <div class="fact-row">
+              <span class="fact-lbl">Net Savings Potential</span>
+              <span class={`fact-val ${isPositive ? 'savings-positive' : 'savings-negative'}`}>
+                {isPositive ? `+€${savingsMargin.toLocaleString()}` : `-€${Math.abs(savingsMargin).toLocaleString()}`} / month
+              </span>
+            </div>
+            <div class="fact-row">
+              <span class="fact-lbl">Typical Program Duration</span>
+              <span class="fact-val">{country.duration}</span>
+            </div>
+            <div class="fact-row">
+              <span class="fact-lbl">Academic Structure</span>
+              <span class="fact-val">{country.structure} Program</span>
+            </div>
+            <div class="fact-row">
+              <span class="fact-lbl">Happiness Index</span>
+              <span class="fact-val">{country.happinessIndex} / 10</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Applicant Conditions -->
+        <div class="content-card">
+          <h2>Applicant Eligibility & Conditions</h2>
+          <div class="applicant-split">
+            <div class="eligibility-box">
+              <h3>EU / EEA Citizens</h3>
+              <ul>
+                <li><strong>Tuition Fees:</strong> {country.tuitionFeesEU === 0 ? 'Free (€0/yr)' : `€${country.tuitionFeesEU.toLocaleString()}/year`}</li>
+                <li><strong>Visa Requirement:</strong> None (Right of free movement and residency)</li>
+                <li><strong>Work Rights:</strong> Unlimited work rights during and post-study</li>
+              </ul>
+            </div>
+            <div class="eligibility-box">
+              <h3>Non-EU / International Citizens</h3>
+              <ul>
+                <li><strong>Tuition Fees:</strong> {country.tuitionFeesNonEU === 0 ? 'Free (€0/yr)' : `€${country.tuitionFeesNonEU.toLocaleString()}/year`}</li>
+                <li><strong>Visa Requirement:</strong> Student/Employment visa required</li>
+                <li><strong>Stay-Back Options:</strong> {country.visaComplexityNonEU === 'Easy' ? '36-month post-study visa available' : (country.visaComplexityNonEU === 'Medium' ? '12-month post-study search visa' : '6-month restricted stay-back')}</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- How PhDs are funded -->
+        <div class="content-card">
+          <h2>Funding Channels & Open Portals</h2>
+          <p class="section-paragraph">
+            Most PhD positions in {country.name} are funded via state scholarship programs or institutional university contracts. Here are the primary directories and search portals:
+          </p>
+          <div class="sources-list">
+            {country.contact_portals && country.contact_portals.length > 0 ? (
+              country.contact_portals.map((portal) => (
+                <a href={portal.url} target="_blank" rel="noopener noreferrer" class="portal-link-item">
+                  <span class="portal-title">{portal.title}</span>
+                  <span class="portal-url">{portal.url} ↗</span>
+                </a>
+              ))
+            ) : (
+              <p class="text-muted">No external portals listed. Apply directly to university research councils.</p>
+            )}
+          </div>
+        </div>
+
+      </section>
+
+      <!-- Column 2: Pros, Cons, and Cautions -->
+      <section class="details-sidebar-column">
+        
+        <!-- Warnings Banner -->
+        {country.warnings && country.warnings.length > 0 && (
+          <div class="warning-alert-card">
+            <h3>⚠️ Important Considerations</h3>
+            <ul>
+              {country.warnings.map((warning) => (
+                <li>{warning}</li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+        <!-- Advantages & Cautions -->
+        <div class="content-card">
+          <h2>Potential Advantages</h2>
+          <ul class="pros-bullet-list">
+            {country.pros.map((pro) => (
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" class="bullet-check"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>{pro}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div class="content-card">
+          <h2>Drawbacks & Risks</h2>
+          <ul class="cons-bullet-list">
+            {country.cons.map((con) => (
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" class="bullet-cross"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                <span>{con}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <!-- Sources & Assumptions -->
+        <div class="content-card sources-card">
+          <h2>Sources & Assumptions</h2>
+          <p><strong>Primary Sources:</strong> Combined national ministries of education, Eurostat living expenses index 2025/2026, and direct university doctoral school guidelines.</p>
+          <p><strong>Calculation Assumptions:</strong> Estimated net pay calculations assume a single candidate without dependants, standard tax rates, and mid-level stipend or contract agreements. Living costs represent student rent, insurance, and basics.</p>
+        </div>
+
+      </section>
+
+    </div>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .country-page {
+    padding-top: 20px;
+    padding-bottom: 60px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .nav-breadcrumbs {
+    margin-bottom: 24px;
+  }
+
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    border: 1px solid var(--border-color);
+    padding: 8px 16px;
+    border-radius: var(--radius-sm);
+    background: var(--bg-secondary);
+  }
+
+  .back-link:hover {
+    color: var(--primary-hover);
+    border-color: var(--primary);
+    background: var(--bg-tertiary);
+  }
+
+  .country-header {
+    margin-bottom: 30px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 24px;
+  }
+
+  .header-main-row {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+  }
+
+  .country-flag-large {
+    font-size: 4rem;
+    line-height: 1;
+  }
+
+  .country-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--text-primary);
+  }
+
+  .meta-badges {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 8px;
+  }
+
+  .status-badge-large, .region-badge, .confidence-badge {
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border-color);
+  }
+
+  .status-badge-large {
+    background: var(--primary-glow);
+    color: var(--primary-hover);
+    border-color: rgba(139, 92, 246, 0.2);
+  }
+
+  .region-badge {
+    background: var(--bg-tertiary);
+    color: var(--text-secondary);
+  }
+
+  .confidence-badge {
+    background: var(--bg-secondary);
+  }
+
+  .conf-high {
+    color: var(--success);
+    border-color: rgba(16, 185, 129, 0.2);
+  }
+
+  .conf-medium {
+    color: var(--warning);
+    border-color: rgba(245, 158, 11, 0.2);
+  }
+
+  .conf-limited {
+    color: var(--danger);
+    border-color: rgba(239, 68, 68, 0.2);
+  }
+
+  .country-details-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 30px;
+  }
+
+  .details-main-column, .details-sidebar-column {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .content-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 24px;
+  }
+
+  .content-card h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: var(--text-primary);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 8px;
+  }
+
+  .overview-text {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin-bottom: 16px;
+  }
+
+  .meta-info-row {
+    display: flex;
+    gap: 24px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+
+  .section-paragraph {
+    margin-bottom: 16px;
+  }
+
+  /* Facts Table Grid */
+  .facts-table-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .fact-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  }
+
+  .fact-row:last-child {
+    border-bottom: none;
+  }
+
+  .fact-lbl {
+    color: var(--text-secondary);
+    font-weight: 500;
+  }
+
+  .fact-val {
+    font-weight: 700;
+    color: var(--text-primary);
+  }
+
+  .savings-positive {
+    color: var(--success);
+  }
+
+  .savings-negative {
+    color: var(--danger);
+  }
+
+  /* Applicant Eligibility Split */
+  .applicant-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .eligibility-box {
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    padding: 16px;
+  }
+
+  .eligibility-box h3 {
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+    color: var(--text-primary);
+  }
+
+  .eligibility-box ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .eligibility-box li {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+  }
+
+  /* Warning Alert Card */
+  .warning-alert-card {
+    background: rgba(244, 63, 94, 0.05);
+    border: 1px solid rgba(244, 63, 94, 0.2);
+    border-radius: var(--radius-md);
+    padding: 24px;
+    color: var(--text-primary);
+  }
+
+  .warning-alert-card h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: var(--accent);
+  }
+
+  .warning-alert-card ul {
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .warning-alert-card li {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+  }
+
+  /* Pros / Cons lists */
+  .pros-bullet-list, .cons-bullet-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .pros-bullet-list li, .cons-bullet-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .bullet-check {
+    color: var(--success);
+    margin-top: 3px;
+    flex-shrink: 0;
+  }
+
+  .bullet-cross {
+    color: var(--accent);
+    margin-top: 3px;
+    flex-shrink: 0;
+  }
+
+  /* Portals / Sources Links */
+  .sources-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .portal-link-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid var(--border-color);
+    background: var(--bg-tertiary);
+    padding: 12px 16px;
+    border-radius: var(--radius-sm);
+    font-size: 0.95rem;
+  }
+
+  .portal-link-item:hover {
+    border-color: var(--primary);
+    background: var(--bg-secondary);
+  }
+
+  .portal-title {
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+
+  .portal-url {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+
+  .sources-card p {
+    font-size: 0.85rem;
+    margin-bottom: 8px;
+    line-height: 1.5;
+  }
+
+  .sources-card p:last-child {
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 820px) {
+    .country-details-grid {
+      grid-template-columns: 1fr;
+    }
+    .applicant-split {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

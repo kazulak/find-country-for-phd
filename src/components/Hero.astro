@@ -1,5 +1,10 @@
 ---
-// Hero.astro
+import { countries } from '../data/countries';
+
+const systemCount = countries.length;
+const peakNetIncome = Math.max(...countries.map(c => c.netIncome));
+const peakNetCountry = countries.find(c => c.netIncome === peakNetIncome)?.name || 'Switzerland';
+const freeTuitionCount = countries.filter(c => c.tuitionFeesEU === 0).length;
 ---
 
 <section class="hero-section glass">
@@ -32,19 +37,19 @@
   
   <div class="hero-stats">
     <div class="stat-card glass-interactive">
-      <span class="stat-number">9</span>
+      <span class="stat-number">{systemCount}</span>
       <span class="stat-label">Major PhD Systems</span>
       <span class="stat-detail">Structured & Individual</span>
     </div>
     <div class="stat-card glass-interactive">
-      <span class="stat-number">€4,100</span>
+      <span class="stat-number">€{peakNetIncome.toLocaleString()}</span>
       <span class="stat-label">Peak Net Stipend</span>
-      <span class="stat-detail">Switzerland (Average)</span>
+      <span class="stat-detail">{peakNetCountry} (Average)</span>
     </div>
     <div class="stat-card glass-interactive">
       <span class="stat-number">0€</span>
       <span class="stat-label">Tuition Fees</span>
-      <span class="stat-detail">DE, NL, SE, NO (Everyone)</span>
+      <span class="stat-detail">{freeTuitionCount} Countries Free for EU</span>
     </div>
     <div class="stat-card glass-interactive">
       <span class="stat-number">100%</span>

@@ -58,7 +58,31 @@ function validate() {
         });
         hasErrors = true;
       } else {
-        console.log(`[OK] File "${file}" is valid.`);
+        // Run automated consistency rules
+        const stipendVal = data.stipend?.amount_eur_per_year || 0;
+        const isTaxable = data.stipend?.is_taxable;
+        const netIncome = Math.round((stipendVal / 12) * (isTaxable ? (data.id === 'denmark' ? 0.65 : 0.8) : 1.0));
+        const costOfLiving = data.cost_of_living?.estimated_monthly_expenses_eur || 1200;
+        const disposableIncome = netIncome - costOfLiving;
+
+        if (disposableIncome < 0) {
+          console.error(`[ERROR] File "${file}": Negative disposable-income estimate (Net pay: €${netIncome}/mo, Living costs: €${costOfLiving}/mo)`);
+          hasErrors = true;
+        }
+
+        if (!data.contact_portals || data.contact_portals.length === 0) {
+          console.error(`[ERROR] File "${file}": Profile contains no source URLs or reference portals.`);
+          hasErrors = true;
+        }
+
+        if (!data.description || !data.description.overview) {
+          console.error(`[ERROR] File "${file}": Profile is missing the description overview text.`);
+          hasErrors = true;
+        }
+
+        if (!hasErrors) {
+          console.log(`[OK] File "${file}" is valid and passes all consistency rules.`);
+        }
       }
     } catch (e) {
       console.error(`[ERROR] File "${file}" failed to parse or read:`, e.message);

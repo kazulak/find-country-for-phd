@@ -11,6 +11,7 @@
     "data:build": "node scripts/build.js",
     "report": "node scripts/report.js",
     "test": "node scripts/test.js",
+    "test:e2e": "playwright test",
     "web:build": "astro build",
     "verify": "node scripts/verify-output.js"
   },
@@ -26,6 +27,7 @@
     "react-dom": "^19.2.7"
   },
   "devDependencies": {
+    "@playwright/test": "^1.61.1",
     "vite": "^5.0.0"
   }
 }

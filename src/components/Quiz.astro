@@ -622,32 +622,12 @@
                 </div>
               ` : ''}
             </div>
-            <button class="btn btn-secondary btn-sm result-details-trigger" data-id="${item.country.id}">
-              View Passport
-            </button>
+            <a href="/find-country-for-phd/countries/${item.country.id}/" class="btn btn-secondary btn-sm">
+              View details →
+            </a>
           </div>
         `;
       }).join('');
-
-      // Add click listeners to "View Passport" buttons in results
-      document.querySelectorAll('.result-details-trigger').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-          const id = (e.currentTarget as HTMLButtonElement).getAttribute('data-id');
-          if (id) {
-            // Trigger tab change to explorer and immediately click card or open modal
-            window.dispatchEvent(new CustomEvent('switch-tab', { detail: { tab: 'explorer' } }));
-            
-            // Wait slightly for DOM to render the tab, then open modal
-            setTimeout(() => {
-              // We can select the card on explorer and click it or just dispatch the custom event
-              const explorerCard = document.querySelector(`.country-card[data-country-id="${id}"]`) as HTMLElement;
-              if (explorerCard) {
-                explorerCard.click();
-              }
-            }, 100);
-          }
-        });
-      });
     }
 
     // Toggle UI blocks

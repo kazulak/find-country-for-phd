@@ -9,7 +9,7 @@ languages:
     english_friendly: true
     official: false
 stipend:
-  amount_eur_per_year: 7200
+  amount_eur_per_year: 8400
   is_taxable: false
   is_social_security_covered: false
   purchasing_power_index: 75

@@ -24,7 +24,7 @@ const savingsMargin = country.netIncome - country.costOfLiving;
 const isPositive = savingsMargin > 0;
 ---
 
-<div class="country-card glass-interactive gradient-border-card" data-country-id={country.id}>
+<article class="country-card glass-interactive gradient-border-card" data-country-id={country.id}>
   <div class="card-header">
     <div class="country-identity">
       <span class="country-flag" aria-hidden="true">{country.flag}</span>
@@ -91,24 +91,35 @@ const isPositive = savingsMargin > 0;
       <span class={`badge ${housingCrisisClass}`}>Housing: {country.housingCrisis}</span>
       {country.englishFriendly >= 8 && <span class="badge badge-secondary">English Ok</span>}
     </div>
-    <button class="view-details-btn btn btn-secondary btn-sm" data-id={country.id}>
-      Explore Details
-    </button>
+    <a href={`/find-country-for-phd/countries/${country.id}/`} class="view-details-link btn btn-secondary btn-sm stretched-link">
+      View {country.name} →
+    </a>
   </div>
-</div>
+</article>
 
 <style>
   .country-card {
+    position: relative;
     display: flex;
     flex-direction: column;
     padding: 24px;
     height: 100%;
-    cursor: pointer;
-    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+    transition: border-color var(--transition-normal), background var(--transition-normal);
+  }
+  
+  .stretched-link::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    content: "";
   }
   
   .country-card:hover {
-    transform: translateY(-4px);
+    border-color: var(--primary);
+    background: var(--bg-secondary);
   }
   
   .card-header {

@@ -43,9 +43,9 @@ const {
         if (storedTheme) {
           document.documentElement.setAttribute('data-theme', storedTheme);
         } else {
-          // Default to dark mode for premium aesthetics
-          document.documentElement.setAttribute('data-theme', 'dark');
-          localStorage.setItem('theme', 'dark');
+          // Default to light mode for clean research aesthetics
+          document.documentElement.setAttribute('data-theme', 'light');
+          localStorage.setItem('theme', 'light');
         }
       })();
     </script>
