@@ -9,23 +9,23 @@
         <span class="f-logo-icon">🇪🇺</span>
         <span class="f-logo-text">PhD<span class="highlight">Europe</span></span>
       </div>
-      <p class="footer-desc">An interactive, serverless decision platform mapping PhD funding models, employment benefits, and living cost sustainabilities for early-stage researchers in Europe.</p>
+      <p class="footer-desc">A side project that puts PhD pay, living costs, tuition and visa rules side by side, so picking where to spend the next three or four years is a little less of a guessing game.</p>
     </div>
-    
+
     <div class="footer-sources">
-      <h4 class="sources-title">Data Sources & Citations</h4>
+      <h2 class="sources-title">About the Data</h2>
       <ul class="sources-list">
-        <li>Academic salaries correspond to national collective agreements (e.g., German TV-L E13, Dutch VSNU, Swedish Doktorandtrappa, UKRI minimum stipends).</li>
-        <li>Tuition fee assessments reflect general state university guidelines for doctoral registrations as of 2025/2026.</li>
-        <li>Cost of living estimates compile rent, food, transport, and mandatory insurance data from Numbeo, national student unions, and university advice portals.</li>
+        <li>Pay comes from official pay tables and funder rules, cited on every country page. Tax and contribution rates come from the OECD, price levels from Eurostat, life satisfaction from the World Happiness Report.</li>
+        <li>Living costs, tuition and some programme details are still the author's estimates, and the site labels them as such. <a href={`https://github.com/kazulak/find-country-for-phd/blob/main/docs/DATA_SOURCES.md`} target="_blank" rel="noopener noreferrer">How the data is built</a>.</li>
+        <li>This is a snapshot, not an official source. Always confirm with the university or funder. Found a wrong number? <a href="https://github.com/kazulak/find-country-for-phd/issues" target="_blank" rel="noopener noreferrer">Open an issue</a>.</li>
       </ul>
     </div>
   </div>
-  
+
   <div class="footer-bottom">
     <div class="container bottom-container">
-      <span class="copyright">© 2026 PhD Europe Match Platform. No rights reserved (Public Domain).</span>
-      <span class="credit">Built entirely client-side with Astro & Vanilla JS.</span>
+      <span class="copyright">© 2026 <a href="https://github.com/kazulak" target="_blank" rel="noopener noreferrer">@kazulak</a> · <a href="https://github.com/kazulak/find-country-for-phd" target="_blank" rel="noopener noreferrer">Source on GitHub</a> · MIT License</span>
+      <span class="credit">Built with heavy AI assistance (Claude Code) · Astro, React and plain YAML.</span>
     </div>
   </div>
 </footer>
@@ -142,5 +142,10 @@
   
   .credit {
     font-weight: 400;
+  }
+
+  .site-footer a {
+    color: var(--primary-hover);
+    text-decoration: underline;
   }
 </style>

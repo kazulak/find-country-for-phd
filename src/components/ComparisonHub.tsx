@@ -44,6 +44,9 @@ export default function ComparisonHub() {
   const happinesses = [c1?.happinessIndex, c2?.happinessIndex, c3?.happinessIndex].filter(Boolean) as number[];
   const maxHappiness = happinesses.length > 0 ? Math.max(...happinesses) : 0;
 
+  const maxStay = Math.max(...[c1, c2, c3].filter(Boolean).map((c) => (c as Country).postStudyVisaMonths));
+  const isPricey = (c?: Country | null) => !!c && (c.priceLevel === 'High' || c.priceLevel === 'Very high');
+
   const renderBadge = (status?: string) => {
     if (!status) return '';
     let cls = 'badge-secondary';
@@ -189,7 +192,7 @@ export default function ComparisonHub() {
               <td colSpan={4}>Financial Framework</td>
             </tr>
             <tr>
-              <td className="param-name">Avg. Net Income</td>
+              <td className="param-name">Est. Net Pay</td>
               <td className={`param-val ${c1?.netIncome === maxSalary ? 'highlight-cell-green' : ''}`}>
                 €{c1?.netIncome.toLocaleString()}/mo
               </td>
@@ -242,51 +245,39 @@ export default function ComparisonHub() {
               <td colSpan={4}>Practical Life</td>
             </tr>
             <tr>
-              <td className="param-name">English Friendly</td>
-              <td className={`param-val ${c1 && c1.englishFriendly >= 9 ? 'highlight-cell-green' : ''}`}>
-                {c1?.englishFriendly} / 10
+              <td className="param-name">Post-PhD Stay (Non-EU)</td>
+              <td className={`param-val ${c1?.postStudyVisaMonths === maxStay ? 'highlight-cell-green' : ''}`}>
+                {c1?.postStudyVisaMonths} months
               </td>
-              <td className={`param-val ${c2 && c2.englishFriendly >= 9 ? 'highlight-cell-green' : ''}`}>
-                {c2?.englishFriendly} / 10
+              <td className={`param-val ${c2?.postStudyVisaMonths === maxStay ? 'highlight-cell-green' : ''}`}>
+                {c2?.postStudyVisaMonths} months
               </td>
-              <td className={`param-val ${c3 && c3.englishFriendly >= 9 ? 'highlight-cell-green' : ''}`}>
-                {c3 ? `${c3.englishFriendly} / 10` : <span className="empty-cell-text">—</span>}
-              </td>
-            </tr>
-            <tr>
-              <td className="param-name">Visa Complexity</td>
-              <td className={`param-val ${c1?.visaComplexityNonEU === 'Hard' ? 'highlight-cell-red' : ''}`}>
-                {c1?.visaComplexityNonEU}
-              </td>
-              <td className={`param-val ${c2?.visaComplexityNonEU === 'Hard' ? 'highlight-cell-red' : ''}`}>
-                {c2?.visaComplexityNonEU}
-              </td>
-              <td className={`param-val ${c3 && c3.visaComplexityNonEU === 'Hard' ? 'highlight-cell-red' : ''}`}>
-                {c3 ? c3.visaComplexityNonEU : <span className="empty-cell-text">—</span>}
+              <td className={`param-val ${c3 && c3.postStudyVisaMonths === maxStay ? 'highlight-cell-green' : ''}`}>
+                {c3 ? `${c3.postStudyVisaMonths} months` : <span className="empty-cell-text">—</span>}
               </td>
             </tr>
             <tr>
-              <td className="param-name">Housing Pressure</td>
-              <td className={`param-val ${c1 && (c1.housingCrisis === 'Critical' || c1.housingCrisis === 'High') ? 'highlight-cell-red' : ''}`}>
-                {c1?.housingCrisis}
+              <td className="param-name">Price Level (EU avg. = 100)</td>
+              <td className={`param-val ${isPricey(c1) ? 'highlight-cell-red' : ''}`}>
+                {c1?.priceIndex} ({c1?.priceLevel})
               </td>
-              <td className={`param-val ${c2 && (c2.housingCrisis === 'Critical' || c2.housingCrisis === 'High') ? 'highlight-cell-red' : ''}`}>
-                {c2?.housingCrisis}
+              <td className={`param-val ${isPricey(c2) ? 'highlight-cell-red' : ''}`}>
+                {c2?.priceIndex} ({c2?.priceLevel})
               </td>
-              <td className={`param-val ${c3 && (c3.housingCrisis === 'Critical' || c3.housingCrisis === 'High') ? 'highlight-cell-red' : ''}`}>
-                {c3 ? c3.housingCrisis : <span className="empty-cell-text">—</span>}
+              <td className={`param-val ${isPricey(c3) ? 'highlight-cell-red' : ''}`}>
+                {c3 ? `${c3.priceIndex} (${c3.priceLevel})` : <span className="empty-cell-text">—</span>}
               </td>
             </tr>
             <tr>
-              <td className="param-name">Happiness Index</td>
+              <td className="param-name">Life Satisfaction (0–10)</td>
               <td className={`param-val ${c1?.happinessIndex === maxHappiness ? 'highlight-cell-green' : ''}`}>
-                {c1?.happinessIndex} / 10
+                {c1?.happinessIndex ?? 'No data'}
               </td>
               <td className={`param-val ${c2?.happinessIndex === maxHappiness ? 'highlight-cell-green' : ''}`}>
-                {c2?.happinessIndex} / 10
+                {c2?.happinessIndex ?? 'No data'}
               </td>
               <td className={`param-val ${c3 && c3.happinessIndex === maxHappiness ? 'highlight-cell-green' : ''}`}>
-                {c3 ? `${c3.happinessIndex} / 10` : <span className="empty-cell-text">—</span>}
+                {c3 ? (c3.happinessIndex ?? 'No data') : <span className="empty-cell-text">—</span>}
               </td>
             </tr>
           </tbody>

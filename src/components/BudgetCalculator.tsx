@@ -127,14 +127,11 @@ export default function BudgetCalculator() {
 
   // Get available cities for selected country
   const availableCities = useMemo(() => {
-    if (CITIES_DATA[selectedCountryId]) {
-      return CITIES_DATA[selectedCountryId];
-    }
-    // Fallback dynamic options using capital
-    return [
-      { name: 'National Average', costOfLiving: country.costOfLiving },
-      { name: `${country.capital || 'Capital'} (Capital)`, costOfLiving: Math.round(country.costOfLiving * 1.2) }
-    ];
+    // The national average always comes from the canonical dataset; city
+    // figures are rough extras (fallback: capital at +20%).
+    const cities = CITIES_DATA[selectedCountryId]?.filter((c) => c.name !== 'National Average')
+      ?? [{ name: `${country.capital} (capital, est.)`, costOfLiving: Math.round(country.costOfLiving * 1.2) }];
+    return [{ name: 'National Average', costOfLiving: country.costOfLiving }, ...cities];
   }, [selectedCountryId, country]);
 
   // Load defaults when country or citizenship changes
@@ -443,34 +440,34 @@ export default function BudgetCalculator() {
             <div className="calculator-warnings" id="calc-warnings-panel">
               {netBalance < 0 && (
                 <div className="alert-box alert-box-danger">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style={{ flexShrink: 0, marginTop: '2px' }}><polygon points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2" /><line x1="12" y1="8" x2="12" y2="12" /><line x1="12" y1="16" x2="12.01" y2="16" /></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ flexShrink: 0, marginTop: '2px' }}><polygon points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2" /><line x1="12" y1="8" x2="12" y2="12" /><line x1="12" y1="16" x2="12.01" y2="16" /></svg>
                   <div>
                     <strong>Negative Monthly Cashflow!</strong> Your expenses exceed your funding. You must secure additional scholarships or family support to cover the difference of €{Math.abs(netBalance).toLocaleString()}/month.
                   </div>
                 </div>
               )}
 
-              {country.housingCrisis === 'Critical' && (
+              {country.priceLevel === 'Very high' && (
                 <div className="alert-box alert-box-danger">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style={{ flexShrink: 0, marginTop: '2px' }}><polygon points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2" /><line x1="12" y1="8" x2="12" y2="12" /><line x1="12" y1="16" x2="12.01" y2="16" /></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ flexShrink: 0, marginTop: '2px' }}><polygon points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2" /><line x1="12" y1="8" x2="12" y2="12" /><line x1="12" y1="16" x2="12.01" y2="16" /></svg>
                   <div>
-                    <strong>Critical Housing Shortage in {country.name}:</strong> Average rents might be significantly higher than budgeted if you can only find temporary listings. Budget at least 20-30% more for lodging to remain safe.
+                    <strong>Expensive country:</strong> prices in {country.name} are well above the EU average (index {country.priceIndex}). Big-city rents can be higher still, so leave yourself a buffer.
                   </div>
                 </div>
               )}
 
-              {country.housingCrisis === 'High' && (
+              {country.priceLevel === 'High' && (
                 <div className="alert-box alert-box-warning">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style={{ flexShrink: 0, marginTop: '2px' }}><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z" /><line x1="12" y1="9" x2="12" y2="13" /><line x1="12" y1="17" x2="12.01" y2="17" /></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ flexShrink: 0, marginTop: '2px' }}><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z" /><line x1="12" y1="9" x2="12" y2="13" /><line x1="12" y1="17" x2="12.01" y2="17" /></svg>
                   <div>
-                    <strong>Tight Housing Market:</strong> Rents in major university cities here are highly competitive. Start searching at least 4-6 months before your contract starts.
+                    <strong>Above-average prices:</strong> popular university cities fill up fast. Start the flat hunt early.
                   </div>
                 </div>
               )}
 
               {country.warnings.map((warn, index) => (
                 <div key={index} className="alert-box alert-box-info">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style={{ flexShrink: 0, marginTop: '2px' }}><circle cx="12" cy="12" r="10" /><line x1="12" y1="16" x2="12" y2="12" /><line x1="12" y1="8" x2="12.01" y2="8" /></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ flexShrink: 0, marginTop: '2px' }}><circle cx="12" cy="12" r="10" /><line x1="12" y1="16" x2="12" y2="12" /><line x1="12" y1="8" x2="12.01" y2="8" /></svg>
                   <div>
                     <strong>Notice:</strong> {warn}
                   </div>

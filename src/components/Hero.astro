@@ -2,59 +2,58 @@
 import { countries } from '../data/countries';
 
 const systemCount = countries.length;
-const peakNetIncome = Math.max(...countries.map(c => c.netIncome));
-const peakNetCountry = countries.find(c => c.netIncome === peakNetIncome)?.name || 'Switzerland';
+const topEarner = countries.reduce((a, b) => (b.netIncome > a.netIncome ? b : a));
 const freeTuitionCount = countries.filter(c => c.tuitionFeesEU === 0).length;
+const longestStay = Math.max(...countries.map(c => c.postStudyVisaMonths));
+const longestStayCountries = countries.filter(c => c.postStudyVisaMonths === longestStay).map(c => c.name);
 ---
 
 <section class="hero-section glass">
-  <div class="hero-glow"></div>
   <div class="hero-content">
     <div class="hero-badge badge badge-primary">
-      <span class="pulse-dot"></span>
-      Static & Serverless — Run Completely Local
+      Built by a PhD applicant, for PhD applicants
     </div>
-    
+
     <h1 class="hero-title">
-      Find Your Ideal <span class="gradient-text">PhD Destination</span> in Europe
+      Where in Europe should you do your <span class="gradient-text">PhD</span>?
     </h1>
-    
+
     <p class="hero-desc">
-      Pursuing a PhD is a major life decision. Avoid funding traps, high tuition fees, and housing crises. Compare salaries, living costs, visa complexities, and academic environments across European systems.
+      Pay, rent, tuition, visas and a bit of weather: rough numbers for {systemCount} European countries in one place. Treat it as a starting point for your own research, and check with the university before you sign anything.
     </p>
-    
+
     <div class="hero-actions">
       <button class="btn btn-primary btn-lg" id="hero-quiz-btn">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 12 2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 12 2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
         Take the Match Quiz
       </button>
       <button class="btn btn-secondary btn-lg" id="hero-compare-btn">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3h5v5"/><path d="M8 21H3v-5"/><path d="M12 12 3 21"/><path d="m19 5-7 7"/></svg>
-        Compare Systems
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 3h5v5"/><path d="M8 21H3v-5"/><path d="M12 12 3 21"/><path d="m19 5-7 7"/></svg>
+        Compare Countries
       </button>
     </div>
   </div>
-  
+
   <div class="hero-stats">
-    <div class="stat-card glass-interactive">
+    <div class="stat-card">
       <span class="stat-number">{systemCount}</span>
-      <span class="stat-label">Major PhD Systems</span>
-      <span class="stat-detail">Structured & Individual</span>
+      <span class="stat-label">Countries Compared</span>
+      <span class="stat-detail">Employee, fellowship & student models</span>
     </div>
-    <div class="stat-card glass-interactive">
-      <span class="stat-number">€{peakNetIncome.toLocaleString()}</span>
-      <span class="stat-label">Peak Net Stipend</span>
-      <span class="stat-detail">{peakNetCountry} (Average)</span>
+    <div class="stat-card">
+      <span class="stat-number">€{topEarner.netIncome.toLocaleString('en-GB')}</span>
+      <span class="stat-label">Highest Est. Net Pay / Month</span>
+      <span class="stat-detail">{topEarner.name} (before rent eats it)</span>
     </div>
-    <div class="stat-card glass-interactive">
-      <span class="stat-number">0€</span>
-      <span class="stat-label">Tuition Fees</span>
-      <span class="stat-detail">{freeTuitionCount} Countries Free for EU</span>
+    <div class="stat-card">
+      <span class="stat-number">{freeTuitionCount}</span>
+      <span class="stat-label">No Tuition for EU Citizens</span>
+      <span class="stat-detail">out of {systemCount} countries</span>
     </div>
-    <div class="stat-card glass-interactive">
-      <span class="stat-number">100%</span>
-      <span class="stat-label">Data Transparency</span>
-      <span class="stat-detail">Housing & Visa Warnings</span>
+    <div class="stat-card">
+      <span class="stat-number">{longestStay} mo</span>
+      <span class="stat-label">Longest Post-PhD Stay</span>
+      <span class="stat-detail">{longestStayCountries.join(' & ')} (non-EU grads)</span>
     </div>
   </div>
 </section>
@@ -71,16 +70,6 @@ const freeTuitionCount = countries.filter(c => c.tuitionFeesEU === 0).length;
     overflow: hidden;
   }
   
-  .hero-glow {
-    position: absolute;
-    top: -50%;
-    left: -20%;
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, var(--primary-glow) 0%, transparent 70%);
-    z-index: 0;
-    pointer-events: none;
-  }
   
   .hero-content {
     position: relative;
@@ -94,19 +83,8 @@ const freeTuitionCount = countries.filter(c => c.tuitionFeesEU === 0).length;
     margin-bottom: 20px;
     font-size: 0.8rem;
     padding: 6px 14px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
   }
   
-  .pulse-dot {
-    width: 8px;
-    height: 8px;
-    background-color: var(--primary-hover);
-    border-radius: var(--radius-full);
-    display: inline-block;
-    animation: pulseGlow 2s infinite;
-  }
   
   .hero-title {
     font-size: 3.2rem;

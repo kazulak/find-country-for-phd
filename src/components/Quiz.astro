@@ -1,5 +1,5 @@
 ---
-// Quiz.astro
+import { countries } from '../data/countries';
 ---
 
 <div class="quiz-container glass">
@@ -13,120 +13,120 @@
     </div>
   </div>
 
-  <!-- Step 0: Welcome / Intro -->
+  <!-- Step 0: Intro -->
   <div class="quiz-step active" id="step-0">
     <div class="quiz-welcome-content">
-      <span class="quiz-welcome-icon">🎓</span>
-      <h2>Discover Your Ideal PhD System</h2>
-      <p>European doctoral programs vary wildly. Some treat you as a full employee with a high salary and pension; others treat you as a student with tuition fees and limited rights. Take this 2-minute quiz to find the country that fits your goals.</p>
+      <span class="quiz-welcome-icon" aria-hidden="true">🎓</span>
+      <h3>Which PhD system fits you?</h3>
+      <p>European PhDs differ a lot. In some countries you're an employee with a salary and a pension; in others you're a student living on a stipend. Answer five quick questions and see how {countries.length} countries rank on the things you care about. It's a transparent weighted score, not a crystal ball.</p>
       <button class="btn btn-primary btn-lg" id="start-quiz-btn">
-        Start Matching Quiz
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 4px;"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        Start the Quiz
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 4px;" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
       </button>
     </div>
   </div>
 
   <!-- Step 1: Citizenship -->
   <div class="quiz-step" id="step-1" style="display: none;">
-    <h3 class="step-title">1. What is your citizenship status?</h3>
-    <p class="step-desc">This determines whether you face visa restrictions and international tuition rates.</p>
+    <h3 class="step-title">1. What is your citizenship?</h3>
+    <p class="step-desc">This decides tuition rates and whether post-PhD visa rules matter to you.</p>
     <div class="option-grid">
       <label class="option-card glass-interactive">
         <input type="radio" name="q-citizenship" value="eu" class="quiz-radio" />
         <span class="option-title">EU / EEA / Swiss Citizen</span>
-        <span class="option-desc">Free movement rights. Low or zero tuition fees in almost all countries. Easy visa-free entry.</span>
+        <span class="option-desc">Free movement: no visa, and usually no or low tuition fees.</span>
       </label>
       <label class="option-card glass-interactive">
         <input type="radio" name="q-citizenship" value="noneu" class="quiz-radio" />
         <span class="option-title">Non-EU / International Citizen</span>
-        <span class="option-desc">Requires a student or employment visa. Subject to international tuition fees in the UK.</span>
+        <span class="option-desc">You'll need a permit, some countries charge higher fees, and the post-PhD stay-back period counts.</span>
       </label>
     </div>
   </div>
 
   <!-- Step 2: Financial Model -->
   <div class="quiz-step" id="step-2" style="display: none;">
-    <h3 class="step-title">2. What is your financial priority?</h3>
-    <p class="step-desc">Do you seek a high-salary contract or an affordable, low-cost-of-living location?</p>
+    <h3 class="step-title">2. What's your top money priority?</h3>
+    <p class="step-desc">A PhD is years of your life. How should it pay?</p>
     <div class="option-grid">
       <label class="option-card glass-interactive">
         <input type="radio" name="q-finance" value="salary" class="quiz-radio" />
-        <span class="option-title">Maximizing Income (Employment)</span>
-        <span class="option-desc">Treat me like a staff member. I want a contract with a high salary, pension, and standard benefits.</span>
+        <span class="option-title">A Real Salary (Employment)</span>
+        <span class="option-desc">Treat me like staff: a contract, a pension and good pay. Only countries where PhDs are typically employed will qualify.</span>
       </label>
       <label class="option-card glass-interactive">
         <input type="radio" name="q-finance" value="living" class="quiz-radio" />
-        <span class="option-title">Low Cost of Living (Affordability)</span>
-        <span class="option-desc">I prefer affordable housing, cheap dining, and low expenses, even if the stipend is lower.</span>
+        <span class="option-title">Low Cost of Living</span>
+        <span class="option-desc">Cheap rent and groceries, even if the stipend is smaller.</span>
       </label>
       <label class="option-card glass-interactive">
         <input type="radio" name="q-finance" value="tuition" class="quiz-radio" />
-        <span class="option-title">Zero Tuition / Low Costs</span>
-        <span class="option-desc">I want to ensure there are no tuition fees whatsoever. Safe, funded, and balanced.</span>
+        <span class="option-title">No Tuition Fees</span>
+        <span class="option-desc">The PhD itself shouldn't cost me money.</span>
       </label>
     </div>
   </div>
 
-  <!-- Step 3: Language Requirement -->
+  <!-- Step 3: Duration -->
   <div class="quiz-step" id="step-3" style="display: none;">
-    <h3 class="step-title">3. What is your language preference?</h3>
-    <p class="step-desc">Are you willing to learn a local language for administration and daily life?</p>
+    <h3 class="step-title">3. How long do you want to be a PhD student?</h3>
+    <p class="step-desc">Typical programme length ranges from 3 to 4 years, depending on the country.</p>
     <div class="option-grid">
       <label class="option-card glass-interactive">
-        <input type="radio" name="q-language" value="english" class="quiz-radio" />
-        <span class="option-title">English-Only Academic Setting</span>
-        <span class="option-desc">I want to communicate, research, and socialize entirely in English without needing local languages.</span>
+        <input type="radio" name="q-duration" value="fast" class="quiz-radio" />
+        <span class="option-title">Three Years and Out</span>
+        <span class="option-desc">I'd like the shortest typical programme. Thesis first, sabbatical later.</span>
       </label>
       <label class="option-card glass-interactive">
-        <input type="radio" name="q-language" value="local" class="quiz-radio" />
-        <span class="option-title">Willing to learn local languages</span>
-        <span class="option-desc">I am happy to learn German, French, Spanish, or Italian to secure teaching gigs or integrate locally.</span>
+        <input type="radio" name="q-duration" value="any" class="quiz-radio" />
+        <span class="option-title">However Long Good Research Takes</span>
+        <span class="option-desc">Four years is fine if the project and the funding are right.</span>
       </label>
     </div>
   </div>
 
   <!-- Step 4: PhD Research Structure -->
   <div class="quiz-step" id="step-4" style="display: none;">
-    <h3 class="step-title">4. Which academic structure do you prefer?</h3>
-    <p class="step-desc">Structured cohorts with classes vs. individual self-driven research.</p>
+    <h3 class="step-title">4. Which kind of programme do you prefer?</h3>
+    <p class="step-desc">Some systems require coursework credits (ECTS); others are mostly independent research.</p>
     <div class="option-grid">
       <label class="option-card glass-interactive">
         <input type="radio" name="q-structure" value="structured" class="quiz-radio" />
-        <span class="option-title">Structured PhD Program</span>
-        <span class="option-desc">Cohort-based, mandatory coursework, clear milestones, and progress reviews.</span>
+        <span class="option-title">Structured Programme</span>
+        <span class="option-desc">Required coursework, a cohort and clear milestones.</span>
       </label>
       <label class="option-card glass-interactive">
         <input type="radio" name="q-structure" value="individual" class="quiz-radio" />
-        <span class="option-title">Individual / Traditional PhD</span>
-        <span class="option-desc">High independence, self-scheduled research, focused primarily on supervisor-candidate relationship.</span>
+        <span class="option-title">Individual / Traditional</span>
+        <span class="option-desc">Mostly independent research with your supervisor, little required coursework.</span>
       </label>
       <label class="option-card glass-interactive">
         <input type="radio" name="q-structure" value="nopref" class="quiz-radio" />
-        <span class="option-title">No Preference / Mixed</span>
-        <span class="option-desc">I am comfortable with either a structured program or a traditional model.</span>
+        <span class="option-title">No Preference</span>
+        <span class="option-desc">Either works for me.</span>
       </label>
     </div>
   </div>
 
-  <!-- Step 5: Lifestyle & Climate -->
+  <!-- Step 5: Life outside the lab -->
   <div class="quiz-step" id="step-5" style="display: none;">
-    <h3 class="step-title">5. What is your preferred quality of life focus?</h3>
-    <p class="step-desc">Choose what matters most in your daily life outside the lab.</p>
+    <h3 class="step-title">5. What matters most outside the lab?</h3>
+    <p class="step-desc">You will have a life outside the lab. Probably.</p>
     <div class="option-grid">
       <label class="option-card glass-interactive">
         <input type="radio" name="q-lifestyle" value="wlb" class="quiz-radio" />
-        <span class="option-title">High Work-Life Balance & Happiness</span>
-        <span class="option-desc">Excellent welfare, parental leave, equality, and high social happiness indices (Nordics / Swiss).</span>
+        <span class="option-title">Work-Life Balance & Happiness</span>
+        <span class="option-desc">Somewhere people report high life satisfaction.</span>
       </label>
       <label class="option-card glass-interactive">
         <input type="radio" name="q-lifestyle" value="climate" class="quiz-radio" />
-        <span class="option-title">Warm Climate & Mediterranean Culture</span>
-        <span class="option-desc">Sunny weather, active social scenes, relaxed pace, and outstanding cuisine (Spain / Italy).</span>
+        <span class="option-title">Sunshine, Please</span>
+        <span class="option-desc">Warm winters matter. Vitamin D counts as research infrastructure.</span>
       </label>
       <label class="option-card glass-interactive">
-        <input type="radio" name="q-lifestyle" value="prestige" class="quiz-radio" />
-        <span class="option-title">Global Academic Prestige</span>
-        <span class="option-desc">Focus on top-ranked university brand names, extensive alumni networks, and prestige (UK / Switzerland).</span>
+        <input type="radio" name="q-lifestyle" value="savings" class="quiz-radio" />
+        <span class="option-title">Money Left Over</span>
+        <span class="option-desc">The biggest gap between pay and living costs, so I can save or send money home.</span>
       </label>
     </div>
   </div>
@@ -134,36 +134,38 @@
   <!-- Quiz Results (Hidden initially) -->
   <div class="quiz-results" id="quiz-results" style="display: none;">
     <div class="results-header">
-      <span class="results-sparkle">✨</span>
-      <h2>Your Top PhD Country Matches</h2>
-      <p>Based on your citizenship, budget priorities, language choice, and academic goals:</p>
+      <span class="results-sparkle" aria-hidden="true">✨</span>
+      <h3>Your Matches</h3>
+      <p>Ranked by a weighted score of the figures in this dataset. Use it to start a shortlist, not to make the decision.</p>
     </div>
-    
+
     <div class="results-list" id="matches-output-list">
       <!-- Injected by Javascript -->
     </div>
-    
+
     <div class="results-actions">
       <button class="btn btn-secondary" id="restart-quiz-btn">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
         Retake Quiz
       </button>
       <button class="btn btn-primary" id="view-all-explorer-btn">
         Explore All Countries
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
       </button>
     </div>
   </div>
 
+  <p class="quiz-error" id="quiz-error" role="alert" hidden>Pick one of the options to continue.</p>
+
   <!-- Step Actions (Footer controls inside quiz) -->
   <div class="quiz-footer" id="quiz-footer" style="display: none;">
     <button class="btn btn-secondary" id="prev-step-btn" disabled>
-      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
       Back
     </button>
     <button class="btn btn-primary" id="next-step-btn">
       Next
-      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
     </button>
   </div>
 </div>
@@ -226,6 +228,20 @@
     margin: 0 auto;
   }
   
+  .quiz-welcome-content h3,
+  .results-header h3 {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: var(--text-primary);
+  }
+
+  .quiz-error {
+    color: var(--danger);
+    font-weight: 600;
+    text-align: right;
+    margin-top: 16px;
+  }
+
   .quiz-welcome-icon {
     font-size: 4rem;
     line-height: 1;
@@ -320,7 +336,6 @@
     line-height: 1;
     display: inline-block;
     margin-bottom: 12px;
-    filter: drop-shadow(0 0 10px rgba(251, 191, 36, 0.4));
   }
   
   .results-list {
@@ -330,7 +345,7 @@
     margin-bottom: 40px;
   }
   
-  .result-item {
+  .results-list :global(.result-item) {
     display: flex;
     align-items: center;
     padding: 24px;
@@ -342,7 +357,7 @@
     overflow: hidden;
   }
   
-  .result-rank-num {
+  .results-list :global(.result-rank-num) {
     font-family: var(--font-display);
     font-size: 2.2rem;
     font-weight: 800;
@@ -350,43 +365,43 @@
     min-width: 45px;
   }
   
-  .result-flag {
+  .results-list :global(.result-flag) {
     font-size: 3rem;
     line-height: 1;
   }
   
-  .result-content {
+  .results-list :global(.result-content) {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
     gap: 6px;
   }
   
-  .result-name-row {
+  .results-list :global(.result-name-row) {
     display: flex;
     align-items: center;
     gap: 12px;
     flex-wrap: wrap;
   }
   
-  .result-country-name {
+  .results-list :global(.result-country-name) {
     font-size: 1.35rem;
     font-weight: 700;
   }
   
-  .match-percentage-badge {
+  .results-list :global(.match-percentage-badge) {
     font-family: var(--font-display);
     font-weight: 700;
     color: var(--primary-hover);
     font-size: 1rem;
   }
   
-  .result-brief {
+  .results-list :global(.result-brief) {
     font-size: 0.9rem;
     color: var(--text-secondary);
   }
   
-  .result-reasoning-tag {
+  .results-list :global(.result-reasoning-tag) {
     font-size: 0.8rem;
     color: var(--text-muted);
     font-style: italic;
@@ -396,7 +411,7 @@
     gap: 4px;
   }
   
-  .result-reasoning-tag::before {
+  .results-list :global(.result-reasoning-tag::before) {
     content: "💡";
   }
   
@@ -411,12 +426,12 @@
     .quiz-container {
       padding: 24px;
     }
-    .result-item {
+    .results-list :global(.result-item) {
       flex-direction: column;
       align-items: flex-start;
       gap: 16px;
     }
-    .result-rank-num {
+    .results-list :global(.result-rank-num) {
       position: absolute;
       top: 16px;
       right: 16px;
@@ -444,6 +459,11 @@
   const restartBtn = document.getElementById('restart-quiz-btn');
   const viewAllBtn = document.getElementById('view-all-explorer-btn');
   const matchesOutputList = document.getElementById('matches-output-list');
+  const quizError = document.getElementById('quiz-error');
+
+  const escapeHtml = (value: unknown) => String(value)
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
 
   let currentStep = 0;
   const totalSteps = 5;
@@ -452,7 +472,7 @@
   const answers = {
     citizenship: '',
     finance: '',
-    language: '',
+    duration: '',
     structure: '',
     lifestyle: ''
   };
@@ -461,7 +481,7 @@
     currentStep = 1;
     answers.citizenship = '';
     answers.finance = '';
-    answers.language = '';
+    answers.duration = '';
     answers.structure = '';
     answers.lifestyle = '';
     
@@ -478,6 +498,7 @@
   }
 
   function showStep(step: number) {
+    if (quizError) quizError.hidden = true;
     // Hide all steps
     for (let i = 0; i <= totalSteps; i++) {
       const el = document.getElementById(`step-${i}`);
@@ -510,7 +531,7 @@
     const checkedOption = document.querySelector(`input[name="${currentQuestionName}"]:checked`) as HTMLInputElement;
 
     if (!checkedOption) {
-      alert("Please select one of the options to proceed.");
+      if (quizError) quizError.hidden = false;
       return;
     }
 
@@ -537,7 +558,7 @@
     switch(step) {
       case 1: return 'q-citizenship';
       case 2: return 'q-finance';
-      case 3: return 'q-language';
+      case 3: return 'q-duration';
       case 4: return 'q-structure';
       case 5: return 'q-lifestyle';
       default: return '';
@@ -545,17 +566,19 @@
   }
 
   function calculateAndShowResults() {
-    // Standardize user answers to priority weighting preferences
+    // Every answer maps to a preference the score engine actually uses.
+    // Chosen priorities weigh 5, the rest 1, so the answers visibly move the ranking.
     const preferences = {
       isEuStudent: answers.citizenship === 'eu',
-      priorityStipend: answers.finance === 'salary' ? 5 : 3,
-      priorityCostOfLiving: answers.finance === 'living' ? 5 : 3,
-      priorityTuitionFees: answers.finance === 'tuition' ? 5 : 3,
-      requireEnglishFriendly: answers.language === 'english',
+      priorityStipend: answers.finance === 'salary' ? 5 : 1,
       requireEmployeeStatus: answers.finance === 'salary',
-      preferShorterDuration: answers.structure === 'individual',
-      priorityHappiness: answers.lifestyle === 'wlb' ? 5 : 3,
-      visaImportance: answers.lifestyle === 'prestige' ? 5 : 3
+      priorityCostOfLiving: answers.finance === 'living' ? 5 : 1,
+      priorityTuitionFees: answers.finance === 'tuition' ? 5 : 1,
+      preferShorterDuration: answers.duration === 'fast',
+      preferStructure: answers.structure === 'structured' ? 'Structured' : (answers.structure === 'individual' ? 'Individual' : null),
+      priorityHappiness: answers.lifestyle === 'wlb' ? 5 : 1,
+      preferWarmClimate: answers.lifestyle === 'climate',
+      prioritySavings: answers.lifestyle === 'savings' ? 5 : 1
     };
 
     const matchedScores = countries.map(country => {
@@ -565,9 +588,7 @@
         eligible: match.eligible,
         score: match.totalScore,
         reason: match.explanation,
-        warnings: match.warnings,
-        confidence: match.confidence,
-        affordability_risk: match.affordability_risk
+        warnings: match.warnings
       };
     });
 
@@ -582,48 +603,47 @@
     // Render results list
     if (matchesOutputList) {
       matchesOutputList.innerHTML = matchedScores.map((item, idx) => {
-        let confidenceClass = 'badge-danger';
-        let confidenceLabel = 'Low Fit';
+        let fitClass = 'badge-danger';
+        let fitLabel = 'Weak Match';
 
         if (!item.eligible) {
-          confidenceClass = 'badge-danger';
-          confidenceLabel = 'Disqualified';
+          fitLabel = 'Excluded';
         } else if (item.score >= 80) {
-          confidenceClass = 'badge-success';
-          confidenceLabel = 'High Match';
+          fitClass = 'badge-success';
+          fitLabel = 'Strong Match';
         } else if (item.score >= 60) {
-          confidenceClass = 'badge-warning';
-          confidenceLabel = 'Medium Match';
+          fitClass = 'badge-warning';
+          fitLabel = 'Decent Match';
         }
 
         const scoreHTML = item.eligible 
           ? `<span class="match-percentage-badge">${item.score}% Match</span>`
-          : `<span class="match-percentage-badge disqualified-badge" style="background: rgba(239, 68, 68, 0.1); color: var(--accent); border-color: var(--accent); padding: 4px 8px; border-radius: 4px; font-size: 0.8rem; font-weight: 700;">DB Failed</span>`;
+          : `<span class="match-percentage-badge disqualified-badge" style="background: rgba(239, 68, 68, 0.1); color: var(--accent); border-color: var(--accent); padding: 4px 8px; border-radius: 4px; font-size: 0.8rem; font-weight: 700;">Excluded</span>`;
 
         return `
           <div class="result-item glass-interactive ${item.eligible ? '' : 'disqualified-item'}" style="${item.eligible ? '' : 'opacity: 0.65;'}">
             <span class="result-rank-num">#${idx + 1}</span>
-            <span class="result-flag" aria-hidden="true">${item.country.flag}</span>
+            <span class="result-flag" aria-hidden="true">${escapeHtml(item.country.flag)}</span>
             <div class="result-content">
               <div class="result-name-row">
-                <h3 class="result-country-name">${item.country.name}</h3>
-                <span class="badge ${confidenceClass}">${confidenceLabel}</span>
+                <h4 class="result-country-name">${escapeHtml(item.country.name)}</h4>
+                <span class="badge ${fitClass}">${fitLabel}</span>
                 ${scoreHTML}
               </div>
               <p class="result-brief">
-                PhD Candidate Status: <strong>${item.country.status}</strong> | Net income: <strong>€${item.country.netIncome.toLocaleString()}/mo</strong> | Cost of living: <strong>~€${item.country.costOfLiving.toLocaleString()}/mo</strong>
+                Status: <strong>${escapeHtml(item.country.status)}</strong> | Est. net pay: <strong>€${item.country.netIncome.toLocaleString()}/mo</strong> | Cost of living: <strong>~€${item.country.costOfLiving.toLocaleString()}/mo</strong>
               </p>
               <div class="result-reasoning-tag" style="margin-top: 6px;">
-                <span>${item.reason}</span>
+                <span>${escapeHtml(item.reason)}</span>
               </div>
               ${item.warnings.length > 0 ? `
                 <div class="result-warnings-tag" style="margin-top: 6px; font-size: 0.8rem; color: var(--accent); display: flex; gap: 4px; align-items: center;">
-                  <span>⚠️ ${item.warnings.join(' | ')}</span>
+                  <span>⚠️ ${escapeHtml(item.warnings.join(' | '))}</span>
                 </div>
               ` : ''}
             </div>
-            <a href="/find-country-for-phd/countries/${item.country.id}/" class="btn btn-secondary btn-sm">
-              View details →
+            <a href="${import.meta.env.BASE_URL}countries/${encodeURIComponent(item.country.id)}/" class="btn btn-secondary btn-sm">
+              View ${escapeHtml(item.country.name)} →
             </a>
           </div>
         `;

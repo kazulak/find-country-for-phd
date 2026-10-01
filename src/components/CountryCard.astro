@@ -7,16 +7,16 @@ interface Props {
 
 const { country } = Astro.props;
 
-// Determine housing warning color
-const housingCrisisColors = {
-  None: 'badge-success',
+// Price level relative to the EU average
+const priceLevelColors: Record<Country['priceLevel'], string> = {
+  'Very low': 'badge-success',
   Low: 'badge-success',
-  Medium: 'badge-warning',
+  Average: 'badge-warning',
   High: 'badge-danger',
-  Critical: 'badge-danger'
+  'Very high': 'badge-danger'
 };
 
-const housingCrisisClass = housingCrisisColors[country.housingCrisis] || 'badge-secondary';
+const priceLevelClass = priceLevelColors[country.priceLevel];
 
 // Calculate stipend to expense ratio
 const expenseRatio = Math.round((country.costOfLiving / country.netIncome) * 100);
@@ -40,7 +40,7 @@ const isPositive = savingsMargin > 0;
     <!-- Quick Stats Grid -->
     <div class="quick-stats">
       <div class="q-stat">
-        <span class="q-label">Avg. Net Income</span>
+        <span class="q-label">Est. Net Pay</span>
         <span class="q-value text-glow-primary">€{country.netIncome.toLocaleString()}/mo</span>
       </div>
       <div class="q-stat">
@@ -52,7 +52,7 @@ const isPositive = savingsMargin > 0;
     <!-- Stipend-to-Expense Visual Bar -->
     <div class="ratio-wrapper">
       <div class="ratio-label-row">
-        <span class="ratio-title">Stipend Consumption</span>
+        <span class="ratio-title">Pay Spent on Living Costs</span>
         <span class={`ratio-percentage ${isPositive && expenseRatio < 80 ? 'text-success' : 'text-warning'}`}>{expenseRatio}%</span>
       </div>
       <div class="progress-bar-bg">
@@ -81,15 +81,14 @@ const isPositive = savingsMargin > 0;
       </div>
       <div class="bullet-item">
         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="bullet-icon"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        <span>Visa Complexity: <strong class="capitalize">{country.visaComplexityNonEU}</strong></span>
+        <span>Post-PhD stay (non-EU): <strong>{country.postStudyVisaMonths} months</strong></span>
       </div>
     </div>
   </div>
 
   <div class="card-footer">
     <div class="card-badges">
-      <span class={`badge ${housingCrisisClass}`}>Housing: {country.housingCrisis}</span>
-      {country.englishFriendly >= 8 && <span class="badge badge-secondary">English Ok</span>}
+      <span class={`badge ${priceLevelClass}`} title="Price level relative to the EU average">Prices: {country.priceLevel}</span>
     </div>
     <a href={`/find-country-for-phd/countries/${country.id}/`} class="view-details-link btn btn-secondary btn-sm stretched-link">
       View {country.name} →

@@ -17,8 +17,8 @@ import CountryCard from './CountryCard.astro';
         <select id="filter-status" class="form-select">
           <option value="all">All Statuses</option>
           <option value="Employed">Employed (Contract)</option>
-          <option value="Fellowship">Fellowship (Borsa)</option>
-          <option value="Student">Student Status</option>
+          <option value="Fellowship">Fellowship (stipend + social security)</option>
+          <option value="Student">Student (stipend only)</option>
         </select>
       </div>
 
@@ -34,11 +34,12 @@ import CountryCard from './CountryCard.astro';
       </div>
 
       <div class="filter-group">
-        <label for="filter-language" class="filter-label">Language Level</label>
-        <select id="filter-language" class="form-select">
-          <option value="all">All Language profiles</option>
-          <option value="english-friendly">English Only Friendly (8+)</option>
-          <option value="local-required">Local Language Needed</option>
+        <label for="filter-price" class="filter-label">Price Level (vs. EU avg.)</label>
+        <select id="filter-price" class="form-select">
+          <option value="all">Any price level</option>
+          <option value="cheap">Below average</option>
+          <option value="Average">Around average</option>
+          <option value="expensive">Above average</option>
         </select>
       </div>
     </div>
@@ -47,7 +48,7 @@ import CountryCard from './CountryCard.astro';
   <!-- Country Grid -->
   <div class="explorer-grid grid-3" id="country-grid">
     {countries.map((country) => (
-      <div class="grid-item-wrapper" data-status={country.status} data-region={country.region} data-english={country.englishFriendly} data-name={country.name.toLowerCase()}>
+      <div class="grid-item-wrapper" data-status={country.status} data-region={country.region} data-price={country.priceLevel} data-name={country.name.toLowerCase()}>
         <CountryCard country={country} />
       </div>
     ))}
@@ -160,7 +161,7 @@ import CountryCard from './CountryCard.astro';
   const searchInput = document.getElementById('explorer-search') as HTMLInputElement;
   const filterStatus = document.getElementById('filter-status') as HTMLSelectElement;
   const filterRegion = document.getElementById('filter-region') as HTMLSelectElement;
-  const filterLanguage = document.getElementById('filter-language') as HTMLSelectElement;
+  const filterPrice = document.getElementById('filter-price') as HTMLSelectElement;
   const gridItems = document.querySelectorAll('.grid-item-wrapper');
   const noResults = document.getElementById('explorer-no-results');
 
@@ -169,7 +170,7 @@ import CountryCard from './CountryCard.astro';
     const searchVal = searchInput?.value.toLowerCase().trim() || '';
     const statusVal = filterStatus?.value || 'all';
     const regionVal = filterRegion?.value || 'all';
-    const languageVal = filterLanguage?.value || 'all';
+    const priceVal = filterPrice?.value || 'all';
     
     let visibleCount = 0;
 
@@ -178,20 +179,18 @@ import CountryCard from './CountryCard.astro';
       const name = htmlItem.getAttribute('data-name') || '';
       const status = htmlItem.getAttribute('data-status') || '';
       const region = htmlItem.getAttribute('data-region') || '';
-      const english = parseInt(htmlItem.getAttribute('data-english') || '0', 10);
+      const price = htmlItem.getAttribute('data-price') || '';
       
       const matchesSearch = name.includes(searchVal);
       const matchesStatus = statusVal === 'all' || status === statusVal;
       const matchesRegion = regionVal === 'all' || region === regionVal;
       
-      let matchesLanguage = true;
-      if (languageVal === 'english-friendly') {
-        matchesLanguage = english >= 8;
-      } else if (languageVal === 'local-required') {
-        matchesLanguage = english < 8;
-      }
+      const matchesPrice = priceVal === 'all'
+        || (priceVal === 'cheap' && (price === 'Low' || price === 'Very low'))
+        || (priceVal === 'expensive' && (price === 'High' || price === 'Very high'))
+        || price === priceVal;
 
-      if (matchesSearch && matchesStatus && matchesRegion && matchesLanguage) {
+      if (matchesSearch && matchesStatus && matchesRegion && matchesPrice) {
         htmlItem.style.display = 'block';
         visibleCount++;
       } else {
@@ -208,5 +207,5 @@ import CountryCard from './CountryCard.astro';
   searchInput?.addEventListener('input', applyFilters);
   filterStatus?.addEventListener('change', applyFilters);
   filterRegion?.addEventListener('change', applyFilters);
-  filterLanguage?.addEventListener('change', applyFilters);
+  filterPrice?.addEventListener('change', applyFilters);
 </script>
