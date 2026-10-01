@@ -28,3 +28,7 @@ Thumbs.db
 .astro/
 test-results/
 playwright-report/
+
+# Generated from data/countries/*.yaml by `npm run data:build`
+public/data/countries.json
+public/data/meta.json
