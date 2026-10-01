@@ -1,27 +1,7 @@
 import { defineConfig, devices } from '@playwright/test';
-import net from 'net';
 
-// Helper to check if the Astro dev server is already running on port 4321
-const checkPort = () => {
-  return new Promise((resolve) => {
-    const server = net.createServer();
-    server.once('error', (err) => {
-      if (err.code === 'EADDRINUSE') {
-        resolve(true);
-      } else {
-        resolve(false);
-      }
-    });
-    server.once('listening', () => {
-      server.close();
-      resolve(false);
-    });
-    server.listen(4321);
-  });
-};
-
-const portInUse = await checkPort();
-
+// E2E tests run against the production build (`npm run build` first), so they
+// exercise exactly what gets deployed to GitHub Pages.
 export default defineConfig({
   testDir: './tests/e2e',
   timeout: 30 * 1000,
@@ -43,10 +23,10 @@ export default defineConfig({
       use: { ...devices['Desktop Chrome'] },
     },
   ],
-  webServer: portInUse ? undefined : {
-    command: 'npm run dev',
+  webServer: {
+    command: 'npm run preview',
     url: 'http://localhost:4321/find-country-for-phd/',
-    reuseExistingServer: true,
-    timeout: 15 * 1000,
+    reuseExistingServer: !process.env.CI,
+    timeout: 30 * 1000,
   },
 });

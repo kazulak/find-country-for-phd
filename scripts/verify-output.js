@@ -1,72 +1,48 @@
 import fs from 'fs';
 import path from 'path';
+import { fileURLToPath } from 'url';
 
-const __dirname = path.dirname(new URL(import.meta.url).pathname);
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const distDir = path.join(__dirname, '../dist');
+const countriesDir = path.join(__dirname, '../data/countries');
 
+// Sanity-checks the static site in dist/ before it gets deployed.
 function verify() {
-  console.log('\n--- Step 4: Verifying Static Output ---');
-  let hasErrors = false;
+  console.log('Verifying static output in dist/ ...');
+  const errors = [];
+  const check = (ok, message) => { if (ok) console.log(`[OK] ${message}`); else errors.push(message); };
 
-  const filesToCheck = [
-    { name: 'index.html', required: true, checkJson: false },
-    { name: '.nojekyll', required: true, checkJson: false },
-    { name: 'countries.json', required: true, checkJson: true },
-    { name: 'countries.min.json', required: true, checkJson: true },
-    { name: 'search-index.json', required: true, checkJson: true }
-  ];
+  check(fs.existsSync(path.join(distDir, 'index.html')), 'index.html exists');
+  check(fs.existsSync(path.join(distDir, '.nojekyll')), '.nojekyll exists');
 
-  for (const file of filesToCheck) {
-    const filePath = path.join(distDir, file.name);
-    if (!fs.existsSync(filePath)) {
-      console.error(`[ERROR] Missing required file: ${file.name}`);
-      hasErrors = true;
-      continue;
-    }
-
-    const stats = fs.statSync(filePath);
-    if (stats.size === 0 && file.name !== '.nojekyll') {
-      console.error(`[ERROR] File is empty: ${file.name}`);
-      hasErrors = true;
-      continue;
-    }
-
-    console.log(`[OK] Found ${file.name} (${stats.size} bytes)`);
-
-    if (file.checkJson) {
-      try {
-        const content = fs.readFileSync(filePath, 'utf8');
-        JSON.parse(content);
-        console.log(`[OK] File ${file.name} parses as valid JSON.`);
-      } catch (e) {
-        console.error(`[ERROR] File ${file.name} is not valid JSON: ${e.message}`);
-        hasErrors = true;
-      }
-    }
-  }
-
-  // Check that the assets folder exists and is not empty
   const assetsDir = path.join(distDir, 'assets');
-  if (!fs.existsSync(assetsDir)) {
-    console.error('[ERROR] Missing assets/ directory');
-    hasErrors = true;
-  } else {
-    const assetsFiles = fs.readdirSync(assetsDir);
-    if (assetsFiles.length === 0) {
-      console.error('[ERROR] Assets directory is empty');
-      hasErrors = true;
-    } else {
-      console.log(`[OK] Assets directory contains ${assetsFiles.length} files.`);
-    }
+  check(fs.existsSync(assetsDir) && fs.readdirSync(assetsDir).length > 0, 'assets/ is non-empty');
+
+  const expectedIds = fs.readdirSync(countriesDir)
+    .filter(f => f.endsWith('.yaml') || f.endsWith('.yml'))
+    .map(f => path.basename(f, path.extname(f)));
+
+  const dataPath = path.join(distDir, 'data', 'countries.json');
+  let published = [];
+  try {
+    published = JSON.parse(fs.readFileSync(dataPath, 'utf8'));
+    check(published.length === expectedIds.length, `data/countries.json has ${published.length}/${expectedIds.length} countries`);
+  } catch (e) {
+    check(false, `data/countries.json is readable JSON (${e.message})`);
   }
 
-  if (hasErrors) {
+  const missingPages = expectedIds.filter(id => !fs.existsSync(path.join(distDir, 'countries', id, 'index.html')));
+  check(missingPages.length === 0,
+    missingPages.length === 0
+      ? `all ${expectedIds.length} country pages built`
+      : `missing country pages: ${missingPages.join(', ')}`);
+
+  if (errors.length > 0) {
+    errors.forEach(e => console.error(`[ERROR] ${e}`));
     console.error('\nStatic output verification failed!');
     process.exit(1);
-  } else {
-    console.log('\nStatic output successfully verified!');
-    process.exit(0);
   }
+  console.log('\nStatic output successfully verified!');
 }
 
 verify();

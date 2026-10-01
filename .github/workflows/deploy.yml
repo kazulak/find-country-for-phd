@@ -33,8 +33,14 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Validate & Build Project
+      - name: Validate, Test & Build
         run: npm run build
+
+      - name: Install Playwright Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: End-to-End Tests
+        run: npm run test:e2e
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
