@@ -9,16 +9,21 @@ languages:
     english_friendly: true
     official: false
 stipend:
-  amount_eur_per_year: 10800
+  amount_eur_per_year: 10100
   is_taxable: false
   is_social_security_covered: true
-  purchasing_power_index: 94
+  deductions_percent: 11.26
+  local:
+    amount: 3570.5
+    currency: PLN
+    per: month
+    description: 'Statutory minimum before the mid-term evaluation: 37% of the professor base (PLN 9,650 in 2026); 57% (PLN 5,500.50) afterwards. Many universities pay more.'
 tuition_fees:
   eu_students_eur_per_year: 0
   non_eu_students_eur_per_year: 0
 cost_of_living:
   estimated_monthly_expenses_eur: 750
-  index_relative_to_eu_average: 72
+  index_relative_to_eu_average: 70
 phd_system:
   typical_duration_years: 4
   is_employee_status: false
@@ -26,26 +31,43 @@ phd_system:
   required_ects: 0
 visa_and_work_rights:
   requires_visa_for_non_eu: true
-  post_study_work_visa_duration_months: 12
+  post_study_work_visa_duration_months: 9
   work_hours_limit_per_week: 20
 funding_availability:
   rate: high
   main_sources:
     - NCN (National Science Centre Poland)
     - State-funded Doctoral Schools
-happiness_index: 6.12
+happiness_index: 6.77
 climate:
   type: Temperate / Continental
-  average_temperature_summer_c: 24
-  average_temperature_winter_c: -2
+  average_temperature_summer_c: 20
+  average_temperature_winter_c: 0
 contact_portals:
   - title: Study in Poland
     url: https://studyinpoland.pl
 description:
-  overview: Poland utilizes a two-tier stipend structure for Doctoral Schools. In the first two years (before mid-term evaluation), candidates receive a lower tier of ~3,467 PLN gross/month (~€800 gross, ~€720 net after pension/social security deductions). After a successful mid-term evaluation (next two years), the stipend increases to ~5,340 PLN gross/month (~€1,240 gross, ~€1,100 net). Stipends are tax-free but subject to social security pension deductions.
+  overview: Poland pays doctoral-school stipends in two tiers. Before the mid-term evaluation (roughly years 1-2) the statutory minimum is 37% of the professor base salary, PLN 3,570.50 gross/month in 2026 (about EUR 840). After a successful evaluation it rises to 57%, PLN 5,500.50 gross/month (about EUR 1,300). Many universities pay above the minimum (e.g. PLN 4,700 before the evaluation at Wrocław University of Science and Technology). Stipends are free of income tax, but pension and disability contributions (about 11%) are deducted.
   pros:
     - Stipend increases significantly after the 2-year mid-term evaluation.
     - No tuition fees for doctoral school programs.
   cons:
-    - Stipend in the first two years is tight for renting in Warsaw.
+    - 'The first-two-years stipend is very low: hard to live on without savings, a side job or a university top-up, especially in Warsaw or Kraków.'
     - Subject to social security pension deductions since 2019 reform.
+sources:
+  - topic: pay
+    title: 'Wrocław University of Science and Technology Doctoral School: stipend (gross/net examples)'
+    url: https://szd.pwr.edu.pl/rekrutacja/stypendium
+    accessed: '2026-09-29'
+  - topic: pay
+    title: 'Gdańsk University of Technology: stipend rates from 1 January 2026 (Dz.U. 2026 poz. 525)'
+    url: https://pg.edu.pl/szkola-doktorska/2026-04/zmiana-wysokosci-stypendiow-doktoranckich-od-1-stycznia-2026-r
+    accessed: '2026-09-29'
+  - topic: deductions
+    title: 'PWr example: PLN 4,700 gross = PLN 4,171 net (pension and disability contributions, 11.26%)'
+    url: https://szd.pwr.edu.pl/rekrutacja/stypendium
+    accessed: '2026-09-29'
+  - topic: visa
+    title: 'EMN Inform: Attracting and retaining international researchers (2022), Table 1'
+    url: https://www.emn.lt/uploads/Products/product_1934/EMN_inform_international_researchers.2022.pdf
+    accessed: '2026-09-29'

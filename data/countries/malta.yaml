@@ -9,43 +9,66 @@ languages:
     english_friendly: true
     official: true
 stipend:
-  amount_eur_per_year: 13200
-  is_taxable: false
+  amount_eur_per_year: 28800
+  is_taxable: true
   is_social_security_covered: false
-  purchasing_power_index: 86
+  deductions_percent: 23.2
+  local:
+    amount: 28829
+    currency: EUR
+    per: year
+    description: University of Malta Research Support Officer II, a typical project-funded PhD post (rate from 1 Jan 2024). The national TESS scheme covers fees plus at most EUR 2,500/year maintenance.
 tuition_fees:
   eu_students_eur_per_year: 0
   non_eu_students_eur_per_year: 8500
 cost_of_living:
   estimated_monthly_expenses_eur: 1100
-  index_relative_to_eu_average: 95
+  index_relative_to_eu_average: 93
 phd_system:
   typical_duration_years: 3.5
-  is_employee_status: false
+  is_employee_status: true
   academic_calendar: Semester (Oct-Jan / Feb-Jun)
   required_ects: 0
 visa_and_work_rights:
   requires_visa_for_non_eu: true
-  post_study_work_visa_duration_months: 6
+  post_study_work_visa_duration_months: 9
   work_hours_limit_per_week: 20
 funding_availability:
   rate: low
   main_sources:
     - Ministry for Education Malta
     - University Research Grants
-happiness_index: 6.3
+happiness_index: 6.44
 climate:
   type: Subtropical / Mediterranean
-  average_temperature_summer_c: 31
-  average_temperature_winter_c: 12
+  average_temperature_summer_c: 27
+  average_temperature_winter_c: 14
 contact_portals:
   - title: University of Malta PhDs
     url: https://www.um.edu.mt
 description:
-  overview: Malta funds PhD candidates via University of Malta or MGSS scholarships, providing €8,500 to €11,000/year tax-free (~€700–€900/month net).
+  overview: Most funded PhDs in Malta are project posts at the University of Malta (for example Research Support Officer II, about EUR 28,800/year from 2024). The national TESS scheme covers tuition and at most EUR 2,500/year of maintenance, so it is not a full stipend on its own.
   pros:
     - English is an official language, making integration immediate.
     - Tax-free stipend status.
   cons:
     - Stipend is low relative to rising rental costs in expat hubs.
     - Limited research funding for large lab materials.
+sources:
+  - topic: pay
+    title: 'EURAXESS: University of Malta Research Support Officer II (EUR 28,829 from 1 Jan 2024)'
+    url: https://euraxess.ec.europa.eu/jobs/143628
+    accessed: '2026-09-29'
+  - topic: funding
+    title: 'Malta TESS: Tertiary Education Scholarships Scheme'
+    url: https://myscholarship.gov.mt/en/services/tess-tertiary-education-scholarships-scheme/
+    accessed: '2026-09-29'
+  - topic: deductions
+    title: 'MTCA: income tax rates for individuals 2026 (single rates)'
+    url: https://mtca.gov.mt/personal-tax/tax-rates/tax-ratesindividuals/2026
+    accessed: '2026-09-29'
+    note: 'At EUR 28,829: income tax EUR 3,807 + 10% class 1 social security (about EUR 2,883) = about 23.2%. Malta is not in OECD Taxing Wages.'
+  - topic: visa
+    title: 'EMN Inform: Attracting and retaining international researchers (2022), Table 1'
+    url: https://www.emn.lt/uploads/Products/product_1934/EMN_inform_international_researchers.2022.pdf
+    accessed: '2026-09-29'

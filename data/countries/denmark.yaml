@@ -9,16 +9,21 @@ languages:
     english_friendly: true
     official: false
 stipend:
-  amount_eur_per_year: 52800
+  amount_eur_per_year: 51200
   is_taxable: true
   is_social_security_covered: true
-  purchasing_power_index: 128
+  deductions_percent: 32.5
+  local:
+    amount: 31845
+    currency: DKK
+    per: month
+    description: AC agreement pay scale 4 (DKK 30,264.08) + PhD supplement (DKK 1,580.92) from 1 Aug 2026; employer pension is paid on top
 tuition_fees:
   eu_students_eur_per_year: 0
   non_eu_students_eur_per_year: 0
 cost_of_living:
   estimated_monthly_expenses_eur: 1700
-  index_relative_to_eu_average: 140
+  index_relative_to_eu_average: 143
 phd_system:
   typical_duration_years: 3
   is_employee_status: true
@@ -33,19 +38,32 @@ funding_availability:
   main_sources:
     - Independent Research Fund Denmark
     - State-funded PhD positions
-happiness_index: 7.58
+happiness_index: 7.54
 climate:
   type: Maritime / Cool
-  average_temperature_summer_c: 21
-  average_temperature_winter_c: 0
+  average_temperature_summer_c: 18
+  average_temperature_winter_c: 2
 contact_portals:
   - title: Study in Denmark
     url: https://studyindenmark.dk
 description:
-  overview: Salaried employee contracts with high starting salaries (~€2,500 to €3,000/month net) and a generous 17.1% university-paid pension scheme.
+  overview: PhD fellows are salaried employees under the AC collective agreement. In 2026 the first-year pay is about DKK 31,800/month (base pay plus a PhD supplement), plus a 17.1% employer pension contribution on top. Taxes are high, but so is the starting point.
   pros:
     - High net starting salaries and excellent pension schemes.
     - Very flat hierarchy and high work autonomy.
   cons:
     - High personal income taxes.
     - Very high cost of living and housing shortages in Copenhagen.
+sources:
+  - topic: pay
+    title: 'Aarhus University Graduate School Arts: PhD pay calculations as of 1 August 2026'
+    url: https://phd.arts.au.dk/fileadmin/phd.arts.au.dk/ARTS/Rules_and_forms/Loenoversigt_UK.pdf
+    accessed: '2026-09-29'
+  - topic: deductions
+    title: 'OECD Taxing Wages: income tax + employee SSC, single person at 67% of average wage (refreshed by npm run data:refresh)'
+    url: https://data-explorer.oecd.org/vis?df%5Bag%5D=OECD.CTP.TPS&df%5Bid%5D=DSD_TAX_WAGES_COMP%40DF_TW_COMP
+    accessed: '2026-09-29'
+  - topic: visa
+    title: 'New to Denmark: 3-year job-seeking permit after a completed PhD'
+    url: https://nyidanmark.dk/pl-PL/You-want-to-apply/Study/Study---job-seeking/Study---3-years-job-seeking
+    accessed: '2026-09-29'

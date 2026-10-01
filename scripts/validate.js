@@ -1,10 +1,11 @@
 import fs from 'fs';
 import path from 'path';
+import { fileURLToPath } from 'url';
 import yaml from 'js-yaml';
 import Ajv from 'ajv';
 import addFormats from 'ajv-formats';
 
-const __dirname = path.dirname(new URL(import.meta.url).pathname);
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const schemaPath = path.join(__dirname, '../schemas/country.schema.json');
 const countriesDir = path.join(__dirname, '../data/countries');
 
@@ -39,6 +40,8 @@ function validate() {
 
   for (const file of files) {
     const filePath = path.join(countriesDir, file);
+    let fileHasErrors = false;
+    const fail = (msg) => { console.error(msg); fileHasErrors = true; hasErrors = true; };
     try {
       const content = fs.readFileSync(filePath, 'utf8');
       const data = yaml.load(content);
@@ -46,47 +49,46 @@ function validate() {
       // Validate ID matches filename (without extension)
       const expectedId = path.basename(file, path.extname(file));
       if (data.id !== expectedId) {
-        console.error(`[ERROR] File "${file}": 'id' field "${data.id}" does not match filename "${expectedId}"`);
-        hasErrors = true;
+        fail(`[ERROR] File "${file}": 'id' field "${data.id}" does not match filename "${expectedId}"`);
       }
 
       const valid = validateFn(data);
       if (!valid) {
-        console.error(`[ERROR] File "${file}" failed schema validation:`);
+        fail(`[ERROR] File "${file}" failed schema validation:`);
         validateFn.errors.forEach(err => {
           console.error(`  - Path: "${err.instancePath}" | Message: ${err.message} | Params: ${JSON.stringify(err.params)}`);
         });
-        hasErrors = true;
       } else {
-        // Run automated consistency rules
-        const stipendVal = data.stipend?.amount_eur_per_year || 0;
-        const isTaxable = data.stipend?.is_taxable;
-        const netIncome = Math.round((stipendVal / 12) * (isTaxable ? (data.id === 'denmark' ? 0.65 : 0.8) : 1.0));
-        const costOfLiving = data.cost_of_living?.estimated_monthly_expenses_eur || 1200;
-        const disposableIncome = netIncome - costOfLiving;
+        // Run automated consistency rules. Pay that doesn't cover living costs is not an
+        // error: it's a fact the site reports (see lib/country-model.js).
+        const topics = new Set((data.sources || []).map(s => s.topic));
+        for (const required of ['pay', 'visa']) {
+          if (!topics.has(required)) fail(`[ERROR] File "${file}": no source with topic "${required}".`);
+        }
 
-        if (disposableIncome < 0) {
-          console.error(`[ERROR] File "${file}": Negative disposable-income estimate (Net pay: €${netIncome}/mo, Living costs: €${costOfLiving}/mo)`);
-          hasErrors = true;
+        // EUR amounts need no exchange rate, so their conversion can be checked offline.
+        const local = data.stipend.local;
+        if (local?.currency === 'EUR') {
+          const expected = Math.round((local.amount * (local.per === 'month' ? (local.payments_per_year ?? 12) : 1)) / 100) * 100;
+          if (expected !== data.stipend.amount_eur_per_year) {
+            fail(`[ERROR] File "${file}": amount_eur_per_year (${data.stipend.amount_eur_per_year}) does not match stipend.local (${expected}). Run \`npm run data:refresh\`.`);
+          }
         }
 
         if (!data.contact_portals || data.contact_portals.length === 0) {
-          console.error(`[ERROR] File "${file}": Profile contains no source URLs or reference portals.`);
-          hasErrors = true;
+          fail(`[ERROR] File "${file}": Profile contains no source URLs or reference portals.`);
         }
 
         if (!data.description || !data.description.overview) {
-          console.error(`[ERROR] File "${file}": Profile is missing the description overview text.`);
-          hasErrors = true;
+          fail(`[ERROR] File "${file}": Profile is missing the description overview text.`);
         }
 
-        if (!hasErrors) {
+        if (!fileHasErrors) {
           console.log(`[OK] File "${file}" is valid and passes all consistency rules.`);
         }
       }
     } catch (e) {
-      console.error(`[ERROR] File "${file}" failed to parse or read:`, e.message);
-      hasErrors = true;
+      fail(`[ERROR] File "${file}" failed to parse or read: ${e.message}`);
     }
   }
 

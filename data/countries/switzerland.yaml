@@ -15,16 +15,21 @@ languages:
     english_friendly: true
     official: false
 stipend:
-  amount_eur_per_year: 52000
+  amount_eur_per_year: 53400
   is_taxable: true
   is_social_security_covered: true
-  purchasing_power_index: 135
+  deductions_percent: 15
+  local:
+    amount: 50000
+    currency: CHF
+    per: year
+    description: SNSF minimum doctoral salary from 1 Jan 2026 (range CHF 50,000-55,000)
 tuition_fees:
   eu_students_eur_per_year: 1400
   non_eu_students_eur_per_year: 1400
 cost_of_living:
   estimated_monthly_expenses_eur: 2100
-  index_relative_to_eu_average: 155
+  index_relative_to_eu_average: 184
 phd_system:
   typical_duration_years: 4
   is_employee_status: true
@@ -40,21 +45,34 @@ funding_availability:
     - SNSF (Swiss National Science Foundation)
     - University assistantships
     - EU Horizon programs
-happiness_index: 7.24
+happiness_index: 7.02
 climate:
   type: Continental/Alpine
-  average_temperature_summer_c: 23
-  average_temperature_winter_c: -1
+  average_temperature_summer_c: 19
+  average_temperature_winter_c: 1
 contact_portals:
   - title: Swiss National Science Foundation
     url: https://www.snf.ch
   - title: Study in Switzerland
     url: https://www.studyinswitzerland.plus
 description:
-  overview: Swiss National Science Foundation (SNSF) salaries start at CHF 48,000 gross/year in year 1 (~CHF 4,000/mo gross, ~CHF 3,300/mo net) up to CHF 50,000 in year 4. Major institutions (ETH Zurich, EPFL) offer higher scales up to CHF 85,000/year gross (~CHF 5,200/mo net). Social security contributions are automatically deducted, and tuition fees are low, but the cost of living is extremely high.
+  overview: Doctoral candidates are employed by their university or institute. The Swiss National Science Foundation raised its minimum doctoral salary to CHF 50,000/year from January 2026 (range CHF 50,000-55,000); ETH Zurich, EPFL and some universities set their own, often higher, scales. Living costs are the highest in Europe.
   pros:
-    - Highest nominal PhD salaries in Europe (up to CHF 5,200/mo net).
+    - Highest nominal PhD salaries in Europe.
     - World-renowned research labs and infrastructure (ETH/EPFL).
   cons:
     - Extremely high cost of living (rent, groceries, health insurance).
     - Strict immigration quotas for non-EU/EFTA graduates.
+sources:
+  - topic: pay
+    title: 'SNSF: salary increase for doctoral students'
+    url: https://www.snf.ch/en/kHunysxdKHpyUL8s/news/salary-increase-for-doctoral-students
+    accessed: '2026-09-29'
+  - topic: deductions
+    title: 'OECD Taxing Wages: income tax + employee SSC, single person at 67% of average wage (refreshed by npm run data:refresh)'
+    url: https://data-explorer.oecd.org/vis?df%5Bag%5D=OECD.CTP.TPS&df%5Bid%5D=DSD_TAX_WAGES_COMP%40DF_TW_COMP
+    accessed: '2026-09-29'
+  - topic: visa
+    title: 'ETH Zurich: residence permit after graduation for job seeking (6 months)'
+    url: https://ethz.ch/en/studies/international/end-studies/residence-permit-job-seeking.html
+    accessed: '2026-09-29'

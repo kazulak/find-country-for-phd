@@ -9,16 +9,21 @@ languages:
     english_friendly: true
     official: false
 stipend:
-  amount_eur_per_year: 54000
+  amount_eur_per_year: 47000
   is_taxable: true
   is_social_security_covered: true
-  purchasing_power_index: 135
+  deductions_percent: 23.5
+  local:
+    amount: 550800
+    currency: NOK
+    per: year
+    description: PhD research fellow (code 1017) salary advertised by NTNU and UiO in 2026; the central minimum was removed on 1 May 2026
 tuition_fees:
   eu_students_eur_per_year: 0
   non_eu_students_eur_per_year: 0
 cost_of_living:
   estimated_monthly_expenses_eur: 1800
-  index_relative_to_eu_average: 155
+  index_relative_to_eu_average: 134
 phd_system:
   typical_duration_years: 3.5
   is_employee_status: true
@@ -33,7 +38,7 @@ funding_availability:
   main_sources:
     - Research Council of Norway
     - University PhD Positions (Employed)
-happiness_index: 7.39
+happiness_index: 7.24
 climate:
   type: Nordic / Temperate
   average_temperature_summer_c: 18
@@ -42,10 +47,27 @@ contact_portals:
   - title: Study in Norway
     url: https://www.studyinnorway.no
 description:
-  overview: PhD candidates are hired as public servants (Stipendiat, code 1017). Starting salaries begin at scale 54, yielding ~532,000 NOK gross/year (~44,300 NOK gross/month, resulting in ~30,000 to 32,000 NOK/mo net, approx. €2,750 net/month). Enjoy full employee benefits and state pension accrual.
+  overview: PhD research fellows (stipendiat, code 1017) are public employees. Universities such as NTNU and UiO advertise NOK 550,800 gross/year in 2026; the central minimum was removed from the state agreement in May 2026, so salaries are now set per university. Full employee benefits and state pension apply.
   pros:
     - Excellent starting salary with full public servant benefits.
     - Exceptional work-life balance and generous parental leave.
   cons:
     - Very high cost of living, especially for services and eating out.
     - Highly competitive application process.
+sources:
+  - topic: pay
+    title: 'Tekna: pay for research fellows in the state sector'
+    url: https://www.tekna.no/lonn-og-arbeidsvilkar/stipendiat--phd/lonn-for-stipendiater-i-statlig-sektor/
+    accessed: '2026-09-29'
+  - topic: pay
+    title: 'Jobbnorge: PhD research fellow positions (NOK 550,800)'
+    url: https://www.jobbnorge.no/en/available-jobs/joblisting/pdf/304877
+    accessed: '2026-09-29'
+  - topic: deductions
+    title: 'OECD Taxing Wages: income tax + employee SSC, single person at 67% of average wage (refreshed by npm run data:refresh)'
+    url: https://data-explorer.oecd.org/vis?df%5Bag%5D=OECD.CTP.TPS&df%5Bid%5D=DSD_TAX_WAGES_COMP%40DF_TW_COMP
+    accessed: '2026-09-29'
+  - topic: visa
+    title: 'UDI: job seekers (up to one year after completing education in Norway)'
+    url: https://www.udi.no/en/want-to-apply/work-immigration/job-seekers/
+    accessed: '2026-09-29'

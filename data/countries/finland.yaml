@@ -12,16 +12,21 @@ languages:
     english_friendly: true
     official: false
 stipend:
-  amount_eur_per_year: 30000
+  amount_eur_per_year: 32400
   is_taxable: true
   is_social_security_covered: true
-  purchasing_power_index: 105
+  deductions_percent: 22.6
+  local:
+    amount: 2700
+    currency: EUR
+    per: month
+    description: Typical starting salary in University of Helsinki and Tampere ads (job requirement level 2 + personal component); Aalto pays more
 tuition_fees:
   eu_students_eur_per_year: 0
   non_eu_students_eur_per_year: 0
 cost_of_living:
   estimated_monthly_expenses_eur: 1200
-  index_relative_to_eu_average: 122
+  index_relative_to_eu_average: 127
 phd_system:
   typical_duration_years: 4
   is_employee_status: true
@@ -36,19 +41,32 @@ funding_availability:
   main_sources:
     - Academy of Finland
     - University graduate school funding
-happiness_index: 7.8
+happiness_index: 7.76
 climate:
   type: Subarctic / Cold
-  average_temperature_summer_c: 20
-  average_temperature_winter_c: -6
+  average_temperature_summer_c: 18
+  average_temperature_winter_c: -3
 contact_portals:
   - title: Study in Finland
     url: https://www.studyinfinland.fi
 description:
-  overview: PhD researchers are hired on university contracts starting at ~€2,200 gross/month (~€1,650 net) up to €3,000 gross/month. Covers health insurance and public pension accumulation.
+  overview: Doctoral researchers are employed by the university under the national university salary system (job requirement levels 2-4 plus a personal performance component). Starting salaries in 2026 ads are around EUR 2,500-2,800 gross/month at most universities, and higher at Aalto. Employment includes occupational health care and pension accrual.
   pros:
     - Salaried contract with full pension and social security.
     - Excellent work-life balance and pristine nature.
   cons:
     - Cold, dark winters.
     - High tax rates on salaries.
+sources:
+  - topic: pay
+    title: Aalto University doctoral researcher ad (base EUR 3,075/month; other universities start around EUR 2,500-2,800)
+    url: https://www.aalto.fi/en/open-positions/doctoral-researcher-engage-project
+    accessed: '2026-09-29'
+  - topic: deductions
+    title: 'OECD Taxing Wages: income tax + employee SSC, single person at 67% of average wage (refreshed by npm run data:refresh)'
+    url: https://data-explorer.oecd.org/vis?df%5Bag%5D=OECD.CTP.TPS&df%5Bid%5D=DSD_TAX_WAGES_COMP%40DF_TW_COMP
+    accessed: '2026-09-29'
+  - topic: visa
+    title: 'Migri: seeking work after graduation or completion of research (up to 2 years)'
+    url: https://migri.fi/en/seeking-work-after-graduation-or-completion-of-research
+    accessed: '2026-09-29'

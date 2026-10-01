@@ -9,16 +9,21 @@ languages:
     english_friendly: true
     official: false
 stipend:
-  amount_eur_per_year: 10200
+  amount_eur_per_year: 13200
   is_taxable: false
   is_social_security_covered: false
-  purchasing_power_index: 82
+  deductions_percent: 0
+  local:
+    amount: 1097.5
+    currency: EUR
+    per: month
+    description: Full-time doctoral scholarship before the dissertation exam (EUR 1,278 afterwards), tax-free
 tuition_fees:
   eu_students_eur_per_year: 0
   non_eu_students_eur_per_year: 2500
 cost_of_living:
   estimated_monthly_expenses_eur: 700
-  index_relative_to_eu_average: 74
+  index_relative_to_eu_average: 81
 phd_system:
   typical_duration_years: 3.5
   is_employee_status: false
@@ -33,19 +38,28 @@ funding_availability:
   main_sources:
     - Slovak Ministry of Education
     - National scholarship scheme
-happiness_index: 6.25
+happiness_index: 6.26
 climate:
   type: Continental / Temperate
-  average_temperature_summer_c: 25
-  average_temperature_winter_c: -1
+  average_temperature_summer_c: 23
+  average_temperature_winter_c: 1
 contact_portals:
   - title: Slovak Scholarship Portal
     url: https://www.scholarships.sk
 description:
-  overview: 'Slovakia offers standardized junior researcher scholarships: €1,025/month tax-free before passing the dissertation exam, and €1,195/month tax-free after passing the exam.'
+  overview: 'Full-time doctoral students receive a tax-free scholarship tied to university pay scales: EUR 1,097.50/month before the dissertation exam and EUR 1,278 afterwards (2026).'
   pros:
     - Significant stipend increase after the dissertation exam.
     - Tax-free stipend status with health insurance included.
   cons:
     - No standard employee social benefits or pension accrual.
     - Slow academic administrative processes.
+sources:
+  - topic: pay
+    title: 'Slovak Ministry of Education: doctoral scholarships increase'
+    url: https://www.minedu.sk/doktorandi-si-prilepsia-o-desiatky-eur-mesacne/
+    accessed: '2026-09-29'
+  - topic: visa
+    title: 'EMN Inform: Attracting and retaining international researchers (2022), Table 1'
+    url: https://www.emn.lt/uploads/Products/product_1934/EMN_inform_international_researchers.2022.pdf
+    accessed: '2026-09-29'

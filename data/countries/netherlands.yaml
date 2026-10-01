@@ -9,16 +9,22 @@ languages:
     english_friendly: true
     official: false
 stipend:
-  amount_eur_per_year: 35000
+  amount_eur_per_year: 44700
   is_taxable: true
   is_social_security_covered: true
-  purchasing_power_index: 112
+  deductions_percent: 18.3
+  local:
+    amount: 3204
+    currency: EUR
+    per: month
+    payments_per_year: 13.96
+    description: CAO NU PhD scale, year 1 (EUR 3,204 from 1 Jul 2026), plus 8% holiday allowance and 8.3% year-end bonus
 tuition_fees:
   eu_students_eur_per_year: 0
   non_eu_students_eur_per_year: 0
 cost_of_living:
   estimated_monthly_expenses_eur: 1500
-  index_relative_to_eu_average: 118
+  index_relative_to_eu_average: 121
 phd_system:
   typical_duration_years: 4
   is_employee_status: true
@@ -35,21 +41,38 @@ funding_availability:
     - Direct university funding (employee positions)
     - ERC grants
     - Industrial partnerships
-happiness_index: 7.4
+happiness_index: 7.22
 climate:
   type: Temperate Maritime
-  average_temperature_summer_c: 21
-  average_temperature_winter_c: 3
+  average_temperature_summer_c: 18
+  average_temperature_winter_c: 4
 contact_portals:
   - title: AcademicTransfer (Dutch PhD Jobs)
     url: https://www.academictransfer.com
   - title: Study in NL
     url: https://www.studyinnl.org
 description:
-  overview: Fully salaried employee status governed by the Dutch CAO-NU. Salary scales start at scale P1 (~€2,770 gross/mo, ~€2,200 net/mo) and scale up to scale P4 in year 4 (~€3,530 gross/mo, ~€2,750 net/mo). Includes 8% holiday allowance, 8.3% year-end bonus, and full pension accumulation.
+  overview: PhD candidates are salaried employees under the Dutch university collective agreement (CAO NU). From July 2026 the scale starts at EUR 3,204 gross/month in year 1 and rises to about EUR 4,050 by year 4, plus an 8% holiday allowance and an 8.3% year-end bonus, with full pension accrual.
   pros:
     - Highest standard employee salaries and holiday/end-year bonuses.
     - Outstanding university support networks and high English proficiency.
   cons:
     - Severe national housing shortage with high rent.
     - High cost of daily living and services in academic hubs.
+sources:
+  - topic: pay
+    title: 'FNV: new CAO Nederlandse Universiteiten 2026-2027 (+3.1% and +EUR 50 from 1 July 2026)'
+    url: https://www.fnv.nl/nieuwsbericht/sectornieuws/fnv-overheid/2026/07/nieuwe-cao-nederlandse-universiteiten-2026-2027
+    accessed: '2026-09-29'
+  - topic: pay
+    title: CAO Nederlandse Universiteiten 2025-2026 (salary scales, holiday and year-end bonus)
+    url: https://www.universiteitenvannederland.nl/files/publications/UNL-20879-10-CAO%20Nederlandse%20Universiteiten%20NL%202025-2026_0.pdf
+    accessed: '2026-09-29'
+  - topic: deductions
+    title: 'OECD Taxing Wages: income tax + employee SSC, single person at 67% of average wage (refreshed by npm run data:refresh)'
+    url: https://data-explorer.oecd.org/vis?df%5Bag%5D=OECD.CTP.TPS&df%5Bid%5D=DSD_TAX_WAGES_COMP%40DF_TW_COMP
+    accessed: '2026-09-29'
+  - topic: visa
+    title: 'EMN Inform: Attracting and retaining international researchers (2022), Table 1'
+    url: https://www.emn.lt/uploads/Products/product_1934/EMN_inform_international_researchers.2022.pdf
+    accessed: '2026-09-29'

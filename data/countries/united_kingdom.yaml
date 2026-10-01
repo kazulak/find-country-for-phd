@@ -6,16 +6,21 @@ languages:
     english_friendly: true
     official: true
 stipend:
-  amount_eur_per_year: 22500
+  amount_eur_per_year: 25400
   is_taxable: false
   is_social_security_covered: false
-  purchasing_power_index: 85
+  deductions_percent: 0
+  local:
+    amount: 21805
+    currency: GBP
+    per: year
+    description: UKRI minimum doctoral stipend 2026/27 outside London (+GBP 2,000 London weighting), tax-free
 tuition_fees:
   eu_students_eur_per_year: 24000
   non_eu_students_eur_per_year: 24000
 cost_of_living:
   estimated_monthly_expenses_eur: 1400
-  index_relative_to_eu_average: 122
+  index_relative_to_eu_average: 129
 phd_system:
   typical_duration_years: 3.5
   is_employee_status: false
@@ -32,21 +37,34 @@ funding_availability:
     - Wellcome Trust
     - University scholarships
     - Industrial funding
-happiness_index: 6.72
+happiness_index: 6.69
 climate:
   type: Temperate Maritime
-  average_temperature_summer_c: 20
-  average_temperature_winter_c: 4
+  average_temperature_summer_c: 19
+  average_temperature_winter_c: 5
 contact_portals:
   - title: FindAPhD
     url: https://www.findaphd.com
   - title: UKRI Funding Finder
     url: https://www.ukri.org
 description:
-  overview: PhD funding is primarily distributed through tax-free UKRI minimum stipends. The standard rate is ~£19,237 tax-free per year (~£1,600/month net), with a London allowance top-up of £2,000 (~£1,765/month net). Since it is a tax-free stipend, it does not accumulate pension or national insurance benefits.
+  overview: Most funded PhDs are tax-free stipends rather than jobs. The UKRI minimum stipend for 2026/27 is GBP 21,805/year (plus GBP 2,000 London weighting), with fees paid separately. Stipends do not build up a pension or National Insurance record.
   pros:
     - Stipend is 100% tax-free.
     - Opportunity for industry-sponsored CASE top-ups.
   cons:
     - No social security benefits, paid parental leave, or pension accrual.
     - Dublin-equivalent severe rental crisis in major university cities.
+sources:
+  - topic: pay
+    title: 'UKRI: guidance for training grant holders (minimum stipend)'
+    url: https://www.ukri.org/manage-your-award/studentship-guidance/guidance-for-training-grant-holders/
+    accessed: '2026-09-29'
+  - topic: pay
+    title: 'Research Professional News: UKRI raises PhD stipend 4.9% for 2026-27'
+    url: https://www.researchprofessionalnews.com/rr-news-uk-careers-2026-2-ukri-increases-phd-stipend-by-4-9-per-cent-for-2026-27/
+    accessed: '2026-09-29'
+  - topic: visa
+    title: 'The PIE News: shorter Graduate Route from January 2027 (PhD graduates keep 3 years)'
+    url: https://thepienews.com/shorter-graduate-route-from-january-2027-uk-govt-confirms/
+    accessed: '2026-09-29'

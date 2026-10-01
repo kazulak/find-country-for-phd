@@ -9,16 +9,21 @@ languages:
     english_friendly: true
     official: false
 stipend:
-  amount_eur_per_year: 15000
+  amount_eur_per_year: 16300
   is_taxable: false
   is_social_security_covered: false
-  purchasing_power_index: 95
+  deductions_percent: 0
+  local:
+    amount: 1359.64
+    currency: EUR
+    per: month
+    description: 'FCT doctoral scholarship (BD) monthly allowance: EUR 1,309.64 in 2025 plus EUR 50 from 1 Jan 2026; exempt from income tax'
 tuition_fees:
   eu_students_eur_per_year: 1000
   non_eu_students_eur_per_year: 2500
 cost_of_living:
   estimated_monthly_expenses_eur: 900
-  index_relative_to_eu_average: 84
+  index_relative_to_eu_average: 85
 phd_system:
   typical_duration_years: 4
   is_employee_status: false
@@ -32,17 +37,30 @@ funding_availability:
   rate: medium
   main_sources:
     - FCT (Foundation for Science and Technology)
-happiness_index: 5.96
+happiness_index: 6.03
 climate:
   type: Mediterranean / Sunny
-  average_temperature_summer_c: 28
-  average_temperature_winter_c: 10
+  average_temperature_summer_c: 22
+  average_temperature_winter_c: 12
 contact_portals:
-  - title: Study in Portugal
-    url: https://www.studyinportugal.edu.pt
+  - title: Study & Research in Portugal
+    url: https://www.study-research.pt
 description:
   overview: PhD candidates in Portugal typically receive standard funding and research access.
   pros:
     - Tax-free or structured funding options.
   cons:
     - Cost of living or stay-back complexities depending on nationality.
+sources:
+  - topic: pay
+    title: 'FCT: scholarship values updated for 2026 (+EUR 50)'
+    url: https://www.fct.pt/en/fct-atualizou-o-valor-das-bolsas-para-2026/
+    accessed: '2026-09-29'
+  - topic: pay
+    title: 'FCT: monthly maintenance allowance table 2025'
+    url: https://www.fct.pt/wp-content/uploads/2025/02/Tabela_valores_SMM_2025.pdf
+    accessed: '2026-09-29'
+  - topic: visa
+    title: 'AIMA: one year to look for work after completing 2nd/3rd-cycle studies (Lei 23/2007, art. 122 p)'
+    url: https://aima.gov.pt/pt/trabalhar/tendo-beneficiado-de-ar-para-estudantes-do-2-o-ou-3-o-ciclos-do-ensino-superior-ou-de-ar-para-investigacao-e-concluido-os-estudo
+    accessed: '2026-09-29'

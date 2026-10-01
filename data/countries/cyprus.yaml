@@ -15,13 +15,18 @@ stipend:
   amount_eur_per_year: 12000
   is_taxable: false
   is_social_security_covered: false
-  purchasing_power_index: 88
+  deductions_percent: 0
+  local:
+    amount: 12000
+    currency: EUR
+    per: year
+    description: University of Cyprus full PhD scholarship (12 x EUR 1,000)
 tuition_fees:
   eu_students_eur_per_year: 1500
   non_eu_students_eur_per_year: 4000
 cost_of_living:
   estimated_monthly_expenses_eur: 900
-  index_relative_to_eu_average: 89
+  index_relative_to_eu_average: 95
 phd_system:
   typical_duration_years: 3.5
   is_employee_status: false
@@ -29,7 +34,7 @@ phd_system:
   required_ects: 0
 visa_and_work_rights:
   requires_visa_for_non_eu: true
-  post_study_work_visa_duration_months: 6
+  post_study_work_visa_duration_months: 12
   work_hours_limit_per_week: 20
 funding_availability:
   rate: low
@@ -38,16 +43,25 @@ funding_availability:
 happiness_index: 6.13
 climate:
   type: Subtropical / Sunny
-  average_temperature_summer_c: 33
-  average_temperature_winter_c: 12
+  average_temperature_summer_c: 30
+  average_temperature_winter_c: 11
 contact_portals:
   - title: Cyprus Ministry of Education
     url: https://highereducation.ac.cy
 description:
-  overview: Cyprus employs predoctoral researchers primarily on European-funded research grants (Horizon Europe). Typical monthly net salaries range from €1,200 to €1,500.
+  overview: Doctoral funding is mostly project-based or through university scholarships. A full University of Cyprus PhD scholarship is EUR 12,000/year; research-project positions on European grants can pay more.
   pros:
     - Vibrant, English-friendly Mediterranean academic settings.
     - High funding levels in specific EU-sponsored research institutes.
   cons:
     - Limited local tenure opportunities post-PhD.
     - Car-dependent infrastructure outside city centers.
+sources:
+  - topic: pay
+    title: 'University of Cyprus Graduate School: scholarships'
+    url: https://www.ucy.ac.cy/graduateschool/home/scholarships/?lang=en
+    accessed: '2026-09-29'
+  - topic: visa
+    title: 'EMN Inform: Attracting and retaining international researchers (2022), Table 1'
+    url: https://www.emn.lt/uploads/Products/product_1934/EMN_inform_international_researchers.2022.pdf
+    accessed: '2026-09-29'

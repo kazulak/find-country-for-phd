@@ -9,16 +9,21 @@ languages:
     english_friendly: true
     official: false
 stipend:
-  amount_eur_per_year: 16243
+  amount_eur_per_year: 16200
   is_taxable: false
   is_social_security_covered: true
-  purchasing_power_index: 82
+  deductions_percent: 11.68
+  local:
+    amount: 16243
+    currency: EUR
+    per: year
+    description: MUR minimum doctoral scholarship (DM 247/2022), gross of the holder's INPS share
 tuition_fees:
   eu_students_eur_per_year: 200
   non_eu_students_eur_per_year: 200
 cost_of_living:
   estimated_monthly_expenses_eur: 850
-  index_relative_to_eu_average: 88
+  index_relative_to_eu_average: 98
 phd_system:
   typical_duration_years: 3
   is_employee_status: false
@@ -34,11 +39,11 @@ funding_availability:
     - MUR (Ministry of University and Research)
     - PNRR (National Recovery and Resilience Plan) scholarships
     - University funding
-happiness_index: 6.4
+happiness_index: 6.57
 climate:
   type: Mediterranean
-  average_temperature_summer_c: 29
-  average_temperature_winter_c: 7
+  average_temperature_summer_c: 27
+  average_temperature_winter_c: 8
 contact_portals:
   - title: Universitaly
     url: https://www.universitaly.it
@@ -50,3 +55,18 @@ description:
   cons:
     - Net stipend is very low for northern cities like Milan/Turin.
     - Highly document-heavy public administration bureaucracy.
+sources:
+  - topic: pay
+    title: 'Università di Milano-Bicocca: doctoral vademecum 2025/2026'
+    url: https://www.unimib.it/sites/default/files/2025-11/vademecum%202025-2026.pdf
+    accessed: '2026-09-29'
+  - topic: deductions
+    title: 'Assolombarda: Gestione Separata INPS 2026 (35.03% for doctoral students, INPS circular 8/2026); the holder pays one third'
+    url: https://www.assolombarda.it/servizi/lavoro-e-previdenza/informazioni/gestione-separata-inps-valori-annui-2026
+    accessed: '2026-09-29'
+    note: 1/3 of 35.03% = 11.68%. Update from the yearly INPS circular.
+  - topic: visa
+    title: Directive (EU) 2016/801, Article 25 (at least 9 months to look for work after research/studies)
+    url: https://eur-lex.europa.eu/eli/dir/2016/801/oj/eng
+    accessed: '2026-09-29'
+    note: Italy grants 12 months to look for work after a degree or doctorate (Testo Unico Immigrazione); not re-verified in 2026.

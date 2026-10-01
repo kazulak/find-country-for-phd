@@ -9,16 +9,21 @@ languages:
     english_friendly: true
     official: false
 stipend:
-  amount_eur_per_year: 18000
+  amount_eur_per_year: 25500
   is_taxable: true
   is_social_security_covered: true
-  purchasing_power_index: 85
+  deductions_percent: 18.9
+  local:
+    amount: 25457
+    currency: EUR
+    per: year
+    description: 'FPU 2026 predoctoral contract: minimum gross salary per contract year'
 tuition_fees:
   eu_students_eur_per_year: 500
   non_eu_students_eur_per_year: 500
 cost_of_living:
   estimated_monthly_expenses_eur: 900
-  index_relative_to_eu_average: 90
+  index_relative_to_eu_average: 91
 phd_system:
   typical_duration_years: 3
   is_employee_status: true
@@ -34,19 +39,32 @@ funding_availability:
     - FPU (University Teacher Training) fellowships
     - FPI (Research Personnel Training) fellowships
     - Regional government predoctoral grants
-happiness_index: null
+happiness_index: 6.54
 climate:
   type: Mediterranean / Continental
-  average_temperature_summer_c: 30
-  average_temperature_winter_c: 9
+  average_temperature_summer_c: 28
+  average_temperature_winter_c: 5
 contact_portals:
   - title: Ministry of Science, Innovation and Universities
     url: https://www.ciencia.gob.es
 description:
-  overview: 'Predoctoral contracts (contrato predoctoral) are regulated by the EPIF statute. Salaries scale as percentages of standard categories: 56% in years 1-2 (~€18,000/yr gross, ~€1,250 net/mo), 60% in year 3 (~€19,000/yr gross, ~€1,350 net/mo), and 75% in year 4 (~€23,000/yr gross, ~€1,650 net/mo). Cover health insurance and full employment rights.'
+  overview: Predoctoral researchers are employees under the EPIF statute. National FPU contracts pay at least EUR 25,457 gross per year in 2026; regional and project-funded (FPI) contracts are similar. Contracts include social security and full employment rights.
   pros:
     - Predoctoral contract provides solid legal employee rights.
     - Vibrant academic communities and outstanding quality of life.
   cons:
     - Stipend is very low relative to Madrid and Barcelona rental costs.
     - Varying research budgets between institutions.
+sources:
+  - topic: pay
+    title: 'UGT: FPU 2026 call (EUR 25,457 gross per year)'
+    url: https://ugt-sp.es/ayudas-fpu-2026/
+    accessed: '2026-09-29'
+  - topic: deductions
+    title: 'OECD Taxing Wages: income tax + employee SSC, single person at 67% of average wage (refreshed by npm run data:refresh)'
+    url: https://data-explorer.oecd.org/vis?df%5Bag%5D=OECD.CTP.TPS&df%5Bid%5D=DSD_TAX_WAGES_COMP%40DF_TW_COMP
+    accessed: '2026-09-29'
+  - topic: visa
+    title: 'EMN Inform: Attracting and retaining international researchers (2022), Table 1'
+    url: https://www.emn.lt/uploads/Products/product_1934/EMN_inform_international_researchers.2022.pdf
+    accessed: '2026-09-29'

@@ -9,16 +9,21 @@ languages:
     english_friendly: true
     official: false
 stipend:
-  amount_eur_per_year: 6000
+  amount_eur_per_year: 9600
   is_taxable: false
   is_social_security_covered: false
-  purchasing_power_index: 78
+  deductions_percent: 0
+  local:
+    amount: 798.64
+    currency: EUR
+    per: month
+    description: Regular doctoral scholarship of BGN 1,562/month from 1 Oct 2025, converted at the fixed euro rate (Bulgaria adopted the euro on 1 Jan 2026)
 tuition_fees:
   eu_students_eur_per_year: 500
   non_eu_students_eur_per_year: 3000
 cost_of_living:
   estimated_monthly_expenses_eur: 500
-  index_relative_to_eu_average: 55
+  index_relative_to_eu_average: 57
 phd_system:
   typical_duration_years: 3
   is_employee_status: false
@@ -32,19 +37,29 @@ funding_availability:
   rate: low
   main_sources:
     - Ministry of Education and Science
-happiness_index: 5.36
+happiness_index: 5.7
 climate:
   type: Temperate / Continental
-  average_temperature_summer_c: 27
+  average_temperature_summer_c: 23
   average_temperature_winter_c: 0
 contact_portals:
   - title: Ministry of Education Bulgaria
     url: https://www.mon.bg
 description:
-  overview: Bulgaria provides state-funded PhD candidates with a flat monthly stipend of ~1,000 BGN (approx. €510 net). Living expenses in Sofia are low.
+  overview: State-funded full-time doctoral students receive a monthly scholarship, raised to BGN 1,562 (about EUR 799) from October 2025; Bulgaria adopted the euro in January 2026. Living costs, especially outside Sofia, are among the lowest in the EU.
   pros:
     - Very low cost of daily living and services.
     - Cheap student dormitory options.
   cons:
     - Lowest base PhD salary in the EU.
     - Heavy administrative requirements and high language barrier.
+sources:
+  - topic: pay
+    title: 'Utro Ruse: government raises doctoral scholarship to BGN 1,562 (news report)'
+    url: https://utroruse.com/article/1151254/
+    accessed: '2026-09-29'
+    note: News report of the government decision; check the Council of Ministers decree when refreshing.
+  - topic: visa
+    title: 'EMN Inform: Attracting and retaining international researchers (2022), Table 1'
+    url: https://www.emn.lt/uploads/Products/product_1934/EMN_inform_international_researchers.2022.pdf
+    accessed: '2026-09-29'

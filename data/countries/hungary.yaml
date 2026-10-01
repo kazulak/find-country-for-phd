@@ -9,16 +9,21 @@ languages:
     english_friendly: true
     official: false
 stipend:
-  amount_eur_per_year: 8400
+  amount_eur_per_year: 4200
   is_taxable: false
   is_social_security_covered: false
-  purchasing_power_index: 76
+  deductions_percent: 0
+  local:
+    amount: 140680
+    currency: HUF
+    per: month
+    description: State doctoral scholarship in years 1-2 (HUF 180,680 in years 3-4); many universities add about HUF 100,000 (Doktori Ösztöndíj+)
 tuition_fees:
   eu_students_eur_per_year: 0
   non_eu_students_eur_per_year: 3000
 cost_of_living:
   estimated_monthly_expenses_eur: 700
-  index_relative_to_eu_average: 70
+  index_relative_to_eu_average: 68
 phd_system:
   typical_duration_years: 4
   is_employee_status: false
@@ -33,14 +38,14 @@ funding_availability:
   main_sources:
     - Hungarian Doctoral Council
     - Stipendium Hungaricum (international)
-happiness_index: 5.8
+happiness_index: 5.94
 climate:
   type: Continental / Temperate
-  average_temperature_summer_c: 26
-  average_temperature_winter_c: -1
+  average_temperature_summer_c: 23
+  average_temperature_winter_c: 1
 contact_portals:
   - title: Study in Hungary
-    url: http://www.studyinhungary.hu
+    url: https://studyinhungary.hu
 description:
   overview: 'Hungary offers a national predoctoral scholarship: before the complex exam (years 1 & 2) the tax-free stipend is 140,000 HUF/month (~€350/mo net), which increases to 180,000 HUF/month (~€460/mo net) for years 3 & 4.'
   pros:
@@ -49,3 +54,24 @@ description:
   cons:
     - Stipend is very low and requires additional teaching or part-time work to survive.
     - Strict academic requirements for passing the complex exam at 2 years.
+  warnings:
+    - The state scholarship (about EUR 350 a month in years 1-2) is far below typical living costs. Most doctoral students rely on university top-ups, teaching or project work.
+sources:
+  - topic: pay
+    title: 'Szeged365: University of Szeged raises doctoral scholarships (state base HUF 140,000 / 180,000 plus top-ups)'
+    url: https://szeged365.hu/2025/03/04/megemeli-a-doktori-osztondijak-merteket-a-szegedi-tudomanyegyetem/
+    accessed: '2026-09-29'
+  - topic: pay
+    title: 'DOSZ (National Association of Doctoral Students): FAQ'
+    url: https://dosz.hu/gyik
+    accessed: '2026-09-29'
+    note: A July 2026 government proposal would raise the scholarship; check whether it was adopted.
+  - topic: visa
+    title: 'EMN Inform: Attracting and retaining international researchers (2022), Table 1'
+    url: https://www.emn.lt/uploads/Products/product_1934/EMN_inform_international_researchers.2022.pdf
+    accessed: '2026-09-29'
+  - topic: pay
+    title: 'Eduline: government plans to raise the doctoral scholarship to the guaranteed minimum wage (July 2026)'
+    url: https://eduline.hu/felsooktatas/20260703_doktorandusz-osztondij-emeles-garantalt-berminimum-kormany
+    accessed: '2026-09-29'
+    note: Proposal, not yet in force when researched.

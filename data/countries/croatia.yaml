@@ -9,16 +9,21 @@ languages:
     english_friendly: true
     official: false
 stipend:
-  amount_eur_per_year: 13200
+  amount_eur_per_year: 24700
   is_taxable: true
   is_social_security_covered: true
-  purchasing_power_index: 85
+  deductions_percent: 30.5
+  local:
+    amount: 2060.25
+    currency: EUR
+    per: month
+    description: Assistant (asistent) job coefficient 2.01 x salary base EUR 1,025 (from 1 Aug 2026), before seniority
 tuition_fees:
   eu_students_eur_per_year: 0
   non_eu_students_eur_per_year: 3000
 cost_of_living:
   estimated_monthly_expenses_eur: 700
-  index_relative_to_eu_average: 74
+  index_relative_to_eu_average: 73
 phd_system:
   typical_duration_years: 3
   is_employee_status: true
@@ -32,19 +37,33 @@ funding_availability:
   rate: low
   main_sources:
     - HRZZ (Croatian Science Foundation)
-happiness_index: 5.88
+happiness_index: 6.01
 climate:
   type: Mediterranean / Continental
-  average_temperature_summer_c: 26
-  average_temperature_winter_c: 2
+  average_temperature_summer_c: 23
+  average_temperature_winter_c: 1
 contact_portals:
   - title: Study in Croatia
     url: https://www.studyincroatia.hr
 description:
-  overview: Croatia employs PhD researchers on assistant contracts, often funded by the Croatian Science Foundation (HRZZ). The gross salary is ~€1,400/month, translating to a net pay of ~€1,050 to €1,150/month with full health and social security benefits.
+  overview: PhD researchers are typically employed as assistants (asistent), often on Croatian Science Foundation (HRZZ) projects. Pay is the job coefficient (2.01) times the public-sector salary base (EUR 1,025 from August 2026), about EUR 2,060 gross or EUR 1,430 net per month, with full social security.
   pros:
     - Full employee rights, including health cover and pension accrual.
     - Low cost of living in historical coastal/academic cities.
   cons:
     - Low salary scale relative to Western European averages.
     - Highly document-heavy public administration and language barrier.
+sources:
+  - topic: pay
+    title: 'Plaće Hrvatska: salary base increases in science and higher education 2026'
+    url: https://place-hrvatska.com/vijesti/povecanje-placa-znanost-visoko-obrazovanje-travanj-2026/
+    accessed: '2026-09-29'
+  - topic: deductions
+    title: 'tportal: ministry data on university salaries (assistant median EUR 2,060 gross / 1,432 net)'
+    url: https://www.tportal.hr/vijesti/clanak/kolike-su-place-na-fakultetima-ministarstvo-objavilo-detaljne-podatke-20260512
+    accessed: '2026-09-29'
+    note: Croatia is not in OECD Taxing Wages; 30.5% derived from the ministry net/gross figures.
+  - topic: visa
+    title: 'EMN Inform: Attracting and retaining international researchers (2022), Table 1'
+    url: https://www.emn.lt/uploads/Products/product_1934/EMN_inform_international_researchers.2022.pdf
+    accessed: '2026-09-29'

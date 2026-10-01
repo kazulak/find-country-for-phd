@@ -15,16 +15,21 @@ languages:
     english_friendly: true
     official: false
 stipend:
-  amount_eur_per_year: 40800
+  amount_eur_per_year: 43400
   is_taxable: true
   is_social_security_covered: true
-  purchasing_power_index: 120
+  deductions_percent: 23.1
+  local:
+    amount: 43445
+    currency: EUR
+    per: year
+    description: University of Luxembourg doctoral researcher, full-time (2026 job ads)
 tuition_fees:
   eu_students_eur_per_year: 400
   non_eu_students_eur_per_year: 400
 cost_of_living:
   estimated_monthly_expenses_eur: 1850
-  index_relative_to_eu_average: 135
+  index_relative_to_eu_average: 151
 phd_system:
   typical_duration_years: 3.5
   is_employee_status: true
@@ -39,19 +44,32 @@ funding_availability:
   main_sources:
     - FNR (Luxembourg National Research Fund)
     - University of Luxembourg contracts
-happiness_index: 7.23
+happiness_index: 7.06
 climate:
   type: Temperate / Maritime
-  average_temperature_summer_c: 23
-  average_temperature_winter_c: 1
+  average_temperature_summer_c: 19
+  average_temperature_winter_c: 2
 contact_portals:
   - title: University of Luxembourg
     url: https://www.uni.lu
 description:
-  overview: Luxembourg hires doctoral candidates on standard university employment contracts (often funded by AFR). Gross salaries are €3,100 to €3,400/month, yielding a net pay of ~€2,500 to €2,750/month.
+  overview: Doctoral candidates are employees of the University of Luxembourg or a research institute, often funded by the FNR. 2026 job ads list a yearly gross salary of about EUR 43,400 full-time, indexed to the national salary index. Housing is expensive.
   pros:
-    - Very high net salary (approx. €2,600 net) with full pension.
+    - High salaries by European standards, with full pension accrual.
     - Highly international, multilingual research labs.
   cons:
     - Rents are extremely high and finding housing is difficult.
     - Limited local student life outside the university town of Belval.
+sources:
+  - topic: pay
+    title: 'University of Luxembourg job ad: doctoral researcher positions (yearly gross salary)'
+    url: https://www.uni.lu/en/jobs/doctoral-researcher-positions-in-finance/
+    accessed: '2026-09-29'
+  - topic: deductions
+    title: 'OECD Taxing Wages: income tax + employee SSC, single person at 67% of average wage (refreshed by npm run data:refresh)'
+    url: https://data-explorer.oecd.org/vis?df%5Bag%5D=OECD.CTP.TPS&df%5Bid%5D=DSD_TAX_WAGES_COMP%40DF_TW_COMP
+    accessed: '2026-09-29'
+  - topic: visa
+    title: 'EMN Inform: Attracting and retaining international researchers (2022), Table 1'
+    url: https://www.emn.lt/uploads/Products/product_1934/EMN_inform_international_researchers.2022.pdf
+    accessed: '2026-09-29'

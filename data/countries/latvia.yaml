@@ -9,42 +9,60 @@ languages:
     english_friendly: true
     official: false
 stipend:
-  amount_eur_per_year: 8400
-  is_taxable: false
+  amount_eur_per_year: 12000
+  is_taxable: true
   is_social_security_covered: false
-  purchasing_power_index: 75
+  deductions_percent: 22.4
+  local:
+    amount: 1000
+    currency: EUR
+    per: month
+    description: Minimum state salary for doctoral candidates admitted from 2024/25 under the new doctoral model (universities may pay more)
 tuition_fees:
   eu_students_eur_per_year: 0
   non_eu_students_eur_per_year: 3500
 cost_of_living:
   estimated_monthly_expenses_eur: 700
-  index_relative_to_eu_average: 72
+  index_relative_to_eu_average: 77
 phd_system:
   typical_duration_years: 3.5
-  is_employee_status: false
+  is_employee_status: true
   academic_calendar: Semester (Sep-Dec / Feb-Jun)
   required_ects: 0
 visa_and_work_rights:
   requires_visa_for_non_eu: true
-  post_study_work_visa_duration_months: 12
+  post_study_work_visa_duration_months: 9
   work_hours_limit_per_week: 20
 funding_availability:
   rate: low
   main_sources:
     - Latvian Council of Science
-happiness_index: 5.87
+happiness_index: 6.37
 climate:
   type: Maritime / Cool
-  average_temperature_summer_c: 20
-  average_temperature_winter_c: -3
+  average_temperature_summer_c: 19
+  average_temperature_winter_c: -2
 contact_portals:
   - title: Study in Latvia
     url: https://www.studyinlatvia.lv
 description:
-  overview: Latvia supports PhD candidates through state stipends (~€250/month tax-free) supplemented by university or European research contract employment. This typically results in a combined net take-home salary of €800 to €950/month.
+  overview: 'Latvia reformed doctoral studies in 2024: candidates admitted to state-funded places from 2024/25 are employed with a state salary of at least EUR 1,000/month, which universities can top up from projects. Earlier cohorts finish under the old scholarship rules until the end of 2026.'
   pros:
     - Low cost of living and affordable student accommodation.
     - Beautiful nature and Baltic coastal access.
   cons:
     - Base state stipend alone is not survivable.
     - Limited funding for humanities and social sciences.
+sources:
+  - topic: pay
+    title: 'Research Latvia: regulation on doctoral student employment and remuneration'
+    url: https://www.researchlatvia.gov.lv/en/regulation-doctoral-student-employment-and-remuneration-comes-force
+    accessed: '2026-09-29'
+  - topic: deductions
+    title: 'OECD Taxing Wages: income tax + employee SSC, single person at 67% of average wage (refreshed by npm run data:refresh)'
+    url: https://data-explorer.oecd.org/vis?df%5Bag%5D=OECD.CTP.TPS&df%5Bid%5D=DSD_TAX_WAGES_COMP%40DF_TW_COMP
+    accessed: '2026-09-29'
+  - topic: visa
+    title: 'EMN Inform: Attracting and retaining international researchers (2022), Table 1'
+    url: https://www.emn.lt/uploads/Products/product_1934/EMN_inform_international_researchers.2022.pdf
+    accessed: '2026-09-29'

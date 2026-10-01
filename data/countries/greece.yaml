@@ -9,16 +9,21 @@ languages:
     english_friendly: true
     official: false
 stipend:
-  amount_eur_per_year: 9000
+  amount_eur_per_year: 10800
   is_taxable: false
   is_social_security_covered: false
-  purchasing_power_index: 80
+  deductions_percent: 0
+  local:
+    amount: 900
+    currency: EUR
+    per: month
+    description: HFRI (ELIDEK) doctoral scholarship, tax-free
 tuition_fees:
   eu_students_eur_per_year: 0
   non_eu_students_eur_per_year: 0
 cost_of_living:
   estimated_monthly_expenses_eur: 750
-  index_relative_to_eu_average: 78
+  index_relative_to_eu_average: 83
 phd_system:
   typical_duration_years: 3
   is_employee_status: false
@@ -33,19 +38,28 @@ funding_availability:
   main_sources:
     - IKY (State Scholarships Foundation)
     - ELIDEK (Hellenic Foundation for Research)
-happiness_index: 5.93
+happiness_index: 5.7
 climate:
   type: Mediterranean / Sunny
-  average_temperature_summer_c: 32
-  average_temperature_winter_c: 10
+  average_temperature_summer_c: 29
+  average_temperature_winter_c: 9
 contact_portals:
   - title: Study in Greece
     url: https://studyingreece.edu.gr
 description:
-  overview: Greece funds PhD candidates through tax-free stipends from the State Scholarship Foundation (IKY) or ELIDEK, typically averaging €900 to €1,100/month net.
+  overview: 'Greece has no universal PhD salary: funding comes from project positions and scholarships. The Hellenic Foundation for Research and Innovation (HFRI/ELIDEK) doctoral scholarship pays EUR 900/month, tax-free.'
   pros:
     - Low cost of daily living and dining.
     - Tax-free stipend status.
   cons:
     - Very low stipend compared to Western Europe.
     - Limited laboratory infrastructure and slow university bureaucracy.
+sources:
+  - topic: pay
+    title: 'HFRI: 5th call for scholarships to PhD candidates'
+    url: https://portal.hfri.gr/docs/5th%20Call%20for%20H.F.R.I.%20Scholarship%20to%20PhD%20Candidates_%CE%95%CE%9D.pdf
+    accessed: '2026-09-29'
+  - topic: visa
+    title: 'EMN Inform: Attracting and retaining international researchers (2022), Table 1'
+    url: https://www.emn.lt/uploads/Products/product_1934/EMN_inform_international_researchers.2022.pdf
+    accessed: '2026-09-29'

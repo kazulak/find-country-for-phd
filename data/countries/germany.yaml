@@ -9,16 +9,22 @@ languages:
     english_friendly: true
     official: false
 stipend:
-  amount_eur_per_year: 28000
+  amount_eur_per_year: 38600
   is_taxable: true
   is_social_security_covered: true
-  purchasing_power_index: 102
+  deductions_percent: 34.1
+  local:
+    amount: 3093.59
+    currency: EUR
+    per: month
+    payments_per_year: 12.4647
+    description: 65% of TV-L E13 step 1 (EUR 4,759.37 full-time from 1 Apr 2026) plus the annual special payment of 46.47% of a monthly salary
 tuition_fees:
   eu_students_eur_per_year: 600
   non_eu_students_eur_per_year: 600
 cost_of_living:
   estimated_monthly_expenses_eur: 1100
-  index_relative_to_eu_average: 105
+  index_relative_to_eu_average: 109
 phd_system:
   typical_duration_years: 3.5
   is_employee_status: true
@@ -35,11 +41,11 @@ funding_availability:
     - DAAD (German Academic Exchange Service)
     - University TV-L employment contracts
     - Industry funding
-happiness_index: 6.89
+happiness_index: 6.88
 climate:
   type: Temperate
-  average_temperature_summer_c: 22
-  average_temperature_winter_c: 1
+  average_temperature_summer_c: 20
+  average_temperature_winter_c: 2
 contact_portals:
   - title: Research in Germany
     url: https://www.research-in-germany.org
@@ -53,3 +59,20 @@ description:
   cons:
     - Heavy regional administration and bureaucracy.
     - Humanities often receive low contract percentages (50%).
+sources:
+  - topic: pay
+    title: TV-L Entgelttabelle 1.4.2026-28.2.2027
+    url: https://www.oeffentlichen-dienst.de/entgelttabelle/tv-l/a/4411-2026.html
+    accessed: '2026-09-29'
+  - topic: pay
+    title: 'TV-L Jahressonderzahlung (E12-E13: 46.47%)'
+    url: https://oeffentlicher-dienst.info/tv-l/allg/jahressonderzahlung.html
+    accessed: '2026-09-29'
+  - topic: deductions
+    title: 'OECD Taxing Wages: income tax + employee SSC, single person at 67% of average wage (refreshed by npm run data:refresh)'
+    url: https://data-explorer.oecd.org/vis?df%5Bag%5D=OECD.CTP.TPS&df%5Bid%5D=DSD_TAX_WAGES_COMP%40DF_TW_COMP
+    accessed: '2026-09-29'
+  - topic: visa
+    title: 'Make it in Germany: 18-month job-search permit after graduating in Germany'
+    url: https://www.make-it-in-germany.com/en/study-training/study/prospects/seeking-employment
+    accessed: '2026-09-29'

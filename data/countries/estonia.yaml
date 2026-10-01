@@ -9,16 +9,21 @@ languages:
     english_friendly: true
     official: false
 stipend:
-  amount_eur_per_year: 21600
+  amount_eur_per_year: 25200
   is_taxable: true
   is_social_security_covered: true
-  purchasing_power_index: 102
+  deductions_percent: 15.7
+  local:
+    amount: 2100
+    currency: EUR
+    per: month
+    description: Minimum full-time salary of a junior research fellow (doctoral student) from 1 Apr 2026
 tuition_fees:
   eu_students_eur_per_year: 0
   non_eu_students_eur_per_year: 0
 cost_of_living:
   estimated_monthly_expenses_eur: 950
-  index_relative_to_eu_average: 90
+  index_relative_to_eu_average: 97
 phd_system:
   typical_duration_years: 4
   is_employee_status: true
@@ -33,19 +38,32 @@ funding_availability:
   main_sources:
     - Estonian Research Council
     - University employee research grants
-happiness_index: 6.44
+happiness_index: 6.41
 climate:
   type: Maritime / Cold
-  average_temperature_summer_c: 21
-  average_temperature_winter_c: -4
+  average_temperature_summer_c: 18
+  average_temperature_winter_c: -3
 contact_portals:
   - title: Study in Estonia
     url: https://studyinestonia.ee
 description:
-  overview: Estonia employs PhD candidates as junior researchers, providing standard employee rights. Junior researchers receive a guaranteed salary aligned with the national average wage (approx. €1,750 to €1,900 gross/month, yielding ~€1,400 to €1,550 net/month).
+  overview: Since 2022 doctoral candidates are employed as junior research fellows with full employee rights. The minimum full-time salary is EUR 2,100 gross/month from April 2026, and income tax is relatively low.
   pros:
     - Highly digitalized, paperless university administration.
     - Full employee status with standard health cover and pension.
   cons:
     - Winters are long, dark, and cold.
     - Relatively high rental costs in Tallinn and Tartu.
+sources:
+  - topic: pay
+    title: 'University of Tartu: pathways for doctoral studies'
+    url: https://ut.ee/en/pathways-for-doctoral-studies
+    accessed: '2026-09-29'
+  - topic: deductions
+    title: 'OECD Taxing Wages: income tax + employee SSC, single person at 67% of average wage (refreshed by npm run data:refresh)'
+    url: https://data-explorer.oecd.org/vis?df%5Bag%5D=OECD.CTP.TPS&df%5Bid%5D=DSD_TAX_WAGES_COMP%40DF_TW_COMP
+    accessed: '2026-09-29'
+  - topic: visa
+    title: 'EMN Inform: Attracting and retaining international researchers (2022), Table 1'
+    url: https://www.emn.lt/uploads/Products/product_1934/EMN_inform_international_researchers.2022.pdf
+    accessed: '2026-09-29'

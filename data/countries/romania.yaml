@@ -9,16 +9,21 @@ languages:
     english_friendly: true
     official: false
 stipend:
-  amount_eur_per_year: 7200
+  amount_eur_per_year: 8800
   is_taxable: false
   is_social_security_covered: false
-  purchasing_power_index: 77
+  deductions_percent: 0
+  local:
+    amount: 3700
+    currency: RON
+    per: month
+    description: State doctoral scholarship (ministerial order for 2025-2026, unchanged in 2026)
 tuition_fees:
   eu_students_eur_per_year: 0
   non_eu_students_eur_per_year: 3000
 cost_of_living:
   estimated_monthly_expenses_eur: 600
-  index_relative_to_eu_average: 60
+  index_relative_to_eu_average: 57
 phd_system:
   typical_duration_years: 3
   is_employee_status: false
@@ -26,26 +31,36 @@ phd_system:
   required_ects: 0
 visa_and_work_rights:
   requires_visa_for_non_eu: true
-  post_study_work_visa_duration_months: 6
+  post_study_work_visa_duration_months: 9
   work_hours_limit_per_week: 20
 funding_availability:
   rate: medium
   main_sources:
     - UEFISCDI Romania
     - State financed tuition-free spots
-happiness_index: 6.5
+happiness_index: 6.63
 climate:
   type: Temperate / Continental
-  average_temperature_summer_c: 28
-  average_temperature_winter_c: -1
+  average_temperature_summer_c: 25
+  average_temperature_winter_c: 0
 contact_portals:
   - title: Study in Romania
     url: https://studyinromania.gov.ro
 description:
-  overview: Romania provides ministry stipends of ~1,800 RON/month (~€360/mo net) for the first two years, increasing to ~2,200 RON/month (~€440/mo net) in years 3 & 4. Frequently topped up by research grants to €600–€800/month net.
+  overview: State-funded full-time doctoral students receive a monthly scholarship of RON 3,700 (2025-2026, unchanged in 2026), regardless of year of study. Research grants can add to it.
   pros:
     - Low cost of daily living and housing.
     - Fast-growing IT and tech hubs in Cluj and Bucharest.
   cons:
     - Base state stipend is very low.
     - Heavy reliance on project-based top-ups which vary between labs.
+sources:
+  - topic: pay
+    title: 'Ministry of Education: order on scholarship amounts 2025-2026'
+    url: https://www.edu.ro/sites/default/files/PO_cuantum_burse_IIS_2025_2026.pdf
+    accessed: '2026-09-29'
+  - topic: visa
+    title: Directive (EU) 2016/801, Article 25 (at least 9 months to look for work after research/studies)
+    url: https://eur-lex.europa.eu/eli/dir/2016/801/oj/eng
+    accessed: '2026-09-29'
+    note: Romania was not covered by the EMN table; the directive minimum of 9 months is shown.

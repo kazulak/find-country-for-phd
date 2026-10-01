@@ -9,16 +9,21 @@ languages:
     english_friendly: false
     official: true
 stipend:
-  amount_eur_per_year: 22000
+  amount_eur_per_year: 25000
   is_taxable: false
   is_social_security_covered: false
-  purchasing_power_index: 92
+  deductions_percent: 0
+  local:
+    amount: 25000
+    currency: EUR
+    per: year
+    description: Research Ireland PhD stipend from 1 Jan 2025, tax-free
 tuition_fees:
   eu_students_eur_per_year: 6000
   non_eu_students_eur_per_year: 14000
 cost_of_living:
   estimated_monthly_expenses_eur: 1750
-  index_relative_to_eu_average: 138
+  index_relative_to_eu_average: 141
 phd_system:
   typical_duration_years: 4
   is_employee_status: false
@@ -33,19 +38,28 @@ funding_availability:
   main_sources:
     - Irish Research Council (IRC)
     - Science Foundation Ireland (SFI)
-happiness_index: 6.91
+happiness_index: 6.93
 climate:
   type: Maritime / Temperate
-  average_temperature_summer_c: 19
-  average_temperature_winter_c: 5
+  average_temperature_summer_c: 16
+  average_temperature_winter_c: 6
 contact_portals:
   - title: Study in Ireland
     url: https://www.educationinireland.com
 description:
-  overview: Funded primarily through Irish Research Council (IRC) awards or university fellowships. The standard minimum stipend is ~€22,000 tax-free per year (~€1,833/month net). Grant holders do not pay income tax, and tuition fees are covered separately.
+  overview: Most funded PhDs are tax-free stipends rather than jobs. The Research Ireland stipend rose to EUR 25,000/year from January 2025, with fees usually paid separately. Dublin rents are among the highest in the EU, so location matters a lot.
   pros:
     - Stipend is completely tax-free.
     - Excellent tech and biotech post-PhD industry connections.
   cons:
     - Dublin rental costs can exceed the entire stipend.
     - No pension contributions or standard employee contract protections.
+sources:
+  - topic: pay
+    title: 'Research Ireland: financial policies (stipend EUR 25,000 from 1 Jan 2025)'
+    url: https://www.researchireland.ie/funding-policies/financial/
+    accessed: '2026-09-29'
+  - topic: visa
+    title: 'Irish Immigration: Third Level Graduate Programme (24 months for level 9-10)'
+    url: https://www.irishimmigration.ie/my-situation-has-changed-since-i-arrived-in-ireland/third-level-graduate-programme/
+    accessed: '2026-09-29'

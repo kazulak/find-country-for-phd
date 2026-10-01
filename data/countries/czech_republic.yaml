@@ -9,10 +9,15 @@ languages:
     english_friendly: true
     official: false
 stipend:
-  amount_eur_per_year: 9600
+  amount_eur_per_year: 13100
   is_taxable: false
   is_social_security_covered: false
-  purchasing_power_index: 82
+  deductions_percent: 0
+  local:
+    amount: 26880
+    currency: CZK
+    per: month
+    description: Guaranteed minimum doctoral study income from 2026/27 (1.2x the minimum wage), paid as stipend and/or salary
 tuition_fees:
   eu_students_eur_per_year: 0
   non_eu_students_eur_per_year: 2000
@@ -33,19 +38,29 @@ funding_availability:
   main_sources:
     - GACR (Czech Science Foundation)
     - University specific grants
-happiness_index: 6.85
+happiness_index: 6.82
 climate:
   type: Continental / Temperate
-  average_temperature_summer_c: 24
-  average_temperature_winter_c: -1
+  average_temperature_summer_c: 21
+  average_temperature_winter_c: 1
 contact_portals:
   - title: Study in Czechia
     url: https://www.studyin.cz
 description:
-  overview: PhD candidates in the Czech Republic receive a state stipend (~11,250 CZK/month tax-free, approx. €450 net/month), which is frequently topped up by university or project employment to ~€1,200/month net.
+  overview: A 2025 reform guarantees new doctoral students a minimum doctoral income of 1.2x the minimum wage (CZK 26,880/month from 2026/27), paid as a tax-free stipend, a salary from a project or university, or a mix. Many students combine both.
   pros:
     - Low tuition fees and very affordable dormitory housing.
     - Prague is a highly attractive, central European city.
   cons:
     - Base state stipend is too low without university top-ups.
     - Strict predoctoral milestones before completing studies.
+sources:
+  - topic: pay
+    title: 'Charles University: doctoral study reform (minimum doctoral income)'
+    url: https://phd.cuni.cz/PHD-355.html
+    accessed: '2026-09-29'
+    note: Part of the income may be a taxed salary; the untaxed-stipend case is shown.
+  - topic: visa
+    title: 'EMN Inform: Attracting and retaining international researchers (2022), Table 1'
+    url: https://www.emn.lt/uploads/Products/product_1934/EMN_inform_international_researchers.2022.pdf
+    accessed: '2026-09-29'

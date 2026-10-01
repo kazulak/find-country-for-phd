@@ -12,24 +12,29 @@ languages:
     english_friendly: true
     official: false
 stipend:
-  amount_eur_per_year: 30000
+  amount_eur_per_year: 31200
   is_taxable: false
   is_social_security_covered: true
-  purchasing_power_index: 104
+  deductions_percent: 0
+  local:
+    amount: 2600
+    currency: EUR
+    per: month
+    description: FWO PhD fellowship fundamental research, 0 years seniority; FWO quotes this as the net (tax-free) amount
 tuition_fees:
   eu_students_eur_per_year: 900
   non_eu_students_eur_per_year: 900
 cost_of_living:
   estimated_monthly_expenses_eur: 1300
-  index_relative_to_eu_average: 112
+  index_relative_to_eu_average: 119
 phd_system:
   typical_duration_years: 4
-  is_employee_status: true
+  is_employee_status: false
   academic_calendar: Semester (Sep-Jan / Feb-Jun)
   required_ects: 60
 visa_and_work_rights:
   requires_visa_for_non_eu: true
-  post_study_work_visa_duration_months: 12
+  post_study_work_visa_duration_months: 9
   work_hours_limit_per_week: 20
 funding_availability:
   rate: medium
@@ -37,19 +42,29 @@ funding_availability:
     - FWO (Flanders)
     - FNRS (Wallonia)
     - University research assistantships
-happiness_index: 6.89
+happiness_index: 6.93
 climate:
   type: Maritime / Temperate
-  average_temperature_summer_c: 22
-  average_temperature_winter_c: 3
+  average_temperature_summer_c: 19
+  average_temperature_winter_c: 4
 contact_portals:
   - title: Study in Belgium
     url: https://www.studyinbelgium.be
 description:
-  overview: Predoctoral researchers are typically funded via tax-free doctoral fellowships (stipendiat) of €2,200 to €2.450/month net. It is tax-free but covers basic health and social security insurance. Rents in Brussels, Ghent, and Leuven are moderate-high.
+  overview: Many PhD candidates hold doctoral fellowships rather than employment contracts. A Flemish FWO PhD fellowship pays at least EUR 2,600/month net (tax-free, indexed), with social security coverage. University-funded and French-community scholarships follow similar scales.
   pros:
     - High tax-free net stipend with basic health insurance.
     - Excellent research groups and central European location.
   cons:
     - No standard pension contributions during the fellowship.
     - Complex regional university administrations (Flanders vs. Wallonia).
+sources:
+  - topic: pay
+    title: 'KU Leuven: FWO PhD fellowship fundamental research 2026'
+    url: https://research.kuleuven.be/gedocumenteerd/en/41701
+    accessed: '2026-09-29'
+  - topic: visa
+    title: 'EMN Inform: Attracting and retaining international researchers (2022), Table 1'
+    url: https://www.emn.lt/uploads/Products/product_1934/EMN_inform_international_researchers.2022.pdf
+    accessed: '2026-09-29'
+    note: Belgium had not transposed Article 25 for researchers (2022); the 9-month minimum applies directly. Graduates with student status get a 12-month search year.

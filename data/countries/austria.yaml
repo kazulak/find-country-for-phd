@@ -9,16 +9,22 @@ languages:
     english_friendly: true
     official: false
 stipend:
-  amount_eur_per_year: 38400
+  amount_eur_per_year: 39600
   is_taxable: true
   is_social_security_covered: true
-  purchasing_power_index: 108
+  deductions_percent: 26.9
+  local:
+    amount: 2832.08
+    currency: EUR
+    per: month
+    payments_per_year: 14
+    description: Uni-KV group B1 (EUR 3,776.10 full-time from 1 Jan 2026) at the usual 30 h/week (75%), paid 14 times a year
 tuition_fees:
   eu_students_eur_per_year: 750
   non_eu_students_eur_per_year: 1500
 cost_of_living:
   estimated_monthly_expenses_eur: 1250
-  index_relative_to_eu_average: 110
+  index_relative_to_eu_average: 120
 phd_system:
   typical_duration_years: 3.5
   is_employee_status: true
@@ -33,19 +39,32 @@ funding_availability:
   main_sources:
     - FWF (Austrian Science Fund)
     - University project assistant contracts
-happiness_index: 7.21
+happiness_index: 6.85
 climate:
   type: Temperate / Alpine
-  average_temperature_summer_c: 25
-  average_temperature_winter_c: -1
+  average_temperature_summer_c: 22
+  average_temperature_winter_c: 1
 contact_portals:
   - title: Study in Austria
     url: https://studyinaustria.at
 description:
-  overview: PhD candidates are hired as university assistants under the collective agreement. Minimum gross salary is ~€3,277/month gross (based on 30 hours/week, approx. €2,300 net/month). STEM contracts are often topped up to 40 hours/week (~€3,050 net/month). Includes 14 monthly salary payouts per year.
+  overview: PhD candidates are usually employed as university assistants (prae doc) under the universities collective agreement. Group B1 pays EUR 3,776.10 gross/month full-time (2026), and most PhD posts are 30 hours/week (75%), paid 14 times a year. Some STEM positions are full-time.
   pros:
     - Full employee status with 14 salary payouts per year.
     - Strong academic networks and high quality of life.
   cons:
     - Rents are rising in Vienna and Innsbruck.
     - Requires teaching contributions in local languages.
+sources:
+  - topic: pay
+    title: Universitäten-KV Gehaltstabellen ab 1.1.2026 (GÖD)
+    url: https://www.uibk.ac.at/betriebsrat/wissenschaftlich/435-2026_uni_kv_gehaltstabelle_ab_1.1.2026.pdf
+    accessed: '2026-09-29'
+  - topic: deductions
+    title: 'OECD Taxing Wages: income tax + employee SSC, single person at 67% of average wage (refreshed by npm run data:refresh)'
+    url: https://data-explorer.oecd.org/vis?df%5Bag%5D=OECD.CTP.TPS&df%5Bid%5D=DSD_TAX_WAGES_COMP%40DF_TW_COMP
+    accessed: '2026-09-29'
+  - topic: visa
+    title: 'EMN Inform: Attracting and retaining international researchers (2022), Table 1'
+    url: https://www.emn.lt/uploads/Products/product_1934/EMN_inform_international_researchers.2022.pdf
+    accessed: '2026-09-29'

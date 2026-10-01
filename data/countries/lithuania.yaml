@@ -9,16 +9,21 @@ languages:
     english_friendly: true
     official: false
 stipend:
-  amount_eur_per_year: 12000
+  amount_eur_per_year: 16900
   is_taxable: false
   is_social_security_covered: false
-  purchasing_power_index: 89
+  deductions_percent: 0
+  local:
+    amount: 1406
+    currency: EUR
+    per: month
+    description: 'Year 1: 19 x basic social benefit (EUR 74 in 2026); later years about EUR 1,628'
 tuition_fees:
   eu_students_eur_per_year: 0
   non_eu_students_eur_per_year: 3000
 cost_of_living:
   estimated_monthly_expenses_eur: 750
-  index_relative_to_eu_average: 76
+  index_relative_to_eu_average: 78
 phd_system:
   typical_duration_years: 4
   is_employee_status: false
@@ -32,19 +37,28 @@ funding_availability:
   rate: medium
   main_sources:
     - Research Council of Lithuania
-happiness_index: 6.21
+happiness_index: 6.7
 climate:
   type: Maritime / Continental
-  average_temperature_summer_c: 22
+  average_temperature_summer_c: 19
   average_temperature_winter_c: -3
 contact_portals:
   - title: Study in Lithuania
     url: https://www.studyin.lt
 description:
-  overview: 'Lithuania provides tax-free government scholarships for doctoral students: €930/month in the 1st year and €1,075/month for years 2 to 4. Rents in Vilnius are moderate.'
+  overview: 'State-funded doctoral students receive a tax-free scholarship linked to the basic social benefit: 19 x BSI (EUR 1,406/month) in year 1 and about EUR 1,628 in later years (2026), plus a yearly allowance from the doctoral fund.'
   pros:
     - Scholarship is completely tax-free.
     - Low cost of living and modern digital infrastructure.
   cons:
     - No standard pension accrual or employee contract rights.
     - Language barrier in municipal and off-campus offices.
+sources:
+  - topic: pay
+    title: 'Vilnius Academy of Arts: scholarships (doctoral scholarship in BSI multiples)'
+    url: https://www.vda.lt/lt/finansiniai-klausimai/stipendijos
+    accessed: '2026-09-29'
+  - topic: visa
+    title: 'EMN Inform: Attracting and retaining international researchers (2022), Table 1'
+    url: https://www.emn.lt/uploads/Products/product_1934/EMN_inform_international_researchers.2022.pdf
+    accessed: '2026-09-29'

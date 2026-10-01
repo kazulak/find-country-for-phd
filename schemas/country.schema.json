@@ -15,7 +15,8 @@
     "funding_availability",
     "happiness_index",
     "climate",
-    "contact_portals"
+    "contact_portals",
+    "sources"
   ],
   "additionalProperties": false,
   "properties": {
@@ -34,7 +35,11 @@
       "minItems": 1,
       "items": {
         "type": "object",
-        "required": ["name", "english_friendly", "official"],
+        "required": [
+          "name",
+          "english_friendly",
+          "official"
+        ],
         "additionalProperties": false,
         "properties": {
           "name": {
@@ -51,95 +56,205 @@
     },
     "stipend": {
       "type": "object",
-      "required": ["amount_eur_per_year", "is_taxable", "is_social_security_covered", "purchasing_power_index"],
+      "required": [
+        "amount_eur_per_year",
+        "is_taxable",
+        "is_social_security_covered",
+        "deductions_percent"
+      ],
       "additionalProperties": false,
       "properties": {
         "amount_eur_per_year": {
-          "type": ["number", "null"]
+          "type": [
+            "number",
+            "null"
+          ]
         },
         "is_taxable": {
-          "type": ["boolean", "null"]
+          "type": [
+            "boolean",
+            "null"
+          ]
         },
         "is_social_security_covered": {
-          "type": ["boolean", "null"]
+          "type": [
+            "boolean",
+            "null"
+          ]
         },
-        "purchasing_power_index": {
-          "type": ["number", "null"],
+        "deductions_percent": {
+          "description": "Income tax + employee social contributions as % of gross (0 for untaxed stipends without deductions). Refreshed from OECD Taxing Wages for taxed salaries.",
+          "type": "number",
           "minimum": 0,
-          "maximum": 200
+          "maximum": 60
+        },
+        "local": {
+          "description": "The pay figure as published at the source, in its own currency. `npm run data:refresh` converts it to amount_eur_per_year.",
+          "type": "object",
+          "required": [
+            "amount",
+            "currency",
+            "per",
+            "description"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "amount": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "currency": {
+              "type": "string",
+              "pattern": "^[A-Z]{3}$"
+            },
+            "per": {
+              "type": "string",
+              "enum": [
+                "month",
+                "year"
+              ]
+            },
+            "payments_per_year": {
+              "type": "number",
+              "minimum": 1,
+              "maximum": 15
+            },
+            "description": {
+              "type": "string"
+            }
+          }
         }
       }
     },
     "tuition_fees": {
       "type": "object",
-      "required": ["eu_students_eur_per_year", "non_eu_students_eur_per_year"],
+      "required": [
+        "eu_students_eur_per_year",
+        "non_eu_students_eur_per_year"
+      ],
       "additionalProperties": false,
       "properties": {
         "eu_students_eur_per_year": {
-          "type": ["number", "null"]
+          "type": [
+            "number",
+            "null"
+          ]
         },
         "non_eu_students_eur_per_year": {
-          "type": ["number", "null"]
+          "type": [
+            "number",
+            "null"
+          ]
         }
       }
     },
     "cost_of_living": {
       "type": "object",
-      "required": ["estimated_monthly_expenses_eur", "index_relative_to_eu_average"],
+      "required": [
+        "estimated_monthly_expenses_eur",
+        "index_relative_to_eu_average"
+      ],
       "additionalProperties": false,
       "properties": {
         "estimated_monthly_expenses_eur": {
-          "type": ["number", "null"]
+          "type": [
+            "number",
+            "null"
+          ]
         },
         "index_relative_to_eu_average": {
-          "type": ["number", "null"],
+          "type": [
+            "number",
+            "null"
+          ],
           "minimum": 0
         }
       }
     },
     "phd_system": {
       "type": "object",
-      "required": ["typical_duration_years", "is_employee_status", "academic_calendar", "required_ects"],
+      "required": [
+        "typical_duration_years",
+        "is_employee_status",
+        "academic_calendar",
+        "required_ects"
+      ],
       "additionalProperties": false,
       "properties": {
         "typical_duration_years": {
-          "type": ["number", "null"]
+          "type": [
+            "number",
+            "null"
+          ]
         },
         "is_employee_status": {
-          "type": ["boolean", "null"]
+          "type": [
+            "boolean",
+            "null"
+          ]
         },
         "academic_calendar": {
-          "type": ["string", "null"]
+          "type": [
+            "string",
+            "null"
+          ]
         },
         "required_ects": {
-          "type": ["number", "null"]
+          "type": [
+            "number",
+            "null"
+          ]
         }
       }
     },
     "visa_and_work_rights": {
       "type": "object",
-      "required": ["requires_visa_for_non_eu", "post_study_work_visa_duration_months", "work_hours_limit_per_week"],
+      "required": [
+        "requires_visa_for_non_eu",
+        "post_study_work_visa_duration_months",
+        "work_hours_limit_per_week"
+      ],
       "additionalProperties": false,
       "properties": {
         "requires_visa_for_non_eu": {
-          "type": ["boolean", "null"]
+          "type": [
+            "boolean",
+            "null"
+          ]
         },
         "post_study_work_visa_duration_months": {
-          "type": ["number", "null"]
+          "type": [
+            "number",
+            "null"
+          ]
         },
         "work_hours_limit_per_week": {
-          "type": ["number", "null"]
+          "type": [
+            "number",
+            "null"
+          ]
         }
       }
     },
     "funding_availability": {
       "type": "object",
-      "required": ["rate", "main_sources"],
+      "required": [
+        "rate",
+        "main_sources"
+      ],
       "additionalProperties": false,
       "properties": {
         "rate": {
-          "type": ["string", "null"],
-          "enum": ["high", "medium", "low", null]
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "high",
+            "medium",
+            "low",
+            null
+          ]
         },
         "main_sources": {
           "type": "array",
@@ -150,23 +265,39 @@
       }
     },
     "happiness_index": {
-      "type": ["number", "null"],
+      "type": [
+        "number",
+        "null"
+      ],
       "minimum": 0,
       "maximum": 10
     },
     "climate": {
       "type": "object",
-      "required": ["type", "average_temperature_summer_c", "average_temperature_winter_c"],
+      "required": [
+        "type",
+        "average_temperature_summer_c",
+        "average_temperature_winter_c"
+      ],
       "additionalProperties": false,
       "properties": {
         "type": {
-          "type": ["string", "null"]
+          "type": [
+            "string",
+            "null"
+          ]
         },
         "average_temperature_summer_c": {
-          "type": ["number", "null"]
+          "type": [
+            "number",
+            "null"
+          ]
         },
         "average_temperature_winter_c": {
-          "type": ["number", "null"]
+          "type": [
+            "number",
+            "null"
+          ]
         }
       }
     },
@@ -174,7 +305,10 @@
       "type": "array",
       "items": {
         "type": "object",
-        "required": ["title", "url"],
+        "required": [
+          "title",
+          "url"
+        ],
         "additionalProperties": false,
         "properties": {
           "title": {
@@ -189,7 +323,9 @@
     },
     "description": {
       "type": "object",
-      "required": ["overview"],
+      "required": [
+        "overview"
+      ],
       "additionalProperties": false,
       "properties": {
         "overview": {
@@ -197,15 +333,64 @@
         },
         "pros": {
           "type": "array",
-          "items": { "type": "string" }
+          "items": {
+            "type": "string"
+          }
         },
         "cons": {
           "type": "array",
-          "items": { "type": "string" }
+          "items": {
+            "type": "string"
+          }
         },
         "warnings": {
           "type": "array",
-          "items": { "type": "string" }
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "sources": {
+      "description": "Where each manually researched figure comes from. topic says which part of the profile the source backs.",
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "topic",
+          "title",
+          "url",
+          "accessed"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "topic": {
+            "type": "string",
+            "enum": [
+              "pay",
+              "deductions",
+              "visa",
+              "tuition",
+              "phd_system",
+              "living_costs",
+              "funding"
+            ]
+          },
+          "title": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "accessed": {
+            "type": "string",
+            "format": "date"
+          },
+          "note": {
+            "type": "string"
+          }
         }
       }
     }
