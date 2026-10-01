@@ -7,8 +7,8 @@ Welcome, Agent. You are tasked with contributing code, data, or tests to the **E
 ## 1. Project Purpose & Architecture
 * **Purpose**: Helps prospective PhD candidates compare European destinations using clean, objective facts (funding structures, net salaries, cost of living, visa complexity).
 * **Architecture**: Astro + React static site.
-  * Canonical country data is maintained in YAML format under [data/countries/](file:///home/tom/repos/find-country-for-phd/data/countries/).
-  * At build time, scripts compile the YAML files into structured JSON files inside `public/data/` and `dist/`.
+  * Canonical country data is maintained in YAML format under [data/countries/](data/countries/).
+  * At build time, `scripts/build.js` compiles the YAML files (via `lib/country-model.js`) into `public/data/countries.json`, which Astro bundles and also publishes to `dist/data/`. Every derived label (pros, cons, price level) must be traceable to a YAML field.
   * Dynamic, serverless country detail routes are generated statically at `/find-country-for-phd/countries/[id]/` using Astro pages.
   * Base URL is `/find-country-for-phd/` (for GitHub Pages deployment compatibility). All relative links MUST include this prefix.
 
@@ -29,10 +29,10 @@ Welcome, Agent. You are tasked with contributing code, data, or tests to the **E
 ## 3. Measurable Definition of Done (DoD)
 A task is complete only when:
 1. **Schema Validation Passes**: `npm run validate` runs successfully with no warnings.
-2. **Consistency Rules Pass**: Verified that no country has a negative net disposable-income estimate and all files have verified source URLs.
+2. **Consistency Rules Pass**: Every profile cites `pay` and `visa` sources and its EUR pay matches its `stipend.local` figure. Report the data as it is: pay that does not cover living costs is shown to users, never adjusted to pass a check. See [docs/DATA_SOURCES.md](docs/DATA_SOURCES.md).
 3. **Core Unit Tests Pass**: `npm run test` executes successfully.
 4. **End-to-End Tests Pass**: `npm run test:e2e` completes with zero errors on Chromium.
-5. **Dynamic Routes Verified**: All 30 static country details routes compile successfully during `npm run build`.
+5. **Dynamic Routes Verified**: One static country details route per YAML file compiles successfully during `npm run build`.
 6. **Accessibility Conformity**: Meets WCAG 2.2 AA standards (semantic structure, keyboard focus outlines present, contrast meets ratio requirements, zero empty headers).
 7. **No Console Errors**: The page runs in standard preview with zero uncaught browser-level exceptions or console failures.
 
