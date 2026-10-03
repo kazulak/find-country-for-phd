@@ -84,7 +84,9 @@ function validate() {
             fail(`[ERROR] File "${file}": cost_of_living EUR range does not match cost_of_living.local. Run \`npm run data:refresh\`.`);
           }
         }
-        if (!topics.has('living_costs')) fail(`[ERROR] File "${file}": no source with topic "living_costs".`);
+        for (const required of ['living_costs', 'tuition']) {
+          if (!topics.has(required)) fail(`[ERROR] File "${file}": no source with topic "${required}".`);
+        }
 
         if (!data.contact_portals || data.contact_portals.length === 0) {
           fail(`[ERROR] File "${file}": Profile contains no source URLs or reference portals.`);

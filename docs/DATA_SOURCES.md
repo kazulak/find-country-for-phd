@@ -17,7 +17,8 @@ The canonical data lives in [`data/countries/*.yaml`](../data/countries/) (one f
 | Post-PhD stay (`visa_and_work_rights.post_study_work_visa_duration_months`) | [EMN Inform 2022, Table 1](https://www.emn.lt/uploads/Products/product_1934/EMN_inform_international_researchers.2022.pdf), national immigration sites for non-EU countries and more generous national rules; [Directive (EU) 2016/801 Art. 25](https://eur-lex.europa.eu/eli/dir/2016/801/oj/eng) sets a 9-month minimum | **Manual** |
 | Living costs as published (`cost_of_living.local`: low/high) | Official university, national study-portal, EURAXESS or visa-authority budgets: cheaper university city → most expensive one | **Manual**, every year or two |
 | Living costs in EUR (`cost_of_living.low_eur_per_month`, `high_eur_per_month`, `estimated_monthly_expenses_eur` = midpoint) | Computed from `cost_of_living.local` with the ECB rate | Automatic |
-| Tuition, duration, ECTS, funding rate, funders | Hand-compiled, mostly from the national portals in `contact_portals` | **Not systematically sourced yet** |
+| Doctoral fees (`tuition_fees`, EUR per year, EU and non-EU) | University fee pages and national portals: all mandatory fees for a full-time doctoral candidate (one-off fees spread over a four-year PhD) | **Manual**, every year or two |
+| Typical duration, main funders | Hand-compiled | **Not sourced yet** |
 
 `npm run report` writes [`reports/data_report.md`](../reports/data_report.md), which lists, per country, which topics still have no source. Use it as the to-do list.
 
@@ -64,6 +65,8 @@ Do this once a year, ideally in **October**. Most pay tables change between Janu
 3. **Pay, country by country.** Open the `pay` source in each YAML file (the table below says what to look for). Update `stipend.local.amount`, its `description` and the source's `accessed` date. Then run `npm run data:refresh` again to convert to EUR. For untaxed stipends, check whether the contribution rate changed.
 
 4. **Visa rules.** Check the `visa` sources, especially for countries in the news: the UK Graduate Route and anything that transposes the 2016/801 directive differently. The EMN table is from 2022, so a newer EMN report on international researchers or students should replace it when one appears.
+
+   **Every year or two:** recheck the `living_costs` and `tuition` sources the same way (update `cost_of_living.local` and `tuition_fees`, then `npm run data:refresh`).
 
 5. **See what's left**
 
@@ -116,9 +119,10 @@ Do this once a year, ideally in **October**. Most pay tables change between Janu
 
 Honest list of what is **not** properly sourced yet:
 
-- **Living costs are student-style budgets.** Official portals budget for a student (often shared housing or a dormitory). An employed PhD renting their own flat usually spends more (Aarhus University: about EUR 1,950/month for an employed single PhD vs EUR 1,000 for a student). Sources also differ in what they include, and a few upper ends (Bulgaria, Estonia, Greece, Romania, Luxembourg) are derived from listed component costs rather than stated totals; their source notes say so.
+- **Living costs are student-style budgets.** Official portals budget for a student (often shared housing or a dormitory). An employed PhD renting their own flat usually spends more (Aarhus University: about EUR 1,950/month for an employed single PhD vs EUR 1,000 for a student). Sources also differ in what they include, and some ends are derived from listed component costs rather than stated totals (both ends for Bulgaria; the upper end for Estonia, Greece, Romania and Luxembourg); their source notes say so.
 - **The Budget Calculator's per-city figures** (Munich, Amsterdam and so on) are rough hand estimates, labelled as such in the dropdown.
-- **Tuition fees, typical duration, required ECTS, funding rate and funder lists.** Hand-compiled; each needs a source with the matching `topic`.
+- **Typical duration and the funder lists.** Hand-compiled; a source with `topic: phd_system` would close this.
+- **Fees assume a funded position.** Many fees are waived or paid by the funder (UKRI, Research Ireland, FCT, Dutch and Nordic employment contracts); the source notes say where. Self-funded doctorates can cost much more (UK international fees, Hungary, Malta).
 - **One pay figure per country.** Real pay varies by field, funder, contract percentage and city. The site says so, and the overview text gives ranges where known.
 - **Untaxed stipends with partial contributions** (Czechia's mixed stipend + salary, for example) are approximations.
-- `languages[].english_friendly` and `visa_and_work_rights.work_hours_limit_per_week` are not used on the site and are not sourced.
+- Fields that were unsourced and added little (required ECTS and the derived "structured/individual" label, academic calendar, language flags, student work-hour limits, a high/medium/low funding rating, hand-written climate labels) were removed in October 2026 rather than kept as guesses.

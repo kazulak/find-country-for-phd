@@ -1,19 +1,6 @@
 id: switzerland
 name: Switzerland
 capital: Bern
-languages:
-  - name: German
-    english_friendly: false
-    official: true
-  - name: French
-    english_friendly: false
-    official: true
-  - name: Italian
-    english_friendly: false
-    official: true
-  - name: English
-    english_friendly: true
-    official: false
 stipend:
   amount_eur_per_year: 53400
   is_taxable: true
@@ -25,8 +12,8 @@ stipend:
     per: year
     description: SNSF minimum doctoral salary from 1 Jan 2026 (range CHF 50,000-55,000)
 tuition_fees:
-  eu_students_eur_per_year: 1400
-  non_eu_students_eur_per_year: 1400
+  eu_students_eur_per_year: 720
+  non_eu_students_eur_per_year: 720
 cost_of_living:
   estimated_monthly_expenses_eur: 2280
   low_eur_per_month: 1970
@@ -40,21 +27,15 @@ cost_of_living:
 phd_system:
   typical_duration_years: 4
   is_employee_status: true
-  academic_calendar: null
-  required_ects: 12
 visa_and_work_rights:
-  requires_visa_for_non_eu: true
   post_study_work_visa_duration_months: 6
-  work_hours_limit_per_week: 15
 funding_availability:
-  rate: high
   main_sources:
     - SNSF (Swiss National Science Foundation)
     - University assistantships
     - EU Horizon programs
 happiness_index: 7.02
 climate:
-  type: Continental/Alpine
   average_temperature_summer_c: 19
   average_temperature_winter_c: 1
 contact_portals:
@@ -91,3 +72,8 @@ sources:
     title: 'EPFL: cost of living'
     url: https://www.epfl.ch/education/studies/en/financing-study/cost-of-living/
     accessed: '2026-10-03'
+  - topic: tuition
+    title: 'ETH Zurich: tuition, semester and other fees (doctoral semester fee CHF 150 + one-off CHF 1,500 exam fee)'
+    url: https://ethz.ch/content/dam/ethz/main/education/finanzielles/files-en/tuition-fees.pdf
+    accessed: '2026-10-03'
+    note: About CHF 675 a year over four years, converted at the 2025 ECB rate. EPFL charges no annual fee.

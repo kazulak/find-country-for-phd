@@ -1,13 +1,6 @@
 id: malta
 name: Malta
 capital: Valletta
-languages:
-  - name: Maltese
-    english_friendly: false
-    official: true
-  - name: English
-    english_friendly: true
-    official: true
 stipend:
   amount_eur_per_year: 28800
   is_taxable: true
@@ -19,8 +12,8 @@ stipend:
     per: year
     description: University of Malta Research Support Officer II, a typical project-funded PhD post (rate from 1 Jan 2024). The national TESS scheme covers fees plus at most EUR 2,500/year maintenance.
 tuition_fees:
-  eu_students_eur_per_year: 0
-  non_eu_students_eur_per_year: 8500
+  eu_students_eur_per_year: 600
+  non_eu_students_eur_per_year: 11000
 cost_of_living:
   estimated_monthly_expenses_eur: 1500
   low_eur_per_month: 1360
@@ -34,20 +27,14 @@ cost_of_living:
 phd_system:
   typical_duration_years: 3.5
   is_employee_status: true
-  academic_calendar: Semester (Oct-Jan / Feb-Jun)
-  required_ects: 0
 visa_and_work_rights:
-  requires_visa_for_non_eu: true
   post_study_work_visa_duration_months: 9
-  work_hours_limit_per_week: 20
 funding_availability:
-  rate: low
   main_sources:
     - Ministry for Education Malta
     - University Research Grants
 happiness_index: 6.44
 climate:
-  type: Subtropical / Mediterranean
   average_temperature_summer_c: 27
   average_temperature_winter_c: 14
 contact_portals:
@@ -82,4 +69,8 @@ sources:
   - topic: living_costs
     title: 'University of Malta: living costs'
     url: https://www.um.edu.mt/international/students/livingcosts/
+    accessed: '2026-10-03'
+  - topic: tuition
+    title: 'University of Malta: fees and funding (full-time doctorate EUR 600 EU/EEA, EUR 11,000 non-EU)'
+    url: https://www.um.edu.mt/study/feesfunding/
     accessed: '2026-10-03'

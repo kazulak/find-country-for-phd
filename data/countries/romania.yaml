@@ -1,13 +1,6 @@
 id: romania
 name: Romania
 capital: Bucharest
-languages:
-  - name: Romanian
-    english_friendly: false
-    official: true
-  - name: English
-    english_friendly: true
-    official: false
 stipend:
   amount_eur_per_year: 8800
   is_taxable: false
@@ -20,7 +13,7 @@ stipend:
     description: State doctoral scholarship (ministerial order for 2025-2026, unchanged in 2026)
 tuition_fees:
   eu_students_eur_per_year: 0
-  non_eu_students_eur_per_year: 3000
+  non_eu_students_eur_per_year: 3400
 cost_of_living:
   estimated_monthly_expenses_eur: 850
   low_eur_per_month: 600
@@ -34,20 +27,14 @@ cost_of_living:
 phd_system:
   typical_duration_years: 3
   is_employee_status: false
-  academic_calendar: Semester (Oct-Jan / Feb-Jun)
-  required_ects: 0
 visa_and_work_rights:
-  requires_visa_for_non_eu: true
   post_study_work_visa_duration_months: 9
-  work_hours_limit_per_week: 20
 funding_availability:
-  rate: medium
   main_sources:
     - UEFISCDI Romania
     - State financed tuition-free spots
 happiness_index: 6.63
 climate:
-  type: Temperate / Continental
   average_temperature_summer_c: 25
   average_temperature_winter_c: 0
 contact_portals:
@@ -76,3 +63,8 @@ sources:
     url: https://studyinromania.gov.ro/living-cost
     accessed: '2026-10-03'
     note: Upper end derived from the listed component costs.
+  - topic: tuition
+    title: 'University of Bucharest: tuition fees for non-EU citizens (doctorate EUR 3,400 a year)'
+    url: https://unibuc.ro/wp-content/uploads/2022/03/TAXE-DE-SCOLARIZARE-SI-SERVICII-PENTRU-STUDENTI-NON-EU-2022-2022.pdf
+    accessed: '2026-10-03'
+    note: EU citizens on state budget places pay no fee. Document from 2022; the ISDS programme lists EUR 3,900 for 2025-2026.

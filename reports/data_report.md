@@ -18,41 +18,39 @@ Last refreshed with `npm run data:refresh` on **2026-10-03**.
 
 | Country | Sources | Oldest access date | Not sourced yet |
 |---|---|---|---|
-| Austria | 4 | 2026-09-29 | tuition, phd_system |
-| Belgium | 3 | 2026-09-29 | tuition, phd_system |
-| Bulgaria | 4 | 2026-09-29 | tuition, phd_system |
-| Croatia | 5 | 2026-09-29 | tuition, phd_system |
-| Cyprus | 3 | 2026-09-29 | tuition, phd_system |
-| Czech Republic | 4 | 2026-09-29 | tuition, phd_system |
-| Denmark | 5 | 2026-09-29 | tuition, phd_system |
-| Estonia | 5 | 2026-09-29 | tuition, phd_system |
-| Finland | 4 | 2026-09-29 | tuition, phd_system |
-| France | 4 | 2026-09-29 | tuition, phd_system |
-| Germany | 6 | 2026-09-29 | tuition, phd_system |
-| Greece | 4 | 2026-09-29 | tuition, phd_system |
-| Hungary | 6 | 2026-09-29 | tuition, phd_system |
-| Ireland | 4 | 2026-09-29 | tuition, phd_system |
-| Italy | 4 | 2026-09-29 | tuition, phd_system |
-| Latvia | 4 | 2026-09-29 | tuition, phd_system |
-| Lithuania | 4 | 2026-09-29 | tuition, phd_system |
-| Luxembourg | 5 | 2026-09-29 | tuition, phd_system |
-| Malta | 5 | 2026-09-29 | tuition, phd_system |
-| Netherlands | 5 | 2026-09-29 | tuition, phd_system |
-| Norway | 6 | 2026-09-29 | tuition, phd_system |
-| Poland | 5 | 2026-09-29 | tuition, phd_system |
-| Portugal | 5 | 2026-09-29 | tuition, phd_system |
-| Romania | 3 | 2026-09-29 | tuition, phd_system |
-| Slovakia | 3 | 2026-09-29 | tuition, phd_system |
-| Slovenia | 4 | 2026-09-29 | tuition, phd_system |
-| Spain | 4 | 2026-09-29 | tuition, phd_system |
-| Sweden | 5 | 2026-09-29 | tuition, phd_system |
-| Switzerland | 5 | 2026-09-29 | tuition, phd_system |
-| United Kingdom | 4 | 2026-09-29 | tuition, phd_system |
+| Austria | 5 | 2026-09-29 | phd_system |
+| Belgium | 4 | 2026-09-29 | phd_system |
+| Bulgaria | 5 | 2026-09-29 | phd_system |
+| Croatia | 6 | 2026-09-29 | phd_system |
+| Cyprus | 4 | 2026-09-29 | phd_system |
+| Czech Republic | 5 | 2026-09-29 | phd_system |
+| Denmark | 6 | 2026-09-29 | phd_system |
+| Estonia | 6 | 2026-09-29 | phd_system |
+| Finland | 5 | 2026-09-29 | phd_system |
+| France | 5 | 2026-09-29 | phd_system |
+| Germany | 7 | 2026-09-29 | phd_system |
+| Greece | 5 | 2026-09-29 | phd_system |
+| Hungary | 7 | 2026-09-29 | phd_system |
+| Ireland | 5 | 2026-09-29 | phd_system |
+| Italy | 5 | 2026-09-29 | phd_system |
+| Latvia | 5 | 2026-09-29 | phd_system |
+| Lithuania | 4 | 2026-09-29 | phd_system |
+| Luxembourg | 6 | 2026-09-29 | phd_system |
+| Malta | 6 | 2026-09-29 | phd_system |
+| Netherlands | 6 | 2026-09-29 | phd_system |
+| Norway | 7 | 2026-09-29 | phd_system |
+| Poland | 6 | 2026-09-29 | phd_system |
+| Portugal | 6 | 2026-09-29 | phd_system |
+| Romania | 4 | 2026-09-29 | phd_system |
+| Slovakia | 4 | 2026-09-29 | phd_system |
+| Slovenia | 5 | 2026-09-29 | phd_system |
+| Spain | 5 | 2026-09-29 | phd_system |
+| Sweden | 6 | 2026-09-29 | phd_system |
+| Switzerland | 6 | 2026-09-29 | phd_system |
+| United Kingdom | 6 | 2026-09-29 | phd_system |
 
-Still unsourced across the dataset: **tuition** (30 countries), **phd_system** (30 countries).
+Still unsourced across the dataset: **phd_system** (30 countries).
 
 ## Empty fields
 
-- **France**: `phd_system.required_ects`
-- **Italy**: `visa_and_work_rights.work_hours_limit_per_week`
-- **Switzerland**: `phd_system.academic_calendar`
+No empty fields.

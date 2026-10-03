@@ -1,13 +1,6 @@
 id: czech_republic
 name: Czech Republic
 capital: Prague
-languages:
-  - name: Czech
-    english_friendly: false
-    official: true
-  - name: English
-    english_friendly: true
-    official: false
 stipend:
   amount_eur_per_year: 13100
   is_taxable: false
@@ -20,7 +13,7 @@ stipend:
     description: Guaranteed minimum doctoral study income from 2026/27 (1.2x the minimum wage), paid as stipend and/or salary
 tuition_fees:
   eu_students_eur_per_year: 0
-  non_eu_students_eur_per_year: 2000
+  non_eu_students_eur_per_year: 0
 cost_of_living:
   estimated_monthly_expenses_eur: 700
   low_eur_per_month: 550
@@ -34,20 +27,14 @@ cost_of_living:
 phd_system:
   typical_duration_years: 4
   is_employee_status: false
-  academic_calendar: Semester (Oct-Jan / Feb-May)
-  required_ects: 0
 visa_and_work_rights:
-  requires_visa_for_non_eu: true
   post_study_work_visa_duration_months: 9
-  work_hours_limit_per_week: 20
 funding_availability:
-  rate: medium
   main_sources:
     - GACR (Czech Science Foundation)
     - University specific grants
 happiness_index: 6.82
 climate:
-  type: Continental / Temperate
   average_temperature_summer_c: 21
   average_temperature_winter_c: 1
 contact_portals:
@@ -79,3 +66,8 @@ sources:
     title: 'Masaryk University: life in Brno'
     url: https://www.fss.muni.cz/en/faculty-of-social-studies/student-life/life-in-brno
     accessed: '2026-10-03'
+  - topic: tuition
+    title: 'Masaryk University: financing of doctoral studies (no tuition, including the English programme)'
+    url: https://www.fi.muni.cz/admission/doctoral/finance.html.en
+    accessed: '2026-10-03'
+    note: Czech-language doctoral programmes are free for all; some English programmes still charge (e.g. about EUR 500 a year at Charles University IES).

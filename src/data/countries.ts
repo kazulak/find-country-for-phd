@@ -36,10 +36,7 @@ export interface Country {
   capital: string;
   durationYears: number;
   duration: string;
-  academicCalendar: string;
   status: 'Employed' | 'Student' | 'Fellowship';
-  structure: 'Structured' | 'Individual';
-  requiredEcts: number;
   grossSalary: number; // EUR per month
   netIncome: number; // EUR per month, rough estimate
   isTaxable: boolean;
@@ -53,12 +50,11 @@ export interface Country {
   costBasis: string | null; // what the range is, as published
   priceIndex: number; // EU average = 100
   priceLevel: 'Very low' | 'Low' | 'Average' | 'High' | 'Very high';
-  fundingAvailability: 'High' | 'Medium' | 'Low';
   fundingSources: string[];
-  requiresVisaNonEU: boolean;
   postStudyVisaMonths: number;
+  euFreeMovement: boolean; // false for the UK since Brexit
   happinessIndex: number | null; // 0 to 10 life-satisfaction score
-  climate: { type: string; summerC: number; winterC: number };
+  climate: { summerC: number; winterC: number };
   portals: Portal[];
   sources: Source[];
   overview: string;

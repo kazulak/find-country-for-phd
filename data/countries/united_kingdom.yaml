@@ -1,10 +1,6 @@
 id: united_kingdom
 name: United Kingdom
 capital: London
-languages:
-  - name: English
-    english_friendly: true
-    official: true
 stipend:
   amount_eur_per_year: 25400
   is_taxable: false
@@ -16,8 +12,8 @@ stipend:
     per: year
     description: UKRI minimum doctoral stipend 2026/27 outside London (+GBP 2,000 London weighting), tax-free
 tuition_fees:
-  eu_students_eur_per_year: 24000
-  non_eu_students_eur_per_year: 24000
+  eu_students_eur_per_year: 31500
+  non_eu_students_eur_per_year: 31500
 cost_of_living:
   estimated_monthly_expenses_eur: 1580
   low_eur_per_month: 1370
@@ -31,14 +27,10 @@ cost_of_living:
 phd_system:
   typical_duration_years: 3.5
   is_employee_status: false
-  academic_calendar: Trimester/Term (Autumn, Spring, Summer)
-  required_ects: 0
 visa_and_work_rights:
-  requires_visa_for_non_eu: true
   post_study_work_visa_duration_months: 36
-  work_hours_limit_per_week: 20
+  eu_free_movement: false
 funding_availability:
-  rate: medium
   main_sources:
     - UKRI (UK Research and Innovation)
     - Wellcome Trust
@@ -46,7 +38,6 @@ funding_availability:
     - Industrial funding
 happiness_index: 6.69
 climate:
-  type: Temperate Maritime
   average_temperature_summer_c: 19
   average_temperature_winter_c: 5
 contact_portals:
@@ -78,4 +69,13 @@ sources:
   - topic: living_costs
     title: 'GOV.UK: Student visa, money you need'
     url: https://www.gov.uk/student-visa/money
+    accessed: '2026-10-03'
+  - topic: tuition
+    title: 'University of Manchester: research degree fees (international PhD GBP 27,000 a year)'
+    url: https://www.bmh.manchester.ac.uk/study/research/funding-fees/fees-and-costs/
+    accessed: '2026-10-03'
+    note: Converted at the 2025 ECB rate. New EU students pay international fees since Brexit; the home fee is GBP 5,238 (UKRI 2026/27), and UKRI studentships cover at least that.
+  - topic: visa
+    title: 'GOV.UK: Student visa (EU citizens without settled status need one)'
+    url: https://www.gov.uk/student-visa
     accessed: '2026-10-03'

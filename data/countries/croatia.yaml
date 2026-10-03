@@ -1,13 +1,6 @@
 id: croatia
 name: Croatia
 capital: Zagreb
-languages:
-  - name: Croatian
-    english_friendly: false
-    official: true
-  - name: English
-    english_friendly: true
-    official: false
 stipend:
   amount_eur_per_year: 24700
   is_taxable: true
@@ -19,8 +12,8 @@ stipend:
     per: month
     description: Assistant (asistent) job coefficient 2.01 x salary base EUR 1,025 (from 1 Aug 2026), before seniority
 tuition_fees:
-  eu_students_eur_per_year: 0
-  non_eu_students_eur_per_year: 3000
+  eu_students_eur_per_year: 1100
+  non_eu_students_eur_per_year: 1100
 cost_of_living:
   estimated_monthly_expenses_eur: 800
   low_eur_per_month: 500
@@ -34,19 +27,13 @@ cost_of_living:
 phd_system:
   typical_duration_years: 3
   is_employee_status: true
-  academic_calendar: Semester (Oct-Jan / Mar-Jun)
-  required_ects: 0
 visa_and_work_rights:
-  requires_visa_for_non_eu: true
   post_study_work_visa_duration_months: 12
-  work_hours_limit_per_week: 20
 funding_availability:
-  rate: low
   main_sources:
     - HRZZ (Croatian Science Foundation)
 happiness_index: 6.01
 climate:
-  type: Mediterranean / Continental
   average_temperature_summer_c: 23
   average_temperature_winter_c: 1
 contact_portals:
@@ -82,3 +69,8 @@ sources:
     title: 'University of Zagreb: living and studying in Zagreb'
     url: https://projects.unizg.hr/international_students/degree_seeking_students/living__studying_in_zagreb
     accessed: '2026-10-03'
+  - topic: tuition
+    title: 'University of Zagreb, Faculty of Science: doctoral fees and funding'
+    url: https://www.pmf.unizg.hr/phy/en/teaching/doctoral/enrolment/fees_and_funding
+    accessed: '2026-10-03'
+    note: Lowest of the Zagreb fees (EUR 1,100-3,000 a year depending on the faculty); usually paid by the project or employer for assistants.

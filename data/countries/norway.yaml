@@ -1,13 +1,6 @@
 id: norway
 name: Norway
 capital: Oslo
-languages:
-  - name: Norwegian
-    english_friendly: false
-    official: true
-  - name: English
-    english_friendly: true
-    official: false
 stipend:
   amount_eur_per_year: 47000
   is_taxable: true
@@ -34,20 +27,14 @@ cost_of_living:
 phd_system:
   typical_duration_years: 3.5
   is_employee_status: true
-  academic_calendar: Semester (Aug-Dec / Jan-Jun)
-  required_ects: 30
 visa_and_work_rights:
-  requires_visa_for_non_eu: true
   post_study_work_visa_duration_months: 12
-  work_hours_limit_per_week: 20
 funding_availability:
-  rate: high
   main_sources:
     - Research Council of Norway
     - University PhD Positions (Employed)
 happiness_index: 7.24
 climate:
-  type: Nordic / Temperate
   average_temperature_summer_c: 18
   average_temperature_winter_c: -3
 contact_portals:
@@ -85,4 +72,8 @@ sources:
   - topic: living_costs
     title: 'University of Oslo: budget and cost of living'
     url: https://www.uio.no/english/student-life/budget/
+    accessed: '2026-10-03'
+  - topic: tuition
+    title: 'Study in Norway: cost and requirements (doctoral candidates are exempt from tuition at public institutions)'
+    url: https://studyinnorway.no/cost-and-requirements
     accessed: '2026-10-03'

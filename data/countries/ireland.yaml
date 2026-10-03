@@ -1,13 +1,6 @@
 id: ireland
 name: Ireland
 capital: Dublin
-languages:
-  - name: English
-    english_friendly: true
-    official: true
-  - name: Irish
-    english_friendly: false
-    official: true
 stipend:
   amount_eur_per_year: 25000
   is_taxable: false
@@ -19,8 +12,8 @@ stipend:
     per: year
     description: Research Ireland PhD stipend from 1 Jan 2025, tax-free
 tuition_fees:
-  eu_students_eur_per_year: 6000
-  non_eu_students_eur_per_year: 14000
+  eu_students_eur_per_year: 7410
+  non_eu_students_eur_per_year: 12440
 cost_of_living:
   estimated_monthly_expenses_eur: 1370
   low_eur_per_month: 1000
@@ -34,20 +27,14 @@ cost_of_living:
 phd_system:
   typical_duration_years: 4
   is_employee_status: false
-  academic_calendar: Semester (Sep-Dec / Jan-May)
-  required_ects: 30
 visa_and_work_rights:
-  requires_visa_for_non_eu: true
   post_study_work_visa_duration_months: 24
-  work_hours_limit_per_week: 20
 funding_availability:
-  rate: medium
   main_sources:
     - Irish Research Council (IRC)
     - Science Foundation Ireland (SFI)
 happiness_index: 6.93
 climate:
-  type: Maritime / Temperate
   average_temperature_summer_c: 16
   average_temperature_winter_c: 6
 contact_portals:
@@ -78,3 +65,8 @@ sources:
     title: 'UCD Global: living costs in Dublin'
     url: https://www.ucd.ie/global/study-at-ucd/scholarshipsfinances/livingcosts/
     accessed: '2026-10-03'
+  - topic: tuition
+    title: 'Trinity College Dublin: doctoral programme fees 2026/27 (EU EUR 7,410; non-EU EUR 12,440 at the Business School)'
+    url: https://www.tcd.ie/business/programmes/the-doctoral-programme/fees/
+    accessed: '2026-10-03'
+    note: Varies by school and university (UCD EU fees EUR 3,570-16,560). Research Ireland and most funded positions pay the fees.

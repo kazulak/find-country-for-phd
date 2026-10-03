@@ -180,12 +180,6 @@ export default function ComparisonHub() {
               <td className="param-val">{renderBadge(c2?.status)}</td>
               <td className="param-val">{c3 ? renderBadge(c3.status) : <span className="empty-cell-text">—</span>}</td>
             </tr>
-            <tr>
-              <td className="param-name">Standard Model</td>
-              <td className="param-val">{c1?.structure}</td>
-              <td className="param-val">{c2?.structure}</td>
-              <td className="param-val">{c3 ? c3.structure : <span className="empty-cell-text">—</span>}</td>
-            </tr>
 
             {/* Financial Framework Section */}
             <tr className="section-row">

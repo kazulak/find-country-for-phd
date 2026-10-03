@@ -2,11 +2,11 @@ import { test, expect } from '@playwright/test';
 
 const BASE = '/find-country-for-phd/';
 
-async function answerQuiz(page, { citizenship = 'eu', finance = 'salary', duration = 'any', structure = 'nopref', lifestyle = 'wlb' } = {}) {
+async function answerQuiz(page, { citizenship = 'eu', finance = 'salary', duration = 'any', lifestyle = 'wlb' } = {}) {
   await page.goto(BASE);
   await page.locator('.nav-link[data-tab="quiz"]').click();
   await page.locator('#start-quiz-btn').click();
-  for (const [name, value] of [['citizenship', citizenship], ['finance', finance], ['duration', duration], ['structure', structure], ['lifestyle', lifestyle]]) {
+  for (const [name, value] of [['citizenship', citizenship], ['finance', finance], ['duration', duration], ['lifestyle', lifestyle]]) {
     await page.locator(`input[name="q-${name}"][value="${value}"]`).click();
     await page.locator('#next-step-btn').click();
   }
@@ -87,6 +87,12 @@ test.describe('PhD Country Match Platform E2E Tests', () => {
     await expect(page.locator('.source-list a[href*="lmu.de"]')).toHaveCount(1);
   });
 
+  test('UK page does not promise EU free movement', async ({ page }) => {
+    await page.goto(`${BASE}countries/united_kingdom/`);
+    await expect(page.getByText(/Student visa required \(no EU free movement\)/)).toBeVisible();
+    await expect(page.getByText('Not needed (free movement)')).toHaveCount(0);
+  });
+
   test('header navigation works from a country page', async ({ page }) => {
     await page.goto(`${BASE}countries/poland/`);
     await page.locator('.nav-link[data-tab="quiz"]').click();
@@ -102,7 +108,7 @@ test.describe('PhD Country Match Platform E2E Tests', () => {
   });
 
   test('should run the quiz and show results', async ({ page }) => {
-    const results = await answerQuiz(page, { structure: 'structured' });
+    const results = await answerQuiz(page, { duration: 'fast' });
     const firstMatch = results.first();
     await expect(firstMatch).toBeVisible();
 

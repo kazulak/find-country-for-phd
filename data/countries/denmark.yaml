@@ -1,13 +1,6 @@
 id: denmark
 name: Denmark
 capital: Copenhagen
-languages:
-  - name: Danish
-    english_friendly: false
-    official: true
-  - name: English
-    english_friendly: true
-    official: false
 stipend:
   amount_eur_per_year: 51200
   is_taxable: true
@@ -34,20 +27,14 @@ cost_of_living:
 phd_system:
   typical_duration_years: 3
   is_employee_status: true
-  academic_calendar: Semester (Sep-Jan / Feb-Jun)
-  required_ects: 30
 visa_and_work_rights:
-  requires_visa_for_non_eu: true
   post_study_work_visa_duration_months: 36
-  work_hours_limit_per_week: 20
 funding_availability:
-  rate: high
   main_sources:
     - Independent Research Fund Denmark
     - State-funded PhD positions
 happiness_index: 7.54
 climate:
-  type: Maritime / Cool
   average_temperature_summer_c: 18
   average_temperature_winter_c: 2
 contact_portals:
@@ -81,4 +68,8 @@ sources:
   - topic: living_costs
     title: 'Aarhus University: cost of living for students, PhDs and researchers'
     url: https://international.au.dk/life/lifeindenmark/costofliving
+    accessed: '2026-10-03'
+  - topic: tuition
+    title: 'Study in Denmark: PhD programmes (PhD fellows are employed; no tuition)'
+    url: https://studyindenmark.dk/study-options/what-can-i-study/phd-and-research
     accessed: '2026-10-03'

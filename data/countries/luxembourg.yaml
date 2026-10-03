@@ -1,19 +1,6 @@
 id: luxembourg
 name: Luxembourg
 capital: Luxembourg City
-languages:
-  - name: Luxembourgish
-    english_friendly: false
-    official: true
-  - name: French
-    english_friendly: false
-    official: true
-  - name: German
-    english_friendly: false
-    official: true
-  - name: English
-    english_friendly: true
-    official: false
 stipend:
   amount_eur_per_year: 43400
   is_taxable: true
@@ -40,20 +27,14 @@ cost_of_living:
 phd_system:
   typical_duration_years: 3.5
   is_employee_status: true
-  academic_calendar: Semester (Sep-Feb / Feb-Jul)
-  required_ects: 20
 visa_and_work_rights:
-  requires_visa_for_non_eu: true
   post_study_work_visa_duration_months: 9
-  work_hours_limit_per_week: 20
 funding_availability:
-  rate: high
   main_sources:
     - FNR (Luxembourg National Research Fund)
     - University of Luxembourg contracts
 happiness_index: 7.06
 climate:
-  type: Temperate / Maritime
   average_temperature_summer_c: 19
   average_temperature_winter_c: 2
 contact_portals:
@@ -89,3 +70,8 @@ sources:
     url: https://www.euraxess.lu/luxembourg/information-researchers/accommodation
     accessed: '2026-10-03'
     note: Upper end is an estimate; no official total for private housing.
+  - topic: tuition
+    title: 'University of Luxembourg: doctoral candidates (enrolment fee EUR 200 per semester)'
+    url: https://www.uni.lu/en/admissions/doctoral-candidates/
+    accessed: '2026-10-03'
+    note: Some programmes charge EUR 400 per semester.

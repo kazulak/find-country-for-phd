@@ -1,13 +1,6 @@
 id: france
 name: France
 capital: Paris
-languages:
-  - name: French
-    english_friendly: false
-    official: true
-  - name: English
-    english_friendly: true
-    official: false
 stipend:
   amount_eur_per_year: 27600
   is_taxable: true
@@ -19,8 +12,8 @@ stipend:
     per: month
     description: Statutory minimum for a contrat doctoral from 1 Jan 2026
 tuition_fees:
-  eu_students_eur_per_year: 380
-  non_eu_students_eur_per_year: 380
+  eu_students_eur_per_year: 397
+  non_eu_students_eur_per_year: 397
 cost_of_living:
   estimated_monthly_expenses_eur: 900
   low_eur_per_month: 800
@@ -34,21 +27,15 @@ cost_of_living:
 phd_system:
   typical_duration_years: 3
   is_employee_status: true
-  academic_calendar: Semester (Sep-Jan / Feb-Jun)
-  required_ects: null
 visa_and_work_rights:
-  requires_visa_for_non_eu: true
   post_study_work_visa_duration_months: 12
-  work_hours_limit_per_week: 20
 funding_availability:
-  rate: medium
   main_sources:
     - Ministry of Higher Education and Research (contrat doctoral)
     - CIFRE (Industrial agreements)
     - CNRS and other public research institutes
 happiness_index: 6.59
 climate:
-  type: Temperate Maritime / Mediterranean
   average_temperature_summer_c: 21
   average_temperature_winter_c: 5
 contact_portals:
@@ -78,6 +65,11 @@ sources:
     url: https://www.emn.lt/uploads/Products/product_1934/EMN_inform_international_researchers.2022.pdf
     accessed: '2026-09-29'
   - topic: living_costs
-    title: 'Campus France: living costs for students in France'
-    url: http://virtual.campusfrance.org/plan-your-stay-in-france-as-student/living-costs-for-students-in-france
+    title: 'Campus France India: how much does it cost to live in France (about EUR 1,000 in Paris, EUR 800 elsewhere)'
+    url: https://www.inde.campusfrance.org/faq/how-much-does-it-cost-to-live-in-france
     accessed: '2026-10-03'
+  - topic: tuition
+    title: 'Campus France: how to enrol in a doctorate (EUR 397 registration fee 2025/2026, same for non-EU)'
+    url: https://www.campusfrance.org/en/how-to-enrol-Doctorate-France
+    accessed: '2026-10-03'
+    note: Plus the CVEC student life contribution (EUR 105).

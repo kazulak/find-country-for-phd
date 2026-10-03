@@ -1,16 +1,6 @@
 id: finland
 name: Finland
 capital: Helsinki
-languages:
-  - name: Finnish
-    english_friendly: false
-    official: true
-  - name: Swedish
-    english_friendly: false
-    official: true
-  - name: English
-    english_friendly: true
-    official: false
 stipend:
   amount_eur_per_year: 32400
   is_taxable: true
@@ -37,20 +27,14 @@ cost_of_living:
 phd_system:
   typical_duration_years: 4
   is_employee_status: true
-  academic_calendar: Semester (Sep-Dec / Jan-May)
-  required_ects: 40
 visa_and_work_rights:
-  requires_visa_for_non_eu: true
   post_study_work_visa_duration_months: 24
-  work_hours_limit_per_week: 20
 funding_availability:
-  rate: high
   main_sources:
     - Academy of Finland
     - University graduate school funding
 happiness_index: 7.76
 climate:
-  type: Subarctic / Cold
   average_temperature_summer_c: 18
   average_temperature_winter_c: -3
 contact_portals:
@@ -80,4 +64,8 @@ sources:
   - topic: living_costs
     title: 'University of Helsinki: cost of living and financial matters'
     url: https://www.helsinki.fi/en/admissions-and-education/international-students/student-life-helsinki/cost-living-and-financial-matters
+    accessed: '2026-10-03'
+  - topic: tuition
+    title: 'Study in Finland: doctoral admissions (no tuition fees at doctoral level, any nationality)'
+    url: https://www.studyinfinland.fi/admissions/doctoral-admissions
     accessed: '2026-10-03'

@@ -6,7 +6,7 @@ import { countries } from '../data/countries';
   <!-- Progress Bar Header -->
   <div class="quiz-header" id="quiz-header" style="display: none;">
     <div class="quiz-progress-wrapper">
-      <span class="quiz-progress-text">Question <span id="current-step-num">1</span> of 5</span>
+      <span class="quiz-progress-text">Question <span id="current-step-num">1</span> of 4</span>
       <div class="progress-bar-bg">
         <div class="progress-bar-fill" id="quiz-progress-bar" style="width: 0%"></div>
       </div>
@@ -18,7 +18,7 @@ import { countries } from '../data/countries';
     <div class="quiz-welcome-content">
       <span class="quiz-welcome-icon" aria-hidden="true">🎓</span>
       <h3>Which PhD system fits you?</h3>
-      <p>European PhDs differ a lot. In some countries you're an employee with a salary and a pension; in others you're a student living on a stipend. Answer five quick questions and see how {countries.length} countries rank on the things you care about. It's a transparent weighted score, not a crystal ball.</p>
+      <p>European PhDs differ a lot. In some countries you're an employee with a salary and a pension; in others you're a student living on a stipend. Answer four quick questions and see how {countries.length} countries rank on the things you care about. It's a transparent weighted score, not a crystal ball.</p>
       <button class="btn btn-primary btn-lg" id="start-quiz-btn">
         Start the Quiz
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 4px;" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
@@ -85,32 +85,9 @@ import { countries } from '../data/countries';
     </div>
   </div>
 
-  <!-- Step 4: PhD Research Structure -->
+  <!-- Step 4: Life outside the lab -->
   <div class="quiz-step" id="step-4" style="display: none;">
-    <h3 class="step-title">4. Which kind of programme do you prefer?</h3>
-    <p class="step-desc">Some systems require coursework credits (ECTS); others are mostly independent research.</p>
-    <div class="option-grid">
-      <label class="option-card glass-interactive">
-        <input type="radio" name="q-structure" value="structured" class="quiz-radio" />
-        <span class="option-title">Structured Programme</span>
-        <span class="option-desc">Required coursework, a cohort and clear milestones.</span>
-      </label>
-      <label class="option-card glass-interactive">
-        <input type="radio" name="q-structure" value="individual" class="quiz-radio" />
-        <span class="option-title">Individual / Traditional</span>
-        <span class="option-desc">Mostly independent research with your supervisor, little required coursework.</span>
-      </label>
-      <label class="option-card glass-interactive">
-        <input type="radio" name="q-structure" value="nopref" class="quiz-radio" />
-        <span class="option-title">No Preference</span>
-        <span class="option-desc">Either works for me.</span>
-      </label>
-    </div>
-  </div>
-
-  <!-- Step 5: Life outside the lab -->
-  <div class="quiz-step" id="step-5" style="display: none;">
-    <h3 class="step-title">5. What matters most outside the lab?</h3>
+    <h3 class="step-title">4. What matters most outside the lab?</h3>
     <p class="step-desc">You will have a life outside the lab. Probably.</p>
     <div class="option-grid">
       <label class="option-card glass-interactive">
@@ -466,14 +443,13 @@ import { countries } from '../data/countries';
     .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
 
   let currentStep = 0;
-  const totalSteps = 5;
+  const totalSteps = 4;
 
   // Selected Answers State
   const answers = {
     citizenship: '',
     finance: '',
     duration: '',
-    structure: '',
     lifestyle: ''
   };
 
@@ -482,7 +458,6 @@ import { countries } from '../data/countries';
     answers.citizenship = '';
     answers.finance = '';
     answers.duration = '';
-    answers.structure = '';
     answers.lifestyle = '';
     
     // Reset checked radios
@@ -559,8 +534,7 @@ import { countries } from '../data/countries';
       case 1: return 'q-citizenship';
       case 2: return 'q-finance';
       case 3: return 'q-duration';
-      case 4: return 'q-structure';
-      case 5: return 'q-lifestyle';
+      case 4: return 'q-lifestyle';
       default: return '';
     }
   }
@@ -575,7 +549,6 @@ import { countries } from '../data/countries';
       priorityCostOfLiving: answers.finance === 'living' ? 5 : 1,
       priorityTuitionFees: answers.finance === 'tuition' ? 5 : 1,
       preferShorterDuration: answers.duration === 'fast',
-      preferStructure: answers.structure === 'structured' ? 'Structured' : (answers.structure === 'individual' ? 'Individual' : null),
       priorityHappiness: answers.lifestyle === 'wlb' ? 5 : 1,
       preferWarmClimate: answers.lifestyle === 'climate',
       prioritySavings: answers.lifestyle === 'savings' ? 5 : 1

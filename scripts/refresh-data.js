@@ -74,7 +74,7 @@ async function request(url, retries = 3) {
   // Open-Meteo's free tier rate-limits per minute and the OECD API returns sporadic
   // 5xx errors; wait and retry rather than fail the whole refresh.
   if ((res.status === 429 || res.status >= 500) && retries > 0) {
-    const wait = res.status === 429 ? 65 : 15;
+    const wait = res.status === 429 ? 65 : 15 * 2 ** (3 - retries); // 15, 30, 60 s
     console.log(`  HTTP ${res.status}, retrying in ${wait} s ...`);
     await sleep(wait * 1000);
     return request(url, retries - 1);

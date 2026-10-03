@@ -1,13 +1,6 @@
 id: sweden
 name: Sweden
 capital: Stockholm
-languages:
-  - name: Swedish
-    english_friendly: false
-    official: true
-  - name: English
-    english_friendly: true
-    official: false
 stipend:
   amount_eur_per_year: 36900
   is_taxable: true
@@ -34,21 +27,15 @@ cost_of_living:
 phd_system:
   typical_duration_years: 4
   is_employee_status: true
-  academic_calendar: Semester (Aug-Jan / Jan-Jun)
-  required_ects: 60
 visa_and_work_rights:
-  requires_visa_for_non_eu: true
   post_study_work_visa_duration_months: 12
-  work_hours_limit_per_week: 0
 funding_availability:
-  rate: high
   main_sources:
     - Swedish Research Council (Vetenskapsrådet)
     - University doctoral positions (Doktorandtjänst)
     - Wallenberg Foundations
 happiness_index: 7.26
 climate:
-  type: Subarctic / Temperate
   average_temperature_summer_c: 18
   average_temperature_winter_c: -1
 contact_portals:
@@ -83,4 +70,8 @@ sources:
   - topic: living_costs
     title: 'Stockholm University: living costs'
     url: https://www.su.se/english/education/new-in-sweden/living-costs
+    accessed: '2026-10-03'
+  - topic: tuition
+    title: 'Study in Sweden: PhD programmes (no tuition fees)'
+    url: https://studyinsweden.se/plan-your-studies/degree-programmes/phd-programmes/
     accessed: '2026-10-03'

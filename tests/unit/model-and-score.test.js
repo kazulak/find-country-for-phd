@@ -78,9 +78,9 @@ describe('country model', () => {
     }
   });
 
-  test('never praises funding in countries marked as low funding availability', () => {
-    for (const c of Object.values(flat).filter((c) => c.fundingAvailability === 'Low')) {
-      assert.ok(!c.pros.some((p) => /well-funded/i.test(p)), c.id);
+  test('every profile cites its doctoral fees', () => {
+    for (const d of Object.values(raw)) {
+      assert.ok(d.sources.some((s) => s.topic === 'tuition'), d.id);
     }
   });
 
@@ -117,15 +117,6 @@ describe('score engine', () => {
   test('shorter-duration preference favours 3-year systems', () => {
     const prefs = { preferShorterDuration: true };
     assert.ok(calculateMatchScore(flat.italy, prefs).breakdown.duration > calculateMatchScore(flat.switzerland, prefs).breakdown.duration);
-  });
-
-  test('structure preference changes the ranking', () => {
-    const structured = { preferStructure: 'Structured' };
-    const individual = { preferStructure: 'Individual' };
-    assert.equal(flat.netherlands.structure, 'Structured');
-    assert.equal(flat.germany.structure, 'Individual');
-    assert.ok(calculateMatchScore(flat.netherlands, structured).totalScore > calculateMatchScore(flat.netherlands, individual).totalScore);
-    assert.ok(calculateMatchScore(flat.germany, individual).totalScore > calculateMatchScore(flat.germany, structured).totalScore);
   });
 
   test('warm-climate preference favours the south', () => {

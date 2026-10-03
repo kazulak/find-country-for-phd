@@ -1,13 +1,6 @@
 id: austria
 name: Austria
 capital: Vienna
-languages:
-  - name: German
-    english_friendly: false
-    official: true
-  - name: English
-    english_friendly: true
-    official: false
 stipend:
   amount_eur_per_year: 39600
   is_taxable: true
@@ -20,8 +13,8 @@ stipend:
     payments_per_year: 14
     description: Uni-KV group B1 (EUR 3,776.10 full-time from 1 Jan 2026) at the usual 30 h/week (75%), paid 14 times a year
 tuition_fees:
-  eu_students_eur_per_year: 750
-  non_eu_students_eur_per_year: 1500
+  eu_students_eur_per_year: 0
+  non_eu_students_eur_per_year: 1453
 cost_of_living:
   estimated_monthly_expenses_eur: 1380
   low_eur_per_month: 1250
@@ -35,20 +28,14 @@ cost_of_living:
 phd_system:
   typical_duration_years: 3.5
   is_employee_status: true
-  academic_calendar: Semester (Oct-Jan / Mar-Jun)
-  required_ects: 0
 visa_and_work_rights:
-  requires_visa_for_non_eu: true
   post_study_work_visa_duration_months: 12
-  work_hours_limit_per_week: 20
 funding_availability:
-  rate: medium
   main_sources:
     - FWF (Austrian Science Fund)
     - University project assistant contracts
 happiness_index: 6.85
 climate:
-  type: Temperate / Alpine
   average_temperature_summer_c: 22
   average_temperature_winter_c: 1
 contact_portals:
@@ -79,3 +66,8 @@ sources:
     title: 'Study in Austria: living costs'
     url: https://studyinaustria.at/en/live-and-work/living-costs
     accessed: '2026-10-03'
+  - topic: tuition
+    title: 'oesterreich.gv.at: university fees (third-country students EUR 726.72 per semester; EU exempt within the standard duration)'
+    url: https://www.oesterreich.gv.at/en/themen/bildung_und_ausbildung/hochschulen/universitaet/Seite.160104
+    accessed: '2026-10-03'
+    note: Plus the student union fee (about EUR 25 per semester).

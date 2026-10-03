@@ -1,13 +1,6 @@
 id: slovenia
 name: Slovenia
 capital: Ljubljana
-languages:
-  - name: Slovenian
-    english_friendly: false
-    official: true
-  - name: English
-    english_friendly: true
-    official: false
 stipend:
   amount_eur_per_year: 28000
   is_taxable: true
@@ -19,8 +12,8 @@ stipend:
     per: month
     description: Young researcher (mladi raziskovalec), public-sector salary grade 22
 tuition_fees:
-  eu_students_eur_per_year: 0
-  non_eu_students_eur_per_year: 3000
+  eu_students_eur_per_year: 2900
+  non_eu_students_eur_per_year: 2900
 cost_of_living:
   estimated_monthly_expenses_eur: 600
   low_eur_per_month: 500
@@ -34,20 +27,14 @@ cost_of_living:
 phd_system:
   typical_duration_years: 3.5
   is_employee_status: true
-  academic_calendar: Semester (Oct-Jan / Feb-Jun)
-  required_ects: 0
 visa_and_work_rights:
-  requires_visa_for_non_eu: true
   post_study_work_visa_duration_months: 9
-  work_hours_limit_per_week: 20
 funding_availability:
-  rate: medium
   main_sources:
     - Slovenian Research Agency (ARRS)
     - Ministry co-funding for doctoral study
 happiness_index: 6.87
 climate:
-  type: Temperate / Alpine
   average_temperature_summer_c: 22
   average_temperature_winter_c: 0
 contact_portals:
@@ -78,3 +65,8 @@ sources:
     title: 'Study in Slovenia: cost of living'
     url: https://studyinslovenia.si/live/cost-of-living/
     accessed: '2026-10-03'
+  - topic: tuition
+    title: 'University of Ljubljana, Faculty of Arts: doctoral study enrolment (EUR 11,600 for four years)'
+    url: https://www.ff.uni-lj.si/en/study/third-cycle-doctoral-study-programmes/application-enrolment
+    accessed: '2026-10-03'
+    note: Study in Slovenia gives EUR 2,000-6,000 a year; fees are covered for young researchers.

@@ -1,13 +1,6 @@
 id: netherlands
 name: Netherlands
 capital: Amsterdam
-languages:
-  - name: Dutch
-    english_friendly: false
-    official: true
-  - name: English
-    english_friendly: true
-    official: false
 stipend:
   amount_eur_per_year: 44700
   is_taxable: true
@@ -35,14 +28,9 @@ cost_of_living:
 phd_system:
   typical_duration_years: 4
   is_employee_status: true
-  academic_calendar: Flexible (Start anytime)
-  required_ects: 30
 visa_and_work_rights:
-  requires_visa_for_non_eu: true
   post_study_work_visa_duration_months: 12
-  work_hours_limit_per_week: 0
 funding_availability:
-  rate: high
   main_sources:
     - NWO (Dutch Research Council)
     - Direct university funding (employee positions)
@@ -50,7 +38,6 @@ funding_availability:
     - Industrial partnerships
 happiness_index: 7.22
 climate:
-  type: Temperate Maritime
   average_temperature_summer_c: 18
   average_temperature_winter_c: 4
 contact_portals:
@@ -87,3 +74,8 @@ sources:
     title: 'Study in NL: daily student expenses and cost of living'
     url: https://www.studyinnl.org/finances/daily-student-expenses-and-cost-of-living-in-the-netherlands
     accessed: '2026-10-03'
+  - topic: tuition
+    title: 'TU Delft: PhD fees and funding (fees usually waived for employed PhD candidates)'
+    url: https://www.tudelft.nl/en/education/programmes/phd/phd-admission/fees-and-funding
+    accessed: '2026-10-03'
+    note: Scholarship (non-employed) candidates at TU Delft pay a one-off EUR 11,000.

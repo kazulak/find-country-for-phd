@@ -1,16 +1,6 @@
 id: belgium
 name: Belgium
 capital: Brussels
-languages:
-  - name: Dutch
-    english_friendly: false
-    official: true
-  - name: French
-    english_friendly: false
-    official: true
-  - name: English
-    english_friendly: true
-    official: false
 stipend:
   amount_eur_per_year: 31200
   is_taxable: false
@@ -22,8 +12,8 @@ stipend:
     per: month
     description: FWO PhD fellowship fundamental research, 0 years seniority; FWO quotes this as the net (tax-free) amount
 tuition_fees:
-  eu_students_eur_per_year: 900
-  non_eu_students_eur_per_year: 900
+  eu_students_eur_per_year: 290
+  non_eu_students_eur_per_year: 580
 cost_of_living:
   estimated_monthly_expenses_eur: 1180
   low_eur_per_month: 1000
@@ -37,21 +27,15 @@ cost_of_living:
 phd_system:
   typical_duration_years: 4
   is_employee_status: false
-  academic_calendar: Semester (Sep-Jan / Feb-Jun)
-  required_ects: 60
 visa_and_work_rights:
-  requires_visa_for_non_eu: true
   post_study_work_visa_duration_months: 9
-  work_hours_limit_per_week: 20
 funding_availability:
-  rate: medium
   main_sources:
     - FWO (Flanders)
     - FNRS (Wallonia)
     - University research assistantships
 happiness_index: 6.93
 climate:
-  type: Maritime / Temperate
   average_temperature_summer_c: 19
   average_temperature_winter_c: 4
 contact_portals:
@@ -79,3 +63,8 @@ sources:
     title: 'KU Leuven: cost of living in Belgium'
     url: https://www.kuleuven.be/english/life-at-ku-leuven/money-matters/cost-of-living-in-belgium
     accessed: '2026-10-03'
+  - topic: tuition
+    title: 'Ghent University: tuition fee for the doctorate 2025-2026 (EUR 578.50 EEA / EUR 1,157 non-EEA at first enrolment and at the defence)'
+    url: https://www.ugent.be/student/en/administration/tuition/tuitiondoctorate20252026
+    accessed: '2026-10-03'
+    note: Spread over a four-year PhD; no fee for the years in between. KU Leuven charges the same EEA amount.

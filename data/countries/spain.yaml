@@ -1,13 +1,6 @@
 id: spain
 name: Spain
 capital: Madrid
-languages:
-  - name: Spanish
-    english_friendly: false
-    official: true
-  - name: English
-    english_friendly: true
-    official: false
 stipend:
   amount_eur_per_year: 25500
   is_taxable: true
@@ -19,8 +12,8 @@ stipend:
     per: year
     description: 'FPU 2026 predoctoral contract: minimum gross salary per contract year'
 tuition_fees:
-  eu_students_eur_per_year: 500
-  non_eu_students_eur_per_year: 500
+  eu_students_eur_per_year: 390
+  non_eu_students_eur_per_year: 390
 cost_of_living:
   estimated_monthly_expenses_eur: 900
   low_eur_per_month: 600
@@ -34,21 +27,15 @@ cost_of_living:
 phd_system:
   typical_duration_years: 3
   is_employee_status: true
-  academic_calendar: Semester (Oct-Jan / Feb-Jun)
-  required_ects: 0
 visa_and_work_rights:
-  requires_visa_for_non_eu: true
   post_study_work_visa_duration_months: 12
-  work_hours_limit_per_week: 0
 funding_availability:
-  rate: medium
   main_sources:
     - FPU (University Teacher Training) fellowships
     - FPI (Research Personnel Training) fellowships
     - Regional government predoctoral grants
 happiness_index: 6.54
 climate:
-  type: Mediterranean / Continental
   average_temperature_summer_c: 28
   average_temperature_winter_c: 5
 contact_portals:
@@ -79,3 +66,8 @@ sources:
     title: 'UC3M: cost of living in Madrid'
     url: https://www.uc3m.es/living-madrid/need-know/social-cost-life
     accessed: '2026-10-03'
+  - topic: tuition
+    title: 'UC3M: doctoral enrolment costs (annual academic tutoring EUR 390 full-time)'
+    url: https://www.uc3m.es/doctorado/tasas
+    accessed: '2026-10-03'
+    note: Plus small administrative fees; the same at UAM and UCM.

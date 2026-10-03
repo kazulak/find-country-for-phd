@@ -1,13 +1,6 @@
 id: latvia
 name: Latvia
 capital: Riga
-languages:
-  - name: Latvian
-    english_friendly: false
-    official: true
-  - name: English
-    english_friendly: true
-    official: false
 stipend:
   amount_eur_per_year: 12000
   is_taxable: true
@@ -20,7 +13,7 @@ stipend:
     description: Minimum state salary for doctoral candidates admitted from 2024/25 under the new doctoral model (universities may pay more)
 tuition_fees:
   eu_students_eur_per_year: 0
-  non_eu_students_eur_per_year: 3500
+  non_eu_students_eur_per_year: 0
 cost_of_living:
   estimated_monthly_expenses_eur: 580
   low_eur_per_month: 450
@@ -34,19 +27,13 @@ cost_of_living:
 phd_system:
   typical_duration_years: 3.5
   is_employee_status: true
-  academic_calendar: Semester (Sep-Dec / Feb-Jun)
-  required_ects: 0
 visa_and_work_rights:
-  requires_visa_for_non_eu: true
   post_study_work_visa_duration_months: 9
-  work_hours_limit_per_week: 20
 funding_availability:
-  rate: low
   main_sources:
     - Latvian Council of Science
 happiness_index: 6.37
 climate:
-  type: Maritime / Cool
   average_temperature_summer_c: 19
   average_temperature_winter_c: -2
 contact_portals:
@@ -77,3 +64,8 @@ sources:
     title: 'Study in Latvia: cost of living'
     url: https://studyinlatvia.lv/survival-guide/cost-of-living-in-latvia
     accessed: '2026-10-03'
+  - topic: tuition
+    title: 'Research Latvia: new doctoral model (state-funded doctoral places, employed candidates)'
+    url: https://www.researchlatvia.gov.lv/en/regulation-doctoral-student-employment-and-remuneration-comes-force
+    accessed: '2026-10-03'
+    note: Self-funded places charge fees set by each university.

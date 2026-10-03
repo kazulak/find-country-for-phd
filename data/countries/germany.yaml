@@ -1,13 +1,6 @@
 id: germany
 name: Germany
 capital: Berlin
-languages:
-  - name: German
-    english_friendly: false
-    official: true
-  - name: English
-    english_friendly: true
-    official: false
 stipend:
   amount_eur_per_year: 38600
   is_taxable: true
@@ -20,8 +13,8 @@ stipend:
     payments_per_year: 12.4647
     description: 65% of TV-L E13 step 1 (EUR 4,759.37 full-time from 1 Apr 2026) plus the annual special payment of 46.47% of a monthly salary
 tuition_fees:
-  eu_students_eur_per_year: 600
-  non_eu_students_eur_per_year: 600
+  eu_students_eur_per_year: 500
+  non_eu_students_eur_per_year: 500
 cost_of_living:
   estimated_monthly_expenses_eur: 1250
   low_eur_per_month: 992
@@ -35,14 +28,9 @@ cost_of_living:
 phd_system:
   typical_duration_years: 3.5
   is_employee_status: true
-  academic_calendar: Semester (Oct-Mar / Apr-Sep)
-  required_ects: 0
 visa_and_work_rights:
-  requires_visa_for_non_eu: true
   post_study_work_visa_duration_months: 18
-  work_hours_limit_per_week: 20
 funding_availability:
-  rate: high
   main_sources:
     - DFG (German Research Foundation)
     - DAAD (German Academic Exchange Service)
@@ -50,7 +38,6 @@ funding_availability:
     - Industry funding
 happiness_index: 6.88
 climate:
-  type: Temperate
   average_temperature_summer_c: 20
   average_temperature_winter_c: 2
 contact_portals:
@@ -91,3 +78,8 @@ sources:
     title: 'LMU Munich: living costs'
     url: https://www.lmu.de/en/workspace-for-students/international-student-guide/living-costs/
     accessed: '2026-10-03'
+  - topic: tuition
+    title: 'Baden-Württemberg ministry FAQ: doctoral studies stay tuition-free, also for international students'
+    url: https://mwk.baden-wuerttemberg.de/de/hochschulen-studium/studieren-in-bw/studienfinanzierung/gebuehren-fuer-internationale-studierende-und-zweitstudium/faqs
+    accessed: '2026-10-03'
+    note: No tuition; the figure is the semester contribution (EUR 70-430 per semester, varies by university), if you enrol.

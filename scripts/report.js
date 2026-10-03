@@ -17,6 +17,7 @@ const reportsDir = path.join(__dirname, '../reports');
 
 // Manually researched topics a complete profile should cite (see docs/DATA_SOURCES.md).
 const TOPICS = ['pay', 'deductions', 'visa', 'tuition', 'living_costs', 'phd_system'];
+// phd_system = typical duration and funders (not sourced yet).
 
 function emptyFields(obj, prefix = '') {
   if (obj === null || obj === undefined || obj === '') return [prefix];

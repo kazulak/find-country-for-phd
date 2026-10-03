@@ -1,13 +1,6 @@
 id: lithuania
 name: Lithuania
 capital: Vilnius
-languages:
-  - name: Lithuanian
-    english_friendly: false
-    official: true
-  - name: English
-    english_friendly: true
-    official: false
 stipend:
   amount_eur_per_year: 16900
   is_taxable: false
@@ -20,33 +13,27 @@ stipend:
     description: 'Year 1: 19 x basic social benefit (EUR 74 in 2026); later years about EUR 1,628'
 tuition_fees:
   eu_students_eur_per_year: 0
-  non_eu_students_eur_per_year: 3000
+  non_eu_students_eur_per_year: 0
 cost_of_living:
-  estimated_monthly_expenses_eur: 600
-  low_eur_per_month: 400
-  high_eur_per_month: 800
+  estimated_monthly_expenses_eur: 730
+  low_eur_per_month: 450
+  high_eur_per_month: 1000
   index_relative_to_eu_average: 78
   local:
-    low: 400
-    high: 800
+    low: 450
+    high: 1000
     currency: EUR
-    description: 'Low: Kaunas and smaller cities (EUR 250-400). High: KTU budget to live comfortably (EUR 600-800); Vilnius is about EUR 540 with a dormitory'
+    description: 'Kaunas University of Technology: average student budget in Kaunas, including rent'
 phd_system:
   typical_duration_years: 4
   is_employee_status: false
-  academic_calendar: Semester (Sep-Jan / Feb-Jun)
-  required_ects: 30
 visa_and_work_rights:
-  requires_visa_for_non_eu: true
   post_study_work_visa_duration_months: 12
-  work_hours_limit_per_week: 20
 funding_availability:
-  rate: medium
   main_sources:
     - Research Council of Lithuania
 happiness_index: 6.7
 climate:
-  type: Maritime / Continental
   average_temperature_summer_c: 19
   average_temperature_winter_c: -3
 contact_portals:
@@ -69,11 +56,12 @@ sources:
     title: 'EMN Inform: Attracting and retaining international researchers (2022), Table 1'
     url: https://www.emn.lt/uploads/Products/product_1934/EMN_inform_international_researchers.2022.pdf
     accessed: '2026-09-29'
-  - topic: living_costs
-    title: 'Kaunas University of Technology: relocation to Kaunas'
-    url: https://admissions.ktu.edu/relocation-to-kaunas/
+  - topic: tuition
+    title: 'Study in Lithuania: tuition fees (PhD from EUR 8,400 a year when self-funded)'
+    url: https://studyin.lt/how-to-apply/tuition-fees/
     accessed: '2026-10-03'
+    note: State-funded PhD places, also open to non-EU applicants, carry no fee; those are the funded positions this site compares.
   - topic: living_costs
-    title: 'Vilnius University: studying in Lithuania'
-    url: https://www.vu.lt/en/news-events/news/vilnius-university-a-world-class-education-in-the-heart-of-lithuania
+    title: 'KTU: why Kaunas for international students (EUR 450-1,000 a month including rent)'
+    url: https://admissions.ktu.edu/news/study-in-kaunas/
     accessed: '2026-10-03'

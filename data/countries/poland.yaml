@@ -1,13 +1,6 @@
 id: poland
 name: Poland
 capital: Warsaw
-languages:
-  - name: Polish
-    english_friendly: false
-    official: true
-  - name: English
-    english_friendly: true
-    official: false
 stipend:
   amount_eur_per_year: 10100
   is_taxable: false
@@ -34,20 +27,14 @@ cost_of_living:
 phd_system:
   typical_duration_years: 4
   is_employee_status: false
-  academic_calendar: Semester (Oct-Feb / Feb-Jun)
-  required_ects: 0
 visa_and_work_rights:
-  requires_visa_for_non_eu: true
   post_study_work_visa_duration_months: 9
-  work_hours_limit_per_week: 20
 funding_availability:
-  rate: high
   main_sources:
     - NCN (National Science Centre Poland)
     - State-funded Doctoral Schools
 happiness_index: 6.77
 climate:
-  type: Temperate / Continental
   average_temperature_summer_c: 20
   average_temperature_winter_c: 0
 contact_portals:
@@ -67,8 +54,8 @@ sources:
     url: https://szd.pwr.edu.pl/rekrutacja/stypendium
     accessed: '2026-09-29'
   - topic: pay
-    title: 'Gdańsk University of Technology: stipend rates from 1 January 2026 (Dz.U. 2026 poz. 525)'
-    url: https://pg.edu.pl/szkola-doktorska/2026-04/zmiana-wysokosci-stypendiow-doktoranckich-od-1-stycznia-2026-r
+    title: 'Gdańsk University of Technology: doctoral stipend (rates from 1 January 2026, Dz.U. 2026 poz. 525)'
+    url: https://pg.edu.pl/szkola-doktorska/doktoranci/stypendia-dla-doktorantow/stypendium-doktoranckie
     accessed: '2026-09-29'
   - topic: deductions
     title: 'PWr example: PLN 4,700 gross = PLN 4,171 net (pension and disability contributions, 11.26%)'
@@ -81,4 +68,8 @@ sources:
   - topic: living_costs
     title: 'University of Warsaw: living costs'
     url: https://welcome.uw.edu.pl/before-you-arrive/living-costs/
+    accessed: '2026-10-03'
+  - topic: tuition
+    title: 'Study in Poland (NAWA): tuition fees (doctoral schools are tuition-free, also for foreigners)'
+    url: https://study.gov.pl/tuition-fees
     accessed: '2026-10-03'

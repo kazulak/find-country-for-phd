@@ -1,13 +1,6 @@
 id: bulgaria
 name: Bulgaria
 capital: Sofia
-languages:
-  - name: Bulgarian
-    english_friendly: false
-    official: true
-  - name: English
-    english_friendly: true
-    official: false
 stipend:
   amount_eur_per_year: 9600
   is_taxable: false
@@ -19,8 +12,8 @@ stipend:
     per: month
     description: Regular doctoral scholarship of BGN 1,562/month from 1 Oct 2025, converted at the fixed euro rate (Bulgaria adopted the euro on 1 Jan 2026)
 tuition_fees:
-  eu_students_eur_per_year: 500
-  non_eu_students_eur_per_year: 3000
+  eu_students_eur_per_year: 0
+  non_eu_students_eur_per_year: 6500
 cost_of_living:
   estimated_monthly_expenses_eur: 600
   low_eur_per_month: 400
@@ -30,23 +23,17 @@ cost_of_living:
     low: 400
     high: 800
     currency: EUR
-    description: 'Low: top of the Study in Bulgaria student minimum (EUR 250-400). High: own furnished flat in Sofia (EUR 250-350) plus utilities and food'
+    description: 'Derived from listed prices (no official total): low with a shared or dormitory room, high with an own furnished flat in Sofia (EUR 250-350) plus utilities, food and transport'
 phd_system:
   typical_duration_years: 3
   is_employee_status: false
-  academic_calendar: Semester (Oct-Jan / Feb-Jun)
-  required_ects: 0
 visa_and_work_rights:
-  requires_visa_for_non_eu: true
   post_study_work_visa_duration_months: 9
-  work_hours_limit_per_week: 20
 funding_availability:
-  rate: low
   main_sources:
     - Ministry of Education and Science
 happiness_index: 5.7
 climate:
-  type: Temperate / Continental
   average_temperature_summer_c: 23
   average_temperature_winter_c: 0
 contact_portals:
@@ -71,11 +58,17 @@ sources:
     url: https://www.emn.lt/uploads/Products/product_1934/EMN_inform_international_researchers.2022.pdf
     accessed: '2026-09-29'
   - topic: living_costs
-    title: 'Study in Bulgaria: fees and costs'
-    url: https://studyinbulgaria.bg/fees-and-costs.html
+    title: 'Study in Bulgaria: fees and costs, itemised prices (archived copy, February 2024)'
+    url: https://web.archive.org/web/20240223125007/https://studyinbulgaria.bg/fees-and-costs.html
     accessed: '2026-10-03'
+    note: Lists item prices, not a monthly total. The live site was unreachable over HTTPS in October 2026.
   - topic: living_costs
     title: 'Sofia University: living expenses (rents, utilities)'
     url: https://erasmus.uni-sofia.bg/site/income/practical-information-2/living-expenses/
     accessed: '2026-10-03'
-    note: Upper end derived from the listed rent, utility and food costs, not stated as a total.
+    note: Both ends of the range are derived from the listed rent, transport and other costs, not stated as a total.
+  - topic: tuition
+    title: 'Sofia University: tuition fees 2025/2026 for international students (doctoral, in residence)'
+    url: https://www.uni-sofia.bg/index.php/eng/admission/international_students/tuition_fees_in_sofia_university_for_the_academic_2025_2026_year
+    accessed: '2026-10-03'
+    note: EU citizens on state-funded places pay no fee.

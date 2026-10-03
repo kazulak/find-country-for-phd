@@ -1,13 +1,6 @@
 id: hungary
 name: Hungary
 capital: Budapest
-languages:
-  - name: Hungarian
-    english_friendly: false
-    official: true
-  - name: English
-    english_friendly: true
-    official: false
 stipend:
   amount_eur_per_year: 4200
   is_taxable: false
@@ -20,7 +13,7 @@ stipend:
     description: State doctoral scholarship in years 1-2 (HUF 180,680 in years 3-4); many universities add about HUF 100,000 (Doktori Ösztöndíj+)
 tuition_fees:
   eu_students_eur_per_year: 0
-  non_eu_students_eur_per_year: 3000
+  non_eu_students_eur_per_year: 9000
 cost_of_living:
   estimated_monthly_expenses_eur: 570
   low_eur_per_month: 380
@@ -34,20 +27,14 @@ cost_of_living:
 phd_system:
   typical_duration_years: 4
   is_employee_status: false
-  academic_calendar: Semester (Sep-Dec / Feb-May)
-  required_ects: 240
 visa_and_work_rights:
-  requires_visa_for_non_eu: true
   post_study_work_visa_duration_months: 9
-  work_hours_limit_per_week: 20
 funding_availability:
-  rate: medium
   main_sources:
     - Hungarian Doctoral Council
     - Stipendium Hungaricum (international)
 happiness_index: 5.94
 climate:
-  type: Continental / Temperate
   average_temperature_summer_c: 23
   average_temperature_winter_c: 1
 contact_portals:
@@ -90,3 +77,8 @@ sources:
     title: 'Study in Hungary: your costs of living (Budapest)'
     url: https://studyinhungary.hu/living-in-hungary/menu/your-costs-of-living.html
     accessed: '2026-10-03'
+  - topic: tuition
+    title: 'BME doctoral programmes: tuition for self-financed students (EUR 4,500 per semester)'
+    url: https://phd.vik.bme.hu/en/fees-scholarships/
+    accessed: '2026-10-03'
+    note: State-funded places (and Stipendium Hungaricum holders) pay no fee.
