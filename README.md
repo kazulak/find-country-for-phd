@@ -5,7 +5,7 @@
 
 **Live site → [kazulak.github.io/find-country-for-phd](https://kazulak.github.io/find-country-for-phd/)**
 
-A small static website that compares doing a PhD in **30 European countries**: pay, taxes, living costs, tuition, post-PhD visa rules, programme structure and a bit of weather, all in one place, with a source link next to the numbers that matter.
+A small static website that compares doing a PhD in **30 European countries**: pay, taxes, living costs, tuition, post-PhD visa rules and a bit of weather, all in one place, with a source link next to the numbers that matter.
 
 ![Screenshot of the home page](docs/screenshot.png)
 
@@ -15,6 +15,10 @@ I'm applying for PhD positions, and I kept running into the same problem: a "PhD
 
 So I collected them into one dataset and built a site around it. It's a side project, but the method is written down and the figures are cited, so you can check them yourself.
 
+## Project status
+
+**Feature-complete, in maintenance mode.** The site does what it set out to do; what's left is keeping the numbers current. Once a year (ideally in October) run the refresh described below and in [docs/DATA_SOURCES.md](docs/DATA_SOURCES.md). Dependabot keeps dependencies moving; merge its PRs when CI is green. Corrections via issues are always welcome.
+
 ## How this was built
 
 This project was built with heavy use of AI coding assistants, including [Claude Code](https://claude.com/claude-code): the code, the tests, and a large share of the data research and source-finding. I set the direction and decide what goes in. Because AI can get things wrong, every pay figure, tax rate and visa rule links to the official page it came from, and the automated figures are pulled straight from Eurostat, the OECD, the ECB and the World Happiness Report by a script.
@@ -22,7 +26,7 @@ This project was built with heavy use of AI coding assistants, including [Claude
 ## What you can do with it
 
 - **Explore:** a card per country with estimated net pay, living costs, tuition and post-PhD stay rights. Filter by candidate status, region and price level.
-- **Take the Match Quiz:** five questions (citizenship, money priority, programme length, structure, life outside the lab) and a transparent ranking. Every answer maps to a scoring dimension.
+- **Take the Match Quiz:** four questions (citizenship, money priority, programme length, life outside the lab) and a transparent ranking. Every answer maps to a scoring dimension.
 - **Run the Budget Calculator:** start from a country's defaults, pick a city, adjust income and expenses, and see your monthly balance.
 - **Compare side by side:** up to three countries in one table.
 - **Read the country pages:** one static page per country (e.g. [`/countries/germany/`](https://kazulak.github.io/find-country-for-phd/countries/germany/)), with what the pay figure is, its sources and access dates, upsides, downsides and official portals.
@@ -41,6 +45,7 @@ The compiled dataset is also published as JSON at [`/data/countries.json`](https
 | **Climate** | ERA5 reanalysis via Open-Meteo: mean January/July temperature in the capital, last 10 years | Script (occasionally) |
 | **Post-PhD stay** | European Migration Network comparison of national rules, plus national immigration sites | By hand |
 | **Living costs** | Monthly range from the cheaper to the most expensive university city, from official university, national study-portal, EURAXESS or visa-authority budgets | By hand, every year or two |
+| **Doctoral fees** | University fee pages and national portals, EU and non-EU, per year | By hand, every year or two |
 
 The full method, the per-country source list and a step-by-step refresh checklist are in **[docs/DATA_SOURCES.md](docs/DATA_SOURCES.md)**.
 
@@ -49,7 +54,8 @@ The full method, the per-country source list and a step-by-step refresh checklis
 - Pay varies a lot *within* a country (field, funder, contract percentage, city). One representative figure per country is a simplification; the overview text gives ranges where known.
 - Net pay uses an average rate for a typical salary level, not your personal tax situation.
 - Living costs are student-style budgets from official portals. An employed PhD renting their own place usually spends more.
-- Tuition fees and some programme details (duration, required ECTS) are not systematically sourced yet. [`reports/data_report.md`](reports/data_report.md) tracks what's missing.
+- Fees assume a funded position: many are waived or paid by the funder. Self-funded doctorates can cost much more.
+- Typical programme length and the funder lists are not sourced yet. [`reports/data_report.md`](reports/data_report.md) tracks what's missing.
 - In some countries the documented pay simply doesn't cover living costs (Hungary's state scholarship, Poland's first-two-years minimum stipend). The site says so plainly.
 - Language (how far you get with English alone) isn't modelled, so the site doesn't pretend to rank it.
 
@@ -74,7 +80,7 @@ npm run build && npm run test:e2e
 - The data lives in **YAML**, one file per country, validated against a **JSON Schema** with [AJV](https://ajv.js.org/) plus consistency rules (sources present, pay conversions consistent, shortfalls explained).
 - There's no backend and no tracking. Everything runs in the browser, and quiz answers never leave your device.
 - Tested with **`node:test`** (data model and scoring) and **Playwright** (end-to-end, against the production build).
-- Deployed to GitHub Pages by GitHub Actions. Every deploy runs validation, unit tests, build verification and E2E tests first.
+- Deployed to GitHub Pages by GitHub Actions. Every deploy (and every pull request) runs validation, unit tests, build verification and E2E tests first. Dependabot opens monthly update PRs for npm packages and Actions.
 
 ```text
 data/countries/*.yaml      ← the canonical dataset (edit these)
