@@ -22,7 +22,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import yaml from 'js-yaml';
+import * as yaml from 'js-yaml';
 import { ISO_CODES } from '../lib/country-model.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
