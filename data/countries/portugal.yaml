@@ -22,8 +22,15 @@ tuition_fees:
   eu_students_eur_per_year: 1000
   non_eu_students_eur_per_year: 2500
 cost_of_living:
-  estimated_monthly_expenses_eur: 900
+  estimated_monthly_expenses_eur: 910
+  low_eur_per_month: 650
+  high_eur_per_month: 1160
   index_relative_to_eu_average: 85
+  local:
+    low: 650
+    high: 1160
+    currency: EUR
+    description: 'Low: University of Porto (FEUP) average. High: ISEG budget for Lisbon (EUR 985-1,160)'
 phd_system:
   typical_duration_years: 4
   is_employee_status: false
@@ -64,3 +71,11 @@ sources:
     title: 'AIMA: one year to look for work after completing 2nd/3rd-cycle studies (Lei 23/2007, art. 122 p)'
     url: https://aima.gov.pt/pt/trabalhar/tendo-beneficiado-de-ar-para-estudantes-do-2-o-ou-3-o-ciclos-do-ensino-superior-ou-de-ar-para-investigacao-e-concluido-os-estudo
     accessed: '2026-09-29'
+  - topic: living_costs
+    title: 'University of Porto (FEUP): cost of living and accommodation'
+    url: https://fe.up.pt/estudar/estudantes-estrangeiros/custo-de-vida-e-alojamento/
+    accessed: '2026-10-03'
+  - topic: living_costs
+    title: 'ISEG, University of Lisbon: living in Lisbon'
+    url: https://www.iseg.ulisboa.pt/en/live-iseg/living-in-lisbon/
+    accessed: '2026-10-03'

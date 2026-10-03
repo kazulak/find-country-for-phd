@@ -7,7 +7,8 @@
  *   pay deductions      OECD Taxing Wages (income tax + employee SSC at 67% of the average wage)
  *                       -> stipend.deductions_percent, for taxed salaries in OECD countries
  *   exchange rates      ECB euro reference rates, annual average of the last full year
- *                       -> recomputes stipend.amount_eur_per_year from each profile's `stipend.local` block
+ *                       -> recomputes stipend.amount_eur_per_year from `stipend.local` and the
+ *                          living-cost range (cost_of_living.*_eur_per_month) from `cost_of_living.local`
  *
  * Pay amounts, fees, visa rules and living costs are researched by hand. See docs/DATA_SOURCES.md.
  *
@@ -201,6 +202,14 @@ async function fetchClimate(id) {
   return { winter: mean(byMonth['01']), summer: mean(byMonth['07']), period: `${lastFullYear - 9}–${lastFullYear}` };
 }
 
+/** Converts a published monthly living-cost range to EUR (converted amounts rounded to EUR 10). */
+function livingCostsEur(local, rates) {
+  if (local.currency === 'EUR') return { low: local.low, high: local.high };
+  const rate = rates[local.currency];
+  const toEur = (v) => Math.round(v / rate / 10) * 10;
+  return { low: toEur(local.low), high: toEur(local.high) };
+}
+
 /** Replace the value of a single `key: value` line, keeping the rest of the file untouched. */
 function setField(text, key, value, file) {
   const re = new RegExp(`^(\\s*${key}:[ \\t]*).*$`, 'm');
@@ -221,11 +230,17 @@ async function main() {
   const pli = await fetchPriceLevels(isoCodes);
   console.log('Fetching World Happiness Report scores ...');
   const whr = await fetchLifeSatisfaction(isoCodes);
-  const currencies = [...new Set(profiles.map(p => p.data.stipend.local?.currency).filter(Boolean))];
+  const currencies = [...new Set(profiles.flatMap(p => [p.data.stipend.local?.currency, p.data.cost_of_living.local?.currency]).filter(Boolean))];
   console.log(`Fetching ECB exchange rates (${currencies.join(', ') || 'none needed'}) ...`);
   const fx = await fetchExchangeRates(currencies);
   console.log('Fetching OECD Taxing Wages deduction rates ...');
-  const taxes = await fetchDeductions(profiles.filter(p => p.data.stipend.is_taxable).map(p => ISO3[isoOf(p)]).filter(c => !NON_OECD.has(c)));
+  // The OECD API is flaky; if it is down, keep the current rates rather than abort everything.
+  let taxes = null;
+  try {
+    taxes = await fetchDeductions(profiles.filter(p => p.data.stipend.is_taxable).map(p => ISO3[isoOf(p)]).filter(c => !NON_OECD.has(c)));
+  } catch (err) {
+    console.warn(`  WARNING: OECD Taxing Wages unavailable (${err.message}). Keeping existing deductions_percent values; re-run later to refresh them.`);
+  }
 
   const previousMeta = fs.existsSync(metaPath) ? yaml.load(fs.readFileSync(metaPath, 'utf8')) : null;
   const changes = [];
@@ -252,7 +267,7 @@ async function main() {
 
     // Taxed salaries use the OECD rate; untaxed stipends and non-OECD countries keep their
     // hand-researched deductions_percent (documented in the profile's `sources`).
-    const oecdRate = p.data.stipend.is_taxable ? taxes.values[ISO3[iso]] : undefined;
+    const oecdRate = p.data.stipend.is_taxable && taxes ? taxes.values[ISO3[iso]] : undefined;
     if (oecdRate !== undefined) {
       updates.push(['deductions_percent', p.data.stipend.deductions_percent, oecdRate]);
     }
@@ -262,6 +277,17 @@ async function main() {
       const rate = local.currency === 'EUR' ? 1 : fx.rates[local.currency];
       const perYear = local.amount * (local.per === 'month' ? (local.payments_per_year ?? 12) : 1);
       updates.push(['amount_eur_per_year', p.data.stipend.amount_eur_per_year, Math.round(perYear / rate / 100) * 100]);
+    }
+
+    // Living-cost range as published -> EUR; the headline estimate is the midpoint.
+    const cost = p.data.cost_of_living;
+    if (cost.local) {
+      const { low, high } = livingCostsEur(cost.local, fx.rates);
+      updates.push(
+        ['low_eur_per_month', cost.low_eur_per_month, low],
+        ['high_eur_per_month', cost.high_eur_per_month, high],
+        ['estimated_monthly_expenses_eur', cost.estimated_monthly_expenses_eur, Math.round((low + high) / 2 / 10) * 10],
+      );
     }
 
     for (const [key, before, after] of updates) {
@@ -290,11 +316,11 @@ async function main() {
         period: climatePeriod,
         url: 'https://open-meteo.com/en/docs/historical-weather-api',
       },
-      pay_deductions: {
+      pay_deductions: taxes ? {
         source: 'OECD Taxing Wages: income tax + employee social security contributions, % of gross wage, single person without children at 67% of the average wage (taxed salaries only)',
         year: taxes.years.length === 1 ? taxes.years[0] : taxes.years.join(', '),
         url: taxes.url,
-      },
+      } : previousMeta?.automated_sources?.pay_deductions,
       exchange_rates: {
         source: 'European Central Bank euro reference rates, annual average (units per 1 EUR)',
         year: fx.year,

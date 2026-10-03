@@ -23,8 +23,15 @@ tuition_fees:
   eu_students_eur_per_year: 0
   non_eu_students_eur_per_year: 0
 cost_of_living:
-  estimated_monthly_expenses_eur: 1500
+  estimated_monthly_expenses_eur: 1250
+  low_eur_per_month: 1000
+  high_eur_per_month: 1500
   index_relative_to_eu_average: 121
+  local:
+    low: 1000
+    high: 1500
+    currency: EUR
+    description: Study in NL average student spending; Amsterdam is more expensive than smaller towns such as Enschede
 phd_system:
   typical_duration_years: 4
   is_employee_status: true
@@ -76,3 +83,7 @@ sources:
     title: 'EMN Inform: Attracting and retaining international researchers (2022), Table 1'
     url: https://www.emn.lt/uploads/Products/product_1934/EMN_inform_international_researchers.2022.pdf
     accessed: '2026-09-29'
+  - topic: living_costs
+    title: 'Study in NL: daily student expenses and cost of living'
+    url: https://www.studyinnl.org/finances/daily-student-expenses-and-cost-of-living-in-the-netherlands
+    accessed: '2026-10-03'

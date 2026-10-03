@@ -22,8 +22,15 @@ tuition_fees:
   eu_students_eur_per_year: 0
   non_eu_students_eur_per_year: 2000
 cost_of_living:
-  estimated_monthly_expenses_eur: 800
+  estimated_monthly_expenses_eur: 700
+  low_eur_per_month: 550
+  high_eur_per_month: 850
   index_relative_to_eu_average: 80
+  local:
+    low: 550
+    high: 850
+    currency: EUR
+    description: 'Low: Charles University first-year estimate (EUR 6,000-7,000/year). High: Masaryk University budget for Brno (EUR 750-850); Prague private rentals cost more'
 phd_system:
   typical_duration_years: 4
   is_employee_status: false
@@ -64,3 +71,11 @@ sources:
     title: 'EMN Inform: Attracting and retaining international researchers (2022), Table 1'
     url: https://www.emn.lt/uploads/Products/product_1934/EMN_inform_international_researchers.2022.pdf
     accessed: '2026-09-29'
+  - topic: living_costs
+    title: 'Charles University (ÚJOP): how much money for the first year'
+    url: https://ujop.cuni.cz/UJOPEN-465.html
+    accessed: '2026-10-03'
+  - topic: living_costs
+    title: 'Masaryk University: life in Brno'
+    url: https://www.fss.muni.cz/en/faculty-of-social-studies/student-life/life-in-brno
+    accessed: '2026-10-03'

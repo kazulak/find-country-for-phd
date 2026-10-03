@@ -22,8 +22,15 @@ tuition_fees:
   eu_students_eur_per_year: 0
   non_eu_students_eur_per_year: 3000
 cost_of_living:
-  estimated_monthly_expenses_eur: 600
+  estimated_monthly_expenses_eur: 850
+  low_eur_per_month: 600
+  high_eur_per_month: 1100
   index_relative_to_eu_average: 57
+  local:
+    low: 600
+    high: 1100
+    currency: EUR
+    description: 'Low: Study in Romania estimate (about EUR 600). High: its listed costs with an own apartment in Bucharest or Cluj (rent EUR 400-650 plus food, utilities, insurance)'
 phd_system:
   typical_duration_years: 3
   is_employee_status: false
@@ -64,3 +71,8 @@ sources:
     url: https://eur-lex.europa.eu/eli/dir/2016/801/oj/eng
     accessed: '2026-09-29'
     note: Romania was not covered by the EMN table; the directive minimum of 9 months is shown.
+  - topic: living_costs
+    title: 'Study in Romania: cost of living'
+    url: https://studyinromania.gov.ro/living-cost
+    accessed: '2026-10-03'
+    note: Upper end derived from the listed component costs.

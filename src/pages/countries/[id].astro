@@ -32,6 +32,7 @@ const deductionsText = country.deductionsPercent === 0
     ? `about ${country.deductionsPercent}% income tax and employee contributions`
     : `about ${country.deductionsPercent}% social contributions (no income tax)`;
 const payBasis = country.payBasis?.replace(/\.$/, '');
+const costBasis = country.costBasis?.replace(/\.$/, '') ?? 'Range from cheaper to more expensive university cities';
 ---
 
 <Layout title={`PhD in ${country.name}: pay, living costs & visas | PhD Europe`} description={description}>
@@ -92,9 +93,9 @@ const payBasis = country.payBasis?.replace(/\.$/, '');
             <p class="fact-note">Gross minus {deductionsText}.</p>
             <div class="fact-row">
               <span class="fact-lbl">Estimated Living Cost</span>
-              <span class="fact-val">~{euro(country.costOfLiving)} / month</span>
+              <span class="fact-val">{euro(country.costOfLivingLow)}–{euro(country.costOfLivingHigh)} / month</span>
             </div>
-            <p class="fact-note">Author's estimate for one person on a modest budget (not yet sourced).</p>
+            <p class="fact-note">{costBasis}. Student-style budget for one person from official university and national portals; an employed PhD renting their own place usually spends more. Calculations use the midpoint (~{euro(country.costOfLiving)}).</p>
             <div class="fact-row">
               <span class="fact-lbl">Left Over Each Month</span>
               <span class={`fact-val ${isPositive ? 'savings-positive' : 'savings-negative'}`}>
@@ -229,6 +230,7 @@ const payBasis = country.payBasis?.replace(/\.$/, '');
           <h2>How These Numbers Work</h2>
           <p><strong>Pay:</strong> first-year gross pay from the official pay table or funder rules cited above, including guaranteed extras such as holiday pay or a 13th/14th month. Converted to euros at the {auto.exchange_rates?.year ?? 'latest'} ECB average rate.</p>
           <p><strong>Net pay:</strong> taxed salaries use the OECD <em>Taxing Wages</em> rate ({auto.pay_deductions?.year ?? 'latest year'}) for a single person at 67% of the average wage. Untaxed stipends subtract only the contributions documented above. Your real payslip will differ.</p>
+          <p><strong>Living costs:</strong> monthly budget for one person, from the cheaper to the most expensive university city, as published by the university or national portals cited above, converted at the same ECB rate.</p>
           <p><strong>Price level:</strong> Eurostat ({auto.price_level_index?.year ?? 'latest year'}). <strong>Life satisfaction:</strong> World Happiness Report ({auto.life_satisfaction?.year ?? 'latest year'}). <strong>Climate:</strong> ERA5 reanalysis for the capital, {auto.climate?.period ?? 'last 10 years'}.</p>
           <p><strong>Spotted a mistake?</strong> <a href="https://github.com/kazulak/find-country-for-phd/issues" target="_blank" rel="noopener noreferrer">Open an issue on GitHub</a>. Corrections with a source link are very welcome.</p>
         </div>

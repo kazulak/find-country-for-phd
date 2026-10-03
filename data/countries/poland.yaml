@@ -22,8 +22,15 @@ tuition_fees:
   eu_students_eur_per_year: 0
   non_eu_students_eur_per_year: 0
 cost_of_living:
-  estimated_monthly_expenses_eur: 750
+  estimated_monthly_expenses_eur: 890
+  low_eur_per_month: 590
+  high_eur_per_month: 1180
   index_relative_to_eu_average: 70
+  local:
+    low: 2500
+    high: 5000
+    currency: PLN
+    description: 'University of Warsaw: PLN 1,600-2,500 for a student in a dormitory or shared flat, PLN 3,000-5,000 to get by in Warsaw. The range runs from the top of the first to the top of the second'
 phd_system:
   typical_duration_years: 4
   is_employee_status: false
@@ -71,3 +78,7 @@ sources:
     title: 'EMN Inform: Attracting and retaining international researchers (2022), Table 1'
     url: https://www.emn.lt/uploads/Products/product_1934/EMN_inform_international_researchers.2022.pdf
     accessed: '2026-09-29'
+  - topic: living_costs
+    title: 'University of Warsaw: living costs'
+    url: https://welcome.uw.edu.pl/before-you-arrive/living-costs/
+    accessed: '2026-10-03'

@@ -40,7 +40,7 @@ The compiled dataset is also published as JSON at [`/data/countries.json`](https
 | **Life satisfaction** | World Happiness Report (0–10), via Our World in Data | Script |
 | **Climate** | ERA5 reanalysis via Open-Meteo: mean January/July temperature in the capital, last 10 years | Script (occasionally) |
 | **Post-PhD stay** | European Migration Network comparison of national rules, plus national immigration sites | By hand |
-| **Living costs** | Author's estimates, labelled as such on the site | Not sourced yet |
+| **Living costs** | Monthly range from the cheaper to the most expensive university city, from official university, national study-portal, EURAXESS or visa-authority budgets | By hand, every year or two |
 
 The full method, the per-country source list and a step-by-step refresh checklist are in **[docs/DATA_SOURCES.md](docs/DATA_SOURCES.md)**.
 
@@ -48,7 +48,8 @@ The full method, the per-country source list and a step-by-step refresh checklis
 
 - Pay varies a lot *within* a country (field, funder, contract percentage, city). One representative figure per country is a simplification; the overview text gives ranges where known.
 - Net pay uses an average rate for a typical salary level, not your personal tax situation.
-- Living costs, tuition fees and some programme details (duration, required ECTS) are not systematically sourced yet. [`reports/data_report.md`](reports/data_report.md) tracks what's missing.
+- Living costs are student-style budgets from official portals. An employed PhD renting their own place usually spends more.
+- Tuition fees and some programme details (duration, required ECTS) are not systematically sourced yet. [`reports/data_report.md`](reports/data_report.md) tracks what's missing.
 - In some countries the documented pay simply doesn't cover living costs (Hungary's state scholarship, Poland's first-two-years minimum stipend). The site says so plainly.
 - Language (how far you get with English alone) isn't modelled, so the site doesn't pretend to rank it.
 

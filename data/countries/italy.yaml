@@ -22,8 +22,15 @@ tuition_fees:
   eu_students_eur_per_year: 200
   non_eu_students_eur_per_year: 200
 cost_of_living:
-  estimated_monthly_expenses_eur: 850
+  estimated_monthly_expenses_eur: 900
+  low_eur_per_month: 700
+  high_eur_per_month: 1100
   index_relative_to_eu_average: 98
+  local:
+    low: 700
+    high: 1100
+    currency: EUR
+    description: Politecnico di Milano budget for Milan (rent EUR 400-700, food, transport, social life); Milan is the most expensive university city
 phd_system:
   typical_duration_years: 3
   is_employee_status: false
@@ -70,3 +77,7 @@ sources:
     url: https://eur-lex.europa.eu/eli/dir/2016/801/oj/eng
     accessed: '2026-09-29'
     note: Italy grants 12 months to look for work after a degree or doctorate (Testo Unico Immigrazione); not re-verified in 2026.
+  - topic: living_costs
+    title: 'Politecnico di Milano: cost of living'
+    url: https://www.polimi.it/en/information-for/international-prospective-students/life/living-in-italy/useful-information/cost-of-living
+    accessed: '2026-10-03'

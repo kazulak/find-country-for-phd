@@ -83,6 +83,8 @@ test.describe('PhD Country Match Platform E2E Tests', () => {
     await expect(page.locator('.source-list a[href*="oeffentlichen-dienst.de"]')).toHaveCount(1);
     await expect(page.getByText(/65% of TV-L E13 step 1/)).toBeVisible();
     await expect(page.getByText(/Gross minus about \d+(\.\d)?% income tax/)).toBeVisible();
+    await expect(page.getByText('€992–€1,500 / month')).toBeVisible();
+    await expect(page.locator('.source-list a[href*="lmu.de"]')).toHaveCount(1);
   });
 
   test('header navigation works from a country page', async ({ page }) => {

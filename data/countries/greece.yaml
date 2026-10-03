@@ -23,7 +23,14 @@ tuition_fees:
   non_eu_students_eur_per_year: 0
 cost_of_living:
   estimated_monthly_expenses_eur: 750
+  low_eur_per_month: 600
+  high_eur_per_month: 900
   index_relative_to_eu_average: 83
+  local:
+    low: 600
+    high: 900
+    currency: EUR
+    description: 'Low: Aristotle University minimum student budget for Thessaloniki. High: Athens with a one-bedroom flat (EUR 350-500)'
 phd_system:
   typical_duration_years: 3
   is_employee_status: false
@@ -63,3 +70,12 @@ sources:
     title: 'EMN Inform: Attracting and retaining international researchers (2022), Table 1'
     url: https://www.emn.lt/uploads/Products/product_1934/EMN_inform_international_researchers.2022.pdf
     accessed: '2026-09-29'
+  - topic: living_costs
+    title: 'Aristotle University of Thessaloniki: cost of living'
+    url: https://eurep.auth.gr/en/students/info/living_cost
+    accessed: '2026-10-03'
+  - topic: living_costs
+    title: 'National and Kapodistrian University of Athens: accommodation'
+    url: https://issu.uoa.gr/guide_for_all_students/getting_ready_for_your_studies/accommodation/
+    accessed: '2026-10-03'
+    note: Upper end derived from Athens rents plus the non-rent part of the Thessaloniki budget.

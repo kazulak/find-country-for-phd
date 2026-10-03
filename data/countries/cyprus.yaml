@@ -25,8 +25,15 @@ tuition_fees:
   eu_students_eur_per_year: 1500
   non_eu_students_eur_per_year: 4000
 cost_of_living:
-  estimated_monthly_expenses_eur: 900
+  estimated_monthly_expenses_eur: 850
+  low_eur_per_month: 700
+  high_eur_per_month: 1000
   index_relative_to_eu_average: 95
+  local:
+    low: 700
+    high: 1000
+    currency: EUR
+    description: University of Cyprus estimate for Nicosia, including rent
 phd_system:
   typical_duration_years: 3.5
   is_employee_status: false
@@ -65,3 +72,7 @@ sources:
     title: 'EMN Inform: Attracting and retaining international researchers (2022), Table 1'
     url: https://www.emn.lt/uploads/Products/product_1934/EMN_inform_international_researchers.2022.pdf
     accessed: '2026-09-29'
+  - topic: living_costs
+    title: 'University of Cyprus: accommodation and cost of living'
+    url: https://www.ucy.ac.cy/livinginnicosia/accommodation-living/?lang=en
+    accessed: '2026-10-03'

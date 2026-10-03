@@ -22,8 +22,15 @@ tuition_fees:
   eu_students_eur_per_year: 0
   non_eu_students_eur_per_year: 0
 cost_of_living:
-  estimated_monthly_expenses_eur: 1300
+  estimated_monthly_expenses_eur: 1020
+  low_eur_per_month: 960
+  high_eur_per_month: 1080
   index_relative_to_eu_average: 123
+  local:
+    low: 10656
+    high: 12000
+    currency: SEK
+    description: 'Low: Study in Sweden / Migration Agency student budget. High: Stockholm University budget for Stockholm'
 phd_system:
   typical_duration_years: 4
   is_employee_status: true
@@ -69,3 +76,11 @@ sources:
     title: 'EMN Inform: Attracting and retaining international researchers (2022), Table 1'
     url: https://www.emn.lt/uploads/Products/product_1934/EMN_inform_international_researchers.2022.pdf
     accessed: '2026-09-29'
+  - topic: living_costs
+    title: 'Study in Sweden: accommodation and budget'
+    url: https://studyinsweden.se/moving-to-sweden/accommodation-budget/
+    accessed: '2026-10-03'
+  - topic: living_costs
+    title: 'Stockholm University: living costs'
+    url: https://www.su.se/english/education/new-in-sweden/living-costs
+    accessed: '2026-10-03'

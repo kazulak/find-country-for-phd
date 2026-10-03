@@ -19,8 +19,15 @@ tuition_fees:
   eu_students_eur_per_year: 24000
   non_eu_students_eur_per_year: 24000
 cost_of_living:
-  estimated_monthly_expenses_eur: 1400
+  estimated_monthly_expenses_eur: 1580
+  low_eur_per_month: 1370
+  high_eur_per_month: 1780
   index_relative_to_eu_average: 129
+  local:
+    low: 1171
+    high: 1529
+    currency: GBP
+    description: 'UK visa maintenance requirement: GBP 1,171/month outside London, GBP 1,529 in London (from 11 Nov 2025)'
 phd_system:
   typical_duration_years: 3.5
   is_employee_status: false
@@ -68,3 +75,7 @@ sources:
     title: 'The PIE News: shorter Graduate Route from January 2027 (PhD graduates keep 3 years)'
     url: https://thepienews.com/shorter-graduate-route-from-january-2027-uk-govt-confirms/
     accessed: '2026-09-29'
+  - topic: living_costs
+    title: 'GOV.UK: Student visa, money you need'
+    url: https://www.gov.uk/student-visa/money
+    accessed: '2026-10-03'

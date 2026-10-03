@@ -204,15 +204,15 @@ export default function ComparisonHub() {
               </td>
             </tr>
             <tr>
-              <td className="param-name">Living Cost Estimate</td>
+              <td className="param-name">Living Costs (cheap–expensive city)</td>
               <td className={`param-val ${c1?.costOfLiving === minCOL ? 'highlight-cell-green' : ''}`}>
-                ~€{c1?.costOfLiving.toLocaleString()}/mo
+                €{c1?.costOfLivingLow.toLocaleString()}–{c1?.costOfLivingHigh.toLocaleString()}/mo
               </td>
               <td className={`param-val ${c2?.costOfLiving === minCOL ? 'highlight-cell-green' : ''}`}>
-                ~€{c2?.costOfLiving.toLocaleString()}/mo
+                €{c2?.costOfLivingLow.toLocaleString()}–{c2?.costOfLivingHigh.toLocaleString()}/mo
               </td>
               <td className={`param-val ${c3 && c3.costOfLiving === minCOL ? 'highlight-cell-green' : ''}`}>
-                {c3 ? `~€${c3.costOfLiving.toLocaleString()}/mo` : <span className="empty-cell-text">—</span>}
+                {c3 ? `€${c3.costOfLivingLow.toLocaleString()}–${c3.costOfLivingHigh.toLocaleString()}/mo` : <span className="empty-cell-text">—</span>}
               </td>
             </tr>
             <tr>

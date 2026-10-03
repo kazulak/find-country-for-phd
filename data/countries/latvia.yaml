@@ -22,8 +22,15 @@ tuition_fees:
   eu_students_eur_per_year: 0
   non_eu_students_eur_per_year: 3500
 cost_of_living:
-  estimated_monthly_expenses_eur: 700
+  estimated_monthly_expenses_eur: 580
+  low_eur_per_month: 450
+  high_eur_per_month: 700
   index_relative_to_eu_average: 77
+  local:
+    low: 450
+    high: 700
+    currency: EUR
+    description: Study in Latvia estimate, depending on accommodation and lifestyle
 phd_system:
   typical_duration_years: 3.5
   is_employee_status: true
@@ -66,3 +73,7 @@ sources:
     title: 'EMN Inform: Attracting and retaining international researchers (2022), Table 1'
     url: https://www.emn.lt/uploads/Products/product_1934/EMN_inform_international_researchers.2022.pdf
     accessed: '2026-09-29'
+  - topic: living_costs
+    title: 'Study in Latvia: cost of living'
+    url: https://studyinlatvia.lv/survival-guide/cost-of-living-in-latvia
+    accessed: '2026-10-03'

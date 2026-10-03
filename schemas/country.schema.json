@@ -152,15 +152,17 @@
       "type": "object",
       "required": [
         "estimated_monthly_expenses_eur",
-        "index_relative_to_eu_average"
+        "low_eur_per_month",
+        "high_eur_per_month",
+        "index_relative_to_eu_average",
+        "local"
       ],
       "additionalProperties": false,
       "properties": {
         "estimated_monthly_expenses_eur": {
-          "type": [
-            "number",
-            "null"
-          ]
+          "description": "Midpoint of the low/high range in EUR (computed by npm run data:refresh).",
+          "type": "number",
+          "exclusiveMinimum": 0
         },
         "index_relative_to_eu_average": {
           "type": [
@@ -168,6 +170,44 @@
             "null"
           ],
           "minimum": 0
+        },
+        "low_eur_per_month": {
+          "description": "Cheaper university city, EUR/month (computed from local).",
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "high_eur_per_month": {
+          "description": "Most expensive university city, EUR/month (computed from local).",
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "local": {
+          "description": "Monthly living-cost range for one person as published at the source (student-style budget), in its own currency.",
+          "type": "object",
+          "required": [
+            "low",
+            "high",
+            "currency",
+            "description"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "low": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "high": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "currency": {
+              "type": "string",
+              "pattern": "^[A-Z]{3}$"
+            },
+            "description": {
+              "type": "string"
+            }
+          }
         }
       }
     },

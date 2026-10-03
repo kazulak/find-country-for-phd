@@ -75,6 +75,17 @@ function validate() {
           }
         }
 
+        const cost = data.cost_of_living;
+        if (cost.local.low > cost.local.high) {
+          fail(`[ERROR] File "${file}": cost_of_living.local.low is above high.`);
+        }
+        if (cost.local.currency === 'EUR') {
+          if (cost.local.low !== cost.low_eur_per_month || cost.local.high !== cost.high_eur_per_month) {
+            fail(`[ERROR] File "${file}": cost_of_living EUR range does not match cost_of_living.local. Run \`npm run data:refresh\`.`);
+          }
+        }
+        if (!topics.has('living_costs')) fail(`[ERROR] File "${file}": no source with topic "living_costs".`);
+
         if (!data.contact_portals || data.contact_portals.length === 0) {
           fail(`[ERROR] File "${file}": Profile contains no source URLs or reference portals.`);
         }

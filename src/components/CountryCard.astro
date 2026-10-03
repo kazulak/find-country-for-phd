@@ -45,7 +45,7 @@ const isPositive = savingsMargin > 0;
       </div>
       <div class="q-stat">
         <span class="q-label">Cost of Living</span>
-        <span class="q-value">~€{country.costOfLiving.toLocaleString()}/mo</span>
+        <span class="q-value" title="Cheaper to most expensive university city">€{country.costOfLivingLow.toLocaleString()}–{country.costOfLivingHigh.toLocaleString()}/mo</span>
       </div>
     </div>
 

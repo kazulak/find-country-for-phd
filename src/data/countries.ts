@@ -47,7 +47,10 @@ export interface Country {
   payBasis: string | null; // what the pay figure is, as published
   tuitionFeesEU: number; // EUR per year
   tuitionFeesNonEU: number; // EUR per year
-  costOfLiving: number; // EUR per month
+  costOfLiving: number; // EUR per month, midpoint of the range
+  costOfLivingLow: number; // EUR per month, cheaper university city
+  costOfLivingHigh: number; // EUR per month, most expensive university city
+  costBasis: string | null; // what the range is, as published
   priceIndex: number; // EU average = 100
   priceLevel: 'Very low' | 'Low' | 'Average' | 'High' | 'Very high';
   fundingAvailability: 'High' | 'Medium' | 'Low';

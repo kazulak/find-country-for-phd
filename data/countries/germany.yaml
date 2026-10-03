@@ -23,8 +23,15 @@ tuition_fees:
   eu_students_eur_per_year: 600
   non_eu_students_eur_per_year: 600
 cost_of_living:
-  estimated_monthly_expenses_eur: 1100
+  estimated_monthly_expenses_eur: 1250
+  low_eur_per_month: 992
+  high_eur_per_month: 1500
   index_relative_to_eu_average: 109
+  local:
+    low: 992
+    high: 1500
+    currency: EUR
+    description: 'Low: official monthly amount for the student blocked account. High: LMU estimate for Munich, the most expensive university city'
 phd_system:
   typical_duration_years: 3.5
   is_employee_status: true
@@ -76,3 +83,11 @@ sources:
     title: 'Make it in Germany: 18-month job-search permit after graduating in Germany'
     url: https://www.make-it-in-germany.com/en/study-training/study/prospects/seeking-employment
     accessed: '2026-09-29'
+  - topic: living_costs
+    title: 'DAAD: costs of education and living (blocked account EUR 11,904 a year)'
+    url: https://www.daad.de/en/studying-in-germany/living-in-germany/finances/
+    accessed: '2026-10-03'
+  - topic: living_costs
+    title: 'LMU Munich: living costs'
+    url: https://www.lmu.de/en/workspace-for-students/international-student-guide/living-costs/
+    accessed: '2026-10-03'

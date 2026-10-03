@@ -54,6 +54,15 @@ describe('country model', () => {
     }
   });
 
+  test('every country has a sourced living-cost range with the estimate at its midpoint', () => {
+    for (const d of Object.values(raw)) {
+      const c = flat[d.id];
+      assert.ok(d.sources.some((s) => s.topic === 'living_costs'), d.id);
+      assert.ok(c.costOfLivingLow > 0 && c.costOfLivingLow <= c.costOfLivingHigh, d.id);
+      assert.ok(Math.abs(c.costOfLiving - (c.costOfLivingLow + c.costOfLivingHigh) / 2) <= 5, d.id);
+    }
+  });
+
   test('pay that does not cover living costs is reported plainly', () => {
     const shortfall = /doesn't cover the estimated living costs/;
     for (const c of Object.values(flat)) {

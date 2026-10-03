@@ -112,7 +112,7 @@ const CITIES_DATA: Record<string, City[]> = {
 export default function BudgetCalculator() {
   const [selectedCountryId, setSelectedCountryId] = useState(countries[0].id);
   const [citizenship, setCitizenship] = useState<'eu' | 'noneu'>('eu');
-  const [selectedCityName, setSelectedCityName] = useState('National Average');
+  const [selectedCityName, setSelectedCityName] = useState('Typical (midpoint)');
 
   // Sliders State
   const [stipend, setStipend] = useState(0);
@@ -127,11 +127,17 @@ export default function BudgetCalculator() {
 
   // Get available cities for selected country
   const availableCities = useMemo(() => {
-    // The national average always comes from the canonical dataset; city
-    // figures are rough extras (fallback: capital at +20%).
-    const cities = CITIES_DATA[selectedCountryId]?.filter((c) => c.name !== 'National Average')
-      ?? [{ name: `${country.capital} (capital, est.)`, costOfLiving: Math.round(country.costOfLiving * 1.2) }];
-    return [{ name: 'National Average', costOfLiving: country.costOfLiving }, ...cities];
+    // The typical figure and the cheap/expensive ends come from the sourced
+    // dataset; the per-city figures below them are rough, unsourced extras.
+    const cities = (CITIES_DATA[selectedCountryId] ?? [])
+      .filter((c) => c.name !== 'National Average')
+      .map((c) => ({ ...c, name: `${c.name} (rough estimate)` }));
+    return [
+      { name: 'Typical (midpoint)', costOfLiving: country.costOfLiving },
+      { name: 'Cheaper university city', costOfLiving: country.costOfLivingLow },
+      { name: 'Most expensive university city', costOfLiving: country.costOfLivingHigh },
+      ...cities,
+    ];
   }, [selectedCountryId, country]);
 
   // Load defaults when country or citizenship changes
@@ -141,9 +147,9 @@ export default function BudgetCalculator() {
 
     setStipend(country.netIncome);
     
-    // Default to National Average cost of living
-    setSelectedCityName('National Average');
-    const defaultCityCost = availableCities.find(c => c.name === 'National Average')?.costOfLiving ?? country.costOfLiving;
+    // Default to the typical (midpoint) living cost
+    setSelectedCityName('Typical (midpoint)');
+    const defaultCityCost = availableCities.find(c => c.name === 'Typical (midpoint)')?.costOfLiving ?? country.costOfLiving;
     setLiving(defaultCityCost);
     
     setTuition(defaultTuition);

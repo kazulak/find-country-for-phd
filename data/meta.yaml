@@ -1,6 +1,6 @@
 # Written by `npm run data:refresh`. Do not edit by hand.
 # Manually researched figures (pay, fees, visas) are documented in docs/DATA_SOURCES.md.
-refreshed: '2026-10-01'
+refreshed: '2026-10-03'
 automated_sources:
   price_level_index:
     source: 'Eurostat, prc_ppp_ind: price level index, household final consumption (EU27_2020 = 100)'

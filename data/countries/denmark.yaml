@@ -22,8 +22,15 @@ tuition_fees:
   eu_students_eur_per_year: 0
   non_eu_students_eur_per_year: 0
 cost_of_living:
-  estimated_monthly_expenses_eur: 1700
+  estimated_monthly_expenses_eur: 1550
+  low_eur_per_month: 1270
+  high_eur_per_month: 1830
   index_relative_to_eu_average: 143
+  local:
+    low: 9450
+    high: 13650
+    currency: DKK
+    description: Study in Denmark budget items (rent DKK 3,000-6,500, food DKK 2,000-3,500 and other costs); Copenhagen sits at the top. Aarhus University estimates EUR 1,950/month for an employed single PhD
 phd_system:
   typical_duration_years: 3
   is_employee_status: true
@@ -67,3 +74,11 @@ sources:
     title: 'New to Denmark: 3-year job-seeking permit after a completed PhD'
     url: https://nyidanmark.dk/pl-PL/You-want-to-apply/Study/Study---job-seeking/Study---3-years-job-seeking
     accessed: '2026-09-29'
+  - topic: living_costs
+    title: 'Study in Denmark: bank and budget'
+    url: https://studyindenmark.dk/live-in-denmark/bank-budget
+    accessed: '2026-10-03'
+  - topic: living_costs
+    title: 'Aarhus University: cost of living for students, PhDs and researchers'
+    url: https://international.au.dk/life/lifeindenmark/costofliving
+    accessed: '2026-10-03'

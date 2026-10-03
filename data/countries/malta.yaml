@@ -22,8 +22,15 @@ tuition_fees:
   eu_students_eur_per_year: 0
   non_eu_students_eur_per_year: 8500
 cost_of_living:
-  estimated_monthly_expenses_eur: 1100
+  estimated_monthly_expenses_eur: 1500
+  low_eur_per_month: 1360
+  high_eur_per_month: 1630
   index_relative_to_eu_average: 93
+  local:
+    low: 1360
+    high: 1630
+    currency: EUR
+    description: University of Malta budget with shared accommodation (rent EUR 550-700, food, utilities, other costs); a single apartment adds EUR 250-900
 phd_system:
   typical_duration_years: 3.5
   is_employee_status: true
@@ -72,3 +79,7 @@ sources:
     title: 'EMN Inform: Attracting and retaining international researchers (2022), Table 1'
     url: https://www.emn.lt/uploads/Products/product_1934/EMN_inform_international_researchers.2022.pdf
     accessed: '2026-09-29'
+  - topic: living_costs
+    title: 'University of Malta: living costs'
+    url: https://www.um.edu.mt/international/students/livingcosts/
+    accessed: '2026-10-03'

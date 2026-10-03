@@ -25,8 +25,15 @@ tuition_fees:
   eu_students_eur_per_year: 900
   non_eu_students_eur_per_year: 900
 cost_of_living:
-  estimated_monthly_expenses_eur: 1300
+  estimated_monthly_expenses_eur: 1180
+  low_eur_per_month: 1000
+  high_eur_per_month: 1350
   index_relative_to_eu_average: 119
+  local:
+    low: 1000
+    high: 1350
+    currency: EUR
+    description: KU Leuven estimate for living in Belgium; bigger cities (Brussels, Ghent, Antwerp, Leuven) sit at the top
 phd_system:
   typical_duration_years: 4
   is_employee_status: false
@@ -68,3 +75,7 @@ sources:
     url: https://www.emn.lt/uploads/Products/product_1934/EMN_inform_international_researchers.2022.pdf
     accessed: '2026-09-29'
     note: Belgium had not transposed Article 25 for researchers (2022); the 9-month minimum applies directly. Graduates with student status get a 12-month search year.
+  - topic: living_costs
+    title: 'KU Leuven: cost of living in Belgium'
+    url: https://www.kuleuven.be/english/life-at-ku-leuven/money-matters/cost-of-living-in-belgium
+    accessed: '2026-10-03'

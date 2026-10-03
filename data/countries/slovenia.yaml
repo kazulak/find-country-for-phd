@@ -22,8 +22,15 @@ tuition_fees:
   eu_students_eur_per_year: 0
   non_eu_students_eur_per_year: 3000
 cost_of_living:
-  estimated_monthly_expenses_eur: 850
+  estimated_monthly_expenses_eur: 600
+  low_eur_per_month: 500
+  high_eur_per_month: 700
   index_relative_to_eu_average: 91
+  local:
+    low: 500
+    high: 700
+    currency: EUR
+    description: 'Study in Slovenia: at least EUR 500, about EUR 700 to live comfortably; Ljubljana is pricier than Maribor'
 phd_system:
   typical_duration_years: 3.5
   is_employee_status: true
@@ -67,3 +74,7 @@ sources:
     title: 'EMN Inform: Attracting and retaining international researchers (2022), Table 1'
     url: https://www.emn.lt/uploads/Products/product_1934/EMN_inform_international_researchers.2022.pdf
     accessed: '2026-09-29'
+  - topic: living_costs
+    title: 'Study in Slovenia: cost of living'
+    url: https://studyinslovenia.si/live/cost-of-living/
+    accessed: '2026-10-03'

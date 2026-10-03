@@ -23,8 +23,15 @@ tuition_fees:
   eu_students_eur_per_year: 750
   non_eu_students_eur_per_year: 1500
 cost_of_living:
-  estimated_monthly_expenses_eur: 1250
+  estimated_monthly_expenses_eur: 1380
+  low_eur_per_month: 1250
+  high_eur_per_month: 1500
   index_relative_to_eu_average: 120
+  local:
+    low: 1250
+    high: 1500
+    currency: EUR
+    description: 'Study in Austria budget: rent EUR 450-700 + food EUR 300 + study and personal costs EUR 500'
 phd_system:
   typical_duration_years: 3.5
   is_employee_status: true
@@ -68,3 +75,7 @@ sources:
     title: 'EMN Inform: Attracting and retaining international researchers (2022), Table 1'
     url: https://www.emn.lt/uploads/Products/product_1934/EMN_inform_international_researchers.2022.pdf
     accessed: '2026-09-29'
+  - topic: living_costs
+    title: 'Study in Austria: living costs'
+    url: https://studyinaustria.at/en/live-and-work/living-costs
+    accessed: '2026-10-03'

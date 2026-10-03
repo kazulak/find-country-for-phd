@@ -28,8 +28,15 @@ tuition_fees:
   eu_students_eur_per_year: 1400
   non_eu_students_eur_per_year: 1400
 cost_of_living:
-  estimated_monthly_expenses_eur: 2100
+  estimated_monthly_expenses_eur: 2280
+  low_eur_per_month: 1970
+  high_eur_per_month: 2580
   index_relative_to_eu_average: 184
+  local:
+    low: 1850
+    high: 2420
+    currency: CHF
+    description: 'Low: Study in Switzerland+ general student budget. High: EPFL estimate for Lausanne (CHF 29,000 a year)'
 phd_system:
   typical_duration_years: 4
   is_employee_status: true
@@ -76,3 +83,11 @@ sources:
     title: 'ETH Zurich: residence permit after graduation for job seeking (6 months)'
     url: https://ethz.ch/en/studies/international/end-studies/residence-permit-job-seeking.html
     accessed: '2026-09-29'
+  - topic: living_costs
+    title: 'Study in Switzerland+: cost of living'
+    url: https://www.studyinswitzerland.plus/cost-of-living/
+    accessed: '2026-10-03'
+  - topic: living_costs
+    title: 'EPFL: cost of living'
+    url: https://www.epfl.ch/education/studies/en/financing-study/cost-of-living/
+    accessed: '2026-10-03'

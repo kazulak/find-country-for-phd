@@ -22,8 +22,15 @@ tuition_fees:
   eu_students_eur_per_year: 380
   non_eu_students_eur_per_year: 380
 cost_of_living:
-  estimated_monthly_expenses_eur: 1150
+  estimated_monthly_expenses_eur: 900
+  low_eur_per_month: 800
+  high_eur_per_month: 1000
   index_relative_to_eu_average: 108
+  local:
+    low: 800
+    high: 1000
+    currency: EUR
+    description: 'Campus France average student budget: about EUR 800 outside Paris, EUR 1,000 in Paris'
 phd_system:
   typical_duration_years: 3
   is_employee_status: true
@@ -70,3 +77,7 @@ sources:
     title: 'EMN Inform: Attracting and retaining international researchers (2022), Table 1'
     url: https://www.emn.lt/uploads/Products/product_1934/EMN_inform_international_researchers.2022.pdf
     accessed: '2026-09-29'
+  - topic: living_costs
+    title: 'Campus France: living costs for students in France'
+    url: http://virtual.campusfrance.org/plan-your-stay-in-france-as-student/living-costs-for-students-in-france
+    accessed: '2026-10-03'

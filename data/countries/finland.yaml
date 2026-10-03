@@ -25,8 +25,15 @@ tuition_fees:
   eu_students_eur_per_year: 0
   non_eu_students_eur_per_year: 0
 cost_of_living:
-  estimated_monthly_expenses_eur: 1200
+  estimated_monthly_expenses_eur: 1080
+  low_eur_per_month: 900
+  high_eur_per_month: 1250
   index_relative_to_eu_average: 127
+  local:
+    low: 900
+    high: 1250
+    currency: EUR
+    description: University of Helsinki estimate for a single student, depending on spending habits
 phd_system:
   typical_duration_years: 4
   is_employee_status: true
@@ -70,3 +77,7 @@ sources:
     title: 'Migri: seeking work after graduation or completion of research (up to 2 years)'
     url: https://migri.fi/en/seeking-work-after-graduation-or-completion-of-research
     accessed: '2026-09-29'
+  - topic: living_costs
+    title: 'University of Helsinki: cost of living and financial matters'
+    url: https://www.helsinki.fi/en/admissions-and-education/international-students/student-life-helsinki/cost-living-and-financial-matters
+    accessed: '2026-10-03'

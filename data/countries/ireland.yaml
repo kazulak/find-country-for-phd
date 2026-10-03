@@ -22,8 +22,15 @@ tuition_fees:
   eu_students_eur_per_year: 6000
   non_eu_students_eur_per_year: 14000
 cost_of_living:
-  estimated_monthly_expenses_eur: 1750
+  estimated_monthly_expenses_eur: 1370
+  low_eur_per_month: 1000
+  high_eur_per_month: 1735
   index_relative_to_eu_average: 141
+  local:
+    low: 1000
+    high: 1735
+    currency: EUR
+    description: 'Low: Education in Ireland budget outside Dublin (Limerick). High: lowest UCD estimate for Dublin (median EUR 2,445)'
 phd_system:
   typical_duration_years: 4
   is_employee_status: false
@@ -63,3 +70,11 @@ sources:
     title: 'Irish Immigration: Third Level Graduate Programme (24 months for level 9-10)'
     url: https://www.irishimmigration.ie/my-situation-has-changed-since-i-arrived-in-ireland/third-level-graduate-programme/
     accessed: '2026-09-29'
+  - topic: living_costs
+    title: 'Education in Ireland: living costs in Limerick'
+    url: https://www.educationinireland.com/en/life-in-ireland/living-costs-in-limerick
+    accessed: '2026-10-03'
+  - topic: living_costs
+    title: 'UCD Global: living costs in Dublin'
+    url: https://www.ucd.ie/global/study-at-ucd/scholarshipsfinances/livingcosts/
+    accessed: '2026-10-03'

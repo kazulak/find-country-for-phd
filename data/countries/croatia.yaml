@@ -22,8 +22,15 @@ tuition_fees:
   eu_students_eur_per_year: 0
   non_eu_students_eur_per_year: 3000
 cost_of_living:
-  estimated_monthly_expenses_eur: 700
+  estimated_monthly_expenses_eur: 800
+  low_eur_per_month: 500
+  high_eur_per_month: 1100
   index_relative_to_eu_average: 73
+  local:
+    low: 500
+    high: 1100
+    currency: EUR
+    description: 'Low: Study in Croatia national range (EUR 500-800). High: University of Zagreb budget with a private room (about EUR 1,100)'
 phd_system:
   typical_duration_years: 3
   is_employee_status: true
@@ -67,3 +74,11 @@ sources:
     title: 'EMN Inform: Attracting and retaining international researchers (2022), Table 1'
     url: https://www.emn.lt/uploads/Products/product_1934/EMN_inform_international_researchers.2022.pdf
     accessed: '2026-09-29'
+  - topic: living_costs
+    title: 'Study in Croatia: finance and living costs'
+    url: https://www.studyincroatia.hr/live-and-work-in-croatia/finance-and-living-costs/
+    accessed: '2026-10-03'
+  - topic: living_costs
+    title: 'University of Zagreb: living and studying in Zagreb'
+    url: https://projects.unizg.hr/international_students/degree_seeking_students/living__studying_in_zagreb
+    accessed: '2026-10-03'

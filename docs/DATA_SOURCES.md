@@ -15,7 +15,8 @@ The canonical data lives in [`data/countries/*.yaml`](../data/countries/) (one f
 | Life satisfaction (`happiness_index`) | [World Happiness Report](https://worldhappiness.report/) Cantril ladder, via [Our World in Data](https://ourworldindata.org/grapher/happiness-cantril-ladder) | Automatic |
 | Climate (`climate.average_temperature_*`) | [Open-Meteo historical API](https://open-meteo.com/en/docs/historical-weather-api) (ERA5 reanalysis): mean daily temperature in the capital, January and July, last 10 full years | Automatic, opt-in (`--climate`) |
 | Post-PhD stay (`visa_and_work_rights.post_study_work_visa_duration_months`) | [EMN Inform 2022, Table 1](https://www.emn.lt/uploads/Products/product_1934/EMN_inform_international_researchers.2022.pdf), national immigration sites for non-EU countries and more generous national rules; [Directive (EU) 2016/801 Art. 25](https://eur-lex.europa.eu/eli/dir/2016/801/oj/eng) sets a 9-month minimum | **Manual** |
-| Living costs (`cost_of_living.estimated_monthly_expenses_eur`) | Author's estimates | **Not sourced yet** (shown as such on the site) |
+| Living costs as published (`cost_of_living.local`: low/high) | Official university, national study-portal, EURAXESS or visa-authority budgets: cheaper university city → most expensive one | **Manual**, every year or two |
+| Living costs in EUR (`cost_of_living.low_eur_per_month`, `high_eur_per_month`, `estimated_monthly_expenses_eur` = midpoint) | Computed from `cost_of_living.local` with the ECB rate | Automatic |
 | Tuition, duration, ECTS, funding rate, funders | Hand-compiled, mostly from the national portals in `contact_portals` | **Not systematically sourced yet** |
 
 `npm run report` writes [`reports/data_report.md`](../reports/data_report.md), which lists, per country, which topics still have no source. Use it as the to-do list.
@@ -30,6 +31,8 @@ So that countries are comparable, every `stipend.local` follows the same rules:
 4. Where pay is set per position rather than nationally (Finland, Luxembourg, Norway, Malta), use the figure most universities advertise and say so in `description`.
 5. If a funder publishes only a **net** amount (Belgium's FWO), store it with `deductions_percent: 0` and say so.
 6. `description` must say what the number is: scheme, step and effective date. It is shown under the pay figure on the country page.
+
+**Living costs** follow the same idea: `cost_of_living.local` holds the monthly range for one person as published (low = a cheaper university city, high = the most expensive one, usually the capital), in the source's currency, with a `description` saying where each end comes from. `npm run data:refresh` converts it to EUR and sets the headline estimate to the midpoint. Prefer one source that gives both ends; otherwise combine two and say so. If an end has to be derived from listed costs (rent + food...), say that in the source's `note`.
 
 `deductions_percent` for **untaxed** stipends is 0 unless contributions are deducted. Poland (pension and disability, 11.26%) and Italy (the holder's third of the INPS Gestione Separata rate, 11.68%) are examples where they are. Cite the source with `topic: deductions`.
 
@@ -113,7 +116,8 @@ Do this once a year, ideally in **October**. Most pay tables change between Janu
 
 Honest list of what is **not** properly sourced yet:
 
-- **Living costs.** These are the author's estimates. A credible replacement would be a consistent per-city source (for example official university cost-of-living guidance, or student-visa proof-of-funds amounts as a floor), documented with `topic: living_costs`.
+- **Living costs are student-style budgets.** Official portals budget for a student (often shared housing or a dormitory). An employed PhD renting their own flat usually spends more (Aarhus University: about EUR 1,950/month for an employed single PhD vs EUR 1,000 for a student). Sources also differ in what they include, and a few upper ends (Bulgaria, Estonia, Greece, Romania, Luxembourg) are derived from listed component costs rather than stated totals; their source notes say so.
+- **The Budget Calculator's per-city figures** (Munich, Amsterdam and so on) are rough hand estimates, labelled as such in the dropdown.
 - **Tuition fees, typical duration, required ECTS, funding rate and funder lists.** Hand-compiled; each needs a source with the matching `topic`.
 - **One pay figure per country.** Real pay varies by field, funder, contract percentage and city. The site says so, and the overview text gives ranges where known.
 - **Untaxed stipends with partial contributions** (Czechia's mixed stipend + salary, for example) are approximations.

@@ -22,8 +22,15 @@ tuition_fees:
   eu_students_eur_per_year: 500
   non_eu_students_eur_per_year: 3000
 cost_of_living:
-  estimated_monthly_expenses_eur: 500
+  estimated_monthly_expenses_eur: 600
+  low_eur_per_month: 400
+  high_eur_per_month: 800
   index_relative_to_eu_average: 57
+  local:
+    low: 400
+    high: 800
+    currency: EUR
+    description: 'Low: top of the Study in Bulgaria student minimum (EUR 250-400). High: own furnished flat in Sofia (EUR 250-350) plus utilities and food'
 phd_system:
   typical_duration_years: 3
   is_employee_status: false
@@ -63,3 +70,12 @@ sources:
     title: 'EMN Inform: Attracting and retaining international researchers (2022), Table 1'
     url: https://www.emn.lt/uploads/Products/product_1934/EMN_inform_international_researchers.2022.pdf
     accessed: '2026-09-29'
+  - topic: living_costs
+    title: 'Study in Bulgaria: fees and costs'
+    url: https://studyinbulgaria.bg/fees-and-costs.html
+    accessed: '2026-10-03'
+  - topic: living_costs
+    title: 'Sofia University: living expenses (rents, utilities)'
+    url: https://erasmus.uni-sofia.bg/site/income/practical-information-2/living-expenses/
+    accessed: '2026-10-03'
+    note: Upper end derived from the listed rent, utility and food costs, not stated as a total.

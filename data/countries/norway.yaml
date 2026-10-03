@@ -22,8 +22,15 @@ tuition_fees:
   eu_students_eur_per_year: 0
   non_eu_students_eur_per_year: 0
 cost_of_living:
-  estimated_monthly_expenses_eur: 1800
+  estimated_monthly_expenses_eur: 1310
+  low_eur_per_month: 1290
+  high_eur_per_month: 1320
   index_relative_to_eu_average: 134
+  local:
+    low: 15169
+    high: 15488
+    currency: NOK
+    description: 'Low: NTNU estimate for Trondheim. High: UDI subsistence requirement for students (Oslo budgets are similar, about NOK 15,250)'
 phd_system:
   typical_duration_years: 3.5
   is_employee_status: true
@@ -71,3 +78,11 @@ sources:
     title: 'UDI: job seekers (up to one year after completing education in Norway)'
     url: https://www.udi.no/en/want-to-apply/work-immigration/job-seekers/
     accessed: '2026-09-29'
+  - topic: living_costs
+    title: 'NTNU: self-financing students (NOK 15,169/month)'
+    url: https://www.ntnu.edu/studies/financingandscholarships/is_self_financing
+    accessed: '2026-10-03'
+  - topic: living_costs
+    title: 'University of Oslo: budget and cost of living'
+    url: https://www.uio.no/english/student-life/budget/
+    accessed: '2026-10-03'

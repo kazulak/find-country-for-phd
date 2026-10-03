@@ -28,8 +28,15 @@ tuition_fees:
   eu_students_eur_per_year: 400
   non_eu_students_eur_per_year: 400
 cost_of_living:
-  estimated_monthly_expenses_eur: 1850
+  estimated_monthly_expenses_eur: 1600
+  low_eur_per_month: 1350
+  high_eur_per_month: 1850
   index_relative_to_eu_average: 151
+  local:
+    low: 1350
+    high: 1850
+    currency: EUR
+    description: 'Low: University of Luxembourg budget items for a salaried doctoral candidate (university housing EUR 800, meals EUR 360, phone, leisure). High: private room or studio'
 phd_system:
   typical_duration_years: 3.5
   is_employee_status: true
@@ -73,3 +80,12 @@ sources:
     title: 'EMN Inform: Attracting and retaining international researchers (2022), Table 1'
     url: https://www.emn.lt/uploads/Products/product_1934/EMN_inform_international_researchers.2022.pdf
     accessed: '2026-09-29'
+  - topic: living_costs
+    title: 'University of Luxembourg: cost of living and budget'
+    url: https://www.uni.lu/life-en/financial-support/cost-of-living/
+    accessed: '2026-10-03'
+  - topic: living_costs
+    title: 'EURAXESS Luxembourg: accommodation (rooms from EUR 800/month)'
+    url: https://www.euraxess.lu/luxembourg/information-researchers/accommodation
+    accessed: '2026-10-03'
+    note: Upper end is an estimate; no official total for private housing.
