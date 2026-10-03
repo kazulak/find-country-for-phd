@@ -29,7 +29,7 @@ This project was built with heavy use of AI coding assistants, including [Claude
 - **Take the Match Quiz:** four questions (citizenship, money priority, programme length, life outside the lab) and a transparent ranking. Every answer maps to a scoring dimension.
 - **Run the Budget Calculator:** start from a country's defaults, pick a city, adjust income and expenses, and see your monthly balance.
 - **Compare side by side:** up to three countries in one table.
-- **Read the country pages:** one static page per country (e.g. [`/countries/germany/`](https://kazulak.github.io/find-country-for-phd/countries/germany/)), with what the pay figure is, its sources and access dates, upsides, downsides and official portals.
+- **Read the country pages:** one static page per country (e.g. [`/countries/germany/`](https://kazulak.github.io/find-country-for-phd/countries/germany/)), with how pay changes by year, stage or contract (e.g. Dutch salary steps, German 50–100% contracts, Polish pre/post-evaluation tiers), its sources and access dates, upsides, downsides and official portals.
 
 The compiled dataset is also published as JSON at [`/data/countries.json`](https://kazulak.github.io/find-country-for-phd/data/countries.json) if you'd rather do your own analysis.
 
@@ -37,7 +37,7 @@ The compiled dataset is also published as JSON at [`/data/countries.json`](https
 
 | Figure | Source | Updated |
 | --- | --- | --- |
-| **Pay** | Official pay tables and funder rules, one per country (e.g. TV-L E13, the Dutch university CAO, UKRI, SNSF, FCT). First-year gross, including guaranteed extras such as a 13th/14th month. | By hand, yearly |
+| **Pay** | Official pay tables and funder rules, one per country (e.g. TV-L E13, the Dutch university CAO, UKRI, SNSF, FCT). First-year gross, including guaranteed extras such as a 13th/14th month, plus the later steps or contract variants where pay changes (11 countries). | By hand, yearly |
 | **Currency conversion** | ECB euro reference rates, annual average | Script |
 | **Tax & contributions** | OECD *Taxing Wages*: income tax + employee social contributions for a single person at 67% of the average wage. Untaxed stipends subtract only documented contributions (e.g. Polish pension contributions). | Script (by hand for 2 non-OECD countries) |
 | **Price level** | Eurostat price level index, EU average = 100 | Script |

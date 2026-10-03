@@ -11,6 +11,15 @@ stipend:
     currency: PLN
     per: month
     description: 'Statutory minimum before the mid-term evaluation: 37% of the professor base (PLN 9,650 in 2026); 57% (PLN 5,500.50) afterwards. Many universities pay more.'
+  steps:
+    - label: Before the mid-term evaluation (statutory minimum)
+      amount: 3570.5
+    - label: After the mid-term evaluation (statutory minimum)
+      amount: 5500.5
+    - label: 'Example: Wrocław University of Science and Technology, before evaluation'
+      amount: 4700
+    - label: 'Example: Wrocław University of Science and Technology, after evaluation'
+      amount: 5700
 tuition_fees:
   eu_students_eur_per_year: 0
   non_eu_students_eur_per_year: 0

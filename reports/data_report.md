@@ -28,7 +28,7 @@ Last refreshed with `npm run data:refresh` on **2026-10-03**.
 | Estonia | 6 | 2026-09-29 | phd_system |
 | Finland | 5 | 2026-09-29 | phd_system |
 | France | 5 | 2026-09-29 | phd_system |
-| Germany | 7 | 2026-09-29 | phd_system |
+| Germany | 8 | 2026-09-29 | phd_system |
 | Greece | 5 | 2026-09-29 | phd_system |
 | Hungary | 7 | 2026-09-29 | phd_system |
 | Ireland | 5 | 2026-09-29 | phd_system |
@@ -37,7 +37,7 @@ Last refreshed with `npm run data:refresh` on **2026-10-03**.
 | Lithuania | 4 | 2026-09-29 | phd_system |
 | Luxembourg | 6 | 2026-09-29 | phd_system |
 | Malta | 6 | 2026-09-29 | phd_system |
-| Netherlands | 6 | 2026-09-29 | phd_system |
+| Netherlands | 7 | 2026-09-29 | phd_system |
 | Norway | 7 | 2026-09-29 | phd_system |
 | Poland | 6 | 2026-09-29 | phd_system |
 | Portugal | 6 | 2026-09-29 | phd_system |

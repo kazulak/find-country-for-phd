@@ -11,6 +11,11 @@ stipend:
     currency: EUR
     per: month
     description: 'Year 1: 19 x basic social benefit (EUR 74 in 2026); later years about EUR 1,628'
+  steps:
+    - label: Year 1 (19 x BSI)
+      amount: 1406
+    - label: Years 2-4 (22 x BSI)
+      amount: 1628
 tuition_fees:
   eu_students_eur_per_year: 0
   non_eu_students_eur_per_year: 0

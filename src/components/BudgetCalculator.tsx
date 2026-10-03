@@ -116,6 +116,7 @@ export default function BudgetCalculator() {
 
   // Sliders State
   const [stipend, setStipend] = useState(0);
+  const [payStep, setPayStep] = useState(0);
   const [savings, setSavings] = useState(0);
   const [living, setLiving] = useState(0);
   const [tuition, setTuition] = useState(0);
@@ -146,6 +147,7 @@ export default function BudgetCalculator() {
     const defaultTuition = isEU ? country.tuitionFeesEU : country.tuitionFeesNonEU;
 
     setStipend(country.netIncome);
+    setPayStep(0);
     
     // Default to the typical (midpoint) living cost
     setSelectedCityName('Typical (midpoint)');
@@ -279,6 +281,28 @@ export default function BudgetCalculator() {
           {/* Financial Inflows */}
           <div className="calc-section-divider">Income & Inflows</div>
 
+          {country.payScale.length > 1 && (
+            <div className="form-group">
+              <label htmlFor="calc-pay-step" className="control-label">Pay Level</label>
+              <select
+                id="calc-pay-step"
+                value={payStep}
+                onChange={(e) => {
+                  const index = Number(e.target.value);
+                  setPayStep(index);
+                  setStipend(country.payScale[index].netMonthly);
+                }}
+                className="form-select"
+              >
+                {country.payScale.map((step, index) => (
+                  <option key={step.label} value={index}>
+                    {step.label} (~€{step.netMonthly.toLocaleString()} net/mo)
+                  </option>
+                ))}
+              </select>
+            </div>
+          )}
+
           <div className="form-group">
             <div className="slider-label-row">
               <label htmlFor="input-stipend" className="control-label">Monthly Net Stipend/Salary</label>
@@ -294,7 +318,7 @@ export default function BudgetCalculator() {
               onChange={(e) => setStipend(Number(e.target.value))}
               className="calc-slider"
             />
-            <span className="slider-hint">Pre-filled with country average.</span>
+            <span className="slider-hint">Pre-filled with the first-year estimate; pick a pay level above or adjust.</span>
           </div>
 
           <div className="form-group">

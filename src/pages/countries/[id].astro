@@ -120,6 +120,42 @@ const costBasis = country.costBasis?.replace(/\.$/, '') ?? 'Range from cheaper t
           </div>
         </div>
 
+        <!-- Pay over the PhD -->
+        <div class="content-card">
+          <h2>Pay During the PhD</h2>
+          {country.payScale.length > 1 ? (
+            <p class="section-paragraph">Pay depends on the year, the stage or the contract. The first row is the figure used everywhere else on this site.</p>
+          ) : (
+            <p class="section-paragraph">One national rate; it does not rise with the year of the PhD (it may be indexed or revised over time).</p>
+          )}
+          <div class="pay-table-wrap">
+            <table class="pay-table">
+              <thead>
+                <tr>
+                  <th scope="col">Stage or contract</th>
+                  <th scope="col">Gross / month</th>
+                  <th scope="col">Est. net / month</th>
+                  <th scope="col">As published</th>
+                </tr>
+              </thead>
+              <tbody>
+                {country.payScale.map((step, i) => (
+                  <tr class={i === 0 ? 'pay-headline' : ''}>
+                    <th scope="row">
+                      {step.label}
+                      {step.note && <span class="pay-note">{step.note}</span>}
+                    </th>
+                    <td>{euro(step.grossMonthly)}</td>
+                    <td>{euro(step.netMonthly)}</td>
+                    <td class="pay-published">{step.published}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p class="fact-note pay-footnote">Gross per month spreads guaranteed annual extras (holiday pay, 13th/14th month) over 12 months. Net applies the same deduction rate to every row, so it slightly overstates net pay for the higher rows. Converted at the {auto.exchange_rates?.year ?? 'latest'} ECB average rate where needed.</p>
+        </div>
+
         <!-- Applicant Conditions -->
         <div class="content-card">
           <h2>EU vs. Non-EU Applicants</h2>
@@ -386,6 +422,67 @@ const costBasis = country.costBasis?.replace(/\.$/, '') ?? 'Range from cheaper t
     border-bottom: 1px solid rgba(255, 255, 255, 0.04);
   }
 
+  .details-main-column,
+  .details-sidebar-column {
+    min-width: 0;
+  }
+
+  .pay-table-wrap {
+    overflow-x: auto;
+  }
+
+  .pay-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+  }
+
+  .pay-table th,
+  .pay-table td {
+    text-align: left;
+    padding: 8px 10px;
+    border-bottom: 1px solid var(--border-color);
+    vertical-align: top;
+  }
+
+  .pay-table thead th {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--text-secondary);
+  }
+
+  .pay-table tbody th {
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+
+  .pay-table td {
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .pay-table .pay-headline {
+    background: var(--bg-tertiary);
+  }
+
+  .pay-note {
+    display: block;
+    font-weight: 400;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    margin-top: 2px;
+  }
+
+  .pay-published {
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+  }
+
+  .fact-note.pay-footnote {
+    margin-top: 10px;
+  }
+
   .fact-note.fees-note {
     margin-top: 12px;
   }
@@ -543,6 +640,8 @@ const costBasis = country.costBasis?.replace(/\.$/, '') ?? 'Range from cheaper t
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 4px 12px;
     border: 1px solid var(--border-color);
     background: var(--bg-tertiary);
     padding: 12px 16px;
@@ -563,6 +662,8 @@ const costBasis = country.costBasis?.replace(/\.$/, '') ?? 'Range from cheaper t
   .portal-url {
     font-size: 0.85rem;
     color: var(--text-muted);
+    overflow-wrap: anywhere;
+    min-width: 0;
   }
 
   .sources-card p {

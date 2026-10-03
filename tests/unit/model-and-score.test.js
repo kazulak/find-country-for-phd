@@ -78,6 +78,18 @@ describe('country model', () => {
     }
   });
 
+  test('pay steps start with the headline figure and scale from it', () => {
+    for (const c of Object.values(flat)) {
+      assert.equal(c.payScale[0].netMonthly, c.netIncome, c.id);
+      assert.ok(c.netIncomeMin <= c.netIncome && c.netIncome <= c.netIncomeMax, c.id);
+    }
+    const nl = flat.netherlands.payScale.map((s) => s.grossMonthly);
+    assert.deepEqual([...nl].sort((a, b) => a - b), nl, 'Dutch pay rises every year');
+    const de = flat.germany.payScale.find((s) => s.label.startsWith('100% contract, year 1'));
+    assert.ok(Math.abs(de.grossMonthly / flat.germany.payScale[0].grossMonthly - 1 / 0.65) < 0.01, 'German 100% is 1/0.65 of the 65% headline');
+    assert.equal(flat.italy.payScale.length, 1, 'flat-rate countries show a single row');
+  });
+
   test('every profile cites its doctoral fees', () => {
     for (const d of Object.values(raw)) {
       assert.ok(d.sources.some((s) => s.topic === 'tuition'), d.id);

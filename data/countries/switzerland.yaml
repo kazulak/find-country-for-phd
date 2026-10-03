@@ -11,6 +11,12 @@ stipend:
     currency: CHF
     per: year
     description: SNSF minimum doctoral salary from 1 Jan 2026 (range CHF 50,000-55,000)
+  steps:
+    - label: SNSF minimum (year 1)
+      amount: 50000
+    - label: SNSF maximum
+      amount: 55000
+      note: Universities set salaries within the SNSF range, usually rising each year; ETH, EPFL and some universities use their own scales
 tuition_fees:
   eu_students_eur_per_year: 720
   non_eu_students_eur_per_year: 720

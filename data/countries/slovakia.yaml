@@ -11,6 +11,11 @@ stipend:
     currency: EUR
     per: month
     description: Full-time doctoral scholarship before the dissertation exam (EUR 1,278 afterwards), tax-free
+  steps:
+    - label: Before the dissertation exam
+      amount: 1097.5
+    - label: After the dissertation exam
+      amount: 1278
 tuition_fees:
   eu_students_eur_per_year: 0
   non_eu_students_eur_per_year: 1000

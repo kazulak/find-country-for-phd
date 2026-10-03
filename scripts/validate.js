@@ -75,6 +75,11 @@ function validate() {
           }
         }
 
+        const steps = data.stipend.steps;
+        if (steps && local && steps[0].amount !== local.amount) {
+          fail(`[ERROR] File "${file}": the first stipend step (${steps[0].amount}) must equal stipend.local.amount (${local.amount}).`);
+        }
+
         const cost = data.cost_of_living;
         if (cost.local.low > cost.local.high) {
           fail(`[ERROR] File "${file}": cost_of_living.local.low is above high.`);

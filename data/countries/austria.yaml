@@ -12,6 +12,15 @@ stipend:
     per: month
     payments_per_year: 14
     description: Uni-KV group B1 (EUR 3,776.10 full-time from 1 Jan 2026) at the usual 30 h/week (75%), paid 14 times a year
+  steps:
+    - label: Years 1-3, 30 h/week (75%)
+      amount: 2832.08
+    - label: From year 4, 30 h/week (75%)
+      amount: 3357.38
+      note: B1 rises to EUR 4,476.50 full-time after three years
+    - label: Full-time (100%), years 1-3
+      amount: 3776.1
+      note: Some positions, mostly in STEM
 tuition_fees:
   eu_students_eur_per_year: 0
   non_eu_students_eur_per_year: 1453

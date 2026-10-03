@@ -11,6 +11,14 @@ stipend:
     currency: HUF
     per: month
     description: State doctoral scholarship in years 1-2 (HUF 180,680 in years 3-4); many universities add about HUF 100,000 (Doktori Ösztöndíj+)
+  steps:
+    - label: Years 1-2 (state scholarship)
+      amount: 140680
+    - label: Years 3-4 (state scholarship)
+      amount: 180680
+    - label: Years 1-2 with a typical university top-up (+HUF 100,000)
+      amount: 240680
+      note: Doktori Ösztöndíj+ at many universities
 tuition_fees:
   eu_students_eur_per_year: 0
   non_eu_students_eur_per_year: 9000

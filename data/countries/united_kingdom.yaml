@@ -11,6 +11,11 @@ stipend:
     currency: GBP
     per: year
     description: UKRI minimum doctoral stipend 2026/27 outside London (+GBP 2,000 London weighting), tax-free
+  steps:
+    - label: UKRI minimum, outside London
+      amount: 21805
+    - label: UKRI minimum, London (with weighting)
+      amount: 23805
 tuition_fees:
   eu_students_eur_per_year: 31500
   non_eu_students_eur_per_year: 31500

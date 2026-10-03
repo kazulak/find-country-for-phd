@@ -27,6 +27,14 @@ export interface DataMeta {
   automated_sources: Partial<Record<'price_level_index' | 'life_satisfaction' | 'climate' | 'pay_deductions' | 'exchange_rates', AutomatedSource>>;
 }
 
+export interface PayStep {
+  label: string;
+  note: string | null;
+  grossMonthly: number; // EUR, annual extras spread over 12 months
+  netMonthly: number; // EUR, estimate
+  published: string; // e.g. "EUR 3,204 / month"
+}
+
 export interface Country {
   id: string;
   name: string;
@@ -42,6 +50,9 @@ export interface Country {
   isTaxable: boolean;
   deductionsPercent: number; // income tax + employee social contributions, % of gross
   payBasis: string | null; // what the pay figure is, as published
+  payScale: PayStep[]; // pay over the PhD / by contract; first entry = headline
+  netIncomeMin: number; // EUR per month, lowest step
+  netIncomeMax: number; // EUR per month, highest step
   tuitionFeesEU: number; // EUR per year
   tuitionFeesNonEU: number; // EUR per year
   costOfLiving: number; // EUR per month, midpoint of the range

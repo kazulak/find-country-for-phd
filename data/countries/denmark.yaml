@@ -11,6 +11,16 @@ stipend:
     currency: DKK
     per: month
     description: AC agreement pay scale 4 (DKK 30,264.08) + PhD supplement (DKK 1,580.92) from 1 Aug 2026; employer pension is paid on top
+  steps:
+    - label: Pay scale 4 (first two years of seniority)
+      amount: 31845
+    - label: Pay scale 5
+      amount: 34198
+    - label: Pay scale 6
+      amount: 36343.92
+    - label: Pay scale 8
+      amount: 38458.34
+      note: Placement depends on relevant work experience after the Master's degree
 tuition_fees:
   eu_students_eur_per_year: 0
   non_eu_students_eur_per_year: 0

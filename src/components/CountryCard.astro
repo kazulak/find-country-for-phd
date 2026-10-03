@@ -42,6 +42,9 @@ const isPositive = savingsMargin > 0;
       <div class="q-stat">
         <span class="q-label">Est. Net Pay</span>
         <span class="q-value text-glow-primary">€{country.netIncome.toLocaleString()}/mo</span>
+        {country.netIncomeMax > country.netIncomeMin && (
+          <span class="q-range" title="Depends on year, stage or contract">€{country.netIncomeMin.toLocaleString()}–{country.netIncomeMax.toLocaleString()} by year/contract</span>
+        )}
       </div>
       <div class="q-stat">
         <span class="q-label">Cost of Living</span>
@@ -97,6 +100,13 @@ const isPositive = savingsMargin > 0;
 </article>
 
 <style>
+  .q-range {
+    display: block;
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    margin-top: 2px;
+  }
+
   .country-card {
     position: relative;
     display: flex;

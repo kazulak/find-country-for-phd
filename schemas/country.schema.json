@@ -98,6 +98,32 @@
               "type": "string"
             }
           }
+        },
+        "steps": {
+          "description": "How pay changes over the PhD or between typical contracts (years, tiers, contract shares). Same currency, period and payments_per_year as stipend.local; the first step must be the headline figure.",
+          "type": "array",
+          "minItems": 2,
+          "items": {
+            "type": "object",
+            "required": [
+              "label",
+              "amount"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "label": {
+                "type": "string",
+                "minLength": 1
+              },
+              "amount": {
+                "type": "number",
+                "exclusiveMinimum": 0
+              },
+              "note": {
+                "type": "string"
+              }
+            }
+          }
         }
       }
     },

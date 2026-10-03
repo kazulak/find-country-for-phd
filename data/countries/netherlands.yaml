@@ -12,6 +12,18 @@ stipend:
     per: month
     payments_per_year: 13.96
     description: CAO NU PhD scale, year 1 (EUR 3,204 from 1 Jul 2026), plus 8% holiday allowance and 8.3% year-end bonus
+  steps:
+    - label: Year 1 (P0)
+      amount: 3204
+    - label: Year 2 (P1)
+      amount: 3706
+      note: Automatic after 12 months
+    - label: Year 3 (P2)
+      amount: 3873
+      note: After a positive annual review
+    - label: Year 4 (P3)
+      amount: 4051
+      note: Equals salary scale 10, step 2
 tuition_fees:
   eu_students_eur_per_year: 0
   non_eu_students_eur_per_year: 0
@@ -79,3 +91,8 @@ sources:
     url: https://www.tudelft.nl/en/education/programmes/phd/phd-admission/fees-and-funding
     accessed: '2026-10-03'
     note: Scholarship (non-employed) candidates at TU Delft pay a one-off EUR 11,000.
+  - topic: pay
+    title: 'CAO Nederlandse Universiteiten 2025-2026, art. 3.9 and table 4.1 (P0-P3 from 1 July 2025: EUR 3,059 / 3,546 / 3,708 / 3,881)'
+    url: https://www.aob.nl/assets/Downloads/CAO-Nederlandse-Universiteiten-2025-2026.pdf
+    accessed: '2026-10-03'
+    note: 2026 values = 2025 values x 1.031 + EUR 50 (CAO 2026-2027, from 1 July 2026).

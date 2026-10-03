@@ -47,6 +47,11 @@ export default function ComparisonHub() {
   const maxStay = Math.max(...[c1, c2, c3].filter(Boolean).map((c) => (c as Country).postStudyVisaMonths));
   const isPricey = (c?: Country | null) => !!c && (c.priceLevel === 'High' || c.priceLevel === 'Very high');
 
+  const payRange = (c?: Country | null) =>
+    c && c.netIncomeMax > c.netIncomeMin ? (
+      <span className="pay-range-note"><br />€{c.netIncomeMin.toLocaleString()}–{c.netIncomeMax.toLocaleString()} by year/contract</span>
+    ) : null;
+
   const renderBadge = (status?: string) => {
     if (!status) return '';
     let cls = 'badge-secondary';
@@ -188,13 +193,13 @@ export default function ComparisonHub() {
             <tr>
               <td className="param-name">Est. Net Pay</td>
               <td className={`param-val ${c1?.netIncome === maxSalary ? 'highlight-cell-green' : ''}`}>
-                €{c1?.netIncome.toLocaleString()}/mo
+                €{c1?.netIncome.toLocaleString()}/mo{payRange(c1)}
               </td>
               <td className={`param-val ${c2?.netIncome === maxSalary ? 'highlight-cell-green' : ''}`}>
-                €{c2?.netIncome.toLocaleString()}/mo
+                €{c2?.netIncome.toLocaleString()}/mo{payRange(c2)}
               </td>
               <td className={`param-val ${c3 && c3.netIncome === maxSalary ? 'highlight-cell-green' : ''}`}>
-                {c3 ? `€${c3.netIncome.toLocaleString()}/mo` : <span className="empty-cell-text">—</span>}
+                {c3 ? <>€{c3.netIncome.toLocaleString()}/mo{payRange(c3)}</> : <span className="empty-cell-text">—</span>}
               </td>
             </tr>
             <tr>

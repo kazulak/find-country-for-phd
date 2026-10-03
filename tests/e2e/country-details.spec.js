@@ -87,6 +87,35 @@ test.describe('PhD Country Match Platform E2E Tests', () => {
     await expect(page.locator('.source-list a[href*="lmu.de"]')).toHaveCount(1);
   });
 
+  test('country page shows how pay changes by year and contract', async ({ page }) => {
+    await page.goto(`${BASE}countries/germany/`);
+    const rows = page.locator('.pay-table tbody tr');
+    await expect(rows).toHaveCount(6);
+    await expect(page.locator('.pay-table')).toContainText('100% contract, year 1');
+    await expect(page.locator('.pay-table')).toContainText('EUR 4,759.37 / month');
+    await page.goto(`${BASE}countries/netherlands/`);
+    await expect(page.locator('.pay-table tbody tr')).toHaveCount(4);
+    await expect(page.locator('.pay-table')).toContainText('Year 4 (P3)');
+  });
+
+  test('country pages fit a phone screen', async ({ page }) => {
+    await page.setViewportSize({ width: 375, height: 800 });
+    for (const id of ['germany', 'netherlands', 'united_kingdom']) {
+      await page.goto(`${BASE}countries/${id}/`);
+      const width = await page.evaluate(() => document.documentElement.scrollWidth);
+      expect(width, id).toBeLessThanOrEqual(375);
+    }
+  });
+
+  test('budget calculator can switch pay level', async ({ page }) => {
+    await page.goto(`${BASE}#calculator`);
+    await page.locator('#calc-country-select').selectOption('netherlands');
+    const before = await page.locator('#input-stipend').inputValue();
+    await page.locator('#calc-pay-step').selectOption({ index: 3 });
+    const after = await page.locator('#input-stipend').inputValue();
+    expect(Number(after)).toBeGreaterThan(Number(before));
+  });
+
   test('UK page does not promise EU free movement', async ({ page }) => {
     await page.goto(`${BASE}countries/united_kingdom/`);
     await expect(page.getByText(/Student visa required \(no EU free movement\)/)).toBeVisible();

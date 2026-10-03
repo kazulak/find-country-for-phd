@@ -11,6 +11,17 @@ stipend:
     currency: SEK
     per: month
     description: Uppsala University doctoral salary ladder, starting step from 1 Oct 2026 (was SEK 33,000)
+  steps:
+    - label: Start
+      amount: 34000
+    - label: Year 2
+      amount: 34500
+    - label: Year 3
+      amount: 35400
+    - label: After 50% of the doctorate
+      amount: 35900
+    - label: After 80% of the doctorate
+      amount: 38500
 tuition_fees:
   eu_students_eur_per_year: 0
   non_eu_students_eur_per_year: 0

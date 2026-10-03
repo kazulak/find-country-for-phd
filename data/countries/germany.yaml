@@ -12,6 +12,22 @@ stipend:
     per: month
     payments_per_year: 12.4647
     description: 65% of TV-L E13 step 1 (EUR 4,759.37 full-time from 1 Apr 2026) plus the annual special payment of 46.47% of a monthly salary
+  steps:
+    - label: 65% contract, year 1
+      amount: 3093.59
+      note: Typical DFG-funded position, common in the natural sciences
+    - label: 50% contract, year 1
+      amount: 2379.69
+      note: Common in the humanities
+    - label: 75% contract, year 1
+      amount: 3569.53
+    - label: 100% contract, year 1
+      amount: 4759.37
+      note: Usual in engineering (about 80% of PhDs in mechanical and electrical engineering are full-time)
+    - label: 65% contract, years 2-3 (step 2)
+      amount: 3318.96
+    - label: 100% contract, years 2-3 (step 2)
+      amount: 5106.09
 tuition_fees:
   eu_students_eur_per_year: 500
   non_eu_students_eur_per_year: 500
@@ -83,3 +99,8 @@ sources:
     url: https://mwk.baden-wuerttemberg.de/de/hochschulen-studium/studieren-in-bw/studienfinanzierung/gebuehren-fuer-internationale-studierende-und-zweitstudium/faqs
     accessed: '2026-10-03'
     note: No tuition; the figure is the semester contribution (EUR 70-430 per semester, varies by university), if you enrol.
+  - topic: pay
+    title: 'DZHW Brief 04/2022: employment conditions of young researchers (contract shares by field; DFG recommends 65-100% depending on field)'
+    url: https://www.dzhw.eu/pdf/pub_brief/dzhw_brief_04_2022.pdf
+    accessed: '2026-10-03'
+    note: Full-time is rare in chemistry (14%), the humanities (16%) and geosciences (17%).
